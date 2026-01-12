@@ -1,0 +1,19 @@
+
+.mv-section {padding: 80px 0px;}
+
+.section-title {
+    font-size: 28px;
+    color: #333333;
+    padding: 0 16px;
+}
+
+.swiper-wrapper {padding: 0 0 80px;}
+
+.mv-swiper {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.swiper-slide {
+  display: flex;
+}

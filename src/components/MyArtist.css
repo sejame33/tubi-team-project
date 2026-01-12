@@ -1,0 +1,57 @@
+.artist-card,
+.artist-more {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+  color: #AEAEAE;
+}
+
+.artist-more img {margin-bottom: 12px;}
+
+.artist-more .artist-name {
+    color: #AEAEAE;
+    white-space: nowrap;
+}
+.artist-card {
+  width: 64px;
+}
+
+.artist-list {display: flex; background: #fafafa; box-shadow: 0 5px 15px rgba(0,0,0,0.08); padding: 0px; list-style: none;}
+
+
+.artist-slide {
+  width: auto; /* slidesPerView: auto 핵심 */
+}
+
+.artist-card, .artist-more {
+  width: 64px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.artist-img {
+  width: 72px;
+  height: 72px;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.artist-name {
+  font-size: 12px;
+  color: #333;
+}
+
+.my-artist {padding: 28px 0 28px 20px; background: #fafafa; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 0 16px 80px;}
+
+.my-artist .swiper-wrapper {padding: 0;}
+
+.artist-slide:has(.artist-more) {
+  width: 65px; /* 원하는 만큼 */
+}

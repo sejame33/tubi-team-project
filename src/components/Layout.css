@@ -1,0 +1,5 @@
+.main {flex: 1; min-height: 100vh; padding: 144px 0 117px; background: #FAFAFA;}
+
+.main {
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+}

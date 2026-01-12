@@ -1,0 +1,25 @@
+.main-banner {
+  width: 100%;
+  height: 100%;
+  padding: 24px 0 0;
+}
+
+.main-banner .banner-swiper {
+  width: 100%;
+}
+
+.main-banner .banner-swiper .swiper-slide {
+  padding: 0 16px;
+  height: auto;
+}
+
+.main-banner .banner-swiper .swiper-wrapper {
+  align-items: center;
+  padding: 0 0 24px;
+}
+
+.main-banner .banner-swiper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
