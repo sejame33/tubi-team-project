@@ -3,20 +3,18 @@ import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import MvCard from "./MvCard";
-import './MvSection.css';
+import "./MvSection.css";
 
 function MvSection() {
   return (
     <section className="mv-section">
-      <h2 className="section-title">실시간 Live!</h2>
-
       <Swiper
         modules={[FreeMode]}
         slidesPerView="auto"
         spaceBetween={16}
         grabCursor
         freeMode
-        freeModeMomentumVelocityRatio={0.38}  // 속도 조절
+        freeModeMomentumVelocityRatio={0.38} // 속도 조절
         freeModeMomentumRatio={0.65}
         freeModeMomentumBounce={false}
         className="mv-swiper"

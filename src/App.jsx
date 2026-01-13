@@ -1,33 +1,30 @@
-import React from 'react'
-import Layout from './components/Layout'
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from './components/Header'
-import Footer from './components/Footer'
 
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import DM from "./pages/DM";
 import My from "./pages/My";
+import NicknamePage from "./pages/NicknamePage";
+import { NicknameProvider } from "./context/NicknameContext";
 
 function App() {
   return (
+    <NicknameProvider>
+      <Routes>
+        {/* 최초 진입 */}
+        <Route path="/" element={<NicknamePage />} />
 
-      <>
-      <Header/>
-
-      <main className='main'>
-        <Routes>
-          <Route path='/' element={<Layout/>}>
-            <Route index element={<Home/>}/>
-            <Route path="shop" element={<Shop />} />
-            <Route path="dm" element={<DM />} />
-            <Route path="my" element={<My />} />
-          </Route>
+        {/* 메인 영역 */}
+        <Route path="/home" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="shop" element={<Shop />} />
+          <Route path="dm" element={<DM />} />
+          <Route path="my" element={<My />} />
+        </Route>
       </Routes>
-      </main>
-
-      <Footer />
-      </>
+    </NicknameProvider>
   );
 }
 
