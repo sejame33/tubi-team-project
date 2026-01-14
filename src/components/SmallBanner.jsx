@@ -25,7 +25,23 @@ function SmallBanner({
           </div>
         )}
 
-        <p className="small-banner-title-top">{title.top}</p>
+        <p className="small-banner-title-top">
+          {title?.topPrefix ? (
+            <>
+              <span>{title.topPrefix}</span>
+              {title.topIcon && (
+                <img
+                  className="small-banner-title-icon"
+                  src={title.topIcon}
+                  alt=""
+                />
+              )}
+              <span>{title.topSuffix}</span>
+            </>
+          ) : (
+            title?.top
+          )}
+        </p>
         <p className="small-banner-title-bottom">{title.bottom}</p>
 
         {variant === "text" && (

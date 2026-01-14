@@ -30,3 +30,18 @@
 .main {
   overflow-x: hidden;
 }
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE, Edge 구버전 */
+body {
+  -ms-overflow-style: none;
+}

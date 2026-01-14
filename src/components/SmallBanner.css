@@ -85,6 +85,18 @@
   display: block;
 }
 
+.small-banner-title-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.small-banner-title-icon {
+  width: 44px; /* 원하는 크기로 조절 */
+  height: 23px;
+  display: block;
+}
+
 .small-banner-wrap.b {
   padding: 24px 0 100px;
 }
@@ -126,4 +138,10 @@
   .swiper-pagination-current {
   font-weight: 600;
   color: #fff;
+}
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: 0%;
 }

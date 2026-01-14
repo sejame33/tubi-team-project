@@ -131,8 +131,6 @@ export default function BrandShop() {
             modules={[Scrollbar, Pagination]}
             slidesPerView="auto"
             spaceBetween={18}
-            slidesPerGroup={1} // ✅ 한 번에 1장
-            centeredSlides={false}
             grabCursor
             scrollbar={{
               draggable: true,
@@ -142,6 +140,17 @@ export default function BrandShop() {
             pagination={{
               type: "fraction",
               el: ".brandshop-products-pagination",
+            }}
+            breakpoints={{
+              0: {
+                spaceBetween: 12,
+              },
+              768: {
+                spaceBetween: 16,
+              },
+              1024: {
+                spaceBetween: 18,
+              },
             }}
           >
             {filteredProducts.map((p) => {
