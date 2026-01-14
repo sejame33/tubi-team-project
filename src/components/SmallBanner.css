@@ -71,7 +71,7 @@
   cursor: pointer;
 }
 
-.swiper-slide {
+.small-banner-wrap .swiper-slide {
   display: block;
 }
 
@@ -83,4 +83,47 @@
   height: 20px; /* 로고 크기 */
   width: auto;
   display: block;
+}
+
+.small-banner-wrap.b {
+  padding: 24px 0 100px;
+}
+
+.small-banner-wrap.b .swiper {
+  overflow: visible;
+  position: relative;
+}
+
+.small-banner-wrap.b .swiper-wrapper {
+  overflow: visible;
+}
+
+.small-banner-wrap.b .swiper-slide {
+  overflow: visible;
+}
+
+.small-banner-wrap.b .swiper > .swiper-pagination-fraction {
+  position: absolute;
+  right: 30px; /* 카드 안처럼 보이게 조절 */
+  bottom: 10px;
+
+  left: auto; /* swiper 기본값 덮기 */
+  width: auto; /* swiper 기본값 덮기 */
+
+  text-align: right;
+  z-index: 20;
+  pointer-events: none;
+  color: #dadada;
+  font-size: 12px;
+  font-weight: 300;
+  background: rgba(16, 15, 15, 0.38);
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+.small-banner-wrap.b
+  .swiper
+  > .swiper-pagination-fraction
+  .swiper-pagination-current {
+  font-weight: 600;
+  color: #fff;
 }

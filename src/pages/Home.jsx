@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "./Home.css";
+import "swiper/css/pagination";
 
 import MvSection from "../components/MvSection";
 import MainBanner from "../components/MainBanner";
@@ -12,11 +12,13 @@ import Gacha from "../components/gacha";
 import SmallBanner from "../components/SmallBanner";
 import { useNickname } from "../context/NicknameContext";
 import LiveSection from "../components/live/LiveSection";
+import AlbumSlide from "../components/AlbumSlide";
+import BrandShop from "../components/BrandShop";
 
 function Home() {
-  const { nickname } = useNickname(); // 나중에 context로
+  const { nickname } = useNickname();
+  const fractionRefs = useRef([]); // ✅ 슬라이드별 fraction 자리 저장
 
-  /* 🔹 Swiper용 SmallBanner 데이터 */
   const swiperBanners = [
     {
       variant: "logo",
@@ -64,14 +66,25 @@ function Home() {
     },
   ];
 
+  // ✅ 현재 슬라이드의 fraction el로 pagination을 연결하는 함수
+  const bindFractionEl = (swiper) => {
+    const active = swiper.realIndex; // loop일 때 realIndex가 안전
+    const el = fractionRefs.current[active];
+    if (!el) return;
+
+    swiper.pagination.el = el;
+    swiper.pagination.init();
+    swiper.pagination.render();
+    swiper.pagination.update();
+  };
+
   return (
     <div className="home">
       <MainBanner />
       <MyArtist />
       <Gacha />
 
-      {/* ✅ 단일 배너도 wrapper로 감싸서 Swiper와 동일한 폭/여백 적용 */}
-      <div className="small-banner-wrap">
+      <div className="small-banner-wrap a">
         <SmallBanner
           background="/img/small-banner-bg-1.svg"
           title={{
@@ -88,33 +101,67 @@ function Home() {
           onMore={() => console.log("single banner")}
         />
       </div>
+
       <LiveSection />
-      <div className="small-banner-wrap">
+
+      <div className="small-banner-wrap b">
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, Pagination]} // ✅ 한번에!
           slidesPerView={1}
           spaceBetween={12}
-          grabCursor={true}
-          loop={true}
+          grabCursor
+          loop
           autoplay={{
             delay: 3000,
-            disableOnInteraction: false, // 터치해도 다시 자동 재생
+            disableOnInteraction: false,
           }}
+          pagination={{
+            type: "fraction",
+            // 01 / 03 같이 0 붙이고 싶으면 아래 두 줄 추가 가능
+            // formatFractionCurrent: (n) => String(n).padStart(2, "0"),
+            // formatFractionTotal: (n) => String(n).padStart(2, "0"),
+            renderFraction: (currentClass, totalClass) =>
+              `<span class="${currentClass}"></span> / <span class="${totalClass}"></span>`,
+          }}
+          onSwiper={(swiper) => bindFractionEl(swiper)}
+          onSlideChange={(swiper) => bindFractionEl(swiper)}
         >
           {swiperBanners.map((banner, index) => (
             <SwiperSlide key={index} className="small-banner-slide">
-              <SmallBanner {...banner} />
+              {/* ✅ fraction div를 "카드 내부"에 넣기 */}
+              <SmallBanner {...banner}>
+                <div
+                  className="small-banner-fraction swiper-pagination-fraction"
+                  ref={(el) => (fractionRefs.current[index] = el)}
+                />
+              </SmallBanner>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
+
+      <SectionTitle
+        title="이달의 ALBUM"
+        showMore={true}
+        useNicknameTitle={false}
+        onMoreClick={() => console.log("/album")}
+      />
+      <AlbumSlide />
+
       <SectionTitle
         title="추천 MV"
         showMore={true}
         onMoreClick={() => console.log("/recommend")}
       />
-
       <MvSection />
+
+      <SectionTitle
+        title="브랜드관"
+        showMore={true}
+        useNicknameTitle={false}
+        onMoreClick={() => console.log("/album")}
+      />
+      <BrandShop />
     </div>
   );
 }

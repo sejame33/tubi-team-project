@@ -1,12 +1,11 @@
-import React from 'react';
-import './Footer.css'
+import React from "react";
+import "./Footer.css";
 import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
     <footer className="footer">
-      
-      <NavLink to="/" className="footer-item">
+      <NavLink to="/home" end className="footer-item">
         {({ isActive }) => (
           <>
             <img
@@ -22,7 +21,7 @@ function Footer() {
         )}
       </NavLink>
 
-      <NavLink to="/shop" className="footer-item">
+      <NavLink to="/home/shop" className="footer-item">
         {({ isActive }) => (
           <>
             <img
@@ -38,14 +37,12 @@ function Footer() {
         )}
       </NavLink>
 
-      <NavLink to="/dm" className="footer-item">
+      <NavLink to="/home/dm" className="footer-item">
         {({ isActive }) => (
           <>
             <img
               src={
-                isActive
-                  ? "/img/footer-dm-active.svg"
-                  : "/img/footer-dm.svg"
+                isActive ? "/img/footer-dm-active.svg" : "/img/footer-dm.svg"
               }
               alt="DM"
             />
@@ -54,14 +51,12 @@ function Footer() {
         )}
       </NavLink>
 
-      <NavLink to="/my" className="footer-item">
+      <NavLink to="/home/my" className="footer-item">
         {({ isActive }) => (
           <>
             <img
               src={
-                isActive
-                  ? "/img/footer-my-active.svg"
-                  : "/img/footer-my.svg"
+                isActive ? "/img/footer-my-active.svg" : "/img/footer-my.svg"
               }
               alt="마이페이지"
             />
@@ -69,7 +64,6 @@ function Footer() {
           </>
         )}
       </NavLink>
-
     </footer>
   );
 }

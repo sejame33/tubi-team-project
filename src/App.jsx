@@ -13,10 +13,10 @@ function App() {
   return (
     <NicknameProvider>
       <Routes>
-        {/* 최초 진입 */}
+        {/* ✅ 최초 진입 페이지 */}
         <Route path="/" element={<NicknamePage />} />
 
-        {/* 메인 영역 */}
+        {/* ✅ 메인 앱 영역 */}
         <Route path="/home" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />

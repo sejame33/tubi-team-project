@@ -8,6 +8,7 @@ function SmallBanner({
   image,
   imageStyle = {},
   onMore,
+  children,
 }) {
   // 위치 관련만 div로, 크기는 img로 분리하는 게 깔끔
   const { height, width, transform, ...posStyle } = imageStyle;
@@ -45,6 +46,7 @@ function SmallBanner({
           }}
         />
       </div>
+      {children}
     </div>
   );
 }
