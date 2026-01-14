@@ -57,11 +57,17 @@
 }
 
 .my-artist {
-  padding: 28px 0 28px 20px;
+  padding: 28px 0 20px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin: 30px 16px 80px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
 }
 
 .my-artist .swiper-wrapper {
@@ -70,4 +76,8 @@
 
 .artist-slide:has(.artist-more) {
   width: 65px; /* 원하는 만큼 */
+}
+.artist-swiper {
+  padding-right: 20px;
+  padding-left: 20px;
 }

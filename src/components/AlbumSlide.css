@@ -1,0 +1,147 @@
+.album-slide {
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 100px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.album-slide-inner {
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin: 0 16px;
+  padding: 80px 0 100px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.album-visual {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+/* 커버 */
+.album-cover {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+
+/* CD: 기본은 "들어가 있는 상태" */
+.album-cd {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+
+  /* ✅ 기본: 커버 뒤에 숨어있는 느낌 */
+  transform: translate(-50%, -50%) translateX(-20px) scale(0.98);
+  opacity: 0.9;
+
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+
+  transition: transform 420ms ease, opacity 420ms ease;
+  pointer-events: none;
+}
+
+/* ✅ 활성 슬라이드가 될 때: CD가 오른쪽으로 "쓱" 나옴 */
+.swiper-slide-active .album-cd {
+  transform: translate(-50%, -50%) translateX(70px) scale(1);
+  opacity: 1;
+}
+
+/* (선택) 활성 슬라이드 커버도 살짝 살아나게 */
+.swiper-slide-active .album-cover {
+  transform: scale(1.02);
+  transition: transform 420ms ease;
+}
+
+.album-meta {
+  text-align: center;
+}
+
+.album-desc {
+  font-size: 12px;
+  color: #333333;
+  margin: 0;
+  margin-top: 24px;
+}
+
+.album-artist {
+  font-size: 20px;
+  color: #333333;
+  font-weight: 600;
+  margin: 4px 0 0;
+}
+
+.album-swiper-controls {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 33%;
+  transform: translateX(-65%);
+}
+
+.album-swiper-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.album-swiper-pagination {
+  position: static !important; /* ✅ Swiper가 absolute로 잡는 경우 방지 */
+  white-space: nowrap;
+  font-size: 14px;
+  color: #666;
+  opacity: 1 !important;
+  margin-left: 110%; /* 기존 110% 제거 추천 */
+}
+
+.album-swiper-scrollbar {
+  flex: 1;
+  position: relative;
+  height: 3px !important;
+  background: #c3c3c3;
+
+  /* ✅ Swiper CSS가 opacity 0 주는 경우가 많아서 강제 */
+  opacity: 1 !important;
+}
+
+.album-swiper-scrollbar .swiper-scrollbar-drag {
+  height: 100%;
+  background: #000;
+}
+
+.album-swiper-pagination .swiper-pagination-current {
+  color: #000;
+}
+
+.album-swiper-pagination .swiper-pagination-total {
+  color: #666;
+}
+
+.album-swiper-pagination {
+  color: #666;
+  font-size: 14px;
+}
+
+.album-swiper-scrollbar {
+  height: 3px !important;
+}

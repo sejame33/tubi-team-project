@@ -3,6 +3,12 @@
   height: 100%;
   padding: 24px 0 0;
   position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
 }
 
 .main-banner .banner-swiper {
@@ -10,7 +16,7 @@
 }
 
 .main-banner .banner-swiper .swiper-slide {
-  padding: 150px 16px 0;
+  padding: 0 16px;
   height: auto;
 }
 

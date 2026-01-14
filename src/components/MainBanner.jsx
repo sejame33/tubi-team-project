@@ -13,6 +13,7 @@ function MainBanner() {
         modules={[Autoplay, Pagination, Scrollbar]}
         slidesPerView={1}
         loop
+        grabCursor
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,

@@ -1,13 +1,18 @@
 import "./SectionTitle.css";
 import { useNickname } from "../context/NicknameContext";
 
-function SectionTitle({ title, showMore = true, onMoreClick }) {
+function SectionTitle({
+  title,
+  showMore = true,
+  onMoreClick,
+  useNicknameTitle = true, // ⭐ 추가
+}) {
   const { nickname } = useNickname();
 
   return (
     <div className="section-title-wrap">
       <h2 className="section-title">
-        {nickname ? (
+        {useNicknameTitle && nickname ? (
           <>
             <strong>{nickname}</strong>님의 {title}
           </>

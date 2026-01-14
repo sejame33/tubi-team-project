@@ -4,7 +4,7 @@
   padding: 0 16px;
 }
 
-.swiper-wrapper {
+.mv-section .swiper-wrapper {
   padding: 24px 0 100px;
 }
 
@@ -13,6 +13,15 @@
   padding-right: 16px;
 }
 
-.swiper-slide {
+.mv-section .swiper-slide {
   display: flex;
+}
+
+.mv-section {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
 }

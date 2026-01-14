@@ -1,0 +1,227 @@
+.brandshop {
+  margin: 24px 16px 30px;
+}
+.brandshop .brandshop-box {
+  padding: 30px 30px 40px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+.brandshop .brandshop-box .brandshop-toprow {
+  display: flex;
+  justify-content: space-between;
+}
+.brandshop .brandshop-box .brandshop-toprow .brandshop-link img {
+  margin-left: 4px;
+}
+.brandshop .brandshop-box .brandshop-toprow .brandshop-sort img {
+  height: 12px;
+  width: auto;
+}
+.brandshop .brandshop-box .brandshop-toprow .brandshop-link,
+.brandshop .brandshop-box .brandshop-toprow .brandshop-sort {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+.brandshop .brandshop-box .brandshop-toprow span {
+  color: #929292;
+}
+.brandshop .brandshop-tabs-swiper .swiper-wrapper {
+  padding: 24px 0 !important;
+}
+
+.brandshop .brandshop-products-swiper .swiper-wrapper {
+  padding: 0 0 60px !important;
+}
+.brandshop-tab-slide {
+  width: auto !important;
+}
+.brandshop-tab {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  padding: 8px 17px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.brandshop-tab.is-active {
+  background: #333333;
+  border: none;
+  color: #fff;
+}
+.brandshop-thumb {
+  width: 173px;
+  margin: 0 auto;
+}
+.brandshop-thumb img {
+  border-radius: 10px;
+}
+.brandshop-product-slide {
+  width: 173px !important;
+}
+.brand-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 9px;
+  margin-top: 12px;
+}
+.brand-card-interest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #666;
+}
+.brandshop-card {
+  position: relative;
+  padding-bottom: 20px;
+}
+.brandshop-card.brand-card {
+  width: 108px !important;
+}
+.brandshop-card.brand-card .brandshop-thumb {
+  width: 108px !important;
+}
+.brandshop-product-slide:has(.brand-card) {
+  width: 108px !important;
+}
+.brandshop-product-slide:not(:has(.brand-card)) {
+  width: 173px !important;
+}
+
+.brandshop-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+.brandshop-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.brandshop-badges {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: norap;
+  gap: 6px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.brandshop-badges .badge {
+  position: static !important;
+  color: #0cb889;
+  white-space: nowrap;
+  padding: 4px 4px;
+  background: #e9fff9;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.brandshop-badges .badge.is-blue {
+  color: #046aff;
+  white-space: nowrap;
+  padding: 4px 4px;
+  background: #e9f2ff;
+  border-radius: 3px;
+}
+.brandshop-badges .badge.is-gray {
+  color: #7b787e;
+  white-space: nowrap;
+  padding: 4px 4px;
+  background: #e9e9e9;
+  border-radius: 3px;
+}
+.brandshop-badges .badge.is-red {
+  color: #ff6062;
+  white-space: nowrap;
+  padding: 4px 4px;
+  background: #fff3f3;
+  border-radius: 3px;
+}
+.brandshop-products {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+.brandshop-products-controls {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  width: 33%;
+  transform: translateX(-65%);
+}
+
+.brandshop-products-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandshop-products-pagination {
+  position: static !important; /* ✅ Swiper가 absolute로 잡는 경우 방지 */
+  white-space: nowrap;
+  font-size: 14px;
+  color: #666;
+  opacity: 1 !important;
+  margin-left: 110%; /* 기존 110% 제거 추천 */
+}
+
+.brandshop-products-scrollbar {
+  flex: 1;
+  position: relative;
+  height: 3px !important;
+  background: #c3c3c3;
+
+  /* ✅ Swiper CSS가 opacity 0 주는 경우가 많아서 강제 */
+  opacity: 1 !important;
+}
+
+.brandshop-products-scrollbar .swiper-scrollbar-drag {
+  height: 100%;
+  background: #000;
+}
+
+.brandshop-products-pagination .swiper-pagination-current {
+  color: #000;
+}
+
+.brandshop-products-pagination .swiper-pagination-total {
+  color: #666;
+}
+
+.brandshop-products-pagination {
+  color: #666;
+  font-size: 14px;
+}
+
+.brandshop-products-scrollbar {
+  height: 3px !important;
+}
+.brandshop-more {
+  border: none;
+  background: #333333;
+  text-align: center;
+  padding: 15px 0;
+  color: #fff;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
