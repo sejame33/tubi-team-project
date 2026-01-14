@@ -1,0 +1,34 @@
+.section-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0;
+}
+
+.section-title strong {
+  font-weight: 700;
+}
+
+.section-title-wrap .section-more {
+  font-size: 18px;
+  color: #929292;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 300;
+  width: auto;
+}
+
+.section-more img {
+  margin-left: 10px;
+}
+
+.section-more:active {
+  opacity: 0.6;
+}
