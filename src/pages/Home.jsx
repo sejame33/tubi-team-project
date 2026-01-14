@@ -40,7 +40,9 @@ function Home() {
       background: "/img/small-banner-bg-3.svg",
       logo: "/img/small-banner-logo-3.svg",
       title: {
-        top: "2/22일 오늘은 의 날!",
+        topPrefix: "2/22일 오늘은",
+        topIcon: "/img/small-banner-text-img-3.svg", // ✅ 여기!
+        topSuffix: "의 날!",
         bottom: "IRISÉ의 헤드셋을 만나보세요!",
       },
       image: "/img/small-banner-char-3.png",
@@ -106,15 +108,15 @@ function Home() {
 
       <div className="small-banner-wrap b">
         <Swiper
-          modules={[Autoplay, Pagination]} // ✅ 한번에!
+          modules={[Pagination]} // ✅ 한번에!
           slidesPerView={1}
           spaceBetween={12}
           grabCursor
           loop
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 3000,
+          //   disableOnInteraction: false,
+          // }}
           pagination={{
             type: "fraction",
             // 01 / 03 같이 0 붙이고 싶으면 아래 두 줄 추가 가능
