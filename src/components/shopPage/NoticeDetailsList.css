@@ -1,0 +1,163 @@
+.notice-detail {
+  padding: 16px;
+  background: #fff;
+}
+
+/* 제목 */
+.notice-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+  margin: 8px 0 6px;
+}
+
+.notice-date {
+  font-size: 13px;
+  color: #8e8e93;
+  margin-bottom: 16px;
+}
+
+/* 섹션 */
+.notice-section {
+  margin-bottom: 60px;
+}
+
+.notice-section h3 {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.notice-section h3 span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.notice-section h3 img {
+  width: 30px;
+  height: 30px;
+}
+
+.notice-section p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+}
+
+/* 경고문 */
+.notice-section .notice-warning {
+  font-size: 12px;
+  color: #656565;
+  margin-top: 6px;
+}
+
+/* 기간 */
+.notice-section .notice-date-range {
+  font-size: 15px;
+  color: #0090f6;
+  font-weight: 400;
+}
+
+/* ===========================
+   당첨자 테이블
+=========================== */
+.notice-table-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e9e9e9;
+  margin-top: 12px;
+}
+
+.notice-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.notice-table th,
+.notice-table td {
+  padding: 8px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.notice-table th {
+  background: #e2e2e2;
+  font-weight: 600;
+}
+
+.notice-table tr:last-child td {
+  border-bottom: none;
+}
+
+.notice-table th:first-child,
+.notice-table tr td:first-child {
+  padding-left: 30px;
+}
+
+/* ===========================
+   경품 테이블
+=========================== */
+.notice-goods-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e9e9e9;
+  margin-top: 12px;
+}
+
+.notice-goods {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.notice-goods th,
+.notice-goods td {
+  padding: 8px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.notice-goods th {
+  background: #e2e2e2;
+  font-weight: 600;
+}
+
+.notice-goods tr:last-child td {
+  border-bottom: none;
+}
+
+.notice-goods tr td,
+.notice-goods th {
+  padding-left: 30px;
+}
+
+.notice-section .notice-congraution {
+  margin-top: 24px;
+  margin-bottom: 80px;
+}
+
+.notice-section h4 {
+  font-size: 16px;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+.notice-section .notice-note {
+  color: #8c8c8c;
+}
+
+.notice-section .last-thank {
+  margin-top: 24px;
+}
+
+.notice-section .notice-input-method span {
+  color: #ee1e1e;
+}
+
+.notice-section .ma-b-30 {
+  margin-bottom: 30px;
+}

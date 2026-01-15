@@ -7,6 +7,8 @@ const Header = ({
   title = "",
   showMenu = false,
   showCart = false, // ✅ 장바구니 옵션 추가
+  showAnCopy = false,
+  showAnShare = false,
 }) => {
   const navigate = useNavigate();
 
@@ -56,6 +58,36 @@ const Header = ({
             onClick={() => console.log("open menu")}
           >
             <img src="/img/burger-menu-icon.svg" alt="" aria-hidden="true" />
+          </button>
+        )}
+
+        {showAnCopy && (
+          <button
+            type="button"
+            className="header-icon-btn"
+            aria-label="복사"
+            onClick={() => console.log("go copy")}
+          >
+            <img
+              src="/img/announcement-copy-icon.svg"
+              alt="복사버튼"
+              aria-hidden="true"
+            />
+          </button>
+        )}
+
+        {showAnShare && (
+          <button
+            type="button"
+            className="header-icon-btn"
+            aria-label="공유"
+            onClick={() => console.log("go share")}
+          >
+            <img
+              src="/img/announcement-share-icon.svg"
+              alt="공유 버튼"
+              aria-hidden="true"
+            />
           </button>
         )}
       </div>

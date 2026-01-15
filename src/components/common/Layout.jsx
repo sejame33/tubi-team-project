@@ -23,6 +23,36 @@ const Layout = () => {
     };
   }
 
+  if (pathname === "/home/shop/announcement") {
+    headerProps = {
+      showBack: true,
+      showAnCopy: true,
+      showAnShare: true,
+      title: "공지사항",
+    };
+  }
+
+  // if (pathname.startsWith("/home/shop/announcement/1")) {
+  //   headerProps = {
+  //     showBack: true,
+  //     showAnCopy: true,
+  //     showAnShare: true,
+  //     title: "공지사항",
+  //   };
+  // }
+
+  if (
+    pathname === "/home/shop/announcement" ||
+    /^\/home\/shop\/announcement\/\d+$/.test(pathname)
+  ) {
+    headerProps = {
+      showBack: true,
+      showAnCopy: true,
+      showAnShare: true,
+      title: "공지사항",
+    };
+  }
+
   if (pathname === "/home/dm") {
     headerProps = {
       showBack: true,
