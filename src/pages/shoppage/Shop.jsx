@@ -1,10 +1,10 @@
 import React from "react";
-import ShopMainBanner from "../../components/shopPage/ShopMainBanner";
-import ShopSectionTitle from "../../components/shopPage/ShopSectionTitle";
-import ShopNewItem from "../../components/shopPage/ShopNewItem";
-import ShopImportant from "../../components/shopPage/ShopImportant";
-import ShopMyArtist from "../../components/shopPage/ShopMyArtist";
-import ShopMoreBtn from "../../components/shopPage/ShopMoreBtn";
+import ShopMainBanner from "../../components/shopcomp/ShopMainBanner";
+import ShopSectionTitle from "../../components/shopcomp/ShopSectionTitle";
+import ShopNewItem from "../../components/shopcomp/ShopNewItem";
+import ShopImportant from "../../components/shopcomp/ShopImportant";
+import ShopMyArtist from "../../components/shopcomp/ShopMyArtist";
+import ShopMoreBtn from "../../components/shopcomp/ShopMoreBtn";
 
 export default function Shop() {
   return (

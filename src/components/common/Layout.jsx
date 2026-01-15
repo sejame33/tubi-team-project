@@ -1,81 +1,32 @@
+import React, { useLayoutEffect, useEffect, useRef } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet, useLocation } from "react-router-dom";
 import "./Layout.css";
 
 const Layout = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
+  const mainRef = useRef(null);
 
-  let headerProps = {
-    showLogo: true,
-    showMenu: true,
-    showBack: false,
-    showCart: false,
-    title: "",
-  };
+  // (선택) 브라우저 스크롤 복원 막기 - 1회
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
 
-  if (pathname === "/home/shop") {
-    headerProps = {
-      showBack: true,
-      showMenu: true,
-      showCart: true, // ✅ Shop만 장바구니
-      title: "Shop",
-    };
-  }
-
-  if (pathname === "/home/shop/announcement") {
-    headerProps = {
-      showBack: true,
-      showAnCopy: true,
-      showAnShare: true,
-      title: "공지사항",
-    };
-  }
-
-  // if (pathname.startsWith("/home/shop/announcement/1")) {
-  //   headerProps = {
-  //     showBack: true,
-  //     showAnCopy: true,
-  //     showAnShare: true,
-  //     title: "공지사항",
-  //   };
-  // }
-
-  if (
-    pathname === "/home/shop/announcement" ||
-    /^\/home\/shop\/announcement\/\d+$/.test(pathname)
-  ) {
-    headerProps = {
-      showBack: true,
-      showAnCopy: true,
-      showAnShare: true,
-      title: "공지사항",
-    };
-  }
-
-  if (pathname === "/home/dm") {
-    headerProps = {
-      showBack: true,
-      showMenu: false,
-      showCart: false,
-      title: "DM",
-    };
-  }
-
-  if (pathname === "/home/my") {
-    headerProps = {
-      showLogo: false,
-      showMenu: false,
-      showCart: false,
-      title: "My",
-    };
-  }
+  // ✅ 페이지 이동(내비게이션) 때마다 무조건 맨 위
+  useLayoutEffect(() => {
+    const el = mainRef.current;
+    if (!el) return;
+    el.scrollTop = 0;
+  }, [location.key]); // pathname보다 key가 "재진입"에도 더 확실
 
   return (
     <div className="app-wrapper">
       <div className="app">
-        <Header {...headerProps} />
-        <main className="main">
+        <Header /* ... */ />
+        <main className="main" ref={mainRef}>
           <Outlet />
         </main>
         <Footer />

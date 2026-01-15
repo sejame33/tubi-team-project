@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 
 import "./ShopImportant.css";
@@ -19,6 +19,7 @@ const notices = [
     bgType: "all",
     title: "Nova X Kakao pay 3/5/7만원 결제시\n추가 적립 프로모션",
     date: "2026.01.07",
+    to: "/home/shop/notice/1",
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ const notices = [
     title:
       "플레이브 데뷔 2주년 기념 한정 굿즈 예약\n판매 사전예약! 선착순 (200명) 특전 제공",
     date: "2026.01.07",
+    to: "/home/shop/notice/1",
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const notices = [
     bgType: "hebi",
     title: "Hebi 싱글 앨범 '늘 (EVER)' 구매자 이벤트 당첨자 발표!",
     date: "2026.01.07",
+    to: "/home/shop/notice/1",
   },
   {
     id: 4,
@@ -41,10 +44,13 @@ const notices = [
     bgType: "irise",
     title: "IRISE 싱글 '날개 (WINGS)' 발매 기념\n스페셜 이벤트 참여 안내",
     date: "2026.01.07",
+    to: "/home/shop/notice/1",
   },
 ];
 
 export default function ShopImportant({ onScheduleClick }) {
+  const navigate = useNavigate();
+
   return (
     <section className="shop-important">
       <div className="shop-important-box">
@@ -63,11 +69,21 @@ export default function ShopImportant({ onScheduleClick }) {
               const b = badgeTypes[n.badge];
               return (
                 <SwiperSlide key={n.id} className="shop-important-slide">
-                  <article className={`notice-card is-${n.bgType}`}>
+                  <article
+                    className={`notice-card is-${n.bgType}`}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => navigate("/home/shop/announcement")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        navigate("/home/shop/announcement");
+                      }
+                    }}
+                  >
                     <span className={`notice-badge is-${b.type}`}>
                       {b.label}
                     </span>
-
                     <p className="notice-title">{n.title}</p>
                     <p className="notice-date">{n.date}</p>
                   </article>

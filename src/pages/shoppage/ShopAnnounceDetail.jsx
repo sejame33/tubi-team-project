@@ -1,5 +1,5 @@
 import React from "react";
-import NoticeDetailsList from "./NoticeDetailsList";
+import NoticeDetailsList from "../../components/shopcomp/NoticeDetailsList";
 
 const NoticeDetailsLayouts = () => {
   return (
