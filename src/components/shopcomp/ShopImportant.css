@@ -29,7 +29,7 @@
   width: 300px; /* ✅ 카드 폭 (원하면 210~260 사이로 조절) */
 }
 
-.notice-card {
+.shop-important .notice-card {
   border-radius: 10px;
   padding: 14px 16px;
 
@@ -38,7 +38,7 @@
   gap: 8px;
 }
 
-.notice-badge {
+.shop-important .notice-badge {
   display: inline-flex;
   align-items: center;
   height: 18px;
@@ -51,24 +51,24 @@
 }
 
 /* ✅ 배지 4종 */
-.notice-badge.is-all {
+.shop-important .notice-badge.is-all {
   color: #884dff;
   border: 1px solid #884dff;
 }
-.notice-badge.is-plave {
+.shop-important .notice-badge.is-plave {
   color: #26a5ff;
   border: 1px solid #26a5ff;
 }
-.notice-badge.is-hebi {
+.shop-important .notice-badge.is-hebi {
   color: #0020ef;
   border: 1px solid #0020ef;
 }
-.notice-badge.is-irise {
+.shop-important .notice-badge.is-irise {
   color: #e477ff;
   border: 1px solid #e477ff;
 }
 
-.notice-title {
+.shop-important .notice-title {
   font-size: 16px;
   line-height: 1.1;
   color: #000;
@@ -82,7 +82,7 @@
   white-space: pre-line; /* \n 줄바꿈 적용 */
 }
 
-.notice-date {
+.shop-important .notice-date {
   font-size: 14px;
   color: #8b8b8b;
   margin-top: auto;
@@ -109,15 +109,15 @@
   margin-right: 8px;
 }
 /* ✅ 공지 카드 배경색 4종 */
-.notice-card.is-all {
+.shop-important .notice-card.is-all {
   background: #f4f1fb;
 }
-.notice-card.is-plave {
+.shop-important .notice-card.is-plave {
   background: #ebf4fb;
 }
-.notice-card.is-hebi {
+.shop-important .notice-card.is-hebi {
   background: #f1f2fd;
 }
-.notice-card.is-irise {
+.shop-important .notice-card.is-irise {
   background: #f8effa;
 }
