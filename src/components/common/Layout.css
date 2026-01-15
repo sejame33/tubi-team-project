@@ -22,7 +22,7 @@
   width: 100%;
   min-width: 0;
   flex: 1;
-  padding: 144px 0 117px; /* header / footer 고려 */
+  padding: 90px 0 117px; /* header / footer 고려 */
   overflow-y: auto;
   box-sizing: border-box;
 }

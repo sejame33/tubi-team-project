@@ -1,5 +1,5 @@
 import "./SectionTitle.css";
-import { useNickname } from "../context/NicknameContext";
+import { useNickname } from "../../context/NicknameContext";
 
 function SectionTitle({
   title,
