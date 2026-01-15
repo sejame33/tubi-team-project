@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import MvCard from "./MvCard";
@@ -9,14 +8,9 @@ function MvSection() {
   return (
     <section className="mv-section">
       <Swiper
-        modules={[FreeMode]}
         slidesPerView="auto"
         spaceBetween={16}
         grabCursor
-        freeMode
-        freeModeMomentumVelocityRatio={0.38} // 속도 조절
-        freeModeMomentumRatio={0.65}
-        freeModeMomentumBounce={false}
         className="mv-swiper"
       >
         <SwiperSlide style={{ width: "376px" }}>
