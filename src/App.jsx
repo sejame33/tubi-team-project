@@ -8,6 +8,8 @@ import DM from "./pages/dmpage/Dm";
 import My from "./pages/mypage/My";
 import NicknamePage from "./pages/startpage/NicknamePage";
 import { NicknameProvider } from "./context/NicknameContext";
+import AnnouncementLayout from "./components/shopPage/AnnouncementLayout";
+import NoticeDetailsLayouts from "./components/shopPage/NoticeDetailsLayouts";
 
 function App() {
   return (
@@ -20,6 +22,11 @@ function App() {
         <Route path="/home" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
+          <Route path="shop/announcement" element={<AnnouncementLayout />} />
+          <Route
+            path="shop/announcement/:noticeId"
+            element={<NoticeDetailsLayouts />}
+          />
           <Route path="dm" element={<DM />} />
           <Route path="my" element={<My />} />
         </Route>
