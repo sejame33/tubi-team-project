@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Layout from "./components/Layout";
-import Home from "./pages/Home";
-import Shop from "./pages/Shop";
-import DM from "./pages/DM";
-import My from "./pages/My";
-import NicknamePage from "./pages/NicknamePage";
+import Layout from "./components/common/Layout";
+import Home from "./pages/homepage/Home";
+import Shop from "./pages/shoppage/Shop";
+import DM from "./pages/dmpage/Dm";
+import My from "./pages/mypage/My";
+import NicknamePage from "./pages/startpage/NicknamePage";
 import { NicknameProvider } from "./context/NicknameContext";
 
 function App() {

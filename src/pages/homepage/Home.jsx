@@ -4,16 +4,16 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import MvSection from "../components/MvSection";
-import MainBanner from "../components/MainBanner";
-import MyArtist from "../components/MyArtist";
-import SectionTitle from "../components/SectionTitle";
-import Gacha from "../components/gacha";
-import SmallBanner from "../components/SmallBanner";
-import { useNickname } from "../context/NicknameContext";
-import LiveSection from "../components/live/LiveSection";
-import AlbumSlide from "../components/AlbumSlide";
-import BrandShop from "../components/BrandShop";
+import MvSection from "../../components/homePage/MvSection";
+import MainBanner from "../../components/homePage/MainBanner";
+import MyArtist from "../../components/homePage/MyArtist";
+import SectionTitle from "../../components/homePage/SectionTitle";
+import Gacha from "../../components/homePage/Gacha";
+import SmallBanner from "../../components/homePage/SmallBanner";
+import { useNickname } from "../../context/NicknameContext";
+import LiveSection from "../../components/homePage/live/LiveSection";
+import AlbumSlide from "../../components/homePage/AlbumSlide";
+import BrandShop from "../../components/homePage/BrandShop";
 
 function Home() {
   const { nickname } = useNickname();
@@ -108,15 +108,15 @@ function Home() {
 
       <div className="small-banner-wrap b">
         <Swiper
-          modules={[Pagination]} // ✅ 한번에!
+          modules={[Autoplay,Pagination]} // ✅ 한번에!
           slidesPerView={1}
           spaceBetween={12}
           grabCursor
           loop
-          // autoplay={{
-          //   delay: 3000,
-          //   disableOnInteraction: false,
-          // }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           pagination={{
             type: "fraction",
             // 01 / 03 같이 0 붙이고 싶으면 아래 두 줄 추가 가능

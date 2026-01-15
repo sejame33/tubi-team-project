@@ -5,7 +5,7 @@ import LiveTabs from "./LiveTabs";
 import FilterChips from "./FilterChips";
 import LiveArtistRow from "./LiveArtistRow";
 import LiveReplayCard from "./LiveReplayCard";
-import { useNickname } from "../../context/NicknameContext";
+import { useNickname } from "../../../context/NicknameContext";
 
 const TABS = ["라이브", "콘텐츠", "무대"];
 const CHIPS = ["인기", "다시보기", "클립", "더보기"];

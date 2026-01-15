@@ -1,11 +1,13 @@
-.nickname-page {
-  height: 100vh;
+
+.nickname-main {
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  
   text-align: center;
-  padding: 20px;
+  justify-content: center;
+  flex-direction: column;
+    padding: 20px;
 }
 
 .logo {
