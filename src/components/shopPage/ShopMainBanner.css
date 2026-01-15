@@ -1,0 +1,100 @@
+/* swiper */
+.shop-banner-swiper {
+  width: 100%;
+  padding-bottom: 30px;
+  margin-bottom: 80px;
+}
+
+/* 배너 카드 */
+.shop-banner-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 430 / 600; /* 📱 기준 비율 */
+  overflow: hidden;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ✅ 버튼 absolute 하단 고정 */
+.shop-banner-cta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 18px;
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+
+.shop-banner-cta img {
+  margin-left: 10px;
+}
+
+.shop-banner-swiper {
+  position: relative;
+}
+/* 컨트롤 영역 */
+.shop-banner-controls {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 33%;
+  transform: translateX(-65%);
+}
+
+.shop-banner-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* fraction */
+.shop-banner-pagination {
+  position: static !important; /* ✅ Swiper가 absolute로 잡는 경우 방지 */
+  white-space: nowrap;
+  font-size: 14px;
+  opacity: 1 !important;
+  margin-left: 110%; /* 기존 110% 제거 추천 */
+}
+
+/* scrollbar */
+.shop-banner-scrollbar {
+  flex: 1;
+  position: relative;
+  height: 3px !important;
+  background: #c3c3c3;
+
+  /* ✅ Swiper CSS가 opacity 0 주는 경우가 많아서 강제 */
+  opacity: 1 !important;
+}
+
+.shop-banner-scrollbar .swiper-scrollbar-drag {
+  height: 100%;
+  background: #000;
+}
+
+.swiper-pagination-current {
+  color: #000;
+}
+
+/* 전체 페이지 수 (오른쪽 숫자) */
+.swiper-pagination-total {
+  color: #666;
+  font-weight: 300 !important;
+}
+
+.shop-banner-scrollbar {
+  height: 3px !important;
+}
