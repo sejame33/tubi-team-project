@@ -12,7 +12,7 @@ import "./ShopproductList.css";
 
 const products = [
   {
-    id: 102,
+    id: 502,
     title:
       "하츠네 미쿠 보컬로이드 굿즈 moeyu 모에유 보이스 오브 스타 시리즈 아크릴 키링 키체인 랜덤 단품",
     price: "₩15,000원",
@@ -21,7 +21,7 @@ const products = [
     badge2: "특전제공",
   },
   {
-    id: 103,
+    id: 503,
     title: "하츠네 미쿠 x 시나모롤 공식 캔 뱃지 랜덤 단품",
     price: "₩22,000원",
     img: "/img/shopproduct-item2.svg",
@@ -29,7 +29,7 @@ const products = [
     badge2: "특전제공",
   },
   {
-    id: 104,
+    id: 504,
     title:
       "하츠네 미쿠 보컬로이드 굿즈 moeyu 모에유 보이스 오브 스타 시리즈 폴라로이드 카드 랜덤 단품",
     price: "₩2,000원",
