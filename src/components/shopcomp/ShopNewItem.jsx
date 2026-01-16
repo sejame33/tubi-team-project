@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Scrollbar, Pagination } from "swiper/modules";
 
@@ -148,6 +149,7 @@ const products = [
 ];
 
 export default function ShopNewItem() {
+  const navigate = useNavigate();
   const [activeBrand, setActiveBrand] = useState("ALL");
   const { isWished, toggleWish } = useWishlist();
 
@@ -155,6 +157,12 @@ export default function ShopNewItem() {
     if (activeBrand === "ALL") return products;
     return products.filter((p) => p.brand === activeBrand);
   }, [activeBrand]);
+
+  const handleProductClick = (id) => {
+    if (id === 102) {
+      navigate("/home/shop/ShopProduct");
+    }
+  };
 
   return (
     <section className="shop-new">
@@ -230,7 +238,10 @@ export default function ShopNewItem() {
 
               return (
                 <SwiperSlide key={p.id} className="shop-new-product-slide">
-                  <article className="shop-new-card">
+                  <article
+                    className="shop-new-card"
+                    onClick={() => handleProductClick(p.id)}
+                  >
                     <div className="shop-new-thumb">
                       <img src={p.img} alt={p.title} />
 
