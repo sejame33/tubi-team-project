@@ -1,0 +1,94 @@
+.shopproduct-info {
+  background: white;
+  margin-bottom: 10px;
+}
+
+.shopproduct-banner {
+  position: relative;
+}
+.shopproduct-banner-smallImg {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+}
+
+.shopproduct-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: #00276e;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 0;
+  text-align: center;
+}
+.shopproduct-brandBox {
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+}
+
+.shopproduct-brand {
+  color: #6b6b6b;
+  display: flex;
+  align-items: center;
+}
+.shopproduct-heart {
+  color: #ff5e63;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.shopproduct-title-row {
+  padding: 16px;
+  padding-top: 0;
+}
+.shoproute {
+  color: #939393;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.shopproduct-title {
+  font-size: 22px;
+  margin-bottom: 9px;
+}
+.shopproduct-badge .brandshop-badges {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.shopproduct-price {
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.shopproduct-price .shopproduct-share {
+  font-size: 14px;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+.shopproduct-shopMoreBtn .shop-more-wrap {
+  padding: 0;
+  margin: 13px 0;
+}
+
+.shopproduct-shopMoreBtn .shop-more-wrap .direct-btn-left {
+  text-align: left;
+}
+.shopproduct-shopMoreBtn .shop-more-wrap .direct-btn-left p:nth-child(2) {
+  font-size: 12px;
+}

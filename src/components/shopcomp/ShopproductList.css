@@ -1,0 +1,167 @@
+.shopproduct {
+  margin: 24px 16px 16px;
+}
+.shopproduct-card {
+  position: relative;
+  padding-bottom: 20px;
+}
+.shopproduct-card.brand-card {
+  width: 108px !important;
+}
+.shopproduct-card.brand-card .shopproduct-thumb {
+  width: 108px !important;
+}
+.shopproduct-product-slide:has(.brand-card) {
+  width: 108px !important;
+}
+.shopproduct-product-slide:not(:has(.brand-card)) {
+  width: 173px !important;
+}
+
+.shopproduct-title2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+.shopproduct-price2 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.shopproduct-badges {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: norap;
+  gap: 6px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.shopproduct-badges .badge {
+  position: static !important;
+  color: #0cb889;
+  white-space: nowrap;
+  padding: 4px 4px;
+  background: #e9fff9;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.shopproduct-badges .badge.is-blue {
+  color: #046aff;
+  white-space: nowrap;
+  padding: 4px 4px;
+  background: #e9f2ff;
+  border-radius: 3px;
+}
+.shopproduct-badges .badge.is-gray {
+  color: #7b787e;
+  white-space: nowrap;
+  padding: 4px 4px;
+  background: #e9e9e9;
+  border-radius: 3px;
+}
+.shopproduct-badges .badge.is-red {
+  color: #ff6062;
+  white-space: nowrap;
+  padding: 4px 4px;
+  background: #fff3f3;
+  border-radius: 3px;
+}
+.shopproduct-products {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+.shopproduct-products-controls {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  width: 33%;
+  transform: translateX(-65%);
+}
+
+.shopproduct-products-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shopproduct-products-pagination {
+  position: static !important; /* ✅ Swiper가 absolute로 잡는 경우 방지 */
+  white-space: nowrap;
+  font-size: 14px;
+  color: #666;
+  opacity: 1 !important;
+  margin-left: 110%; /* 기존 110% 제거 추천 */
+}
+
+.shopproduct-products-scrollbar {
+  flex: 1;
+  position: relative;
+  height: 3px !important;
+  background: #c3c3c3;
+
+  /* ✅ Swiper CSS가 opacity 0 주는 경우가 많아서 강제 */
+  opacity: 1 !important;
+}
+
+.shopproduct-products-scrollbar .swiper-scrollbar-drag {
+  height: 100%;
+  background: #000;
+}
+
+.shopproduct-products-pagination .swiper-pagination-current {
+  color: #000;
+}
+
+.shopproduct-products-pagination .swiper-pagination-total {
+  color: #666;
+}
+
+.shopproduct-products-pagination {
+  color: #666;
+  font-size: 14px;
+}
+
+.shopproduct-products-scrollbar {
+  height: 3px !important;
+}
+.direct-btn {
+  width: 100%;
+  padding: 18px 14px;
+  border: none;
+  background: linear-gradient(90deg, #44b1f7 0%, #884dff 100%);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.direct-btn .direct-btn-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.direct-btn .direct-btn-box p {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+}
+.direct-btn .direct-btn-box span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+.direct-btn .direct-btn-box span img {
+  margin-left: 6px;
+}
