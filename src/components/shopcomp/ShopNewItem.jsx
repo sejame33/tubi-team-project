@@ -2,6 +2,8 @@ import React, { useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Scrollbar, Pagination } from "swiper/modules";
 
+import useWishlist from "../../hooks/useWishlist"; // ✅ 경로 수정 필요할 수 있음
+
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/scrollbar";
@@ -59,7 +61,8 @@ const products = [
     badge1: "단독판매",
     badge2: "특전제공",
   },
-  // ✅ ALBUM 탭
+
+  // ALBUM
   {
     id: 201,
     brand: "ALBUM",
@@ -86,7 +89,8 @@ const products = [
     badge1: "단독판매",
     badge2: "특전제공",
   },
-  // ✅ STAND 탭
+
+  // STAND
   {
     id: 301,
     brand: "STAND",
@@ -113,7 +117,8 @@ const products = [
     badge1: "단독판매",
     badge2: "특전제공",
   },
-  // ✅ STAND 탭
+
+  // DIGITAL
   {
     id: 401,
     brand: "DIGITAL",
@@ -144,51 +149,52 @@ const products = [
 
 export default function ShopNewItem() {
   const [activeBrand, setActiveBrand] = useState("ALL");
+  const { isWished, toggleWish } = useWishlist();
 
   const filteredProducts = useMemo(() => {
-    if (activeBrand === "ALL") return products; // ✅ 전체 보여주기
+    if (activeBrand === "ALL") return products;
     return products.filter((p) => p.brand === activeBrand);
   }, [activeBrand]);
 
   return (
-    <section className="brandshop">
-      <div className="brandshop-box">
-        <div className="brandshop-toprow">
-          <button className="brandshop-link" type="button">
-            <span className="brand-gray">상품</span> 35개
+    <section className="shop-new">
+      <div className="shop-new-box">
+        <div className="shop-new-toprow">
+          <button className="shop-new-link" type="button">
+            <span className="shop-new-gray">상품</span>{" "}
+            {filteredProducts.length}개
             <span aria-hidden="true">
               <img src="/img/brand-more-arrow.svg" alt="" />
             </span>
           </button>
 
-          <button className="brandshop-sort" type="button">
-            인기순{" "}
+          <button className="shop-new-sort" type="button">
+            인기순
             <span aria-hidden="true">
               <img src="/img/brand-popular-arrow.svg" alt="" />
             </span>
           </button>
         </div>
 
-        {/* 아티스트 탭 (그대로) */}
-        <div className="brandshop-tabs">
+        {/* 탭 */}
+        <div className="shop-new-tabs">
           <Swiper
             modules={[FreeMode]}
             freeMode
             slidesPerView="auto"
             spaceBetween={8}
-            className="brandshop-tabs-swiper"
+            className="shop-new-tabs-swiper"
           >
             {artistTabs.map((a) => {
               const isActive = a.id === activeBrand;
               return (
-                <SwiperSlide key={a.id} className="brandshop-tab-slide">
+                <SwiperSlide key={a.id} className="shop-new-tab-slide">
                   <button
                     type="button"
-                    className={`brandshop-tab ${isActive ? "is-active" : ""}`}
+                    className={`shop-new-tab ${isActive ? "is-active" : ""}`}
                     onClick={() => setActiveBrand(a.id)}
                   >
-                    <span className="brandshop-tab-text">{a.name}</span>
-                    {a.dot && <span className="brandshop-tab-dot" />}
+                    <span className="shop-new-tab-text">{a.name}</span>
                   </button>
                 </SwiperSlide>
               );
@@ -196,67 +202,66 @@ export default function ShopNewItem() {
           </Swiper>
         </div>
 
-        {/* ✅ 상품 리스트 (Scrollbar + Fraction 추가) */}
-        <div className="brandshop-products">
+        {/* 상품 Swiper */}
+        <div className="shop-new-products">
           <Swiper
-            className="brandshop-products-swiper"
+            className="shop-new-products-swiper"
             modules={[Scrollbar, Pagination]}
             slidesPerView="auto"
             spaceBetween={18}
             grabCursor
             scrollbar={{
               draggable: true,
-              el: ".brandshop-products-scrollbar",
+              el: ".shop-new-products-scrollbar",
               hide: false,
             }}
             pagination={{
               type: "fraction",
-              el: ".brandshop-products-pagination",
+              el: ".shop-new-products-pagination",
             }}
             breakpoints={{
-              0: {
-                spaceBetween: 12,
-              },
-              768: {
-                spaceBetween: 16,
-              },
-              1024: {
-                spaceBetween: 18,
-              },
+              0: { spaceBetween: 12 },
+              768: { spaceBetween: 16 },
+              1024: { spaceBetween: 18 },
             }}
           >
             {filteredProducts.map((p) => {
-              if (p.type === "brand") {
-                return (
-                  <SwiperSlide key={p.id} className="brandshop-product-slide">
-                    <article className="brandshop-card brand-card">
-                      <div className="brandshop-thumb">
-                        <img src={p.img} alt={p.titleTop} />
-                      </div>
-
-                      <p className="brand-card-title">{p.titleTop}</p>
-
-                      <div className="brand-card-interest">
-                        <span>관심</span>
-                        <img src="/img/brand-star.svg" alt="" />
-                        <span>{p.interest}</span>
-                      </div>
-                    </article>
-                  </SwiperSlide>
-                );
-              }
+              const wished = isWished(p.id);
 
               return (
-                <SwiperSlide key={p.id} className="brandshop-product-slide">
-                  <article className="brandshop-card">
-                    <div className="brandshop-thumb">
+                <SwiperSlide key={p.id} className="shop-new-product-slide">
+                  <article className="shop-new-card">
+                    <div className="shop-new-thumb">
                       <img src={p.img} alt={p.title} />
+
+                      {/* ✅ 썸네일 오른쪽 아래 하트 */}
+                      <button
+                        type="button"
+                        className={`shop-new-wish ${wished ? "is-active" : ""}`}
+                        aria-pressed={wished}
+                        aria-label={wished ? "관심상품 해제" : "관심상품 추가"}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          toggleWish(p.id);
+                        }}
+                      >
+                        <img
+                          src={
+                            wished
+                              ? "/img/heart-fill.svg"
+                              : "/img/heart-line.svg"
+                          }
+                          alt=""
+                          aria-hidden="true"
+                        />
+                      </button>
                     </div>
 
-                    <p className="brandshop-title">{p.title}</p>
-                    <p className="brandshop-price">{p.price}</p>
+                    <p className="shop-new-title">{p.title}</p>
+                    <p className="shop-new-price">{p.price}</p>
 
-                    <div className="brandshop-badges">
+                    <div className="shop-new-badges">
                       {p.badge1 && <span className="badge">{p.badge1}</span>}
                       {p.badge2 && (
                         <span className="badge is-blue">{p.badge2}</span>
@@ -274,11 +279,10 @@ export default function ShopNewItem() {
             })}
           </Swiper>
 
-          {/* ✅ AlbumSlide처럼 바깥에 컨트롤 박스 */}
-          <div className="brandshop-products-controls">
-            <div className="brandshop-products-row">
-              <div className="brandshop-products-scrollbar swiper-scrollbar" />
-              <div className="brandshop-products-pagination swiper-pagination" />
+          <div className="shop-new-products-controls">
+            <div className="shop-new-products-row">
+              <div className="shop-new-products-scrollbar swiper-scrollbar" />
+              <div className="shop-new-products-pagination swiper-pagination" />
             </div>
           </div>
         </div>

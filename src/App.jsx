@@ -11,10 +11,12 @@ import { NicknameProvider } from "./context/NicknameContext";
 import ShopAnnounce from "./pages/shoppage/ShopAnnounce";
 import ShopAnnounceDetail from "./pages/shoppage/ShopAnnounceDetail";
 import ChatRoom from "./pages/dmpage/ChatRoom";
+import ScrollToTop from "./pages/ScrollToTop";
 
 function App() {
   return (
     <NicknameProvider>
+      <ScrollToTop />
       <Routes>
         {/* ✅ 최초 진입 페이지 */}
         <Route path="/" element={<NicknamePage />} />
