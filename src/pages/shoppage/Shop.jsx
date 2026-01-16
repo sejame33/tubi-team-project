@@ -5,6 +5,8 @@ import ShopNewItem from "../../components/shopcomp/ShopNewItem";
 import ShopImportant from "../../components/shopcomp/ShopImportant";
 import ShopMyArtist from "../../components/shopcomp/ShopMyArtist";
 import ShopMoreBtn from "../../components/shopcomp/ShopMoreBtn";
+import ShopBrand from "../../components/shopcomp/ShopBrand";
+import ShopBrand2 from "../../components/shopcomp/ShopBrand2";
 
 export default function Shop() {
   return (
@@ -25,6 +27,14 @@ export default function Shop() {
         onMoreClick={() => console.log("/recommend")}
       />
       <ShopMyArtist />
+      <ShopBrand />
+      <ShopBrand2 />
+      <ShopSectionTitle
+        title="오늘 단 하루만"
+        showMore={false}
+        useNicknameTitle={false}
+        onMoreClick={() => console.log("/newitem")}
+      />
     </div>
   );
 }
