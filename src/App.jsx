@@ -10,6 +10,7 @@ import NicknamePage from "./pages/startpage/NicknamePage";
 import { NicknameProvider } from "./context/NicknameContext";
 import ShopAnnounce from "./pages/shoppage/ShopAnnounce";
 import ShopAnnounceDetail from "./pages/shoppage/ShopAnnounceDetail";
+import ChatRoom from "./pages/dmpage/ChatRoom";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             element={<ShopAnnounceDetail />}
           />
           <Route path="dm" element={<DM />} />
+          <Route path="dm/:artistId" element={<ChatRoom />} />
           <Route path="my" element={<My />} />
         </Route>
       </Routes>
