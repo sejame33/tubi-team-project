@@ -26,25 +26,39 @@ function NicknamePage() {
         {/* ✅ 헤더/푸터 없이 내용만 중앙 */}
         <main className="main nickname-main">
           <div className="nickname-page">
-            <h1 className="logo">NOVA</h1>
+            <h2 className="title">닉네임을 입력해주세요.</h2>
 
-            <h2 className="title">닉네임을 입력해주세요</h2>
-            <p className="desc">입력한 닉네임으로 맞춤 추천을 해드릴게요</p>
+            <div className="input-row">
+              <input
+                type="text"
+                placeholder="닉네임 입력"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                maxLength={9}
+              />
 
-            <input
-              type="text"
-              placeholder="닉네임 입력"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              maxLength={10}
-            />
+              <button
+                className="clear-btn"
+                onClick={() => setInput("")}
+                disabled={!input}
+              >
+                <img src="/img/nickname-x-btn.svg" alt="" />
+              </button>
+            </div>
+
+            <div className="input-line"></div>
+
+            <div className="desc-row">
+              <p className="desc">닉네임은 추후에 수정할 수 있어요.</p>
+              <span className="count">{input.length}/10</span>
+            </div>
 
             <button
               className="start-btn"
               onClick={handleSubmit}
               disabled={!input.trim()}
             >
-              시작하기
+              다음
             </button>
           </div>
         </main>

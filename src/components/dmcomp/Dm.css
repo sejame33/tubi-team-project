@@ -1,0 +1,128 @@
+.dm-section .dm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.dm-section .dm-header h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.dm-section .refresh-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+.dm-section .DmListBox {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+}
+
+/*  DmItem.jsx의 css */
+.dmItemBox .dm-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 22px;
+  cursor: pointer;
+}
+
+/* .dm-section .dm-item:not(:last-child) {
+  border-bottom: 1px solid #f3f3f3;
+} */
+
+.dmItemBox .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.dmItemBox .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dmItemBox .avatar.verified {
+  border: 2px solid #6d5cff;
+}
+
+.dmItemBox .dm-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dmItemBox .dm-name {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dmItemBox .badge {
+  font-size: 12px;
+  color: #6d5cff;
+}
+
+.dmItemBox .dm-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #9b9b9b;
+}
+
+.dmItemBox .dm-check {
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+}
+
+.dmItemBox .dm-check img {
+  width: 100%;
+  height: 100%;
+}
+
+.dmItemBox .dm-time {
+  color: #d3d3d3;
+  font-size: 16px;
+}
+
+.dmItemBox .dm-dot {
+  color: #d3d3d3;
+}
+
+.dmItemBox .dm-group {
+  font-size: 14px;
+  font-weight: 300;
+  color: #b4b4b4;
+}
+
+.dmItemBox .my-artist {
+  margin: 24px 0 16px 0;
+}
+
+.dmItemBox .dm-page {
+  padding: 16px;
+}
+
+.dmItemBox .dm-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}

@@ -1,8 +1,18 @@
 import React from "react";
 import "./Footer.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Footer() {
+  const { pathname } = useLocation();
+
+  // DM 채팅방일 때만 푸터 숨김
+  const isChatRoom =
+    pathname.startsWith("/home/dm/") && pathname !== "/home/dm";
+
+  if (isChatRoom) {
+    return null;
+  }
+
   return (
     <footer className="footer">
       <NavLink to="/home" end className="footer-item">
