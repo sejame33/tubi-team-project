@@ -73,11 +73,6 @@ const ShopProductBanner = () => {
           </div>
           <Btn bgColor="#333333" text="구매하기" />
         </div>
-
-        <div className="shopproduct-benefits">
-          <span className="badge green">특전제공</span>
-          <span className="badge blue">단독판매</span>
-        </div>
       </section>
     </>
   );
