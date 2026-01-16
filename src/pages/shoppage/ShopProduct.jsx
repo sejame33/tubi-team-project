@@ -3,7 +3,7 @@ import ShopProductBanner from "../../components/shopcomp/ShopProductBanner";
 import ShopTag from "../../components/shopcomp/ShopTag";
 import ShopProductItem from "../../components/shopcomp/ShopProductItem";
 import ShopProductSmallBanner from "../../components/shopcomp/ShopProductSmallBanner";
-import ShopBrand from "../../components/shopcomp/ShopBrand";
+import ShopBrandLink from "../../components/shopcomp/ShopBrandLink";
 import ShopMiku from "../../components/shopcomp/ShopMiku";
 
 export default function ShopProduct() {
@@ -15,7 +15,7 @@ export default function ShopProduct() {
       <ShopTag />
       <ShopProductItem />
       <ShopProductSmallBanner />
-      <ShopBrand />
+      <ShopBrandLink />
       <ShopMiku />
     </div>
   );

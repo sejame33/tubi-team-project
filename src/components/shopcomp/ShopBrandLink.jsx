@@ -1,6 +1,6 @@
 import React from "react";
 import ShopTagList from "./ShopTagList"; // 작성하신 파일 임포트
-import "./ShopBrand.css";
+import "./ShopBrandLink.css";
 
 const ShopBrand = () => {
   const tags = [
