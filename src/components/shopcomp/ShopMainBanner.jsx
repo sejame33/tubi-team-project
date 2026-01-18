@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Scrollbar, Pagination } from "swiper/modules";
+import { Scrollbar, Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -39,10 +39,11 @@ export default function ShopMainBanner() {
     <section className="shop-main-banner">
       <Swiper
         className="shop-banner-swiper"
-        modules={[Scrollbar, Pagination]}
+        modules={[Scrollbar, Pagination, Autoplay]}
         slidesPerView={1}
         spaceBetween={0}
         loop
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         grabCursor
         scrollbar={{
           draggable: true,

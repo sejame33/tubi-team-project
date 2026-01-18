@@ -168,7 +168,6 @@ export default function ShopBrand() {
                 );
               })}
             </Swiper>
-
             <div className="shopbrand-products-controls">
               <div className="shopbrand-products-row">
                 <div className="shopbrand-products-scrollbar swiper-scrollbar" />

@@ -1,0 +1,70 @@
+.large-banner {
+  padding: 24px 16px;
+}
+
+.large-banner .swiper {
+  overflow: visible;
+  position: relative;
+}
+
+.large-banner-slide {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.large-banner-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* 버튼 */
+.large-banner-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 35px;
+
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+
+  background: rgba(72, 3, 172, 0.5);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.large-banner-btn img {
+  margin-left: 5px;
+}
+
+.large-banner .swiper-pagination-current {
+  font-weight: 600;
+  color: #fff;
+}
+
+.large-banner .swiper-pagination-total {
+  font-weight: 300;
+  color: #b8b6b4;
+}
+
+.large-banner .swiper-pagination-fraction,
+.large-banner .swiper-pagination-custom,
+.large-banner .swiper-horizontal > .swiper-pagination-bullets,
+.large-banner .swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: absolute;
+  font-size: 12px;
+  bottom: 20px;
+  right: 20px;
+  color: #b8b6b4;
+  left: auto;
+  width: auto;
+  background: rgba(15, 15, 15, 0.38);
+  border-radius: 50px;
+  padding: 8px 14px;
+}
