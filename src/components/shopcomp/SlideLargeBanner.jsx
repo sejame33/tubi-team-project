@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 
 import "swiper/css";
@@ -37,11 +37,15 @@ export default function SlideLargeBanner() {
     <section className="large-banner">
       <Swiper
         className="large-banner-swiper"
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         slidesPerView={1}
         spaceBetween={16}
         grabCursor
-        loop={false}
+        loop
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false, // 터치 후에도 계속 autoplay
+        }}
         pagination={{
           type: "fraction",
           renderFraction: (currentClass, totalClass) =>
@@ -70,6 +74,8 @@ export default function SlideLargeBanner() {
                   <img src="/img/more-arrow-white-5x10.svg" alt="" />
                 </button>
               )}
+
+              {/* 🔹 fraction div (이미 CSS/구조 있다면 유지) */}
             </div>
           </SwiperSlide>
         ))}

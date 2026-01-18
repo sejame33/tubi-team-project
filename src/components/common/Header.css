@@ -1,4 +1,4 @@
-header {
+.header {
   padding: 24px 16px 24px;
   display: flex;
   align-items: center;
@@ -15,29 +15,35 @@ header {
   z-index: 200;
   border-bottom: 1px solid #eee;
 }
+
 .header-left,
 .header-right {
-  width: 88px; /* 아이콘 2개 들어갈 정도(40+40+gap) */
+  width: 88px;
   display: flex;
   align-items: center;
 }
+
 .header-right {
   justify-content: flex-end;
   gap: 12px;
 }
+
 .header-left {
   justify-content: flex-start;
 }
+
 .header-center {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .header-title {
   font-size: 20px;
   margin: 0;
 }
+
 .header-icon-btn {
   background: none;
   border: none;
@@ -47,5 +53,5 @@ header {
 
 .header-logo img {
   display: block;
-  height: 30px; /* 필요하면 조절 */
+  height: 30px;
 }
