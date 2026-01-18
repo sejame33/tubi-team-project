@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Scrollbar, Pagination } from "swiper/modules";
 
@@ -18,7 +18,7 @@ const artistTabs = [
 ];
 
 const products = [
-  //apoki
+  // apoki
   {
     id: 101,
     brand: "apoki",
@@ -69,7 +69,8 @@ const products = [
     price: "₩23,000원",
     img: "/img/brand-shop-product-6.svg",
   },
-  //plave
+
+  // plave
   {
     id: 107,
     brand: "plave",
@@ -106,6 +107,7 @@ const products = [
     img: "/img/brand-shop-plave-4.svg",
     badge3: "정규앨범",
   },
+
   // luvdia
   {
     id: 111,
@@ -142,6 +144,7 @@ const products = [
     img: "/img/brand-shop-luvdia-4.svg",
     badge3: "정규앨범",
   },
+
   // hebi
   {
     id: 115,
@@ -178,9 +181,10 @@ const products = [
     img: "/img/brand-shop-hevi-4.svg",
     badge3: "정규앨범",
   },
+
   // meechu
   {
-    id: 115,
+    id: 119,
     brand: "meechu",
     type: "brand",
     titleTop: "MEECHU",
@@ -189,7 +193,7 @@ const products = [
     badge3: "정규앨범",
   },
   {
-    id: 116,
+    id: 120,
     brand: "meechu",
     title: "MEECHU official light stick",
     price: "₩17,500원",
@@ -198,7 +202,7 @@ const products = [
     badge3: "정규앨범",
   },
   {
-    id: 117,
+    id: 121,
     brand: "meechu",
     title: "MEECHU MD List",
     price: "₩23,000원",
@@ -206,7 +210,7 @@ const products = [
     badge4: "콜라보",
   },
   {
-    id: 118,
+    id: 122,
     brand: "meechu",
     title: "MEECHU RIGHT SPECIAL KEYCAP SET",
     price: "₩15,800원",
@@ -218,10 +222,23 @@ const products = [
 export default function BrandShop() {
   const [activeBrand, setActiveBrand] = useState("apoki");
 
+  // ✅ 상품 swiper 인스턴스 ref (탭 바뀔 때 리셋용)
+  const productsSwiperRef = useRef(null);
+
   const filteredProducts = useMemo(
     () => products.filter((p) => p.brand === activeBrand),
-    [activeBrand]
+    [activeBrand],
   );
+
+  // ✅ 탭 변경 시 상품 스크롤(슬라이드 위치) 리셋
+  useEffect(() => {
+    const swiper = productsSwiperRef.current;
+    if (!swiper) return;
+
+    swiper.setProgress(0, 0);
+    swiper.slideTo(0, 0);
+    swiper.update();
+  }, [activeBrand]);
 
   return (
     <section className="brandshop">
@@ -242,7 +259,7 @@ export default function BrandShop() {
           </button>
         </div>
 
-        {/* 아티스트 탭 (그대로) */}
+        {/* 아티스트 탭 */}
         <div className="brandshop-tabs">
           <Swiper
             modules={[FreeMode]}
@@ -269,7 +286,7 @@ export default function BrandShop() {
           </Swiper>
         </div>
 
-        {/* ✅ 상품 리스트 (Scrollbar + Fraction 추가) */}
+        {/* 상품 리스트 */}
         <div className="brandshop-products">
           <Swiper
             className="brandshop-products-swiper"
@@ -277,6 +294,7 @@ export default function BrandShop() {
             slidesPerView="auto"
             spaceBetween={18}
             grabCursor
+            onSwiper={(swiper) => (productsSwiperRef.current = swiper)} // ✅ 저장
             scrollbar={{
               draggable: true,
               el: ".brandshop-products-scrollbar",
@@ -287,15 +305,9 @@ export default function BrandShop() {
               el: ".brandshop-products-pagination",
             }}
             breakpoints={{
-              0: {
-                spaceBetween: 12,
-              },
-              768: {
-                spaceBetween: 16,
-              },
-              1024: {
-                spaceBetween: 18,
-              },
+              0: { spaceBetween: 12 },
+              768: { spaceBetween: 16 },
+              1024: { spaceBetween: 18 },
             }}
           >
             {filteredProducts.map((p) => {
@@ -347,7 +359,7 @@ export default function BrandShop() {
             })}
           </Swiper>
 
-          {/* ✅ AlbumSlide처럼 바깥에 컨트롤 박스 */}
+          {/* 컨트롤 */}
           <div className="brandshop-products-controls">
             <div className="brandshop-products-row">
               <div className="brandshop-products-scrollbar swiper-scrollbar" />

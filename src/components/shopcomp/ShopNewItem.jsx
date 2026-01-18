@@ -1,9 +1,9 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Scrollbar, Pagination } from "swiper/modules";
 
-import useWishlist from "../../hooks/useWishlist"; // ✅ 경로 수정 필요할 수 있음
+import useWishlist from "../../hooks/useWishlist";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -73,6 +73,7 @@ const products = [
     price: "₩17,000원",
     img: "/img/shop-new-product-album-3.svg",
   },
+
   // FASHION
   {
     id: 401,
@@ -107,9 +108,22 @@ export default function ShopNewItem() {
   const [activeBrand, setActiveBrand] = useState("ALL");
   const { isWished, toggleWish } = useWishlist();
 
+  // ✅ 상품 swiper 인스턴스 ref
+  const productsSwiperRef = useRef(null);
+
   const filteredProducts = useMemo(() => {
     if (activeBrand === "ALL") return products;
     return products.filter((p) => p.brand === activeBrand);
+  }, [activeBrand]);
+
+  // ✅ 탭 변경 시 상품 스크롤 위치 리셋
+  useEffect(() => {
+    const swiper = productsSwiperRef.current;
+    if (!swiper) return;
+
+    swiper.setProgress(0, 0);
+    swiper.slideTo(0, 0);
+    swiper.update();
   }, [activeBrand]);
 
   const handleProductClick = (id) => {
@@ -172,6 +186,7 @@ export default function ShopNewItem() {
             slidesPerView="auto"
             spaceBetween={18}
             grabCursor
+            onSwiper={(swiper) => (productsSwiperRef.current = swiper)} // ✅ 저장
             scrollbar={{
               draggable: true,
               el: ".shop-new-products-scrollbar",
@@ -197,9 +212,15 @@ export default function ShopNewItem() {
                     onClick={() => handleProductClick(p.id)}
                   >
                     <div className="shop-new-thumb">
-                      <img src={p.img} alt={p.title} />
+                      <img
+                        src={p.img}
+                        alt={p.titleTop || p.title}
+                        loading="lazy"
+                        decoding="async"
+                        onLoad={() => productsSwiperRef.current?.update()}
+                      />
 
-                      {/* ✅ 썸네일 오른쪽 아래 하트 */}
+                      {/* ✅ 하트 */}
                       <button
                         type="button"
                         className={`shop-new-wish ${wished ? "is-active" : ""}`}

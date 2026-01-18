@@ -112,7 +112,7 @@
   left: 0;
   bottom: 0;
   display: flex;
-  flex-wrap: norap;
+  flex-wrap: nowrap;
   gap: 6px;
   justify-content: flex-start;
   align-items: center;
@@ -224,4 +224,32 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+}
+
+.brandshop-thumb {
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f3f3; /* 로딩 전 회색 배경 (선택) */
+}
+
+/* ✅ 일반 상품(173) thumb */
+.brandshop-card:not(.brand-card) .brandshop-thumb {
+  width: 173px;
+  height: 173px; /* 👈 여기로 반짝임 거의 사라짐 */
+}
+
+/* ✅ 브랜드 카드(108) thumb */
+.brandshop-card.brand-card .brandshop-thumb {
+  width: 108px !important;
+  height: 173px; /* 👈 브랜드 카드도 고정 */
+  background: none;
+}
+
+/* ✅ 이미지가 thumb를 꽉 채우게 */
+.brandshop-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }

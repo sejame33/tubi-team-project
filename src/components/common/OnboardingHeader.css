@@ -1,0 +1,65 @@
+.ob-header {
+  height: 100px;
+  padding: 40px 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #fff;
+}
+
+.ob-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ob-left {
+  width: 40px; /* 왼쪽 자리(균형용) */
+}
+
+/* ✅ 뒤로가기 */
+.ob-back {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.ob-back img {
+  width: 8px;
+  display: block;
+}
+
+.ob-skip {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  color: #777;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+/* ✅ 진행바(줄 3개) */
+.ob-progress {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.ob-seg {
+  flex: 1;
+  height: 2.5px;
+  border-radius: 999px;
+  background: #efefef;
+}
+
+.ob-seg.is-filled {
+  background: linear-gradient(90deg, #11a4ff 0%, #884dff 100%);
+}
