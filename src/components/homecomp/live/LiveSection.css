@@ -6,7 +6,7 @@
     #000000 0%,
     #150b2b 65%,
     #76c3ff 90%,
-    #fff 100%
+    #fafafa 100%
   );
   margin-top: 30px;
   position: relative;
@@ -103,7 +103,10 @@
   color: #ccc;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.2s ease, transform 0.15s ease;
+  transition:
+    background 0.25s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
 }
 .chip.is-active {
   background: linear-gradient(90deg, #44b1f7 0%, #884dff 100%);

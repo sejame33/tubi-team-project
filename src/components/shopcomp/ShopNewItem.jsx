@@ -16,133 +16,87 @@ const artistTabs = [
   { id: "ALL", name: "ALL" },
   { id: "ALBUM", name: "ALBUM" },
   { id: "STAND", name: "STAND" },
-  { id: "DIGITAL", name: "DIGITAL" },
+  { id: "FASHION", name: "FASHION" },
 ];
 
 const products = [
+  // STAND
   {
-    id: 102,
-    brand: "ALL",
+    id: 202,
+    brand: "STAND",
     title: "스파오 x 하츠네미쿠 아크릴 스탠드 프린트",
-    price: "₩67,000원",
-    img: "/img/shop-new-product-1.svg",
+    price: "₩23,000원",
+    img: "/img/shop-new-product-stand-1.svg",
+    badge3: "정규앨범",
+  },
+  {
+    id: 203,
+    brand: "STAND",
+    title: "[LUCKY DRAW] APOKI",
+    price: "₩52,000원",
+    img: "/img/shop-new-product-stand-2.svg",
     badge1: "단독판매",
     badge2: "특전제공",
   },
   {
-    id: 103,
-    brand: "ALL",
-    title: "이세계 아이돌 아크릴 디오라마",
-    price: "₩43,000원",
-    img: "/img/shop-new-product-2.svg",
-    badge4: "콜라보",
-    badge2: "특전제공",
-  },
-  {
-    id: 104,
-    brand: "ALL",
-    title: "이세계 아이돌 포토카드 세트 A Ver.",
-    price: "₩38,000원",
-    img: "/img/shop-new-product-3.svg",
-  },
-  {
-    id: 105,
-    brand: "ALL",
-    title: "1st Album: Earth, Space, Timesfdsfcdsc",
-    price: "₩23,000원",
-    img: "/img/shop-new-product-4.svg",
-    badge3: "정규앨범",
-  },
-  {
-    id: 106,
-    brand: "ALL",
-    title: "[LUCKY DRAW] APOKIdsfdsfcdsc",
+    id: 204,
+    brand: "STAND",
+    title: "[LUCKY DRAW] APOKI",
     price: "₩52,000원",
-    img: "/img/shop-new-product-5.svg",
+    img: "/img/shop-new-product-stand-3.svg",
     badge1: "단독판매",
     badge2: "특전제공",
   },
 
   // ALBUM
   {
-    id: 201,
-    brand: "ALBUM",
-    title: "1st Album: Earth, Space, Time",
-    price: "₩23,000원",
-    img: "/img/shop-new-product-4.svg",
-    badge3: "정규앨범",
-  },
-  {
-    id: 202,
-    brand: "ALBUM",
-    title: "[LUCKY DRAW] APOKI",
-    price: "₩52,000원",
-    img: "/img/shop-new-product-5.svg",
-    badge1: "단독판매",
-    badge2: "특전제공",
-  },
-  {
-    id: 203,
-    brand: "ALBUM",
-    title: "[LUCKY DRAW] APOKI",
-    price: "₩52,000원",
-    img: "/img/shop-new-product-1.svg",
-    badge1: "단독판매",
-    badge2: "특전제공",
-  },
-
-  // STAND
-  {
     id: 301,
-    brand: "STAND",
+    brand: "ALBUM",
     title: "1st Album: Earth, Space, Time",
     price: "₩23,000원",
-    img: "/img/shop-new-product-1.svg",
+    img: "/img/shop-new-product-album-1.svg",
     badge3: "정규앨범",
   },
   {
     id: 302,
-    brand: "STAND",
-    title: "[LUCKY DRAW] APOKI",
-    price: "₩52,000원",
-    img: "/img/shop-new-product-3.svg",
+    brand: "ALBUM",
+    title: "PLAVE JP 1ST SINGLE(Hide and Seek) LIMITED EDITION",
+    price: "₩21,400원",
+    img: "/img/shop-new-product-album-2.svg",
     badge1: "단독판매",
     badge2: "특전제공",
   },
   {
     id: 303,
-    brand: "STAND",
-    title: "[LUCKY DRAW] APOKI",
-    price: "₩52,000원",
-    img: "/img/shop-new-product-2.svg",
-    badge1: "단독판매",
-    badge2: "특전제공",
+    brand: "ALBUM",
+    title: "PLAVE JP 1ST SINGLE(Hide and Seek) STANDARD EDITION",
+    price: "₩17,000원",
+    img: "/img/shop-new-product-album-3.svg",
   },
-
-  // DIGITAL
+  // FASHION
   {
     id: 401,
-    brand: "DIGITAL",
-    title: "1st Album: Earth, Space, Time",
-    price: "₩23,000원",
-    img: "/img/shop-new-product-4.svg",
+    brand: "FASHION",
+    title: "[LUCKY DRAW] APOKI",
+    price: "₩52,000원",
+    img: "/img/shop-new-product-fashion-1.svg",
     badge3: "정규앨범",
   },
   {
     id: 402,
-    brand: "DIGITAL",
+    brand: "FASHION",
     title: "[LUCKY DRAW] APOKI",
     price: "₩52,000원",
-    img: "/img/shop-new-product-5.svg",
+    img: "/img/shop-new-product-fashion-2.svg",
     badge1: "단독판매",
     badge2: "특전제공",
   },
   {
     id: 403,
-    brand: "DIGITAL",
+    brand: "FASHION",
     title: "[LUCKY DRAW] APOKI",
     price: "₩52,000원",
-    img: "/img/shop-new-product-3.svg",
+    img: "/img/shop-new-product-fashion-3.svg",
     badge1: "단독판매",
     badge2: "특전제공",
   },
@@ -159,7 +113,7 @@ export default function ShopNewItem() {
   }, [activeBrand]);
 
   const handleProductClick = (id) => {
-    if (id === 102) {
+    if (id === 202) {
       navigate("/home/shop/ShopProduct");
     }
   };

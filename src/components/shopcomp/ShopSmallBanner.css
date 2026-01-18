@@ -139,9 +139,10 @@
   font-weight: 600;
   color: #fff;
 }
-.swiper-pagination-fraction,
-.swiper-pagination-custom,
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal {
+
+.small-banner-wrap .swiper-pagination-fraction,
+.small-banner-wrap .swiper-pagination-custom,
+.small-banner-wrap .swiper-horizontal > .swiper-pagination-bullets,
+.small-banner-wrap .swiper-pagination-bullets.swiper-pagination-horizontal {
   width: 0%;
 }
