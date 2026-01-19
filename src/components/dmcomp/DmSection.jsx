@@ -8,8 +8,36 @@ import DmItem from "./DmItem";
 import "./Dm.css";
 import MyArtist from "../../components/homecomp/MyArtist";
 import SmallBanner from "../../components/homecomp/SmallBanner";
+import DmSlideBanner from "./DmSlideBanner";
 
 function DmSection({ items, onClickItem }) {
+  const swiperBanners = [
+    {
+      variant: "logo",
+      background: "/img/dm-slide-banner-1.svg",
+      title: {
+        top: "지금 구독하면 혜택이 팡팡!",
+        bottom: "아티스트 첫 구독 대상 할인 적용",
+      },
+    },
+    {
+      variant: "logo",
+      background: "/img/dm-slide-banner-2.svg",
+      title: {
+        top: "새로운 아티스트 등록",
+        bottom: "이제 더 다양한 아티스트를 만나보세요",
+      },
+    },
+    {
+      variant: "logo",
+      background: "/img/dm-slide-banner-3.svg",
+      title: {
+        top: "월 5,000원 구독으로",
+        bottom: "좋아하는 아티스트와 대화해보세요!",
+      },
+    },
+  ];
+
   const fractionRefs = useRef([]);
 
   // ✅ 현재 슬라이드의 fraction el로 pagination을 연결하는 함수
@@ -27,6 +55,31 @@ function DmSection({ items, onClickItem }) {
   return (
     <section className="dm-section">
       <MyArtist />
+      <div className="dm-slide-banner-wrap">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          slidesPerView={1}
+          spaceBetween={12}
+          grabCursor
+          loop
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{
+            type: "fraction",
+            renderFraction: (currentClass, totalClass) =>
+              `<span class="${currentClass}"></span> / <span class="${totalClass}"></span>`,
+          }}
+          onSwiper={bindFractionEl}
+          onSlideChange={bindFractionEl}
+        >
+          {swiperBanners.map((banner, index) => (
+            <SwiperSlide key={index} className="shop-slide-banner-slide">
+              <DmSlideBanner {...banner}>
+                <div className="shop-slide-banner-fraction swiper-pagination-fraction" />
+              </DmSlideBanner>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
       <div className="DmListBox">
         <DmHeader />
         <ul className="dm-list">

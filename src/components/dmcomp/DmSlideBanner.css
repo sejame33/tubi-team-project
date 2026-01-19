@@ -1,0 +1,120 @@
+/* DmSlideBanner.css */
+
+/* 배너 카드 */
+.dm-slide-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  padding: 15px 20px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 10px;
+
+  /* ✅ 핵심: margin은 컴포넌트가 가지지 않게 */
+  margin: 0 16px;
+  height: 100px;
+}
+
+/* 텍스트 */
+.dm-slide-banner-text-box {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 135px;
+  text-align: left;
+}
+
+/* 타이틀 */
+.dm-slide-banner-title-top {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.dm-slide-banner-title-bottom {
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+}
+
+/* Swiper 래퍼 (기존 shop-slide-banner-wrap → dm-slide-banner-wrap) */
+.dm-slide-banner-wrap .swiper-slide {
+  display: block;
+}
+
+/* B 버전 (기존 .shop-slide-banner-wrap.b → .dm-slide-banner-wrap.b) */
+.dm-slide-banner-wrap {
+  padding: 0 0 20px;
+}
+
+.dm-slide-banner-wrap .swiper {
+  overflow: visible;
+  position: relative;
+}
+
+.dm-slide-banner-wrap .swiper-wrapper {
+  overflow: visible;
+}
+
+.dm-slide-banner-wrap .swiper-slide {
+  overflow: visible;
+}
+
+.dm-slide-banner-wrap .swiper > .swiper-pagination-fraction {
+  position: absolute;
+  right: 30px; /* 카드 안처럼 보이게 조절 */
+  bottom: 10px;
+
+  left: auto; /* swiper 기본값 덮기 */
+  width: auto; /* swiper 기본값 덮기 */
+
+  text-align: right;
+  z-index: 20;
+  pointer-events: none;
+  color: #dadada;
+  font-size: 12px;
+  font-weight: 300;
+  background: rgba(16, 15, 15, 0.38);
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+
+.dm-slide-banner-wrap
+  .swiper
+  > .swiper-pagination-fraction
+  .swiper-pagination-current {
+  font-weight: 600;
+  color: #fff;
+}
+
+.dm-slide-banner-wrap
+  .swiper
+  > .swiper-pagination-fraction
+  .swiper-pagination-total {
+  font-weight: 300;
+  color: #fff;
+}
+
+/* .dm-slide-banner-wrap.b .swiper-pagination-fraction,
+.dm-slide-banner-wrap.b .swiper-pagination-custom,
+.dm-slide-banner-wrap.b .swiper-horizontal > .swiper-pagination-bullets,
+.dm-slide-banner-wrap.b
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: 0%;
+} */
+
+.dm-slide-banner-fraction.swiper-pagination-fraction {
+  width: auto !important;
+}
+
+.dm-slide-banner-fraction.swiper-pagination-fraction {
+  width: auto !important;
+  display: inline-flex;
+  white-space: nowrap;
+}
