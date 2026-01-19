@@ -1,0 +1,139 @@
+.ab-mainbanner {
+  padding: 0 16px;
+}
+
+.ab-mainbanner-swiper {
+  width: 100%;
+}
+
+/* pagination 점 공간 */
+.ab-mainbanner-slide {
+  padding-bottom: 30px;
+}
+
+/* 카드 */
+.ab-mainbanner-card {
+  width: 100%;
+  height: 225px;
+  border: 0;
+  cursor: pointer;
+
+  border-radius: 10px;
+  padding: 30px 26px 68px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+
+  /* ✅ 오른쪽 이미지가 덮어도 텍스트 영역 확보 */
+  padding-right: 120px;
+  z-index: 1;
+}
+
+/* New 뱃지 */
+.ab-mainbanner-badge {
+  position: absolute;
+  top: 30px;
+  left: 26px;
+
+  padding: 5px 10px;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+/* 텍스트 */
+.ab-mainbanner-text {
+  width: 100%;
+  position: relative;
+  z-index: 2; /* ✅ 상품 이미지보다 위(필요 시) */
+}
+
+.ab-mainbanner-title {
+  margin: 0 0 6px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0px;
+}
+
+.ab-mainbanner-subtitle {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+}
+
+/* ✅ 오른쪽 상품 이미지 */
+.ab-mainbanner-product {
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+
+  width: 160px;
+  height: auto;
+
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ===== pagination + scrollbar controls ===== */
+.ab-mainbanner .ab-mainbanner-controls {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 33%;
+  transform: translateX(-60%);
+  z-index: 50;
+}
+
+.ab-mainbanner .ab-mainbanner-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* fraction */
+.ab-mainbanner .ab-mainbanner-pagination {
+  position: static !important;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #666;
+  opacity: 1 !important;
+}
+
+/* scrollbar */
+.ab-mainbanner .ab-mainbanner-scrollbar {
+  position: relative;
+  height: 3px !important;
+  background: #c3c3c3;
+  min-width: 120px;
+}
+
+.ab-mainbanner .ab-mainbanner-scrollbar .swiper-scrollbar-drag {
+  height: 100%;
+  background: #000;
+}
+
+.ab-mainbanner .ab-mainbanner-pagination .swiper-pagination-current {
+  color: #000;
+}
+
+.ab-mainbanner .ab-mainbanner-pagination .swiper-pagination-total {
+  color: #666;
+}

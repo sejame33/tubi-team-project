@@ -311,6 +311,7 @@
   width: calc(100% - 32px);
   margin: 0 auto;
   display: block;
+  cursor: pointer;
 }
 
 .shopbrand2.b .brand-direct-btn .direct-box {
