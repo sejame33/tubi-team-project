@@ -8,6 +8,23 @@ const Layout = () => {
   const location = useLocation();
   const mainRef = useRef(null);
 
+  const isLivePage = location.pathname === "/home/live";
+
+  const headerProps = isLivePage
+    ? {
+        title: "Live",
+        showBack: true,
+        showAnShare: true,
+        showLogo: false,
+        isLive: true,
+      }
+    : {
+        showLogo: true,
+        showCart: true,
+        showMenu: true,
+        title: "",
+      };
+
   // (선택) 브라우저 스크롤 복원 막기 - 1회
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
@@ -25,11 +42,11 @@ const Layout = () => {
   return (
     <div className="app-wrapper">
       <div className="app">
-        <Header /* ... */ />
-        <main className="main" ref={mainRef}>
+        <Header {...headerProps} />
+        <main className={`main ${isLivePage ? "is-live" : ""}`} ref={mainRef}>
           <Outlet />
         </main>
-        <Footer />
+        {!isLivePage && <Footer />}
       </div>
     </div>
   );

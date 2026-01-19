@@ -26,6 +26,12 @@
   overflow-y: auto;
   box-sizing: border-box;
 }
+
+.main.is-live {
+  background-color: #000;
+  color: #ffffff;
+}
+
 .app,
 .main {
   overflow-x: hidden;
