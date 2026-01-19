@@ -19,7 +19,7 @@ function Gacha() {
           </div>
           <button
             className="gacha-btn"
-            onClick={() => navigate("/gacha/detail")}
+            onClick={() => navigate("/home/gatcha")}
           >
             바로가기
             <img src="/img/gacha-more-arrow.svg" alt="" />
