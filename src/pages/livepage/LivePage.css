@@ -1,0 +1,30 @@
+.livepage {
+  background: #000;
+}
+
+.livepage .section-title {
+  color: white;
+  margin-top: 20px;
+}
+
+.livepage .my-artist {
+  background: #141414;
+  margin-bottom: 40px;
+  margin-top: 24px;
+}
+
+.livepage .my-artist-name {
+  color: #bababa;
+}
+
+.livesection {
+  padding: 16px;
+}
+
+.live-page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 40px;
+  background-color: #121212;
+}

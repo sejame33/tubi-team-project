@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./liveSection.css";
 import SectionHeader from "./SectionHeader";
 import LiveTabs from "./LiveTabs";
@@ -79,12 +80,18 @@ export default function LiveSection() {
     return mockReplays;
   }, [chip]);
 
+  const navigate = useNavigate();
+
+  const goToLivePage = () => {
+    navigate("/home/live"); // <LivePage />가 연결된 경로로 이동
+  };
+
   return (
     <section className="live-section">
       <SectionHeader
         title="실시간 Live!"
         showMore={true}
-        onMoreClick={() => console.log("전체보기")}
+        onMoreClick={goToLivePage}
       />
 
       <LiveTabs tabs={TABS} active={tab} onChange={setTab} />

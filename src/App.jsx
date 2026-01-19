@@ -37,6 +37,10 @@ import ChatRoom from "./pages/dmpage/ChatRoom";
 // gacha
 import Gatcha from "./pages/gatchapage/Gatcha";
 
+// live
+import LivePage from "./pages/livepage/LivePage";
+import Artist from "./pages/artistpage/Artist";
+
 function App() {
   return (
     <NicknameProvider>
@@ -60,6 +64,8 @@ function App() {
         {/* ✅ 메인 앱 영역 */}
         <Route path="/home" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/home/artist" element={<Artist />} />
+          <Route path="/home/live" element={<LivePage />} />
           <Route path="gatcha" element={<Gatcha />} />
 
           <Route path="shop" element={<Shop />} />

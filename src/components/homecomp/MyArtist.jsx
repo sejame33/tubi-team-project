@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 
 import "./MyArtist.css";
@@ -27,6 +28,16 @@ const artistList = [
 ];
 
 const MyArtist = () => {
+  const navigate = useNavigate();
+
+  const handleArtistClick = (item) => {
+    if (item.id === 8) {
+      navigate("/home/artist");
+    } else {
+      console.log(`${item.name} 클릭됨`);
+    }
+  };
+
   return (
     <section className="my-artist" aria-label="My Artists">
       <Swiper slidesPerView="auto" spaceBetween={20} className="artist-swiper">
@@ -37,6 +48,7 @@ const MyArtist = () => {
                 type="button"
                 className="artist-more"
                 aria-label="More Artists"
+                onClick={() => handleArtistClick(item)}
               >
                 <img src={item.img} alt="" aria-hidden="true" />
                 <span className="my-artist-name">{item.name}</span>
@@ -46,6 +58,7 @@ const MyArtist = () => {
                 type="button"
                 className="artist-card"
                 aria-label={item.name}
+                onClick={() => handleArtistClick(item)}
               >
                 <div className="artist-img">
                   <img src={item.img} alt={item.name} />

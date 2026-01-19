@@ -1,0 +1,23 @@
+.artist-page {
+  background-color: #f8f9fa;
+}
+
+.artist-visual {
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+.visual-bg img {
+  width: 100%;
+  object-fit: cover;
+}
+.visual-info {
+  position: absolute;
+  bottom: 135px;
+  width: 100%;
+  font-size: 12px;
+}
+.visual-info .artist-name {
+  font-size: 50px;
+  font-weight: bold;
+}
