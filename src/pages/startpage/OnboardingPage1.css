@@ -1,0 +1,56 @@
+.main:has(.onboarding-1) {
+  padding: 0;
+}
+
+.onboarding-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+  padding: none;
+}
+
+.onboarding-1 .onboarding-text {
+  margin-top: 30px;
+}
+
+.onboarding-1 .title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+  background: linear-gradient(
+    to right,
+    rgb(17, 164, 255) 25%,
+    rgb(136, 77, 255) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.onboarding-1 .desc {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333333;
+  line-height: 1.2;
+}
+
+.onboarding-1 .desc .point-color {
+  background: linear-gradient(
+    120deg,
+    rgb(17, 164, 255) 10%,
+    rgb(83, 116, 255) 30%,
+    rgb(136, 77, 255) 63%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.onboarding-1 .onboarding-image {
+  margin-left: 15px;
+  width: 100%;
+}
