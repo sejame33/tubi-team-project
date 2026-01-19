@@ -7,7 +7,7 @@ const Btn = ({ text, bgColor, onClick }) => {
       className="btnBox"
       onClick={onClick}
       type="button"
-      style={{ backgroundColor: bgColor }}
+      style={{ background: bgColor }}
     >
       <span>{text}</span>
     </button>

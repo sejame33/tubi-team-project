@@ -1,11 +1,11 @@
 import "./SectionTitle.css";
 import { useNickname } from "../../context/NicknameContext";
-
 function SectionTitle({
   title,
   showMore = true,
   onMoreClick,
-  useNicknameTitle = true, // ⭐ 추가
+  useNicknameTitle = true,
+  moreElement,
 }) {
   const { nickname } = useNickname();
 
@@ -23,8 +23,14 @@ function SectionTitle({
 
       {showMore && (
         <button className="section-more" onClick={onMoreClick}>
-          전체보기
-          <img src="/img/section-title-more-arrow.svg" alt="" />
+          {moreElement ? (
+            moreElement
+          ) : (
+            <>
+              전체보기
+              <img src="/img/section-title-more-arrow.svg" alt="" />
+            </>
+          )}
         </button>
       )}
     </div>
