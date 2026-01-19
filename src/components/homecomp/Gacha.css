@@ -9,12 +9,12 @@
   overflow: hidden; /* ⭐ 중요 */
   margin-bottom: 80px;
 }
-.gacha-content {
+.gacha-banner .gacha-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.gacha-content .char {
+.gacha-banner .gacha-content .char {
   position: absolute;
   right: 8%;
   bottom: 50%;
@@ -34,24 +34,26 @@
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  float: left;
 }
-.gacha-btn img {
+.gacha-banner .gacha-btn img {
   color: #fff;
   margin-left: 10px;
 }
 
 /* text css */
-.gacha-text-box {
+.gacha-banner .gacha-text-box {
   margin-bottom: 36px;
+  text-align: left;
 }
-.gacha-text-box .gacha-top {
+.gacha-banner .gacha-text-box .gacha-top {
   font-size: 12px;
   color: #535353;
   font-weight: 700;
   margin-bottom: 4px;
   letter-spacing: 0.5px;
 }
-.gacha-text-box .gacha-title {
+.gacha-banner .gacha-text-box .gacha-title {
   font-size: 26px;
   font-weight: 800;
   margin-bottom: 20px;
@@ -60,13 +62,13 @@
   background-clip: text;
   color: transparent;
 }
-.gacha-text-box .gacha-desc {
+.gacha-banner .gacha-text-box .gacha-desc {
   font-size: 14px;
   font-weight: 300;
   color: #969696;
   line-height: 1.35;
 }
-.gacha-text-box .gacha-desc span {
+.gacha-banner .gacha-text-box .gacha-desc span {
   color: #884dff;
   font-weight: 500;
 }
