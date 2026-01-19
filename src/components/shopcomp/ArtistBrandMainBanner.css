@@ -8,7 +8,7 @@
 
 /* pagination 점 공간 */
 .ab-mainbanner-slide {
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 /* 카드 */
@@ -123,6 +123,7 @@
   height: 3px !important;
   background: #c3c3c3;
   min-width: 120px;
+  margin-top: 8px;
 }
 
 .ab-mainbanner .ab-mainbanner-scrollbar .swiper-scrollbar-drag {

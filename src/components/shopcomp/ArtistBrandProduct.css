@@ -1,0 +1,176 @@
+.artistbrandproduct {
+  padding: 0 16px;
+  margin: 50px 0 70px;
+}
+
+/* 헤더 */
+.artistbrandproduct-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.artistbrandproduct-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.artistbrandproduct-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: #777;
+  font-size: 16px;
+}
+
+.artistbrandproduct-actions img {
+  margin-left: 4px;
+}
+
+.artistbrandproduct-actions .down-arrow {
+  padding-bottom: 2px;
+}
+
+.artistbrandproduct-action {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px;
+  color: #777;
+}
+
+/* 2열 그리드 */
+.artistbrandproduct-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 40px; /* 위아래 */
+  column-gap: 12px; /* 좌우 */
+}
+
+/* 카드 */
+.artistbrandproduct-card {
+  border-radius: 10px;
+}
+
+/* 썸네일 */
+.artistbrandproduct-thumb {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f3f3;
+  aspect-ratio: 1 / 1; /* ✅ 정사각 */
+}
+
+.artistbrandproduct-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 이미지 위 뱃지 2종 */
+.artistbrandproduct-topbadge {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 2;
+
+  font-size: 12px;
+  font-weight: 300;
+  padding: 4px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+
+/* HOT / NEW 스타일 */
+.artistbrandproduct-topbadge.is-hot {
+  background: linear-gradient(270deg, #ff4d50 0%, #f78344 100%);
+  color: #fff;
+}
+.artistbrandproduct-topbadge.is-new {
+  background: linear-gradient(270deg, #884dff 0%, #44b1f7 100%);
+  color: #fff;
+}
+
+/* 하트 */
+.artistbrandproduct-wish {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artistbrandproduct-wish img {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+/* 텍스트 */
+.artistbrandproduct-name {
+  margin: 14px 0 6px;
+  font-size: 18px;
+  white-space: nowrap;
+  color: #484848;
+  line-height: 1;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.artistbrandproduct-price {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* 하단 뱃지 4종 */
+.artistbrandproduct-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.artistbrandproduct-badges .badge {
+  color: #0cb889;
+  padding: 4px 4px;
+  background: #e9fff9;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.artistbrandproduct-badges .badge.is-blue {
+  color: #046aff;
+  background: #e9f2ff;
+}
+
+.artistbrandproduct-badges .badge.is-gray {
+  color: #7b787e;
+  background: #e9e9e9;
+}
+
+.artistbrandproduct-badges .badge.is-red {
+  color: #ff6062;
+  background: #fff3f3;
+}

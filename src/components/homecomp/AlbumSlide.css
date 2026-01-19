@@ -29,6 +29,12 @@
   position: relative;
   width: 180px;
   height: 180px;
+  pointer-events: none;
+}
+
+.album-slide img {
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 /* 커버 */
@@ -57,7 +63,9 @@
   height: 140px;
   object-fit: contain;
 
-  transition: transform 420ms ease, opacity 420ms ease;
+  transition:
+    transform 420ms ease,
+    opacity 420ms ease;
   pointer-events: none;
 }
 
@@ -97,6 +105,7 @@
   left: 50%;
   width: 33%;
   transform: translateX(-65%);
+  pointer-events: none;
 }
 
 .album-swiper-row {
@@ -140,8 +149,10 @@
 .album-swiper-pagination {
   color: #666;
   font-size: 14px;
+  pointer-events: auto;
 }
 
 .album-swiper-scrollbar {
   height: 3px !important;
+  pointer-events: auto;
 }
