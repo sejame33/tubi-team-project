@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Scrollbar, Pagination } from "swiper/modules";
 
@@ -218,31 +218,47 @@ const products = [
 export default function BrandShop() {
   const [activeBrand, setActiveBrand] = useState("apoki");
 
+  // ✅ 상품 Swiper 인스턴스 보관
+  const productsSwiperRef = useRef(null);
+
   const filteredProducts = useMemo(
     () => products.filter((p) => p.brand === activeBrand),
     [activeBrand]
   );
 
+  // ✅ 탭 바뀔 때마다 상품 슬라이드 위치 리셋
+  useEffect(() => {
+    const swiper = productsSwiperRef.current;
+    if (!swiper) return;
+
+    // loop 안 쓰는 중이니까 slideTo(0)면 충분
+    swiper.slideTo(0, 0); // (index, speed) speed 0 = 즉시 이동
+
+    // 스크롤바/페이지네이션 갱신이 필요하면(가끔) 이것도 추가 가능
+    swiper.update();
+    swiper.scrollbar?.updateSize?.();
+  }, [activeBrand]);
+
   return (
     <section className="brandshop">
       <div className="brandshop-box">
-        <div className="brandshop-toprow">
-          <button className="brandshop-link" type="button">
-            <span className="brand-gray">상품</span> 235개
+        <div className="shop-new-toprow">
+          <button className="shop-new-link" type="button">
+            <span className="shop-new-gray">상품</span>{" "}
+            {filteredProducts.length}개
             <span aria-hidden="true">
               <img src="/img/brand-more-arrow.svg" alt="" />
             </span>
           </button>
 
-          <button className="brandshop-sort" type="button">
-            인기순{" "}
+          <button className="shop-new-sort" type="button">
+            인기순
             <span aria-hidden="true">
               <img src="/img/brand-popular-arrow.svg" alt="" />
             </span>
           </button>
         </div>
 
-        {/* 아티스트 탭 (그대로) */}
         <div className="brandshop-tabs">
           <Swiper
             modules={[FreeMode]}
@@ -269,7 +285,6 @@ export default function BrandShop() {
           </Swiper>
         </div>
 
-        {/* ✅ 상품 리스트 (Scrollbar + Fraction 추가) */}
         <div className="brandshop-products">
           <Swiper
             className="brandshop-products-swiper"
@@ -287,15 +302,13 @@ export default function BrandShop() {
               el: ".brandshop-products-pagination",
             }}
             breakpoints={{
-              0: {
-                spaceBetween: 12,
-              },
-              768: {
-                spaceBetween: 16,
-              },
-              1024: {
-                spaceBetween: 18,
-              },
+              0: { spaceBetween: 12 },
+              768: { spaceBetween: 16 },
+              1024: { spaceBetween: 18 },
+            }}
+            // ✅ 여기 추가: swiper 인스턴스 저장
+            onSwiper={(swiper) => {
+              productsSwiperRef.current = swiper;
             }}
           >
             {filteredProducts.map((p) => {
@@ -347,7 +360,6 @@ export default function BrandShop() {
             })}
           </Swiper>
 
-          {/* ✅ AlbumSlide처럼 바깥에 컨트롤 박스 */}
           <div className="brandshop-products-controls">
             <div className="brandshop-products-row">
               <div className="brandshop-products-scrollbar swiper-scrollbar" />

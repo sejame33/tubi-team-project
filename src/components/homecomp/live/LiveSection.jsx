@@ -8,7 +8,7 @@ import LiveReplayCard from "./LiveReplayCard";
 import { useNickname } from "../../../context/NicknameContext";
 
 const TABS = ["라이브", "콘텐츠", "무대"];
-const CHIPS = ["인기", "다시보기", "클립", "더보기"];
+const CHIPS = ["HOT", "NEW", "FOR YOU", "TREND"];
 
 // ✅ 팔로잉 목록(예시)
 // PLAVE도 전체에서 보이게 하려면 3을 추가해야 함: [1, 2, 3]
