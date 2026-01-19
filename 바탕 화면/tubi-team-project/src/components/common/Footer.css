@@ -1,0 +1,23 @@
+footer {
+  color: #000;
+  padding: 25px 24px 25px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+
+  position: fixed;
+  bottom: 0;
+
+  /* ✅ 핵심: 화면 가운데에 430px로 고정 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+
+  height: 90px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  z-index: 100;
+}

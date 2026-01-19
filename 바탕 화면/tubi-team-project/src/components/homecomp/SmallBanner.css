@@ -1,0 +1,147 @@
+.small-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  padding: 15px 20px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 10px;
+
+  /* ✅ 핵심: margin은 컴포넌트가 가지지 않게 */
+  margin: 0 16px;
+  height: 100px;
+
+  /* 이미지가 밖으로 튀어나오게 */
+  overflow: visible;
+}
+
+/* 텍스트 */
+.small-banner-text-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* 로고 */
+.small-banner-logo img {
+  height: 24px;
+  display: block;
+}
+
+/* 오른쪽 이미지 */
+.small-banner-image {
+  position: absolute;
+  right: -0.5%;
+  bottom: 0%;
+  pointer-events: none;
+}
+
+.small-banner-image img {
+  display: block; /* ✅ 미세한 높이/라인 틈 방지 */
+}
+
+/* 타이틀 */
+.small-banner-title-top {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.small-banner-title-bottom {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.small-banner-more {
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  width: 100px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.small-banner-wrap .swiper-slide {
+  display: block;
+}
+
+.small-banner-logo {
+  margin-bottom: 8px;
+}
+
+.small-banner-logo img {
+  height: 20px; /* 로고 크기 */
+  width: auto;
+  display: block;
+}
+
+.small-banner-title-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.small-banner-title-icon {
+  width: 44px; /* 원하는 크기로 조절 */
+  height: 23px;
+  display: block;
+}
+
+.small-banner-wrap.b {
+  padding: 24px 0 80px;
+}
+
+.small-banner-wrap.b .swiper {
+  overflow: visible;
+  position: relative;
+}
+
+.small-banner-wrap.b .swiper-wrapper {
+  overflow: visible;
+}
+
+.small-banner-wrap.b .swiper-slide {
+  overflow: visible;
+}
+
+.small-banner-wrap.b .swiper > .swiper-pagination-fraction {
+  position: absolute;
+  right: 30px; /* 카드 안처럼 보이게 조절 */
+  bottom: 10px;
+
+  left: auto; /* swiper 기본값 덮기 */
+  width: auto; /* swiper 기본값 덮기 */
+
+  text-align: right;
+  z-index: 20;
+  pointer-events: none;
+  color: #dadada;
+  font-size: 12px;
+  font-weight: 300;
+  background: rgba(16, 15, 15, 0.38);
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+.small-banner-wrap.b
+  .swiper
+  > .swiper-pagination-fraction
+  .swiper-pagination-current {
+  font-weight: 600;
+  color: #fff;
+}
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: 0%;
+}

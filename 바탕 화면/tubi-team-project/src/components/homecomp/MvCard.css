@@ -1,0 +1,89 @@
+.mv-card {
+  min-width: 376px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 34px 28px;
+  flex-shrink: 0;
+}
+
+.mv-card-main-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+  line-height: 1.3;
+  float: left;
+}
+
+.mv-card-img {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.mv-card-img img {
+  width: 100%;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 24%;
+  left: 5%;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 14px;
+}
+
+.badge-default {
+  background: #ff4d4f;
+}
+
+.badge-yellow {
+  background: #ffce73;
+}
+
+.mv-card-body {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.cover {
+  height: 16px;
+  font-size: 10px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.cover-default {
+  width: 39px;
+  background-image: url("/img/cover-bg.svg");
+}
+
+.cover-yellow {
+  width: 28px;
+  background-image: url("/img/cover-bg-yellow.svg");
+}
+
+.cover-green {
+  width: 47px;
+  background-image: url("/img/cover-bg-green.svg");
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.desc {
+  font-size: 14px;
+  color: #7d7d7d;
+  line-height: 1;
+}

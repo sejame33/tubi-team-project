@@ -1,0 +1,105 @@
+.nickname-main {
+  padding: 157px 16px 0 16px;
+  display: flex;
+  align-items: left;
+
+  text-align: center;
+  flex-direction: column;
+}
+
+.nickname-page .title {
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 72px;
+}
+
+.nickname-page {
+  position: relative;
+}
+
+.nickname-page .input-row {
+  width: 398px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nickname-page .input-row input {
+  flex: 1;
+  border: none;
+  font-size: 20px;
+  padding-bottom: 18px;
+  background: none;
+  outline: none;
+}
+
+.nickname-page .input-row input::placeholder {
+  color: #c7c7c7;
+  font-weight: 400;
+}
+
+.nickname-page .input-line {
+  width: 398px;
+  height: 2px;
+  background: linear-gradient(90deg, #11a4ff, #884dff);
+  margin-bottom: 12px;
+}
+
+.nickname-page .clear-btn {
+  width: 25px;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+  background: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nickname-page .clear-btn img {
+  width: 100%;
+  height: 1005;
+}
+
+.nickname-page .clear-btn:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.nickname-page .desc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 57px;
+}
+
+.nickname-page .desc {
+  font-size: 14px;
+  color: #797979;
+}
+
+.nickname-page .count {
+  font-size: 14px;
+  color: #333333;
+}
+
+.nickname-page .start-btn {
+  width: 398px;
+  height: 65px;
+  border-radius: 8px;
+  border: none;
+  background: #333;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.nickname-page .start-btn:disabled {
+  background: #ebebeb;
+  cursor: not-allowed;
+  color: #5d5d5d;
+}

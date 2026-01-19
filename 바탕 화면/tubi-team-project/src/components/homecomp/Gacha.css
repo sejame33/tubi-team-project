@@ -1,0 +1,72 @@
+.gacha-banner {
+  position: relative;
+  width: calc(100% - 32px);
+  margin: 0 16px;
+  padding: 40px 30px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* ⭐ 중요 */
+  margin-bottom: 80px;
+}
+.gacha-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gacha-content .char {
+  position: absolute;
+  right: 8%;
+  bottom: 50%;
+  transform: translateY(50%);
+  width: 160px;
+  z-index: 1;
+}
+
+/* 버튼 */
+.gacha-banner .gacha-content .gacha-btn {
+  align-self: flex-start;
+  padding: 10px 19px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(90deg, #44b1f7 0%, #884dff 100%);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.gacha-btn img {
+  color: #fff;
+  margin-left: 10px;
+}
+
+/* text css */
+.gacha-text-box {
+  margin-bottom: 36px;
+}
+.gacha-text-box .gacha-top {
+  font-size: 12px;
+  color: #535353;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+.gacha-text-box .gacha-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(270deg, #44b1f7 0%, #884dff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gacha-text-box .gacha-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: #969696;
+  line-height: 1.35;
+}
+.gacha-text-box .gacha-desc span {
+  color: #884dff;
+  font-weight: 500;
+}

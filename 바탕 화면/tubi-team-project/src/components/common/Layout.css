@@ -1,0 +1,47 @@
+/* 화면 전체 배경 + 가운데 정렬 */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: #666666; /* 바깥 배경 */
+}
+
+/* 실제 앱 영역 (430px 고정) */
+.app {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 페이지 내용 영역 */
+.main {
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  padding: 90px 0 90px; /* header / footer 고려 */
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.app,
+.main {
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE, Edge 구버전 */
+body {
+  -ms-overflow-style: none;
+}
