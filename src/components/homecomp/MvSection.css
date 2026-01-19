@@ -1,0 +1,27 @@
+.section-title {
+  font-size: 28px;
+  color: #333333;
+  padding: 0 16px;
+}
+
+.mv-section .swiper-wrapper {
+  padding: 24px 0 80px;
+}
+
+.mv-swiper {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.mv-section .swiper-slide {
+  display: flex;
+}
+
+.mv-section {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-user-drag: none;
+}

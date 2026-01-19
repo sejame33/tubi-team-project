@@ -1,0 +1,194 @@
+/* ======================
+   Gatcha Page
+====================== */
+.gatcha-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f5f5;
+  margin-bottom: 40px;
+}
+
+/* ======================
+   Header
+====================== */
+.gatcha-header {
+  padding: 24px 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #929292;
+}
+
+.gatcha-header-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+}
+
+.gatcha-more {
+  font-size: 18px;
+}
+
+.gatcha-more img {
+  padding-left: 6px;
+}
+
+/* ======================
+   Page Blur (핵심)
+====================== */
+.gatcha-page-blur {
+  position: relative;
+}
+
+/* 블러는 여기 하나만 */
+.gatcha-page-blur.is-blurred {
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+/* ======================
+   Content
+====================== */
+.gatcha-content {
+  position: relative;
+}
+
+/* ======================
+   Gatcha Visual
+====================== */
+.gatcha-visual {
+  width: 398px;
+  height: 685px;
+  margin: 24px 16px 32px;
+  border-radius: 20px;
+  background: url(../../../public/img/gatcha-main.svg) center / cover no-repeat;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.gatcha-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.gatcha-sub-text {
+  font-size: 16px;
+  margin-top: 60px;
+}
+
+.gatcha-sub-text span {
+  color: #ffec7e;
+}
+
+.gatcha-title-text {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 300px;
+}
+
+.gatcha-visual .gatcha-main-button {
+  width: 185px;
+  height: 60px;
+  border-radius: 32px;
+  border: none;
+  padding: 0;
+  background: none;
+  background-image: url("/img/gatcha-click-btn.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.gatcha-visual .gatcha-caption-text {
+  margin-top: 32px;
+  font-size: 14px;
+  opacity: 1;
+  margin-bottom: 46px;
+}
+.gatcha-visual .gatcha-caption-text span {
+  color: #ffec7e;
+}
+.gatcha-visual .gatcha-count-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.gatcha-visual .gatcha-count-btn {
+  width: 150px;
+  height: 52px;
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  background: url(../../../public/img/gatcha-mini-btn.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gatcha-visual .gatcha-count-btn span {
+  font-size: 32px;
+  font-weight: 500;
+  padding: 0 4px 0 12px;
+}
+.gatcha-visual .gatcha-count-btn .gatchanum {
+  font-size: 12px;
+  padding: 0;
+  font-weight: 300;
+}
+
+/* ====================== GatchaExtraList.jsx ====================== */
+.gatcha-btn-list {
+  margin: 0 16px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.1);
+}
+.gatcha-extra-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+}
+.gatcha-extra-box .gatcha-extra-title {
+  font-size: 24px;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+.gatcha-extra-box .gatcha-extra-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.gatcha-extra-box .gatcha-extra-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.gatcha-extra-box .gatcha-extra-text {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.gatcha-extra-box .gatcha-extra-sub {
+  font-size: 12px;
+  color: #656565;
+}
+.gatcha-extra-box .gatcha-extra-btn {
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #945df1;
+  font-size: 12px;
+  color: #fff;
+}

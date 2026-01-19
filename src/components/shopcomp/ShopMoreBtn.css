@@ -1,0 +1,51 @@
+.shop-more-wrap {
+  padding: 0 16px;
+}
+.direct-btn {
+  width: 100%;
+  padding: 18px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0;
+}
+.direct-btn.is-primary {
+  background: linear-gradient(90deg, #44b1f7 0%, #884dff 100%);
+}
+.direct-btn.is-dark {
+  background: linear-gradient(90deg, #ffb937 0%, #ff46a0 100%);
+}
+.direct-btn .direct-btn-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.direct-btn-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.direct-btn-icon {
+  width: 18px;
+  height: 18px;
+}
+.direct-btn .title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+.direct-btn .subtitle {
+  margin-top: 4px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.direct-btn .direct-btn-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+.direct-btn .direct-btn-link img {
+  margin-left: 6px;
+}

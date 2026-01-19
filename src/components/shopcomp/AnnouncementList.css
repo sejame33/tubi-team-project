@@ -1,0 +1,48 @@
+.small-banner-wrap.c {
+  padding-bottom: 8px;
+}
+.announcement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  letter-spacing: -0.5px;
+}
+
+.announcement-item {
+  display: flex;
+  align-items: top;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px 20px;
+  cursor: pointer;
+}
+
+.item-left img {
+  width: 20px;
+  height: 20px;
+}
+
+.item-center {
+  flex: 1;
+  margin-left: 16px;
+}
+
+.item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+
+.item-desc {
+  font-size: 14px;
+  color: #777;
+  margin-top: 6px;
+}
+
+.item-right {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #aaa;
+  white-space: nowrap;
+}
