@@ -7,16 +7,27 @@ function OnboardingPage4() {
 
   return (
     <div className="onboarding-4">
-      <img
-        className="onboarding-image"
-        src="/img/onboarding-4.svg"
-        alt="onboarding-4"
-      />
+      
 
       <div className="onboarding-text">
-        <h2 className="title">이제 시작해볼까요?</h2>
-        <p className="desc">로그인하고 모든 기능을 사용해보세요.</p>
+        <h2 className="title">스티커와 튜비를<br/>한 눈에 확인할 수 있어요</h2>
+        <p className="desc">나만의 튜비를 만들어 가요!</p>
       </div>
+      <img
+        className="onboarding-4-Frame"
+        src="/img/onboarding-4-Frame.svg"
+        alt="onboarding-4-Frame"
+      />
+      <img
+        className="onboarding-4-myitem"
+        src="/img/onboarding-4-myitem.svg"
+        alt="onboarding-4-myitem"
+      />
+      <img
+        className="onboarding-4-tubi"
+        src="/img/onboarding-4-tubi.svg"
+        alt="onboarding-4-tub"
+      />
     </div>
   );
 }
