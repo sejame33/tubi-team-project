@@ -33,6 +33,9 @@ import ShopProduct from "./pages/shoppage/ShopProduct";
 // dm
 import ChatRoom from "./pages/dmpage/ChatRoom";
 
+// gacha
+import Gatcha from "./pages/gatchapage/Gatcha";
+
 function App() {
   return (
     <NicknameProvider>
@@ -56,6 +59,7 @@ function App() {
         {/* ✅ 메인 앱 영역 */}
         <Route path="/home" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="gatcha" element={<Gatcha />} />
 
           <Route path="shop" element={<Shop />} />
           <Route path="shop/announcement" element={<ShopAnnounce />} />
