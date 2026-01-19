@@ -29,6 +29,7 @@ import NicknamePage from "./pages/startpage/NicknamePage";
 import ShopAnnounce from "./pages/shoppage/ShopAnnounce";
 import ShopAnnounceDetail from "./pages/shoppage/ShopAnnounceDetail";
 import ShopProduct from "./pages/shoppage/ShopProduct";
+import ShopBrandPage from "./pages/shoppage/ShopBrandPage";
 
 // dm
 import ChatRoom from "./pages/dmpage/ChatRoom";
@@ -62,6 +63,7 @@ function App() {
           <Route path="gatcha" element={<Gatcha />} />
 
           <Route path="shop" element={<Shop />} />
+          <Route path="shop/brand" element={<ShopBrandPage />} />
           <Route path="shop/announcement" element={<ShopAnnounce />} />
           <Route
             path="shop/announcement/:noticeId"
