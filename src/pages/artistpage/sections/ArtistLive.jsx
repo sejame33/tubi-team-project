@@ -27,7 +27,7 @@ const ArtistLive = () => {
 
               <div className="card-footer">
                 <div className="profile-circle">
-                  <img src="/img/artistlive1.svg" alt="profile" />
+                  <img src="/img/my-artist-list3.svg" alt="profile" />
                 </div>
                 <div className="text-info">
                   <p className="stitle">
@@ -53,7 +53,7 @@ const ArtistLive = () => {
             <div className="main-card">
               <div className="thumbnail-wrap">
                 <img
-                  src="/img/artistlive1.svg"
+                  src="/img/artistlive2.svg"
                   alt="Live Thumbnail"
                   className="thumb-img"
                 />
@@ -62,12 +62,10 @@ const ArtistLive = () => {
 
               <div className="card-footer">
                 <div className="profile-circle">
-                  <img src="/img/artistlive1.svg" alt="profile" />
+                  <img src="/img/my-artist-list5.svg" alt="profile" />
                 </div>
                 <div className="text-info">
-                  <p className="stitle">
-                    [스텔라도감] 다섯 번째! 스텔라이브 2기생...
-                  </p>
+                  <p className="stitle">스텔라이브 (StelLive)</p>
                   <p className="sartist">
                     StelLive <span className="check-v">✓</span> • 아라하시 타비
                   </p>

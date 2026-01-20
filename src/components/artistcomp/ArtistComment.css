@@ -1,0 +1,78 @@
+.artist-comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 50px;
+  font-family: "Pretendard", sans-serif;
+}
+
+/* ---------- 프로필 ---------- */
+.artist-comment__profile {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.artist-comment__profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ---------- 콘텐츠 ---------- */
+.artist-comment__content {
+  flex: 1;
+}
+
+/* 닉네임 */
+.artist-comment__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666666;
+  margin-bottom: 6px;
+}
+
+/* 댓글 텍스트 */
+.artist-comment__text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #222222;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+/* ---------- 메타 정보 ---------- */
+.artist-comment__meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #999999;
+  font-size: 14px;
+}
+
+.artist-comment__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- 아이콘 ---------- */
+.artist-comment .icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.9;
+}
+
+/* 댓글 아이콘 */
+.artist-comment .icon.comment {
+  background-image: url("/img/icon-comment.svg");
+}
+
+.imgBox {
+  display: flex;
+  gap: 5px;
+}

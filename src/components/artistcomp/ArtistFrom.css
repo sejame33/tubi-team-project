@@ -1,0 +1,99 @@
+.artist-from {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 85%;
+  box-sizing: border-box;
+  border: 1px solid #dfdfdf;
+}
+
+.artistswiper .swiper-slide {
+  width: 95%;
+  margin-right: 0 !important;
+}
+
+.artist-from__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.artist-from__profile {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.artist-from__profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-from__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-from__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.artist-from__time {
+  font-size: 12px;
+  color: #9a9a9a;
+  margin-top: 2px;
+}
+
+.artist-from__content {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5;
+  display: flex;
+}
+
+.artist-from__balloon {
+  width: 17px; /* 원하는 크기 */
+  height: auto; /* 비율 유지 */
+  margin-left: 2px; /* 텍스트와 간격 */
+  flex-shrink: 0; /* 찌그러짐 방지 */
+}
+
+.artist-from-list {
+  display: flex;
+  gap: 16px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 16px 20px;
+
+  scroll-snap-type: x mandatory; /* ✅ 스와이퍼 핵심 */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 스크롤바 래퍼 */
+.artist-from-swiper .swiper-scrollbar {
+  position: relative;
+  width: 120px;
+
+  margin: 50px auto;
+  height: 4px;
+  background: #dfdfdf;
+  border-radius: 999px;
+  margin-bottom: 0;
+}
+
+/* 드래그 바 */
+.artist-from-swiper .swiper-scrollbar-drag {
+  background: #333;
+  border-radius: 999px;
+}
