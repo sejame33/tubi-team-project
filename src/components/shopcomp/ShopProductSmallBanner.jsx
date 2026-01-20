@@ -5,18 +5,16 @@ const ShopProductSmallBanner = ({
   title,
   subtitle,
   productImage,
-  background,     // ✅ 추가
+  background,
   onClick,
 }) => {
   return (
     <section
       className="shop-promo-banner"
-      style={{ background }}     // ✅ 적용
+      style={{ background }}
       onClick={onClick}
     >
       <div className="shop-promo-text">
-        <p className="shop-promo-title">{title}</p>
-
         {subtitle?.type === "image" && (
           <img
             className="shop-promo-subtitle-img"
@@ -26,10 +24,9 @@ const ShopProductSmallBanner = ({
         )}
 
         {subtitle?.type === "text" && (
-          <p className="shop-promo-subtitle-text">
-            {subtitle.value}
-          </p>
+          <p className="shop-promo-subtitle-text">{subtitle.value}</p>
         )}
+        <p className="shop-promo-title">{title}</p>
       </div>
 
       <div className="shop-promo-image">

@@ -3,7 +3,7 @@
   position: relative;
   overflow: hidden;
 
-  background: linear-gradient(180deg, #82C3F8, #9B7CFE 100%);
+  background: linear-gradient(180deg, #82c3f8, #9b7cfe 100%);
 }
 
 .myTubi .header {
@@ -28,7 +28,7 @@
 .myTubi .header .email {
   display: block;
   width: 100%;
-  color: #F0F0F0;
+  color: #f0f0f0;
   margin-top: 5px;
 }
 
@@ -118,7 +118,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-
 }
 
 .actionBtn:hover {
@@ -181,7 +180,6 @@
   height: 100px;
 }
 
-
 .sheetSection {
   padding: 0 18px;
 }
@@ -216,9 +214,14 @@
 .stickerSwiper-brand {
   font-size: 14px;
   font-weight: 600;
-  color: #BCBCBC;
+  display: flex;
+  align-items: center;
+  color: #bcbcbc;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+}
+.stickerSwiper-brand img {
+  margin-left: 4px;
 }
 
 .stickerSwiper-name {

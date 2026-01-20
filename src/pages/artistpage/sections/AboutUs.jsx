@@ -1,81 +1,96 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Btn from "../../../components/common/Btn";
+import StickerSwiper from "../../../components/mycomp/StickerSwiper";
 import "swiper/css";
 
 const memberList = [
   {
     id: 1,
-    name: "AOKUMO RIN",
-    subName: "아오쿠모 린",
-    img: "/img/member-rin.png",
+    artist2: "AOKUMO RIN",
+    subartist2: "아오쿠모 린",
+    img: "/img/artist1.svg",
   },
   {
     id: 2,
-    name: "AKANE LIZE",
-    subName: "아카네 리제",
-    img: "/img/member-lize.png",
+    artist2: "AKANE LIZE",
+    subartist2: "아카네 리제",
+    img: "/img/artist2.svg",
   },
   {
     id: 3,
-    name: "SAKIHANE HUYA",
-    subName: "사키하네 후야",
-    img: "/img/member-huya.png",
+    artist2: "SAKIHANE HUYA",
+    subartist2: "사키하네 후야",
+    img: "/img/artist3.svg",
   },
   {
     id: 4,
-    name: "AYATSUNO YUNI",
-    subName: "아야츠노 유니",
-    img: "/img/member-yuni.png",
+    artist2: "AYATSUNO YUNI",
+    subartist2: "아야츠노 유니",
+    img: "/img/artist4.svg",
   },
   {
     id: 5,
-    name: "SHIRAYUKI HINA",
-    subName: "시라유키 히나",
-    img: "/img/member-hina.png",
+    artist2: "SHIRAYUKI HINA",
+    subartist2: "시라유키 히나",
+    img: "/img/artist5.svg",
   },
   {
     id: 6,
-    name: "NENEKO MASHIRO",
-    subName: "네네코 마시로",
-    img: "/img/member-mashiro.png",
+    artist2: "NENEKO MASHIRO",
+    subartist2: "네네코 마시로",
+    img: "/img/artist6.svg",
   },
   {
     id: 7,
-    name: "ARAHASHI TABI",
-    subName: "아라하시 타비",
-    img: "/img/member-tabi.png",
+    artist2: "ARAHASHI TABI",
+    subartist2: "아라하시 타비",
+    img: "/img/artist7.svg",
   },
   {
     id: 8,
-    name: "TENKO SHIBUKI",
-    subName: "텐코 시부키",
-    img: "/img/member-shibuki.png",
+    artist2: "TENKO SHIBUKI",
+    subartist2: "텐코 시부키",
+    img: "/img/artist8.svg",
   },
   {
     id: 9,
-    name: "HANAKO NANA",
-    subName: "하나코 나나",
-    img: "/img/member-nana.png",
+    artist2: "HANAKO NANA",
+    subartist2: "하나코 나나",
+    img: "/img/artist9.svg",
   },
   {
     id: 10,
-    name: "YUZUHA RIKO",
-    subName: "유즈하 리코",
-    img: "/img/member-riko.png",
+    artist2: "YUZUHA RIKO",
+    subartist2: "유즈하 리코",
+    img: "/img/artist10.svg",
   },
 ];
 
 const AboutUs = () => {
+  const swiperItems = memberList.map((member) => ({
+    id: member.id,
+    imageUrl: member.img,
+    brand: member.artist2,
+    name: member.subartist2,
+    brandIcon: `/img/icon-${member.id}.svg`,
+  }));
+
   return (
     <section className="about-us">
+      <StickerSwiper
+        items={swiperItems}
+        onItemClick={(item) => console.log("멤버 클릭:", item)}
+      />
+
       <div className="about-footer">
         <p className="about-description">
           안녕하세요 스텔라이브입니다!
           <br />
           각자의 개성을 가진 멤버들이 모여 라이브와 다양한 콘텐츠로 여러분을
-          만나고 있어요. 무대 위에서도, 일상 속에서도....
+          만나고 있어요.
         </p>
+
         <Btn
           text="더보기"
           bgColor="linear-gradient(90deg, #A97EFF 0%, #11A4FF 100%)"

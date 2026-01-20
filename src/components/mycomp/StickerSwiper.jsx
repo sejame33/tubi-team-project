@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/scrollbar";
 
-
 export default function StickerSwiper({
   items = [],
   onItemClick,
@@ -40,7 +39,17 @@ export default function StickerSwiper({
               </div>
 
               <div className="stickerSwiper-text">
-                <div className="stickerSwiper-brand">{it.brand}</div>
+                <div className="stickerSwiper-brand">
+                  <span>{it.brand}</span>
+                  {it.brandIcon && (
+                    <img
+                      src={it.brandIcon}
+                      alt=""
+                      className="stickerSwiper-brandIcon"
+                    />
+                  )}
+                </div>
+
                 <div className="stickerSwiper-name">{it.name}</div>
               </div>
             </button>

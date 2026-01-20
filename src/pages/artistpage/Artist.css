@@ -7,19 +7,33 @@
   color: #fff;
   text-align: center;
 }
+
 .visual-bg img {
   width: 100%;
   object-fit: cover;
 }
+
 .visual-info {
   position: absolute;
-  bottom: 135px;
+  bottom: 30%;
   width: 100%;
   font-size: 12px;
 }
+
 .visual-info .artist-name {
   font-size: 50px;
   font-weight: bold;
+}
+
+.social-links {
+  position: absolute;
+  bottom: 4px;
+  padding: 22px 40px;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  background-image: url("/img/snsbg.png");
 }
 
 .about-us {
@@ -28,6 +42,10 @@
   border-radius: 16px;
   margin: 24px 16px 100px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.about-us .stickerSwiper-swiper {
+  padding-left: 0;
 }
 
 .about-header {
@@ -61,11 +79,17 @@
 .artistpage {
   width: 100%;
   padding: 24px 16px;
-  /* 배경 이미지 설정 */
   background-image: url("/img/artist-live-bg.png");
   background-size: cover;
   background-position: center;
   color: #ffffff;
+  padding-bottom: 80px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.about-us .stickerSwiper-card {
+  margin-right: 10px;
 }
 
 .artistlive .section-title,
@@ -79,7 +103,7 @@
 }
 
 .artistlive .section-title-wrap {
-  margin-top: 90px;
+  margin-top: 45px;
   margin-bottom: 24px;
 }
 
@@ -92,10 +116,9 @@
   font-size: 22px;
 }
 
-/* 카드 박스 스타일 (유리 효과) */
 .live-content-box {
-  background: rgba(255, 255, 255, 0.1); /* 반투명 화이트 */
-  backdrop-filter: blur(15px); /* 배경 블러 처리 */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
   border-radius: 20px;
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -107,7 +130,6 @@
   margin-bottom: 16px;
 }
 
-/* 메인 카드 이미지 영역 */
 .thumbnail-wrap {
   position: relative;
   width: 100%;
@@ -134,7 +156,6 @@
   font-weight: bold;
 }
 
-/* 카드 하단 정보 영역 */
 .card-footer {
   display: flex;
   align-items: center;
@@ -160,7 +181,6 @@
   font-size: 15px;
   font-weight: 500;
   margin-bottom: 4px;
-  /* 말줄임표 처리 */
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -174,4 +194,83 @@
 
 .check-v {
   font-size: 10px;
+}
+
+.about-us .stickerSwiper-brand {
+  font-size: 14px;
+  color: #333333;
+}
+
+.about-us .stickerSwiper-name {
+  font-size: 16px;
+  color: #6e6e6e;
+  font-weight: 500;
+}
+
+.crown-banner .shop-promo-subtitle-img {
+  height: auto;
+  width: 70%;
+}
+
+.crown-banner .shop-promo-title {
+  font-size: 16px;
+}
+
+.dm-banner {
+  position: absolute;
+  width: 100%;
+  bottom: 37%;
+}
+
+.dm-banner .shop-promo-subtitle-text {
+  background: linear-gradient(90deg, #92b5f9 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.dm-banner .shop-promo-title {
+  font-size: 14px;
+}
+
+.goods {
+  margin-top: 100px;
+}
+
+.goodsshop {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 30px 16px 60px;
+  padding: 57px 16px;
+  padding-right: 0;
+}
+
+.artist-from-swiper {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin: 16px;
+  padding: 37px 24px;
+}
+
+.commentpage {
+  margin-top: 180px;
+}
+
+.comment {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin: 24px 16px;
+  padding: 45px 24px;
+}
+
+.artistlive .section-more img {
+  filter: brightness(0) invert(1);
+}
+
+.mv .section-more img {
+  filter: brightness(0) invert(1);
 }
