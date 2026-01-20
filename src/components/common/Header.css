@@ -1,5 +1,5 @@
 .header {
-  padding: 24px 16px 24px;
+  padding: 24px 16px 0px;
   display: flex;
   align-items: center;
   position: fixed;
@@ -14,11 +14,31 @@
   background: #fff;
   z-index: 200;
   border-bottom: 1px solid #eee;
+
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.header.is-live {
+  background-color: #000000;
+  border-bottom: 1px solid #171717;
+}
+
+.header.is-live .header-title {
+  color: #ffffff;
+}
+
+.header.is-live .header-icon-btn img {
+  filter: brightness(0) invert(1);
+}
+
+.header.is-live .header-icon-btn img.sharebtn {
+  filter: brightness(0) invert(0.5);
 }
 
 .header-left,
 .header-right {
-  width: 88px;
+  width: 30px;
   display: flex;
   align-items: center;
 }
@@ -35,12 +55,12 @@
 .header-center {
   flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .header-title {
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 600;
   margin: 0;
 }
 

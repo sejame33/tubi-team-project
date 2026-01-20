@@ -9,7 +9,7 @@ import ShopMainBanner from "../../components/shopcomp/ShopMainBanner";
 import ShopSectionTitle from "../../components/shopcomp/ShopSectionTitle";
 import ShopNewItem from "../../components/shopcomp/ShopNewItem";
 import ShopImportant from "../../components/shopcomp/ShopImportant";
-import ShopMyArtist from "../../components/shopcomp/ShopMyArtist";
+import MyArtist from "../../components/homecomp/MyArtist";
 import ShopMoreBtn from "../../components/shopcomp/ShopMoreBtn";
 import ShopBrand from "../../components/shopcomp/ShopBrand";
 import ShopBrand2 from "../../components/shopcomp/ShopBrand2";
@@ -105,7 +105,7 @@ export default function Shop() {
       <ShopImportant />
 
       <ShopSectionTitle title="아티스트" showMore />
-      <ShopMyArtist />
+      <MyArtist />
 
       <ShopBrand />
       <ShopBrand2 />

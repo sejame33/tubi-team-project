@@ -51,17 +51,21 @@ export default function AlbumSlide() {
     <section className="album-slide">
       <div className="album-slide-inner">
         <Swiper
-          observer={true}
-          observeParents={true}
-          resizeObserver={true}
+          observer={false}
+          observeParents={false}
+          resizeObserver={false}
           className="album-swiper"
           modules={[Scrollbar, Pagination]}
           grabCursor
           centeredSlides
+          loop
+          touchRatio={1.1}
+          resistanceRatio={0.5}
+          touchStartPreventDefault={false}
           slidesPerView={1.5}
           spaceBetween={16}
           scrollbar={{
-            draggable: true,
+            draggable: false,
             el: ".album-swiper-scrollbar",
             hide: false,
           }}

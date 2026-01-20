@@ -1,7 +1,10 @@
 import React from 'react'
+import MyPage from './sections/MyPage'
 
-function My() {
-  return <h1>마이페이지</h1>;
+const My = () => {
+  return (
+    <MyPage />
+  )
 }
 
-export default My;
+export default My

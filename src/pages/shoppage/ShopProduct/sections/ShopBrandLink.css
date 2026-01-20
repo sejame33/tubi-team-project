@@ -1,0 +1,63 @@
+
+/* ShopBrandLink */
+.profile-container {
+  padding: 36px 16px;
+  background: white;
+  margin-bottom: 10px;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.profile-info-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.main-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+.badge-n {
+  background-color: #fff4e6;
+  color: #ffb347;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.sub-name {
+  color: #999;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.follower-count {
+  color: #999;
+  font-size: 16px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.tag-section .shop-tag {
+  background: #f0f2ff;
+  color: #2642fa;
+}

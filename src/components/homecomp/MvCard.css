@@ -7,7 +7,7 @@
   flex-shrink: 0;
 }
 
-.mv-card-main-title {
+.mv-card .mv-card-main-title {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 15px;
@@ -16,17 +16,17 @@
   float: left;
 }
 
-.mv-card-img {
+.mv-card .mv-card-img {
   position: relative;
   margin-bottom: 16px;
 }
 
-.mv-card-img img {
+.mv-card .mv-card-img img {
   width: 100%;
   display: block;
 }
 
-.badge {
+.mv-card .badge {
   position: absolute;
   top: 24%;
   left: 5%;
@@ -36,20 +36,20 @@
   border-radius: 14px;
 }
 
-.badge-default {
+.mv-card .badge-default {
   background: #ff4d4f;
 }
 
-.badge-yellow {
+.mv-card .badge-yellow {
   background: #ffce73;
 }
 
-.mv-card-body {
+.mv-card .mv-card-body {
   display: flex;
   margin-bottom: 8px;
 }
 
-.cover {
+.mv-card .cover {
   height: 16px;
   font-size: 10px;
   margin-right: 8px;
@@ -62,27 +62,27 @@
   background-size: contain;
 }
 
-.cover-default {
+.mv-card .cover-default {
   width: 39px;
   background-image: url("/img/cover-bg.svg");
 }
 
-.cover-yellow {
+.mv-card .cover-yellow {
   width: 28px;
   background-image: url("/img/cover-bg-yellow.svg");
 }
 
-.cover-green {
+.mv-card .cover-green {
   width: 47px;
   background-image: url("/img/cover-bg-green.svg");
 }
 
-.title {
+.mv-card .title {
   font-size: 16px;
   font-weight: 800;
 }
 
-.desc {
+.mv-card .desc {
   font-size: 14px;
   color: #7d7d7d;
   line-height: 1;

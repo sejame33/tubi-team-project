@@ -6,14 +6,15 @@ const Header = ({
   showLogo = true,
   title = "",
   showMenu = false,
-  showCart = false, // ✅ 장바구니 옵션 추가
+  showCart = false,
   showAnCopy = false,
   showAnShare = false,
+  isLive = false,
 }) => {
   const navigate = useNavigate();
 
   return (
-    <header className="header">
+    <header className={`header ${isLive ? "is-live" : ""}`}>
       {/* Left: back OR logo */}
       <div className="header-left">
         {showBack ? (
@@ -85,6 +86,7 @@ const Header = ({
           >
             <img
               src="/img/announcement-share-icon.svg"
+              className="sharebtn"
               alt="공유 버튼"
               aria-hidden="true"
             />

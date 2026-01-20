@@ -9,19 +9,20 @@ const Layout = () => {
   const location = useLocation();
   const mainRef = useRef(null);
 
-  // (선택) 브라우저 스크롤 복원 막기 - 1회
+  const isMyHome = location.pathname === "/home/my";
+  const isTubiPage = location.pathname === "/home/my/tubi";
+
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
   }, []);
 
-  // ✅ 페이지 이동(내비게이션) 때마다 무조건 맨 위
   useLayoutEffect(() => {
     const el = mainRef.current;
     if (!el) return;
     el.scrollTop = 0;
-  }, [location.key]); // pathname보다 key가 "재진입"에도 더 확실
+  }, [location.key]);
 
   /** ✅ 메인 홈인지 판단 */
   const isHome =
@@ -30,8 +31,15 @@ const Layout = () => {
   return (
     <div className="app-wrapper">
       <div className="app">
-        <Header /* ... */ />
-        <main className="main" ref={mainRef}>
+        {/* Header */}
+        {!isMyHome && !isTubiPage && <Header />}
+
+        <main
+          className={`main ${
+            isMyHome || isTubiPage ? "main--nochrome" : ""
+          }`}
+          ref={mainRef}
+        >
           <Outlet />
         </main>
         <Footer />

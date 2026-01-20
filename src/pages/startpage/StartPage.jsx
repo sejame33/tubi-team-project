@@ -18,9 +18,21 @@ function StartPage() {
       <div className="app">
         <main className="main start-main">
           <div className="start-page">
-            {/* 로고/스플래시 이미지 */}
-            <img className="start-logo" src="/img/start-logo.svg" alt="logo" />
-            <p className="start-sub">잠시만요, 시작할게요!</p>
+            <div className="start-text-group">
+              <p className="start-subtitle">당신과 아이돌을 이어주는</p>
+
+              <img
+                className="start-logo"
+                src="/img/start-page-logo.svg"
+                alt="NOVA Start logo"
+              />
+            </div>
+
+            <img
+              className="startpage-image"
+              src="/img/start-page1.png"
+              alt="NOVA Start Background"
+            />
           </div>
         </main>
       </div>
