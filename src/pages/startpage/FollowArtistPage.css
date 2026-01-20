@@ -1,0 +1,255 @@
+.main.followartist-main {
+  height: 100vh;
+  overflow: hidden;
+  padding: 130px 16px 20px;
+  box-sizing: border-box;
+}
+
+/* 위(고정) / 아래(스크롤) 레이아웃 */
+.followartist-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0; /* ✅ 핵심 */
+}
+
+/* ✅ 상단 고정 영역(타이틀+검색+선택 row) */
+.followartist-sticky {
+  z-index: 10;
+  background: #fff;
+  flex: 0 0 auto;
+}
+
+/* ✅ 리스트만 스크롤 */
+.followartist-list-scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  height: 0; /* ✅ 핵심: flex에서 스크롤 생기게 하는 강제 트릭 */
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.followartist-list-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* 타이틀 */
+.followartist-title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 25px;
+}
+
+/* 검색 */
+.followartist-search {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(90deg, #11a4ff, #884dff) border-box;
+
+  padding: 16px 20px;
+  margin-bottom: 32px;
+}
+
+.followartist-search-icon {
+  width: 22px;
+}
+
+.followartist-search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  color: #c7c7c7;
+  background: transparent;
+}
+
+/* 선택 영역(선택했을 때만 렌더링되므로 margin-top만 있으면 됨) */
+.followartist-selected {
+  margin-top: 32px;
+}
+
+/* 선택 row viewport */
+.followartist-selected-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 측정용(숨김) */
+.followartist-selected-measure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+
+.followartist-selected-measure .followartist-chip-img {
+  width: 56px;
+  height: 56px;
+}
+
+/* flex 버전 */
+.followartist-selected-row {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 28px;
+}
+
+/* swiper 버전 */
+.followartist-selected-swiper {
+  padding-bottom: 28px;
+}
+
+.followartist-chip-slide {
+  width: auto !important; /* slidesPerView="auto" 필수 */
+}
+
+.followartist-chip {
+  flex: 0 0 auto;
+}
+
+.followartist-chip-img {
+  width: 56px;
+  height: 56px;
+  position: relative;
+}
+
+.followartist-chip-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.followartist-chip-remove {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+
+  width: 25px;
+  height: 25px;
+  border-radius: 999px;
+
+  border: 0.5px solid #b7b5b5;
+  background: #fff;
+  font-size: 16px;
+  color: #505050;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+/* 리스트 */
+.followartist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 리스트 아이템 */
+.followartist-item {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: opacity 0.15s ease;
+  margin-bottom: 10px;
+}
+
+.followartist-item.is-selected {
+  opacity: 0.5;
+}
+
+.followartist-item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.followartist-item-avatar {
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.followartist-item-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.followartist-item-name {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.followartist-item-sub {
+  font-size: 14px;
+  color: #818181;
+}
+
+/* (지금 JSX에 안 쓰면 삭제 가능) */
+.followartist-item-action {
+  width: 24px;
+  height: 24px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  line-height: 1;
+}
+
+.followartist-item-action.is-minus {
+  border: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+/* 하단 fixed 버튼 */
+.follow-artist-btn-wrap {
+  background: #fff;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+}
+.followartist-done {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 18px 0;
+
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+
+  position: sticky;
+  bottom: 40px;
+  left: auto;
+}

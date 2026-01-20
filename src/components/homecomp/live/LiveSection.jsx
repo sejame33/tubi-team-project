@@ -7,40 +7,13 @@ import FilterChips from "./FilterChips";
 import LiveArtistRow from "./LiveArtistRow";
 import LiveReplayCard from "./LiveReplayCard";
 import { useNickname } from "../../../context/NicknameContext";
+import { useFollowArtist } from "../../../context/FollowArtistContext";
 
 const TABS = ["라이브", "콘텐츠", "무대"];
 const CHIPS = ["HOT", "NEW", "FOR YOU", "TREND"];
 
-// ✅ 팔로잉 목록(예시)
-// PLAVE도 전체에서 보이게 하려면 3을 추가해야 함: [1, 2, 3]
-const FOLLOWING_IDS = [1, 2, 3];
-
-const mockArtists = [
-  {
-    id: 1,
-    name: "HEBI",
-    label: "헤비",
-    avatar: "/img/live-artist-1.svg",
-    live: true,
-    verified: true,
-  },
-  {
-    id: 2,
-    name: "LUVDIA",
-    label: "밤비",
-    avatar: "/img/live-artist-2.svg",
-    live: true,
-    verified: true,
-  },
-  {
-    id: 3,
-    name: "PLAVE",
-    label: "나스카",
-    avatar: "/img/live-artist-3.svg",
-    live: false,
-    verified: true,
-  },
-];
+// ✅ 라이브 탭에서 "항상 보여줄" 고정 3명 (ARTIST_LIST의 id로 맞춰줘!)
+const FIXED_LIVE_IDS = ["7", "5", "1"]; // IRISE(7), HONEYZ(5), Plave(1)
 
 const mockReplays = [
   {
@@ -53,38 +26,53 @@ const mockReplays = [
 ];
 
 export default function LiveSection() {
+  const navigate = useNavigate();
   const { nickname } = useNickname();
+
+  // ✅ 전체 탭은 팔로우 전체
+  const { followedArtists, artistsOnly } = useFollowArtist();
 
   const [tab, setTab] = useState("라이브");
   const [chip, setChip] = useState("HOT");
-
-  // ✅ mini-tab은 실제 버튼 텍스트랑 동일하게!
   const [panelTab, setPanelTab] = useState("라이브"); // "라이브" | "전체"
 
-  // ✅ 팔로우 리스트 기반 + mini-tab에 따른 필터
-  const artists = useMemo(() => {
-    // 1) 팔로잉한 아티스트만 먼저
-    const following = mockArtists.filter((a) => FOLLOWING_IDS.includes(a.id));
+  // ✅ ARTIST_LIST(artistsOnly)에서 id로 찾아서 "라이브 고정 3명" 구성
+  const fixedLiveArtists = useMemo(() => {
+    const byId = new Map(artistsOnly.map((a) => [String(a.id), a]));
 
-    // 2) mini-tab이 '라이브'면 live=true만
-    if (panelTab === "라이브") {
-      return following.filter((a) => a.live);
-    }
+    return FIXED_LIVE_IDS.map((id) => {
+      const a = byId.get(String(id));
+      if (!a) return null;
 
-    // 3) '전체'면 팔로잉 전체(라이브 여부 상관 없음)
-    return following;
-  }, [panelTab]);
+      return {
+        id: a.id,
+        name: a.name,
+        label: a.label ?? "", // ✅ ARTIST_LIST에서 가져옴
+        avatar: a.img,
+        live: true,
+        verified: true,
+      };
+    }).filter(Boolean);
+  }, [artistsOnly]);
 
-  const replays = useMemo(() => {
-    if (chip === "클립") return mockReplays; // 예시
-    return mockReplays;
-  }, [chip]);
+  // ✅ 전체 탭: 팔로우 전체를 LiveArtistRow 포맷으로 매핑
+  const followingArtists = useMemo(() => {
+    return (followedArtists || []).map((a) => ({
+      id: a.id,
+      name: a.name,
+      label: false, // ✅ ARTIST_LIST 기반 label
+      avatar: a.img,
+      live: false,
+      verified: false,
+    }));
+  }, [followedArtists]);
 
-  const navigate = useNavigate();
+  // ✅ mini-tab에 따라 items 결정
+  const artists = panelTab === "라이브" ? fixedLiveArtists : followingArtists;
 
-  const goToLivePage = () => {
-    navigate("/home/live"); // <LivePage />가 연결된 경로로 이동
-  };
+  const replays = useMemo(() => mockReplays, [chip]);
+
+  const goToLivePage = () => navigate("/home/live");
 
   return (
     <section className="live-section">
@@ -129,16 +117,6 @@ export default function LiveSection() {
           <LiveReplayCard key={r.id} item={r} />
         ))}
       </div>
-
-      <button className="section-more" onClick={() => console.log("더보기")}>
-        더보기
-        <img src="/img/live-down-arrow.svg" alt="" />
-      </button>
-      <img
-        src="/img/live-speech-bubble.png"
-        alt=""
-        className="replay-speech-bubble"
-      />
     </section>
   );
 }

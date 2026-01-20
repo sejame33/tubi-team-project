@@ -4,34 +4,27 @@ import { useNavigate } from "react-router-dom";
 import "swiper/css";
 
 import "./MyArtist.css";
-
-const artistList = [
-  {
-    id: "more",
-    type: "more",
-    name: "More Artists",
-    img: "/img/my-artist-list1.svg",
-  },
-  { id: 1, type: "artist", name: "Plave", img: "/img/my-artist-list2.svg" },
-  { id: 2, type: "artist", name: "MEECHU", img: "/img/my-artist-list3.svg" },
-  { id: 3, type: "artist", name: "APOKI", img: "/img/my-artist-list4.svg" },
-  { id: 4, type: "artist", name: "HEBI", img: "/img/my-artist-list5.svg" },
-  { id: 5, type: "artist", name: "HONEYZ", img: "/img/my-artist-list6.svg" },
-  {
-    id: 6,
-    type: "artist",
-    name: "이세계아이돌",
-    img: "/img/my-artist-list7.svg",
-  },
-  { id: 7, type: "artist", name: "IRISE", img: "/img/my-artist-list8.svg" },
-  { id: 8, type: "artist", name: "StelLive", img: "/img/my-artist-list9.svg" },
-];
+import { useFollowArtist } from "../../context/FollowArtistContext";
 
 const MyArtist = () => {
   const navigate = useNavigate();
+  const { artistList, followedArtists } = useFollowArtist();
 
+  // ✅ MyArtist는 "팔로우된 아티스트"만 보여주고, 마지막에 more 버튼 붙이기
+  const moreItem = artistList.find((a) => a.type === "more");
+
+  const renderList = [
+    ...(moreItem ? [moreItem] : []),
+    ...(followedArtists || []),
+  ];
   const handleArtistClick = (item) => {
-    if (item.id === 8) {
+    if (item.type === "more") {
+      navigate("/follow-artist", { state: { from: "myartist" } });
+      return;
+    }
+
+    // 기존 로직 유지 (예: StelLive(8) 누르면 artist 페이지)
+    if (String(item.id) === "8") {
       navigate("/home/artist");
     } else {
       console.log(`${item.name} 클릭됨`);
@@ -41,8 +34,8 @@ const MyArtist = () => {
   return (
     <section className="my-artist" aria-label="My Artists">
       <Swiper slidesPerView="auto" spaceBetween={20} className="artist-swiper">
-        {artistList.map((item) => (
-          <SwiperSlide key={item.id} className="artist-slide">
+        {renderList.map((item) => (
+          <SwiperSlide key={`${item.type}-${item.id}`} className="artist-slide">
             {item.type === "more" ? (
               <button
                 type="button"

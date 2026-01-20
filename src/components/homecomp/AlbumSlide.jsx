@@ -58,6 +58,7 @@ export default function AlbumSlide() {
           modules={[Scrollbar, Pagination]}
           grabCursor
           centeredSlides
+          loop
           touchRatio={1.1}
           resistanceRatio={0.5}
           touchStartPreventDefault={false}
