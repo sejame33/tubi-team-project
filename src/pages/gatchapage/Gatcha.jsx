@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../components/gatchacomp/Gatcha.css";
 import GatchaVisual from "../../components/gatchacomp/GatchaVisual.jsx";
 import GatchaExtraList from "../../components/gatchacomp/GatchaExtraList.jsx";
@@ -6,6 +6,14 @@ import GachaResultModal from "../../components/gatchacomp/GachaResultModal.jsx";
 
 const Gatcha = () => {
   const [open, setOpen] = useState(false);
+
+  /** ✅ 모달 열릴 때 뒤 스크롤 차단 */
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <div className="gatcha-page">
@@ -23,7 +31,7 @@ const Gatcha = () => {
         </div>
       </div>
 
-      {/* 🔼 블러 제외 영역 (모달 전용) */}
+      {/* 🔼 모달 */}
       {open && <GachaResultModal onClose={() => setOpen(false)} />}
 
       <section className="gatcha-btn-list">

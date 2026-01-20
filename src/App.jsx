@@ -57,6 +57,7 @@ function App() {
         <Route path="/nickname" element={<NicknamePage />} />
 
         {/* ✅ 메인 앱 영역 */}
+
         <Route path="/home" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="gatcha" element={<Gatcha />} />
