@@ -7,6 +7,7 @@ import ShopSectionTitle from "../../components/shopcomp/ShopSectionTitle";
 import ShopMoreBtn from "../../components/shopcomp/ShopMoreBtn";
 import ArtistBrandProduct from "../../components/shopcomp/ArtistBrandProduct";
 import ArtistBrandCollabor from "../../components/shopcomp/ArtistBrandCollabor";
+import EndPost from "../../components/common/EndPost";
 
 export default function ShopBrandPage() {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ export default function ShopBrandPage() {
       />
       <ArtistBrandProduct />
       <ArtistBrandCollabor />
+      <EndPost />
     </section>
   );
 }

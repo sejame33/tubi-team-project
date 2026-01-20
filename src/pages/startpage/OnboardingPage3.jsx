@@ -33,7 +33,9 @@ function OnboardingPage3() {
       {/* 필터 버튼 */}
       <ul className="filter-area">
         <li>
-          <button className="filter-btn outline">NOVA Only</button>
+          <button className="filter-btn outline">
+            <span className="filter-btn-chip-text">NOVA Only</span>
+          </button>
         </li>
         <li>
           <button className="filter-btn active">All</button>
@@ -58,7 +60,7 @@ function OnboardingPage3() {
       {/* 중앙 배경 */}
       <div className="center-bg-layer">
         <img
-          src="/img/onboarding-3-background.svg"
+          src="/img/onboarding-3-background2.svg"
           alt=""
           className="center-bg-img"
         />
