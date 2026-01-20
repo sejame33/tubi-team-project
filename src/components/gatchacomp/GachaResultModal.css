@@ -1,0 +1,125 @@
+/* 전체 화면 덮는 백드랍 */
+.gacha-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* 모달 박스 */
+.gacha-modal {
+  position: fixed; /* 🔥 여기만 fixed */
+  left: 50%;
+  top: 50vh; /* vh 기준 */
+  transform: translateX(-50%) translateY(-50%);
+
+  z-index: 11;
+  pointer-events: auto;
+
+  width: 100%;
+  max-width: 430px;
+  height: 620px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* 모달 자체는 투명, 뒤 배경이 보이게 */
+  background: transparent;
+  color: #fff;
+}
+
+/* 닫기 */
+.gacha-modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  width: 24px;
+  height: 24px;
+
+  background: none;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 타이틀 */
+.gacha-modal-title {
+  margin-top: 44px;
+  margin-bottom: 28px;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+/* 결과 슬롯 */
+.gacha-result-slot {
+  flex: 1;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gacha-result-image {
+  max-width: 92%;
+  max-height: 280px;
+  object-fit: contain;
+}
+
+/* 하단 텍스트 */
+.sticker-gatcha-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.sticker-badge {
+  height: 20px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid #fff;
+  font-size: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.sticker-desc {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.sticker-desc span {
+  font-size: 16px;
+  color: #bfbfbf;
+  margin-left: 8px;
+}
+
+/* 버튼 */
+.sticker-list-btn {
+  width: 204px;
+  height: 52px;
+
+  border-radius: 34px;
+  border: none;
+
+  background: linear-gradient(90deg, #44b1f7, #884dff);
+  color: #fff;
+
+  font-size: 16px;
+  font-weight: 500;
+}

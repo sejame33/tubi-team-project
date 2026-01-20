@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Pagination } from "swiper/modules";
 import useWishlist from "../../hooks/useWishlist";
@@ -49,6 +50,7 @@ const products = [
 ];
 
 export default function ShopBrand() {
+  const navigate = useNavigate();
   const { isWished, toggleWish } = useWishlist();
 
   return (
@@ -168,7 +170,6 @@ export default function ShopBrand() {
                 );
               })}
             </Swiper>
-
             <div className="shopbrand-products-controls">
               <div className="shopbrand-products-row">
                 <div className="shopbrand-products-scrollbar swiper-scrollbar" />
@@ -177,7 +178,11 @@ export default function ShopBrand() {
             </div>
           </div>
         </div>
-        <button type="button" className="brand-direct-btn">
+        <button
+          type="button"
+          className="brand-direct-btn"
+          onClick={() => navigate("/home/shop/brand")}
+        >
           <div className="direct-box">
             <h2 className="direct-left">PLAVE 브랜드관 입점</h2>
             <span className="direct-right">

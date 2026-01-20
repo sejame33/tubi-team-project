@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Pagination } from "swiper/modules";
 import useWishlist from "../../hooks/useWishlist";
@@ -37,41 +38,39 @@ const products = [
     img: "/img/shop-brand-hevi-4.svg",
   },
 ];
+
 export default function ShopBrand2() {
+  const navigate = useNavigate();
   const { isWished, toggleWish } = useWishlist();
 
   return (
-    <section className="shopbrand b">
-      {/* 1) 배경(그라디언트+블러)은 여기서만 잘라냄 */}
-      <div className="shopbrand-hero" aria-hidden="true" />
+    <section className="shopbrand2 b">
+      <div className="shopbrand2-hero" aria-hidden="true" />
 
-      {/* 2) 배경 위에 올라갈 헤더(텍스트/이미지) */}
-      <div className="shopbrand-header">
-        <div className="shopbrand-header-left">
-          <p className="shopbrand-header-sub">3Y CORPORATION</p>
-          <h2 className="shopbrand-header-title">HEVI</h2>
+      <div className="shopbrand2-header">
+        <div className="shopbrand2-header-left">
+          <p className="shopbrand2-header-sub">3Y CORPORATION</p>
+          <h2 className="shopbrand2-header-title">HEVI</h2>
         </div>
 
-        {/* 라인아트/캐릭터 이미지 등 */}
         <img
-          className="shopbrand-header-art"
+          className="shopbrand2-header-art"
           src="/img/shop-brand-hevi-logo.png"
           alt=""
         />
       </div>
 
-      {/* 3) 카드/스와이퍼 본문 (위로 살짝 겹쳐지게 CSS에서 margin-top: -값) */}
-      <div className="shopbrand-body">
-        <div className="shopbrand-box">
-          <div className="shopbrand-toprow">
-            <button className="shopbrand-link" type="button">
-              <span className="shopbrand-gray">상품</span> {"105"}개
+      <div className="shopbrand2-body">
+        <div className="shopbrand2-box">
+          <div className="shopbrand2-toprow">
+            <button className="shopbrand2-link" type="button">
+              <span className="shopbrand2-gray">상품</span> {"105"}개
               <span aria-hidden="true">
                 <img src="/img/brand-more-arrow.svg" alt="" />
               </span>
             </button>
 
-            <button className="shopbrand-sort" type="button">
+            <button className="shopbrand2-sort" type="button">
               인기순
               <span aria-hidden="true">
                 <img src="/img/brand-popular-arrow.svg" alt="" />
@@ -79,21 +78,21 @@ export default function ShopBrand2() {
             </button>
           </div>
 
-          <div className="shopbrand-products">
+          <div className="shopbrand2-products">
             <Swiper
-              className="shopbrand-products-swiper"
+              className="shopbrand2-products-swiper"
               modules={[Scrollbar, Pagination]}
               slidesPerView="auto"
               spaceBetween={18}
               grabCursor
               scrollbar={{
                 draggable: true,
-                el: ".shopbrand-products-scrollbar",
+                el: ".shopbrand2-products-scrollbar",
                 hide: false,
               }}
               pagination={{
                 type: "fraction",
-                el: ".shopbrand-products-pagination",
+                el: ".shopbrand2-products-pagination",
               }}
               breakpoints={{
                 0: { spaceBetween: 12 },
@@ -105,14 +104,14 @@ export default function ShopBrand2() {
                 const wished = isWished(p.id);
 
                 return (
-                  <SwiperSlide key={p.id} className="shopbrand-product-slide">
-                    <article className="shopbrand-card">
-                      <div className="shopbrand-thumb">
+                  <SwiperSlide key={p.id} className="shopbrand2-product-slide">
+                    <article className="shopbrand2-card">
+                      <div className="shopbrand2-thumb">
                         <img src={p.img} alt={p.title} />
 
                         <button
                           type="button"
-                          className={`shopbrand-wish ${
+                          className={`shopbrand2-wish ${
                             wished ? "is-active" : ""
                           }`}
                           aria-pressed={wished}
@@ -137,10 +136,10 @@ export default function ShopBrand2() {
                         </button>
                       </div>
 
-                      <p className="shopbrand-title">{p.title}</p>
-                      <p className="shopbrand-price">{p.price}</p>
+                      <p className="shopbrand2-title">{p.title}</p>
+                      <p className="shopbrand2-price">{p.price}</p>
 
-                      <div className="shopbrand-badges">
+                      <div className="shopbrand2-badges">
                         {p.badge1 && <span className="badge">{p.badge1}</span>}
                         {p.badge2 && (
                           <span className="badge is-blue">{p.badge2}</span>
@@ -158,17 +157,23 @@ export default function ShopBrand2() {
               })}
             </Swiper>
 
-            <div className="shopbrand-products-controls">
-              <div className="shopbrand-products-row">
-                <div className="shopbrand-products-scrollbar swiper-scrollbar" />
-                <div className="shopbrand-products-pagination swiper-pagination" />
+            {/* ✅ shopbrand2 컨트롤 DOM 추가 */}
+            <div className="shopbrand2-products-controls">
+              <div className="shopbrand2-products-row">
+                <div className="shopbrand2-products-scrollbar swiper-scrollbar" />
+                <div className="shopbrand2-products-pagination swiper-pagination" />
               </div>
             </div>
           </div>
         </div>
-        <button type="button" className="brand-direct-btn">
+
+        <button
+          type="button"
+          className="brand-direct-btn"
+          onClick={() => navigate("/home/shop/brand")}
+        >
           <div className="direct-box">
-            <h2 className="direct-left">PLAVE 브랜드관 입점</h2>
+            <h2 className="direct-left">HEVI 브랜드관 입점</h2>
             <span className="direct-right">
               바로가기 <img src="/img/more-arrow-white-5x10.svg" alt="" />
             </span>

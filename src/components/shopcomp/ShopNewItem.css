@@ -51,6 +51,7 @@
   padding: 8px 17px;
   border-radius: 50px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .shop-new-tab.is-active {
@@ -72,10 +73,6 @@
 .shop-new-thumb {
   width: 173px;
   margin: 0 auto;
-}
-
-.shop-new-thumb img {
-  border-radius: 10px;
 }
 
 /* 카드 */
@@ -242,4 +239,26 @@
   width: 32px;
   height: 32px;
   display: block;
+}
+
+/* ✅ thumb 자리(높이) 확보해서 로딩 전에도 레이아웃 고정 */
+.shop-new-thumb {
+  width: 173px;
+  height: 173px; /* 👈 이게 제일 중요 */
+  margin: 0 auto;
+
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: #f3f3f3; /* 로딩 전 회색 배경(선택) */
+}
+
+/* ✅ 이미지가 thumb를 꽉 채우게 */
+.shop-new-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0; /* 부모가 radius+overflow로 처리하니까 필요없음 */
 }

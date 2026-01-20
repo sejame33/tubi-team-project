@@ -1,0 +1,5 @@
+/* ✅ 온보딩 전용 main: 스크롤 잠그고 패딩도 온보딩 헤더/푸터에 맞춤 */
+.main--onboarding {
+  padding: 64px 0 90px; /* ob-header 64px / footer 90px */
+  overflow: hidden; /* ✅ 스크롤 차단 */
+}

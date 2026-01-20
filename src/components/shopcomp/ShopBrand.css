@@ -238,7 +238,10 @@
   -webkit-user-drag: none;
 }
 
-.shopbrand.a .shopbrand-products-controls {
+/* ShopBrand – products controls */
+
+/* 컨트롤 전체 래퍼 */
+.shopbrand-products-controls {
   position: absolute;
   bottom: 0%;
   left: 50%;
@@ -246,39 +249,44 @@
   transform: translateX(-65%);
 }
 
-.shopbrand.a .shopbrand-products-row {
+/* 스크롤바 + 페이지네이션 가로 정렬 */
+.shopbrand-products-row {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.shopbrand.a .shopbrand-products-scrollbar {
-  flex: 1;
-  height: 3px !important;
-  background: #c3c3c3;
-  opacity: 1 !important;
-}
-
-.shopbrand.a .shopbrand-products-scrollbar .swiper-scrollbar-drag {
-  height: 100%;
-  background: #000;
-}
-
-.shopbrand.a .shopbrand-products-pagination {
+/* pagination (fraction) */
+.shopbrand-products-pagination {
   position: static !important;
   white-space: nowrap;
   font-size: 14px;
   color: #666;
   opacity: 1 !important;
-
   margin-left: 110%;
 }
 
-.shopbrand.a .shopbrand-products-pagination .swiper-pagination-current {
+/* scrollbar */
+.shopbrand-products-scrollbar {
+  flex: 1;
+  position: relative;
+  height: 3px !important;
+  background: #c3c3c3;
+  opacity: 1 !important;
+}
+
+/* scrollbar drag */
+.shopbrand-products-scrollbar .swiper-scrollbar-drag {
+  height: 100%;
+  background: #000;
+}
+
+/* pagination current / total */
+.shopbrand-products-pagination .swiper-pagination-current {
   color: #000;
 }
 
-.shopbrand.a .shopbrand-products-pagination .swiper-pagination-total {
+.shopbrand-products-pagination .swiper-pagination-total {
   color: #666;
 }
 
@@ -315,6 +323,10 @@
   display: block;
 }
 
+.shopbrand.a .brand-direct-btn {
+  cursor: pointer;
+}
+
 .shopbrand.a .brand-direct-btn .direct-box {
   padding: 20px 20px;
   display: flex;
@@ -324,6 +336,10 @@
 .shopbrand.a .brand-direct-btn .direct-box .direct-left {
   font-size: 16px;
   font-weight: 400;
+}
+
+.shopbrand.a .brand-direct-btn .direct-box .direct-right {
+  font-size: 16px;
 }
 
 .shopbrand.a .shop-brand-speech {

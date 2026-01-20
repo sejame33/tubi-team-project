@@ -1,0 +1,128 @@
+/* =========================
+   ArtistBrandNotice.css
+   ========================= */
+
+.ab-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  padding: 24px 16px;
+
+  background: #fff;
+}
+
+/* ===== Left: icon + Notice ===== */
+
+.ab-notice .ab-notice-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  padding-right: 10px;
+  border-right: 2px solid #d2d2d2;
+}
+
+/* ✅ 아이콘 이미지 */
+
+.ab-notice .ab-notice-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.ab-notice .ab-notice-label {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  color: #884dff;
+  white-space: nowrap;
+}
+
+/* ===== Middle: rolling title area ===== */
+
+.ab-notice .ab-notice-mid {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+
+  /* ✅ 한 줄 영역 고정 */
+  height: 20px;
+  overflow: hidden;
+}
+
+/* translateY로 한 칸씩 이동 */
+
+.ab-notice .ab-notice-roller {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  transform: translateY(0);
+  transition: transform 350ms ease;
+  will-change: transform;
+}
+
+/* ✅ 루프 점프 시 transition 제거 */
+
+.ab-notice .ab-notice-roller.no-transition {
+  transition: none;
+}
+
+/* 각 줄(한 공지) */
+
+.ab-notice .ab-notice-item {
+  height: 20px; /* ✅ mid 높이와 동일 */
+  display: flex;
+  align-items: center;
+}
+
+/* 제목(클릭 가능) */
+
+.ab-notice .ab-notice-title {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111111;
+
+  /* ✅ 한 줄 말줄임 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+
+  /* 터치 하이라이트 제거(모바일) */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ab-notice .ab-notice-title:hover {
+  opacity: 0.85;
+}
+
+/* ===== Right: more ===== */
+
+.ab-notice .ab-notice-more {
+  flex: 0 0 auto;
+  border: 0;
+  background: transparent;
+  padding: 0;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #884dff;
+
+  white-space: nowrap;
+}

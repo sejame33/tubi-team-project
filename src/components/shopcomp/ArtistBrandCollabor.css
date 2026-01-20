@@ -1,0 +1,75 @@
+.artistbrandcollabor {
+  padding: 0 16px;
+  margin: 50px 0 36px;
+}
+
+/* 섹션 타이틀 */
+.artistbrandcollabor-section-title {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* 카드 */
+.artistbrandcollabor-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 이미지 영역 */
+.artistbrandcollabor-image {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 배경 이미지 */
+.artistbrandcollabor-bg {
+  width: 100%;
+  display: block;
+}
+
+/* 로고 */
+.artistbrandcollabor-logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+  height: 26px;
+  width: auto;
+}
+
+/* 타이틀 (두 줄 고정) */
+.artistbrandcollabor-title {
+  position: absolute;
+  top: 65px;
+  left: 30px;
+  z-index: 2;
+
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #fff;
+  margin: 0;
+}
+
+/* 이미지 아래 텍스트 영역 */
+.artistbrandcollabor-text {
+  padding: 26px 0 0;
+}
+
+/* 작은 설명 */
+.artistbrandcollabor-sub {
+  font-size: 16px;
+  color: #6c6c6c;
+}
+
+/* 메인 설명 */
+.artistbrandcollabor-desc {
+  margin: 8px 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}

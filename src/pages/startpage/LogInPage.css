@@ -1,0 +1,122 @@
+.login-page {
+  text-align: center;
+}
+
+.login-page .desc {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 46px;
+}
+.login-page .desc span {
+  color: #5e52ff;
+  position: relative;
+  display: inline-block;
+}
+.login-page .desc span::after {
+  content: "";
+  display: block;
+  width: 3.5px;
+  height: 3.5px;
+  background-color: #5d5fef;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.login-page .login-movetubi {
+  margin-bottom: 34px;
+  width: 50%;
+}
+
+.login-page .textballonBox {
+  position: relative;
+}
+.login-page .textballonBox .login-jointextballon {
+  margin-bottom: 21px;
+}
+.login-page .textballonBox .inner {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 58%;
+  left: 49%;
+  transform: translateX(-50%);
+}
+.login-page .textballonBox .innertext {
+  font-size: 13px;
+  color: #fff;
+}
+
+.login-page .textBox {
+  margin-bottom: 77px;
+}
+.login-page .textBox .title {
+  font-size: 24px;
+  margin-bottom: 12px;
+  line-height: 34px;
+  font-weight: 700;
+}
+.login-page .textBox .text {
+  font-size: 16px;
+  color: #bebebe;
+  font-weight: 400;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+}
+
+/* 공통 버튼 스타일: 동그라미 모양 만들기 */
+.social-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 16px;
+}
+
+.social-btn:last-child {
+  margin-right: 0;
+}
+
+.social-btn.kakao {
+  background-color: #fee500;
+}
+.social-btn.naver {
+  background-color: #03c75a;
+  padding-left: 2px;
+}
+.social-btn.google {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+}
+.social-btn.apple {
+  background-color: #000000;
+  padding-bottom: 3px;
+}
+
+.social-btn img {
+  width: 24px;
+  height: 24px;
+}
+.social-btn:nth-child(2) img {
+  width: 21px;
+  height: 21px;
+}
+.social-btn:nth-child(3) img {
+  width: 26px;
+  height: 26px;
+}
+.social-btn:nth-child(4) img {
+  width: 25px;
+  height: 25px;
+}

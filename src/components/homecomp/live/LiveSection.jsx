@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./liveSection.css";
 import SectionHeader from "./SectionHeader";
 import LiveTabs from "./LiveTabs";
@@ -8,7 +9,7 @@ import LiveReplayCard from "./LiveReplayCard";
 import { useNickname } from "../../../context/NicknameContext";
 
 const TABS = ["라이브", "콘텐츠", "무대"];
-const CHIPS = ["인기", "다시보기", "클립", "더보기"];
+const CHIPS = ["HOT", "NEW", "FOR YOU", "TREND"];
 
 // ✅ 팔로잉 목록(예시)
 // PLAVE도 전체에서 보이게 하려면 3을 추가해야 함: [1, 2, 3]
@@ -55,7 +56,7 @@ export default function LiveSection() {
   const { nickname } = useNickname();
 
   const [tab, setTab] = useState("라이브");
-  const [chip, setChip] = useState("인기");
+  const [chip, setChip] = useState("HOT");
 
   // ✅ mini-tab은 실제 버튼 텍스트랑 동일하게!
   const [panelTab, setPanelTab] = useState("라이브"); // "라이브" | "전체"
@@ -79,12 +80,18 @@ export default function LiveSection() {
     return mockReplays;
   }, [chip]);
 
+  const navigate = useNavigate();
+
+  const goToLivePage = () => {
+    navigate("/home/live"); // <LivePage />가 연결된 경로로 이동
+  };
+
   return (
     <section className="live-section">
       <SectionHeader
         title="실시간 Live!"
         showMore={true}
-        onMoreClick={() => console.log("전체보기")}
+        onMoreClick={goToLivePage}
       />
 
       <LiveTabs tabs={TABS} active={tab} onChange={setTab} />
