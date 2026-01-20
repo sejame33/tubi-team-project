@@ -17,7 +17,7 @@ function NicknamePage() {
     if (!value) return;
 
     setNickname(value);
-    navigate("/home");
+    navigate("/follow-artist");
   };
 
   return (
