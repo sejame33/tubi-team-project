@@ -27,7 +27,7 @@ const ArtistLive = () => {
 
               <div className="card-footer">
                 <div className="profile-circle">
-                  <img src="/img/my-artist-list3.svg" alt="profile" />
+                  <img src="/img/my-artist-2.png" alt="profile" />
                 </div>
                 <div className="text-info">
                   <p className="stitle">
@@ -62,7 +62,7 @@ const ArtistLive = () => {
 
               <div className="card-footer">
                 <div className="profile-circle">
-                  <img src="/img/my-artist-list5.svg" alt="profile" />
+                  <img src="/img/my-artist-4.png" alt="profile" />
                 </div>
                 <div className="text-info">
                   <p className="stitle">스텔라이브 (StelLive)</p>

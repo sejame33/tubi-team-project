@@ -7,15 +7,16 @@ function OnboardingPage4() {
 
   return (
     <div className="onboarding-4">
-      
-
       <div className="onboarding-text">
-        <h2 className="title">스티커와 튜비를<br/>한 눈에 확인할 수 있어요</h2>
+        <h2 className="title">
+          스티커와 튜비를
+          <br />한 눈에 확인할 수 있어요
+        </h2>
         <p className="desc">나만의 튜비를 만들어 가요!</p>
       </div>
       <img
         className="onboarding-4-Frame"
-        src="/img/onboarding-4-Frame.svg"
+        src="/img/onboarding-4-Frame2.svg"
         alt="onboarding-4-Frame"
       />
       <img

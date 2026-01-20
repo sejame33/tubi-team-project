@@ -6,12 +6,15 @@
 }
 .onboarding-4 .onboarding-text .title {
   font-size: 32px;
-  margin-bottom: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #333333;
+  margin-bottom: 12px;
   margin-top: -30px;
 }
 .onboarding-4 .onboarding-text .desc {
   font-size: 16px;
-  color: #aeaeae;
+  color: #808080;
 }
 
 .onboarding-4 .onboarding-4-Frame {
@@ -19,7 +22,7 @@
   position: absolute;
   right: 62px;
   top: 205px;
-  opacity: 30%;
+  opacity: 70%;
 }
 .onboarding-4 .onboarding-4-myitem {
   position: absolute;

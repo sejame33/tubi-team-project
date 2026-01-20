@@ -4,26 +4,30 @@
   border-radius: 8px;
 }
 
-.top-text {
+.card-overlay .artist-info {
+  color: white;
+}
+
+.hot-issue-container .top-text {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.card-content {
+.hot-issue-container .card-content {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
   aspect-ratio: 16 / 9;
 }
 
-.main-image {
+.hot-issue-container .main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.card-label {
+.hot-issue-container .card-label {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -34,7 +38,7 @@
   font-weight: 600;
 }
 
-.card-overlay {
+.hot-issue-container .card-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -46,20 +50,20 @@
   padding: 16px;
 }
 
-.info-wrap {
+.hot-issue-container .info-wrap {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.small-image {
+.hot-issue-container .small-image {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.sub-title {
+.hot-issue-container .sub-title {
   color: #fff;
   font-size: 16px;
   font-weight: 400;
@@ -69,14 +73,14 @@
   text-overflow: ellipsis;
 }
 
-.group-member {
+.hot-issue-container .group-member {
   color: #ccc;
   font-size: 14px;
   font-weight: 400;
   margin: 0;
 }
 
-.check-icon {
+.hot-issue-container .check-icon {
   font-size: 10px;
   margin-left: 3px;
   margin-right: 6px;

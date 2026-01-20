@@ -117,6 +117,16 @@ export default function LiveSection() {
           <LiveReplayCard key={r.id} item={r} />
         ))}
       </div>
+
+      <button className="section-more" onClick={() => console.log("더보기")}>
+        더보기
+        <img src="/img/live-down-arrow.svg" alt="" />
+      </button>
+      <img
+        src="/img/live-speech-bubble.png"
+        alt=""
+        className="replay-speech-bubble"
+      />
     </section>
   );
 }
