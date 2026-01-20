@@ -3,7 +3,8 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  background: #666666; /* 바깥 배경 */
+  background: #f5f5f5;
+  /* 바깥 배경 */
 }
 
 /* 실제 앱 영역 (430px 고정) */
@@ -11,7 +12,7 @@
   width: 100%;
   max-width: 430px;
   min-height: 100vh;
-  background: #fff;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -22,14 +23,10 @@
   width: 100%;
   min-width: 0;
   flex: 1;
-  padding: 90px 0 90px; /* header / footer 고려 */
+  padding: 90px 0 90px;
+  /* header / footer 고려 */
   overflow-y: auto;
   box-sizing: border-box;
-}
-
-.main.is-live {
-  background-color: #000;
-  color: #ffffff;
 }
 
 .app,
@@ -42,6 +39,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.main::-webkit-scrollbar {
+  display: none;
+}
+
 /* Firefox */
 html {
   scrollbar-width: none;
@@ -50,4 +51,12 @@ html {
 /* IE, Edge 구버전 */
 body {
   -ms-overflow-style: none;
+}
+
+/* 헤더/푸터 없는 페이지에서 main이 화면 꽉 차게 */
+.main--nochrome {
+  padding: 0;
+  height: 100vh;
+  /* 기존 main이 flex/height 구조면 여기로 맞춰짐 */
+  overflow: auto;
 }

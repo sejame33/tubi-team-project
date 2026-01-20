@@ -1,10 +1,15 @@
-import React from "react";
+import {React, useState} from "react";
 import "./ShopProductBanner.css";
-import ShopMoreBtn from "./ShopMoreBtn";
-import ShopEventMoreBtn from "./ShopEventMoreBtn";
-import Btn from "../common/Btn";
+import ShopMoreBtn from "../../../../components/shopcomp/ShopMoreBtn";
+import ShopEventMoreBtn from "../../../../components/shopcomp/ShopEventMoreBtn";
+import Btn from "../../../../components/common/Btn";
 
 const ShopProductBanner = () => {
+  const [isLiked, setIsLiked] = useState(false);
+
+  const toggleLike = () => {
+    setIsLiked(!isLiked);
+  };
   return (
     <>
       <section className="shopproduct-banner-wrap">
@@ -33,9 +38,15 @@ const ShopProductBanner = () => {
             하츠네 미쿠 <img src="/img/shopproduct-brand-arrow.svg" alt="" />
           </div>
 
-          <div className="shopproduct-heart">
-            <img src="/img/shopproduct-heart.svg" alt="" />
-            11,062
+          <div 
+            className="shopproduct-heart" 
+            onClick={toggleLike}
+            style={{ cursor: "pointer", userSelect: "none" }}
+          >
+            <img 
+              src={!isLiked ? "/img/shopproduct-heart.svg" : "/img/shopproduct-fillheart.svg"} 
+            />
+            {!isLiked ? "11,062" : "11,063"}
           </div>
         </div>
 

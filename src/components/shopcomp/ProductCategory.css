@@ -1,0 +1,29 @@
+.productCategory {
+  width: 100%;
+}
+
+.productCategory-swiper {
+  padding: 40px 16px 24px;
+}
+
+.productCategory-slide {
+  width: auto;
+}
+
+.productCategory-chip {
+  border: 1px solid #E9E9E9;
+  background: transparent;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.productCategory-chip.is-active {
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+}

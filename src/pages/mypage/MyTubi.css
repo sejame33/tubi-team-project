@@ -1,0 +1,163 @@
+.main--nochrome {
+  background: transparent;
+  padding: 0;
+}
+
+.mytubipg {
+  background: linear-gradient(24deg, #4F4F4F 0%, #615664 100%);
+  position: relative;
+}
+
+.mytubipg section {
+  padding-bottom: 60px;
+}
+
+.mytubipg .top {
+  padding: 60px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mytubipg .topBox {
+  padding-left: 16px;
+}
+
+.mytubipg .topBox .tit {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.mytubipg .top .topmy {
+  width: 83px;
+  height: 49px;
+  font-size: 16px;
+  color: white;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(620deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.1) 100%);
+}
+
+.mytubipg img.tubi {
+  width: 65%;
+  display: flex;
+  margin: auto;
+  margin-top: -20px;
+}
+
+.mytubipg .circle {
+  width: 295px;
+  height: 295px;
+  background: linear-gradient(620deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.1) 100%);
+  position: absolute;
+  top: 154px;
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.section {
+  margin-top: 24px;
+}
+
+.stickerSec {
+  margin-top: 34px;
+}
+
+.stickerSec .productCategory-chip {
+  color: white;
+}
+
+.stickerSec .productCategory-swiper {
+  padding-left: 0;
+}
+
+.stickerSec .swiper-wrapper {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.stickerHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 16px;
+}
+
+.stickerTitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.stickerDesc {
+  margin-top: 6px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.stickerListBtn {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.stickerTabs {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0 18px;
+}
+
+.tabBtn {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tabBtn.is-active {
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.picslect {
+  padding: 0 16px;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.picslect .right p {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.picslect .right .txt {
+  font-size: 16px;
+  color: #BABABA
+}
+
+.history .swiper-wrapper {
+  padding: 0 16px;
+  margin-top: 24px;
+}

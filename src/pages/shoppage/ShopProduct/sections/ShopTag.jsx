@@ -1,6 +1,6 @@
 import React from "react";
 import "./ShopTag.css";
-import ShopTagList from "./ShopTagList";
+import ShopTagList from "../../../../components/shopcomp/ShopTagList";
 
 const ShopTag = () => {
   return (

@@ -1,6 +1,6 @@
-import React from "react";
-import ShopTagList from "./ShopTagList"; // 작성하신 파일 임포트
-import "./ShopBrandLink.css";
+import {React, useState} from "react";
+import ShopTagList from "../../../../components/shopcomp/ShopTagList"; // 작성하신 파일 임포트
+import "./ShopBrandLink.css"
 
 const ShopBrand = () => {
   const tags = [
@@ -10,6 +10,12 @@ const ShopBrand = () => {
     "경량 백팩",
     "캔뱃지",
   ];
+
+  const [isStar, setStar] = useState(false);
+  
+  const toggleStar = () => {
+    setStar(!isStar);
+  }
 
   return (
     <div className="profile-container">
@@ -26,8 +32,9 @@ const ShopBrand = () => {
           </div>
         </div>
 
-        <div className="follower-count">
-          <img src="/img/shopbrand-star.svg" alt="" />
+        <div className="follower-count" onClick={toggleStar}
+            style={{ cursor: "pointer", userSelect: "none" }}>
+          <img src={!isStar ? "/img/shopbrand-star.svg" :"/img/shopbrand-fillstar.svg" } />
           <p>13.2만</p>
         </div>
       </div>

@@ -28,6 +28,12 @@ import NicknamePage from "./pages/startpage/NicknamePage";
 // shop
 import ShopAnnounce from "./pages/shoppage/ShopAnnounce";
 import ShopAnnounceDetail from "./pages/shoppage/ShopAnnounceDetail";
+
+import ShopProduct from "./pages/shoppage/ShopProduct/ShopProduct";
+import ChatRoom from "./pages/dmpage/ChatRoom";
+import ScrollToTop from "./pages/ScrollToTop";
+import MyTubi from "./pages/mypage/MyTubi";
+
 import ShopProduct from "./pages/shoppage/ShopProduct";
 import ShopBrandPage from "./pages/shoppage/ShopBrandPage";
 
@@ -40,6 +46,7 @@ import Gatcha from "./pages/gatchapage/Gatcha";
 // live
 import LivePage from "./pages/livepage/LivePage";
 import Artist from "./pages/artistpage/Artist";
+
 
 function App() {
   return (
@@ -81,6 +88,7 @@ function App() {
           <Route path="dm/:artistId" element={<ChatRoom />} />
 
           <Route path="my" element={<My />} />
+          <Route path="my/tubi" element={<MyTubi/>} />
         </Route>
       </Routes>
     </NicknameProvider>
