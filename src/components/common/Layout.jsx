@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet, useLocation } from "react-router-dom";
 import "./Layout.css";
+import ChatbotContainer from "../homecomp/chatbot/ChatbotContainer.jsx";
 
 const Layout = () => {
   const location = useLocation();
@@ -23,6 +24,10 @@ const Layout = () => {
     el.scrollTop = 0;
   }, [location.key]);
 
+  /** ✅ 메인 홈인지 판단 */
+  const isHome =
+    location.pathname === "/home" || location.pathname === "/home/";
+
   return (
     <div className="app-wrapper">
       <div className="app">
@@ -37,9 +42,8 @@ const Layout = () => {
         >
           <Outlet />
         </main>
-
-        {/* Footer */}
-        {!isTubiPage && <Footer />}
+        <Footer />
+        {isHome && <ChatbotContainer />}
       </div>
     </div>
   );

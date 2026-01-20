@@ -74,6 +74,7 @@
 .gacha-result-image {
   max-width: 92%;
   max-height: 280px;
+  max-width: 60%;
   object-fit: contain;
 }
 
