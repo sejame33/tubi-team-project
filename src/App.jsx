@@ -10,9 +10,10 @@ import NicknamePage from "./pages/startpage/NicknamePage";
 import { NicknameProvider } from "./context/NicknameContext";
 import ShopAnnounce from "./pages/shoppage/ShopAnnounce";
 import ShopAnnounceDetail from "./pages/shoppage/ShopAnnounceDetail";
-import ShopProduct from "./pages/shoppage/ShopProduct";
+import ShopProduct from "./pages/shoppage/ShopProduct/ShopProduct";
 import ChatRoom from "./pages/dmpage/ChatRoom";
 import ScrollToTop from "./pages/ScrollToTop";
+import MyTubi from "./pages/mypage/MyTubi";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="dm" element={<DM />} />
           <Route path="dm/:artistId" element={<ChatRoom />} />
           <Route path="my" element={<My />} />
+          <Route path="my/tubi" element={<MyTubi/>} />
         </Route>
       </Routes>
     </NicknameProvider>

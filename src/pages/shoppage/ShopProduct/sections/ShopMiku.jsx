@@ -36,6 +36,8 @@ const ShopMiku = () => {
       <section className="detail-info">
         <div className="detail-image-card">
           <img src="/img/shopmiku-logo.svg" alt="Detail Package View" />
+          <p className="miku">하츠네미쿠</p>
+          <p className="mikuTxt">하츠네미쿠는 피규어, 의류, 문구, 한정 컬렉션 등 다양한 카테고리의 상품을 만나볼 수 있으며, 시즌별 테마와 이벤트를 통해 새로운 굿즈를 지속적으로 선보입니다.</p>
         </div>
       </section>
     </div>

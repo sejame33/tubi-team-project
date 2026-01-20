@@ -1,0 +1,40 @@
+.endpost {
+  padding: 40px 16px;
+  background: #363636;
+}
+
+.endpost .endpost-logo {
+  margin-bottom: 30px;
+}
+
+.endpost .bold {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  color: #DBDBDB;
+}
+
+.endpost .endTxt {
+  font-size: 14px;
+  color: #A2A2A2;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.endpost .selectTit {
+  display: flex;
+  justify-content: space-between;
+  color: #A2A2A2;
+}
+
+.endpost .selectTit p:nth-child(1) {
+  color: white;
+}
+
+.endpost .copy {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #94918E;
+}

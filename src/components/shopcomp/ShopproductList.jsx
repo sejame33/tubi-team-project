@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Scrollbar, Pagination } from "swiper/modules";
 
@@ -10,47 +9,33 @@ import "swiper/css/pagination";
 
 import "./ShopproductList.css";
 
-const products = [
-  {
-    id: 502,
-    title:
-      "하츠네 미쿠 보컬로이드 굿즈 moeyu 모에유 보이스 오브 스타 시리즈 아크릴 키링 키체인 랜덤 단품",
-    price: "₩15,000원",
-    img: "/img/shopproduct-item1.svg",
-    badge1: "단독판매",
-    badge2: "특전제공",
-  },
-  {
-    id: 503,
-    title: "하츠네 미쿠 x 시나모롤 공식 캔 뱃지 랜덤 단품",
-    price: "₩22,000원",
-    img: "/img/shopproduct-item2.svg",
-    badge4: "콜라보",
-    badge2: "특전제공",
-  },
-  {
-    id: 504,
-    title:
-      "하츠네 미쿠 보컬로이드 굿즈 moeyu 모에유 보이스 오브 스타 시리즈 폴라로이드 카드 랜덤 단품",
-    price: "₩2,000원",
-    img: "/img/shopproduct-item3.svg",
-  },
-];
+export default function ShopproductList({
+  items = [],
 
-export default function ShopproductList() {
-  const [activeBrand, setActiveBrand] = useState("ALL");
-  const navigate = useNavigate();
+  onProductClick,
+
+  activeBrand: controlledBrand,
+  onBrandChange,
+
+  enableBrandFilter = false,
+}) {
+  const [internalBrand, setInternalBrand] = useState("ALL");
+
+  const activeBrand = controlledBrand ?? internalBrand;
 
   const filteredProducts = useMemo(() => {
-    if (activeBrand === "ALL") return products;
-    return products.filter((p) => p.brand === activeBrand);
-  }, [activeBrand]);
+    if (!enableBrandFilter) return items;
+    if (activeBrand === "ALL") return items;
+    return items.filter((p) => p.brand === activeBrand);
+  }, [items, activeBrand, enableBrandFilter]);
 
-  // ✅ id 102만 ShopProduct로 이동
-  const handleProductClick = (id) => {
-    if (id === 102) {
-      navigate("/home/shop/ShopProduct");
-    }
+  const handleBrand = (next) => {
+    if (onBrandChange) onBrandChange(next);
+    else setInternalBrand(next);
+  };
+
+  const handleProductClick = (id, product) => {
+    onProductClick?.(id, product);
   };
 
   return (
@@ -58,7 +43,7 @@ export default function ShopproductList() {
       <div className="shopproduct-products">
         <Swiper
           className="shopproduct-products-swiper"
-          modules={[Scrollbar, Pagination]}
+          modules={[Scrollbar, Pagination, FreeMode]}
           slidesPerView="auto"
           spaceBetween={18}
           grabCursor
@@ -70,12 +55,13 @@ export default function ShopproductList() {
             type: "fraction",
             el: ".shopproduct-products-pagination",
           }}
+          freeMode
         >
           {filteredProducts.map((p) => (
             <SwiperSlide key={p.id} className="shopproduct-product-slide">
               <article
                 className="shopproduct-card"
-                onClick={() => handleProductClick(p.id)}
+                onClick={() => handleProductClick(p.id, p)}
                 style={{ cursor: "pointer" }}
               >
                 <div className="shopproduct-thumb">
