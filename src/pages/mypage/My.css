@@ -26,6 +26,17 @@
   -webkit-user-drag: auto;
 }
 
+.nameInput {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  text-align: center;
+}
+
 .myTubi {
   min-height: 100vh;
   position: relative;
@@ -36,9 +47,18 @@
 
 .myTubi {
   border: none;
-  padding-top: 80px;
+  padding-top: 60px;
   text-align: center;
   display: block;
+   user-select: none;
+  -webkit-user-select: none;  
+  -ms-user-select: none;
+}
+
+.myTubi img {
+  -webkit-user-drag: none;   
+  user-drag: none;
+  pointer-events: none; 
 }
 
 .myTubi .titleRow {
@@ -58,6 +78,11 @@
   width: 100%;
   color: #f0f0f0;
   margin-top: 5px;
+}
+
+.myTubi .editBtn {
+  border: none;
+  background: transparent;;
 }
 
 .glow {
@@ -88,7 +113,7 @@
 }
 
 .statusList {
-  margin-top: 410px;
+  margin-top: 435px;
   padding: 0 28px;
 }
 
@@ -181,7 +206,7 @@
 
   overflow: hidden;
   will-change: transform;
-  box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.12);  
 }
 
 .sheetHandle {
@@ -202,6 +227,9 @@
   overscroll-behavior: contain;
   -ms-overflow-style: none;
   scrollbar-width: none;
+    user-select: none;
+  -webkit-user-select: none; 
+  -ms-user-select: none;
 }
 
 .sheetSpacer {

@@ -1,19 +1,64 @@
 import { useNavigate } from "react-router-dom";
-import MySticker from "./MySticker";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useNickname } from "../../../context/NicknameContext";
 
 import "../My.css";
 
 const MyPage = () => {
   const navigate = useNavigate();
 
+  const { nickname, setNickname } = useNickname();
+  const [isEditing, setIsEditing] = useState(false);
+  const [tempNickname, setTempNickname] = useState("");
+
+  useEffect(() => {
+    if (nickname) {
+      setTempNickname(nickname);
+    }
+  }, [nickname]);
+
   return (
     <div className="myTubi">
       <div className="titleRow">
-        <h1 className="name">상부3조</h1>
-        <a className="editBtn" href="#edit" aria-label="edit">
-          <img src="/img/my-edit.svg" alt="" />
-        </a>
+        {isEditing ? (
+          <input
+            className="nameInput"
+            value={tempNickname}
+            autoFocus
+            onChange={(e) => setTempNickname(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                if (tempNickname.trim()) {
+                  setNickname(tempNickname.trim());
+                }
+                setIsEditing(false);
+              }
+
+              if (e.key === "Escape") {
+                setTempNickname(nickname);
+                setIsEditing(false);
+              }
+            }}
+          />
+
+        ) : (
+          <>
+            <h1 className="name">{nickname || "닉네임"}</h1>
+            <button
+              className="editBtn"
+              type="button"
+              onClick={() => {
+                console.log("edit click");
+                setIsEditing(true);
+              }}
+            >
+              <img src="/img/my-edit.svg" alt="" />
+            </button>
+          </>
+        )}
       </div>
+
       <p className="email">j.youngsopretty@gmail.com</p>
 
       <section className="characterArea">
@@ -55,7 +100,8 @@ const MyPage = () => {
           <span>My TUBI</span>
         </button>
 
-        <button className="actionBtn" type="button">
+        <button className="actionBtn" type="button"
+          onClick={() => navigate("/home/gatcha/stickercollection")}>
           <img src="/img/my-gacha.svg" alt="" />
           <span>스티커 가챠실</span>
         </button>

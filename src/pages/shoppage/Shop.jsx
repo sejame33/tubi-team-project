@@ -105,7 +105,7 @@ export default function Shop() {
       <ShopMoreBtn title="품절 상품 재입고 30% OFF" variant="primary" />
       <ShopImportant />
 
-      <ShopSectionTitle title="아티스트" showMore />
+      <ShopSectionTitle title="아티스트" showMore={false} />
       <MyArtist />
       <div className="eventmore">
         <ShopEventMoreBtn

@@ -83,11 +83,43 @@ const Layout = () => {
         showMenu: false,
       };
     }
+    if (path === "/home/gatcha/stickercollection") {
+      return {
+        showBack: true,
+        showLogo: false,
+        centerTitle: "스티커 목록",
+        showMenu: false,
+      };
+    }
+    if (path === "/home/gatcha") {
+      return {
+        showBack: true,
+        showLogo: false,
+        centerTitle: "스티커 가챠실",
+        showMenu: false,
+      };
+    }
     if (path === "/home/dm") {
       return {
         showLogo: false,
         centerTitle: "Tubi DM",
         showMenu: false,
+      };
+    }
+    if (path === "/home/album") {
+      return {
+        showBack: true,
+        centerTitle: "ALBUM",
+        showMenu: false,
+        showAnShare: true,
+      };
+    }
+    if (path === "/home/mv") {
+      return {
+        showBack: true,
+        centerTitle: "MV",
+        showMenu: false,
+        showAnShare: true,
       };
     }
     if (path === "/home/live") {

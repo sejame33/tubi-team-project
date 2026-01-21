@@ -5,8 +5,14 @@ import "./OnboardingPage4.css";
 function OnboardingPage4() {
   const navigate = useNavigate();
 
+  const handleNext = () => {
+    navigate("/follow-artist", {
+      state: { from: "onboarding" },
+    });
+  };
+
   return (
-    <div className="onboarding-4">
+    <div className="onboarding-4" onClick={handleNext}>
       <div className="onboarding-text">
         <h2 className="title">
           스티커와 튜비를
@@ -14,6 +20,7 @@ function OnboardingPage4() {
         </h2>
         <p className="desc">나만의 튜비를 만들어 가요!</p>
       </div>
+
       <img
         className="onboarding-4-Frame"
         src="/img/onboarding-4-Frame2.svg"
@@ -27,7 +34,7 @@ function OnboardingPage4() {
       <img
         className="onboarding-4-tubi"
         src="/img/onboarding-4-tubi.svg"
-        alt="onboarding-4-tub"
+        alt="onboarding-4-tubi"
       />
     </div>
   );

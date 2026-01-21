@@ -29,7 +29,7 @@ const Gatcha = () => {
             "--impl-top": "26px",
           }}
         >
-          <h1 className="gatcha-header-title">스티커 가챠실</h1>
+          <h1 className="gatcha-header-title">오늘의 스티커는?</h1>
           <p
             className="gatcha-more"
             onClick={() => navigate("/home/gatcha/stickercollection")}

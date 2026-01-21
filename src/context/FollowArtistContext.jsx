@@ -75,14 +75,17 @@ const ARTIST_LIST = [
 const FollowArtistContext = createContext(null);
 
 export function FollowArtistProvider({ children }) {
-  const [followedIds, setFollowedIds] = useState(() => {
-    try {
-      const saved = localStorage.getItem("followedArtistIds");
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
-    }
-  });
+  const DEFAULT_FOLLOWED_IDS = ["1", "2", "3"];
+
+const [followedIds, setFollowedIds] = useState(() => {
+  try {
+    const saved = localStorage.getItem("followedArtistIds");
+    if (saved) return JSON.parse(saved);
+    return DEFAULT_FOLLOWED_IDS;
+  } catch {
+    return DEFAULT_FOLLOWED_IDS;
+  }
+});
 
   useEffect(() => {
     try {
