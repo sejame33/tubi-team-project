@@ -20,7 +20,7 @@ function Home() {
   const navigate = useNavigate();
   const { nickname } = useNickname();
   const fractionRefs = useRef([]); // ✅ 슬라이드별 fraction 자리 저장
-  const navigate = useNavigate();
+
 
   const swiperBanners = [
     {

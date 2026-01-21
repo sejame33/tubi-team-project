@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useNickname } from "../../../context/NicknameContext";
 import MySticker from "./MySticker";
 
 import "../My.css";
