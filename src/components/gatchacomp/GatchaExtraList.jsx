@@ -91,7 +91,15 @@ const GatchaExtraList = () => {
 
       <ul className="gatcha-extra-list">
         {GATCHA_EXTRA_ACTIONS.map((item) => (
-          <li className="gatcha-extra-item" key={item.id}>
+          <li
+            className="gatcha-extra-item impl-anchor"
+            key={item.id}
+            data-impl
+            style={{
+              "--impl-right": "-4px",
+              "--impl-top": "16px",
+            }}
+          >
             <div className="gatcha-extra-minibox">
               <p className="gatcha-extra-text">{item.label}</p>
               <span className="gatcha-extra-sub">{item.reward}</span>

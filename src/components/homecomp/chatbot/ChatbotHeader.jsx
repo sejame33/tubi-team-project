@@ -11,7 +11,15 @@ const ChatbotHeader = ({ onClose, onReset }) => {
     <>
       {/* 상단 보라색 헤더 */}
       <header className="chatbot-header">
-        <button className="chatbot-reset" onClick={onReset}>
+        <button
+          className="chatbot-reset impl-anchor"
+          onClick={onReset}
+          data-impl
+          style={{
+            "--impl-right": "-10px",
+            "--impl-top": "0px",
+          }}
+        >
           처음으로
           <img src="/img/chatbot-return-icon.svg" alt="" />
         </button>

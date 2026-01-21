@@ -43,8 +43,13 @@ const ChatbotInput = ({ onSend }) => {
 
         <button
           className="chatbot-plus"
+          data-impl
           type="button"
           onClick={handleClickPlus}
+          style={{
+            "--impl-right": "-2px",
+            "--impl-top": "-8px",
+          }}
         >
           +
         </button>
@@ -58,7 +63,16 @@ const ChatbotInput = ({ onSend }) => {
         />
       </div>
 
-      <button className="chatbot-send" type="button" onClick={handleSend}>
+      <button
+        className="chatbot-send impl-anchor"
+        data-impl
+        type="button"
+        onClick={handleSend}
+        style={{
+          "--impl-right": "-5px",
+          "--impl-top": "0px",
+        }}
+      >
         <img src="/img/chatbot-send-icon.svg" alt="전송" />
       </button>
     </div>

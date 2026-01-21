@@ -32,7 +32,16 @@ const OnboardingFooter = ({
     <footer className="ob-footer">
       {!isLast ? (
         // ✅ 1~3 페이지: 작은 NEXT + 화살표
-        <button className="ob-next-icon" onClick={handleNext} type="button">
+        <button
+          className="ob-next-icon impl-anchor"
+          onClick={handleNext}
+          type="button"
+          data-impl
+          style={{
+            "--impl-right": "20px",
+            "--impl-top": "-3px",
+          }}
+        >
           <span className="ob-next-text">NEXT</span>
           <img
             className="ob-next-arrow"
@@ -43,7 +52,16 @@ const OnboardingFooter = ({
         </button>
       ) : (
         // ✅ 4 페이지: 큰 CTA 버튼 (텍스트 커스텀 가능)
-        <button className="ob-cta" onClick={handleNext} type="button">
+        <button
+          className="ob-cta impl-anchor"
+          onClick={handleNext}
+          type="button"
+          data-impl
+          style={{
+            "--impl-right": "108px",
+            "--impl-top": "18px",
+          }}
+        >
           {lastCtaText}
         </button>
       )}

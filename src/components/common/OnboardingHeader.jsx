@@ -31,9 +31,14 @@ const OnboardingHeader = ({ backImg = "/img/left-arrow-dark-8x16.svg" }) => {
         {/* ✅ Left: Back */}
         <button
           type="button"
-          className="ob-back"
+          className="ob-back impl-anchor"
+          data-impl
           onClick={handleBack}
           aria-label="뒤로가기"
+          style={{
+            "--impl-right": "20px",
+            "--impl-top": "5px",
+          }}
         >
           <img src={backImg} alt="" aria-hidden="true" />
         </button>
@@ -42,8 +47,13 @@ const OnboardingHeader = ({ backImg = "/img/left-arrow-dark-8x16.svg" }) => {
         {showSkip ? (
           <button
             type="button"
-            className="ob-skip"
+            className="ob-skip impl-anchor"
+            data-impl
             onClick={() => navigate("/login")}
+            style={{
+              "--impl-right": "-8px",
+              "--impl-top": "0px",
+            }}
           >
             Skip
           </button>

@@ -1,7 +1,15 @@
 function DmItem({ name, time, group, image, verified, check, onClick }) {
   return (
     <section className="dmItemBox">
-      <li className="dm-item" onClick={onClick}>
+      <li
+        className="dm-item impl-anchor"
+        onClick={onClick}
+        data-impl
+        style={{
+          "--impl-right": "384px",
+          "--impl-top": "0px",
+        }}
+      >
         <div className={`avatar ${verified ? "verified" : ""}`}>
           <img src={image} alt={name} />
         </div>

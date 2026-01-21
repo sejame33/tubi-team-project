@@ -14,9 +14,11 @@ function NicknamePage() {
 
   const handleSubmit = () => {
     const value = input.trim();
-    if (!value) return;
 
-    setNickname(value);
+    if (value) {
+      setNickname(value);
+    }
+
     navigate("/follow-artist");
   };
 
@@ -28,13 +30,20 @@ function NicknamePage() {
           <div className="nickname-page">
             <h2 className="title">닉네임을 입력해주세요.</h2>
 
-            <div className="input-row">
+            <div
+              className="input-row impl-anchor"
+              data-impl
+              style={{
+                "--impl-right": "-4px",
+                "--impl-top": "4px",
+              }}
+            >
               <input
                 type="text"
                 placeholder="닉네임 입력"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                maxLength={9}
+                maxLength={10}
               />
 
               <button
@@ -54,9 +63,13 @@ function NicknamePage() {
             </div>
 
             <button
-              className="start-btn"
+              className="start-btn impl-anchor"
               onClick={handleSubmit}
-              disabled={!input.trim()}
+              data-impl
+              style={{
+                "--impl-right": "170px",
+                "--impl-top": "23px",
+              }}
             >
               다음
             </button>

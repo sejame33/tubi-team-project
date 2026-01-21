@@ -47,6 +47,8 @@ import LivePage from "./pages/livepage/LivePage";
 import Artist from "./pages/artistpage/Artist";
 import StickerCollection from "./pages/gatchapage/StickerCollection";
 
+import "./style/Dot.css";
+
 function App() {
   return (
     <NicknameProvider>

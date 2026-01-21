@@ -19,13 +19,11 @@ const ChatbotBody = ({ topic, messages: externalMessages = [] }) => {
     return rule ? rule.answer : "해당 질문은 아직 준비되지 않았어요.";
   };
 
-  /** 옵션 클릭용: topic + option → (text=1개, link=2개) → 룰 → 기본 */
+  /** 옵션 클릭용 */
   const createOptionMessages = (text) => {
     const action = TOPIC_ACTIONS[topic]?.[text];
 
-    // topic action 존재
     if (action) {
-      // text 타입: 메시지 1개
       if (action.type === "text") {
         return [
           {
@@ -36,7 +34,6 @@ const ChatbotBody = ({ topic, messages: externalMessages = [] }) => {
         ];
       }
 
-      // link 타입: 메시지 2개 (설명 + CTA)
       if (action.type === "link") {
         return [
           {
@@ -55,7 +52,6 @@ const ChatbotBody = ({ topic, messages: externalMessages = [] }) => {
       }
     }
 
-    // 옵션에 정의 없으면 룰 → 기본
     const fallback = findRuleAnswer(text);
     return [
       {
@@ -66,7 +62,7 @@ const ChatbotBody = ({ topic, messages: externalMessages = [] }) => {
     ];
   };
 
-  /** 1️⃣ topic 최초 진입 */
+  /** topic 최초 진입 */
   useEffect(() => {
     if (!topic) return;
 
@@ -92,7 +88,7 @@ const ChatbotBody = ({ topic, messages: externalMessages = [] }) => {
     setOptions(TOPIC_OPTIONS[topic] || []);
   }, [topic]);
 
-  /** 2️⃣ Container에서 내려온 입력 메시지 append */
+  /** 외부 메시지 append */
   useEffect(() => {
     if (externalMessages.length === 0) return;
 
@@ -103,16 +99,15 @@ const ChatbotBody = ({ topic, messages: externalMessages = [] }) => {
     });
   }, [externalMessages]);
 
-  /** 3️⃣ 자동 스크롤 */
+  /** 자동 스크롤 */
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, options, isTyping]);
 
-  /** 4️⃣ 옵션 클릭 → 1초 로딩 → 메시지 push */
+  /** 옵션 클릭 */
   const onSelectOption = async (text) => {
     const time = getTime();
 
-    // 사용자 메시지
     setMessages((prev) => [
       ...prev,
       { id: Date.now(), role: "user", content: text, time },
@@ -151,7 +146,11 @@ const ChatbotBody = ({ topic, messages: externalMessages = [] }) => {
       </div>
 
       {options.length > 0 && (
-        <ChatbotOptions options={options} onSelect={onSelectOption} />
+        <ChatbotOptions
+          topic={topic}
+          options={options}
+          onSelect={onSelectOption}
+        />
       )}
     </>
   );

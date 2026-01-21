@@ -1,0 +1,22 @@
+/* 구현 완료 표시 공통 */
+.impl-anchor {
+  position: relative;
+}
+
+[data-impl]::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+
+  top: var(--impl-top, 6px);
+  right: var(--impl-right, 6px);
+}
+
+.gacha-modal .impl-anchor[data-impl]::after {
+  display: block;
+}

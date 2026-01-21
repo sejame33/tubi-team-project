@@ -79,19 +79,23 @@ const ChatbotContainer = () => {
   return (
     <>
       <button
-        className="chatbot-fab"
+        className="chatbot-fab "
+        data-impl
         onClick={() => setIsOpen(true)}
         aria-label="chatbot open"
+        style={{
+          "--impl-right": "-1px",
+          "--impl-top": "4px",
+        }}
       />
 
       {isOpen && (
         <>
-          {/* 배경 블러 + 딤 */}
           <div className="chatbot-backdrop" onClick={handleCloseChat} />
 
           <section className="chatbot-wrapper" role="dialog" aria-modal="true">
             <ChatbotHeader
-              onClose={handleCloseChat} // ✅ 여기
+              onClose={handleCloseChat}
               onReset={handleResetChat}
             />
 
