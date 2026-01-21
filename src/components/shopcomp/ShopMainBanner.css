@@ -1,12 +1,12 @@
 /* swiper */
-.shop-banner-swiper {
+.shop-main-banner .shop-banner-swiper {
   width: 100%;
   padding-bottom: 30px;
   margin-bottom: 80px;
 }
 
 /* 배너 카드 */
-.shop-banner-card {
+.shop-main-banner .shop-banner-card {
   position: relative;
   width: 100%;
   aspect-ratio: 430 / 600; /* 📱 기준 비율 */
@@ -18,7 +18,7 @@
 }
 
 /* ✅ 버튼 absolute 하단 고정 */
-.shop-banner-cta {
+.shop-main-banner .shop-banner-cta {
   position: absolute;
   left: 0;
   right: 0;
@@ -38,15 +38,15 @@
   backdrop-filter: blur(6px);
 }
 
-.shop-banner-cta img {
+.shop-main-banner .shop-banner-cta img {
   margin-left: 10px;
 }
 
-.shop-banner-swiper {
+.shop-main-banner .shop-banner-swiper {
   position: relative;
 }
 /* 컨트롤 영역 */
-.shop-banner-controls {
+.shop-main-banner .shop-banner-controls {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -54,14 +54,14 @@
   transform: translateX(-65%);
 }
 
-.shop-banner-row {
+.shop-main-banner .shop-banner-row {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
 /* fraction */
-.shop-banner-pagination {
+.shop-main-banner .shop-banner-pagination {
   position: static !important; /* ✅ Swiper가 absolute로 잡는 경우 방지 */
   white-space: nowrap;
   font-size: 14px;
@@ -85,16 +85,16 @@
   background: #000;
 }
 
-.swiper-pagination-current {
+.shop-main-banner .swiper-pagination-current {
   color: #000;
 }
 
 /* 전체 페이지 수 (오른쪽 숫자) */
-.swiper-pagination-total {
+.shop-main-banner .swiper-pagination-total {
   color: #666;
   font-weight: 300 !important;
 }
 
-.shop-banner-scrollbar {
+.shop-main-banner .shop-banner-scrollbar {
   height: 3px !important;
 }
