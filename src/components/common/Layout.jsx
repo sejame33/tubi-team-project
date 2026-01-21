@@ -26,23 +26,159 @@ const Layout = () => {
     el.scrollTop = 0;
   }, [location.key]);
 
-  /** ✅ 메인 홈인지 판단 */
   const isHome =
     location.pathname === "/home" || location.pathname === "/home/";
+
+  const getHeaderProps = () => {
+    const path = location.pathname;
+
+    if (path === "/stickercollection") {
+      return {
+        showBack: true,
+        showLogo: false,
+        title: "스티커 목록",
+        showMenu: false,
+      };
+    }
+
+    if (path.startsWith("/home/shop/brand")) {
+      return {
+        showBack: true,
+        showLogo: false,
+        title: "PLAVE",
+        showCart: true,
+      };
+    }
+
+    if (path.startsWith("/home/shop/ShopProduct")) {
+      return {
+        showBack: true,
+        showLogo: false,
+        showCart: true,
+      };
+    }
+
+    if (
+      path === "/home/my" ||
+      path === "/home/my/tubi" ||
+      path.startsWith("/home/artist")
+    ) {
+      return null;
+    }
+
+    if (path === "/home/shop") {
+      return {
+        showBack: false,
+        showLogo: true,
+        showCart: true,
+        showMenu: true,
+      };
+    }
+    if (path === "/home/shop/announcement") {
+      return {
+        showBack: true,
+        showLogo: false,
+        centerTitle: "공지사항",
+        showAnShare: true,
+        showMenu: false,
+      };
+    }
+    if (path === "/home/gatcha/stickercollection") {
+      return {
+        showBack: true,
+        showLogo: false,
+        centerTitle: "스티커 목록",
+        showMenu: false,
+      };
+    }
+    if (path === "/home/gatcha") {
+      return {
+        showBack: true,
+        showLogo: false,
+        centerTitle: "스티커 가챠실",
+        showMenu: false,
+      };
+    }
+    if (path === "/home/dm") {
+      return {
+        showLogo: false,
+        centerTitle: "Tubi DM",
+        showMenu: false,
+      };
+    }
+    if (path === "/home/album") {
+      return {
+        showBack: true,
+        centerTitle: "ALBUM",
+        showMenu: false,
+        showAnShare: true,
+      };
+    }
+    if (path === "/home/mv") {
+      return {
+        showBack: true,
+        centerTitle: "MV",
+        showMenu: false,
+        showAnShare: true,
+      };
+    }
+    if (path === "/home/live") {
+      return {
+        isLive: true,
+        showBack: true,
+        centerTitle: "LIVE",
+        showMenu: false,
+        showAnShare: true,
+      };
+    }
+    if (path === "/home/dm/irise") {
+      return {
+        showBack: true,
+        showLogo: false,
+        centerTitle: "IRISE",
+        showVerify: true,
+        showMenu: false,
+        showMore: true,
+      };
+    }
+    if (path === "/home/dm/honeyz") {
+      return {
+        showBack: true,
+        showLogo: false,
+        centerTitle: "HONEYZ",
+        showVerify: true,
+        showMenu: false,
+        showMore: true,
+      };
+    }
+    if (path === "/home/dm/stellive") {
+      return {
+        showBack: true,
+        showLogo: false,
+        centerTitle: "STELLIVE",
+        showVerify: true,
+        showMenu: false,
+        showMore: true,
+      };
+    }
+
+    return { showBack: false, showLogo: true, showMenu: true };
+  };
+
+  const headerProps = getHeaderProps();
+  const isLiveMode = headerProps?.isLive || false;
 
   return (
     <div className="app-wrapper">
       <div className="app">
-        {/* Header */}
-        {!isMyHome && !isTubiPage && !isArtistPage && <Header />}
-
+        {headerProps && <Header {...headerProps} />}
         <main
           className={`main ${isMyHome || isTubiPage || isArtistPage ? "main--nochrome" : ""}`}
           ref={mainRef}
         >
           <Outlet />
         </main>
-        <Footer />
+        {!isTubiPage && <Footer isLive={isLiveMode} />}
         {isHome && <ChatbotContainer />}
       </div>
     </div>

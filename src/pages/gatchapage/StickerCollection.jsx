@@ -166,10 +166,10 @@ const StickerCollection = () => {
   return (
     <div className="sticker-collection-container">
       <SectionTitle
-        title="스티커 컬렉션"
+        title="컬렉션"
         showMore={false}
         showSort={true}
-        useNicknameTitle={false}
+        useNicknameTitle={true}
       />
 
       <div className="stickerBox">

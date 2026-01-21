@@ -84,7 +84,6 @@
   padding: 2px; /* 프레임 두께 */
   border-radius: 12px;
   background: linear-gradient(135deg, #44b1f7, #884dff);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* 이미지가 안을 가득 채움 */

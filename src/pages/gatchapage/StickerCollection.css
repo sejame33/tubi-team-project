@@ -47,7 +47,7 @@
   word-break: keep-all;
 }
 
-.sticker-content-area .stickerBox .productCategory-chip.is-active {
+.stickerBox .productCategory-chip.is-active {
   background: linear-gradient(#884dff 0%, #44b1f7 100%);
   border: none;
 }
@@ -55,7 +55,7 @@
 .stickerBox {
   margin: 24px 16px;
   border-radius: 20px;
-  box-shadow: 0 0px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
   padding-bottom: 30px;
 }
 

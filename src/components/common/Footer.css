@@ -21,3 +21,25 @@
   border-top: 1px solid #eee;
   z-index: 100;
 }
+.footer.is-live {
+  background-color: #000000;
+  border-top: 1px solid #171717;
+  color: #ffffff;
+}
+
+.footer.is-live .footer-item p {
+  color: #ffffff;
+}
+
+.footer.is-live .footer-item img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.footer.is-live .footer-item.active p {
+  color: #ffffff;
+}
+
+.footer.is-live .footer-item.active img {
+  filter: brightness(0) invert(1);
+}

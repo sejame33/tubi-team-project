@@ -17,6 +17,7 @@ import AlbumSlide from "../../components/homecomp/AlbumSlide";
 import BrandShop from "../../components/homecomp/BrandShop";
 
 function Home() {
+  const navigate = useNavigate();
   const { nickname } = useNickname();
   const fractionRefs = useRef([]); // ✅ 슬라이드별 fraction 자리 저장
   const navigate = useNavigate();
@@ -153,14 +154,14 @@ function Home() {
         title="이달의 ALBUM"
         showMore={true}
         useNicknameTitle={false}
-        onMoreClick={() => console.log("/album")}
+        onMoreClick={() => navigate("/home/album")}
       />
       <AlbumSlide />
 
       <SectionTitle
         title="추천 MV"
         showMore={true}
-        onMoreClick={() => console.log("/recommend")}
+        onMoreClick={() => navigate("/home/mv")}
       />
       <MvSection />
 

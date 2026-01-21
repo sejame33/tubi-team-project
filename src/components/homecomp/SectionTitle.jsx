@@ -8,7 +8,9 @@ function SectionTitle({
   useNicknameTitle = true,
   moreElement,
   showSort = false,
+  showSort2 = false,
   currentSort = "최신순",
+  currentSort2 = "인기순",
   onSortChange,
 }) {
   const { nickname } = useNickname();
@@ -38,13 +40,30 @@ function SectionTitle({
             style={{
               border: "none",
               backgroundColor: "transparent",
-              color: "#656565",
+              color: "#333",
               display: "flex",
               alignItems: "center",
+              fontSize: "14px",
             }}
           >
             최신순
             <img src="/img/sticker-arrow.svg" alt="" className="sort-icon" />
+          </button>
+        )}
+
+        {showSort2 && (
+          <button
+            style={{
+              border: "none",
+              backgroundColor: "transparent",
+              color: "#333",
+              display: "flex",
+              alignItems: "center",
+              
+            }}
+          >
+            인기순
+            <img src="/img/brand-popular-arrow.svg" alt="" className="sort-icon" style={{marginLeft: "4px"}}/>
           </button>
         )}
 

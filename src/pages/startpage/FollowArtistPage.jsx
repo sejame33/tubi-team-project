@@ -72,6 +72,19 @@ export default function FollowArtistPage() {
     };
   }, []);
 
+  const DEFAULT_ONBOARDING_IDS = ["1", "2", "3"]; // 원하는 3개
+
+useEffect(() => {
+  if (from !== "onboarding") return;
+
+  // 이미 팔로우가 있으면 덮어쓰지 않음
+  if (followedArtists.length > 0) return;
+
+  DEFAULT_ONBOARDING_IDS.forEach((id) => {
+    addFollow(id);
+  });
+}, [from, followedArtists.length, addFollow]);
+
   return (
     <div className="app-wrapper">
       <div className="app">
