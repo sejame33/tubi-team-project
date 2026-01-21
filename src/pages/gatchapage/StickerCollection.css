@@ -3,7 +3,7 @@
   padding-bottom: 30px;
 }
 
-.sticker-grid {
+.sticker-content-area .sticker-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px 12px;
@@ -11,7 +11,7 @@
   background-color: #fff;
 }
 
-.badge-new {
+.sticker-content-area .badge-new {
   position: absolute;
   top: -5px;
   right: -5px;
@@ -24,7 +24,7 @@
   z-index: 2;
 }
 
-.stickerSwiper-thumb {
+.sticker-content-area .stickerSwiper-thumb {
   position: relative;
   aspect-ratio: 1/1;
   background: #f9f9f9;
@@ -35,19 +35,19 @@
   margin-bottom: 8px;
 }
 
-.stickerSwiper-thumb img {
+.sticker-content-area .stickerSwiper-thumb img {
   width: 80%;
   height: auto;
 }
 
-.stickerSwiper-name {
+.sticker-content-area .stickerSwiper-name {
   font-size: 13px;
   color: #333;
   text-align: center;
   word-break: keep-all;
 }
 
-.stickerBox .productCategory-chip.is-active {
+.sticker-content-area .stickerBox .productCategory-chip.is-active {
   background: linear-gradient(#884dff 0%, #44b1f7 100%);
   border: none;
 }
