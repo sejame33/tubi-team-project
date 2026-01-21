@@ -148,21 +148,20 @@ const MySticker = () => {
       productImage: "/img/my-banner2.svg",
     },
   ];
-
   const setT = (px, animate) => {
     const el = sheetRef.current;
     if (!el) return;
-    el.style.transition = animate ? "transform 260ms ease-out" : "none";
+    el.style.transition = animate
+      ? "transform 300ms cubic-bezier(0.25, 0.1, 0.25, 1.0)"
+      : "none";
     el.style.transform = `translateY(${px}px)`;
     curT.current = px;
   };
 
   const recalc = () => {
     const vh = window.innerHeight;
-
     snapOpen.current = 0;
     snapPeek.current = Math.round(vh * 0.65);
-
     setT(snapPeek.current, true);
   };
 
@@ -180,26 +179,31 @@ const MySticker = () => {
       e.touches && e.touches.length ? e.touches[0].clientY : e.clientY;
 
     const onStart = (e) => {
-      moved.current = false;
+      // ✅ 텍스트 선택이나 이미지 드래그 방지
+      if (e.type === "mousedown" && e.button !== 0) return;
+
       dragging.current = true;
+      moved.current = false;
       startY.current = getY(e);
-      startT.current = curT.current || snapPeek.current;
+      startT.current = curT.current;
 
       setT(startT.current, false);
-
-      if (e.cancelable) e.preventDefault();
     };
 
     const onMove = (e) => {
       if (!dragging.current) return;
 
       const delta = getY(e) - startY.current;
-      if (Math.abs(delta) > 6) moved.current = true;
 
-      const next = startT.current + delta;
-      const maxDown = snapPeek.current + Math.round(window.innerHeight * 0.12);
-      setT(clamp(next, snapOpen.current, maxDown), false);
+      // ✅ 임계값 설정: 5px 이상 움직였을 때만 시트 이동 시작 (미세 터치 무시)
+      if (Math.abs(delta) > 5) {
+        moved.current = true;
+        const next = startT.current + delta;
+        const maxDown = snapPeek.current + 50; // 아래로 과도하게 내려가는 것 방지
+        setT(clamp(next, snapOpen.current, maxDown), false);
+      }
 
+      // 시트 드래그 중일 때는 브라우저 스크롤 금지
       if (moved.current && e.cancelable) e.preventDefault();
     };
 
@@ -212,32 +216,41 @@ const MySticker = () => {
       const mid = (snapOpen.current + snapPeek.current) / 2;
       const now = curT.current;
 
+      // 스냅 포인트로 이동
       if (now <= mid) setT(snapOpen.current, true);
       else setT(snapPeek.current, true);
     };
 
+    // ✅ 이벤트 등록: mousedown/touchstart는 오직 'handleEl'에만!
     handleEl.addEventListener("touchstart", onStart, { passive: false });
+    handleEl.addEventListener("mousedown", onStart);
+
+    // move와 end는 부드러운 연결을 위해 window에 등록
     window.addEventListener("touchmove", onMove, { passive: false });
     window.addEventListener("touchend", onEnd);
-
-    handleEl.addEventListener("mousedown", onStart);
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseup", onEnd);
 
     return () => {
       handleEl.removeEventListener("touchstart", onStart);
+      handleEl.removeEventListener("mousedown", onStart);
       window.removeEventListener("touchmove", onMove);
       window.removeEventListener("touchend", onEnd);
-
-      handleEl.removeEventListener("mousedown", onStart);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseup", onEnd);
     };
   }, []);
+
   return (
-    <section className="bottomSheet" ref={sheetRef}>
-      <div className="sheetHandle" ref={handleRef} />
-      <div className="sheetBody">
+    <section
+      className="bottomSheet"
+      ref={sheetRef}
+      style={{ touchAction: "none" }}
+    >
+      {/* ✋ 오직 이 핸들 부분을 잡아야 시트가 움직입니다 */}
+      <div className="sheetHandle" ref={handleRef} style={{ cursor: "grab" }} />
+
+      <div className="sheetBody" style={{ touchAction: "pan-y" }}>
         <div
           style={{
             padding: "35px 16px 0",
@@ -250,7 +263,7 @@ const MySticker = () => {
           </h2>
           <button
             type="button"
-            onClick={() => navigate("/my/stickers")}
+            onClick={() => navigate("/home/gatcha/stickercollection")}
             style={{
               border: 0,
               background: "transparent",
@@ -263,6 +276,7 @@ const MySticker = () => {
           </button>
         </div>
 
+        {/* 내부 요소들: 이제 이 부분들을 드래그해도 시트가 올라오지 않습니다 */}
         <ProductCategory
           categories={categories}
           active={active}
@@ -275,7 +289,7 @@ const MySticker = () => {
         <ShopProductBannerSwiper banners={banners} />
         <SettingsList items={settings} />
 
-        <div className="sheetSpacer" />
+        <div className="sheetSpacer" style={{ height: "100px" }} />
       </div>
     </section>
   );

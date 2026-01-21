@@ -34,6 +34,7 @@ function SectionTitle({
               color: "#656565",
               display: "flex",
               alignItems: "center",
+              fontSize: "14px",
             }}
           >
             최신순
