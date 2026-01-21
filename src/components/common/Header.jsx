@@ -20,9 +20,15 @@ const Header = ({
         {showBack ? (
           <button
             type="button"
-            className="header-icon-btn"
+            className="header-icon-btn impl-anchor"
+            data-impl
             onClick={() => navigate(-1)}
             aria-label="뒤로가기"
+            style={{
+              "--impl-right": "2px",
+              "--impl-top": "2px",
+              zIndex: 300,
+            }}
           >
             <img src="/img/Arrow-left-icon.svg" alt="" aria-hidden="true" />
           </button>

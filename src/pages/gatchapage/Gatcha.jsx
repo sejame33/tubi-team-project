@@ -19,7 +19,14 @@ const Gatcha = () => {
     <div className="gatcha-page">
       {/* 🔽 블러 대상 영역 */}
       <div className={`gatcha-page-blur ${open ? "is-blurred" : ""}`}>
-        <div className="gatcha-header">
+        <div
+          className="gatcha-header impl-anchor"
+          data-impl
+          style={{
+            "--impl-right": "10px",
+            "--impl-top": "26px",
+          }}
+        >
           <h1 className="gatcha-header-title">스티커 가챠실</h1>
           <p className="gatcha-more">
             목록보기 <img src="/img/gatcha-right-arrow.svg" alt="" />

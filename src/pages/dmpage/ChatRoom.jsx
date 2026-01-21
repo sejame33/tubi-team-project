@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
+import EmojiPicker from "emoji-picker-react";
 import { chatData } from "../../components/dmcomp/ChatData.jsx";
 import "./ChatRoom.css";
 
@@ -13,7 +14,10 @@ function ChatRoom() {
 
   const [messages, setMessages] = useState(artistInfo.initialMessages);
   const [input, setInput] = useState("");
+  const [showEmoji, setShowEmoji] = useState(false);
+
   const bottomRef = useRef(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "auto" });
@@ -32,6 +36,7 @@ function ChatRoom() {
       { id: Date.now(), sender: "me", text: input, time },
     ]);
     setInput("");
+    setShowEmoji(false);
 
     setTimeout(() => {
       const reply =
@@ -46,6 +51,24 @@ function ChatRoom() {
     }, 1200);
   };
 
+  const handleEmojiClick = (emojiData) => {
+    const cursorPos = inputRef.current.selectionStart;
+
+    const newText =
+      input.slice(0, cursorPos) + emojiData.emoji + input.slice(cursorPos);
+
+    setInput(newText);
+    setShowEmoji(false);
+
+    requestAnimationFrame(() => {
+      inputRef.current.focus();
+      inputRef.current.setSelectionRange(
+        cursorPos + emojiData.emoji.length,
+        cursorPos + emojiData.emoji.length,
+      );
+    });
+  };
+
   return (
     <div className="chat-room">
       <div className="chat-body">
@@ -53,17 +76,14 @@ function ChatRoom() {
           const prev = messages[index - 1];
           const next = messages[index + 1];
 
-          // 그룹 시작
           const isFirstOfGroup =
             !prev || prev.sender !== msg.sender || prev.time !== msg.time;
 
-          // 그룹 끝
           const isLastOfGroup =
             !next || next.sender !== msg.sender || next.time !== msg.time;
 
           return (
             <div key={msg.id} className={`chat-row ${msg.sender}`}>
-              {/* 왼쪽: 프로필 슬롯 */}
               {msg.sender === "artist" && (
                 <div className="profile-slot">
                   {isFirstOfGroup && (
@@ -78,9 +98,7 @@ function ChatRoom() {
                 </div>
               )}
 
-              {/* 오른쪽: 이름 + 말풍선 */}
               <div className="message-col">
-                {/* 이름 + 뱃지 (프로필 옆, 한 줄) */}
                 {msg.sender === "artist" && isFirstOfGroup && (
                   <div className="artist-header">
                     <span className="artist-name">{artistInfo.name}</span>
@@ -95,7 +113,6 @@ function ChatRoom() {
                 <div className="bubble-box">
                   <div className={`bubble ${msg.sender}`}>{msg.text}</div>
 
-                  {/* 시간은 그룹 마지막만 */}
                   {isLastOfGroup && (
                     <span className={`time ${msg.sender}`}>{msg.time}</span>
                   )}
@@ -111,26 +128,46 @@ function ChatRoom() {
       <footer className="chat-input">
         <div className="chat-input-box">
           <input
+            ref={inputRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="메시지 보내기"
             onKeyDown={(e) => e.key === "Enter" && sendMessage()}
           />
 
-          {/* 이모티콘 버튼 */}
           <button
             type="button"
-            className="emoji-btn"
-            onClick={() => {
-              // 나중에 이모지 패널 연결
-              console.log("emoji click");
+            className="emoji-btn impl-anchor"
+            data-impl
+            onClick={() => setShowEmoji((prev) => !prev)}
+            style={{
+              "--impl-right": "-3px",
+              "--impl-top": "0px",
             }}
           >
             <img src="/img/dm-smile.svg" alt="emoji" />
           </button>
+
+          {showEmoji && (
+            <div className="emoji-picker-wrapper">
+              <EmojiPicker
+                onEmojiClick={handleEmojiClick}
+                height={350}
+                width={300}
+              />
+            </div>
+          )}
         </div>
 
-        <button onClick={sendMessage} className="send-btn">
+        <button
+          onClick={sendMessage}
+          className="send-btn impl-anchor"
+          data-impl
+          style={{
+            "--impl-right": "5px",
+            "--impl-top": "11px",
+          }}
+        >
           <img src="/img/dm-send.svg" alt="send" />
         </button>
       </footer>

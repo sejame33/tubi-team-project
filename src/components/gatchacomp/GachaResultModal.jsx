@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./GachaResultModal.css";
 import { gachaItems } from "../data/gachaData.jsx";
+import "../../style/Dot.css";
 
 const GachaResultModal = ({ onClose }) => {
   const [item, setItem] = useState(null);
@@ -38,7 +39,16 @@ const GachaResultModal = ({ onClose }) => {
           </p>
         </div>
 
-        <button className="sticker-list-btn">스티커 목록 보기</button>
+        <button
+          className="sticker-list-btn impl-anchor"
+          data-impl
+          style={{
+            "--impl-right": "38px",
+            "--impl-top": "12px",
+          }}
+        >
+          스티커 목록 보기
+        </button>
       </div>
     </div>
   );

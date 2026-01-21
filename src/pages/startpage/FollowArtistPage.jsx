@@ -86,7 +86,14 @@ export default function FollowArtistPage() {
               </h2>
 
               {/* 검색 */}
-              <div className="followartist-search">
+              <div
+                className="followartist-search impl-anchor"
+                data-impl
+                style={{
+                  "--impl-right": "8px",
+                  "--impl-top": "8px",
+                }}
+              >
                 <span className="followartist-search-icon" aria-hidden="true">
                   <img src="/img/follow-artist-search-icon.svg" alt="" />
                 </span>
@@ -185,13 +192,22 @@ export default function FollowArtistPage() {
                         active ? removeFollow(a.id) : handleSelect(a)
                       }
                     >
-                      <div className="followartist-item-left">
+                      <div
+                        className="followartist-item-left impl-anchor"
+                        data-impl
+                        style={{
+                          "--impl-right": "140px",
+                          "--impl-top": "0px",
+                        }}
+                      >
                         <div className="followartist-item-avatar">
                           <img src={a.img} alt={a.name} />
                         </div>
 
                         <div className="followartist-item-text">
-                          <div className="followartist-item-name">{a.name}</div>
+                          <div className="followartist-item-name ">
+                            {a.name}
+                          </div>
                           <div className="followartist-item-sub">
                             그룹 · 라이브 · 업데이트
                           </div>
@@ -203,7 +219,14 @@ export default function FollowArtistPage() {
               </div>
             </div>
 
-            <div className="follow-artist-btn-wrap">
+            <div
+              className="follow-artist-btn-wrap impl-anchor"
+              data-impl
+              style={{
+                "--impl-right": "154px",
+                "--impl-top": "26px",
+              }}
+            >
               <button
                 className="followartist-done"
                 type="button"

@@ -46,6 +46,8 @@ import Gatcha from "./pages/gatchapage/Gatcha";
 import LivePage from "./pages/livepage/LivePage";
 import Artist from "./pages/artistpage/Artist";
 
+import "./style/Dot.css";
+
 function App() {
   return (
     <NicknameProvider>

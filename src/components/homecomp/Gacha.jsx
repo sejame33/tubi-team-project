@@ -18,8 +18,13 @@ function Gacha() {
             </p>
           </div>
           <button
-            className="gacha-btn"
+            className="gacha-btn impl-anchor"
+            data-impl
             onClick={() => navigate("/home/gatcha")}
+            style={{
+              "--impl-right": "-8px",
+              "--impl-top": "0px",
+            }}
           >
             바로가기
             <img src="/img/gacha-more-arrow.svg" alt="" />

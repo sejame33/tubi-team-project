@@ -7,7 +7,15 @@ const GatchaVisual = ({ setOpen }) => {
         </p>
         <p className="gatcha-title-text">튜비 스티커 뽑기</p>
 
-        <button className="gatcha-main-button" onClick={() => setOpen(true)} />
+        <button
+          className="gatcha-main-button impl-anchor"
+          onClick={() => setOpen(true)}
+          data-impl
+          style={{
+            "--impl-right": "38px",
+            "--impl-top": "16px",
+          }}
+        />
 
         <span className="gatcha-caption-text">
           10회 조합권 <span>1회</span> 무료

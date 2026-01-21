@@ -13,7 +13,8 @@ const ChatbotMessage = ({ message }) => {
       <div className="chatbot-row assistant cta">
         <button
           type="button"
-          className="chatbot-cta-btn"
+          data-impl
+          className="chatbot-cta-btn impl-anchor"
           onClick={() => navigate(message.content)}
         >
           {message.ctaLabel || "바로가기"}
