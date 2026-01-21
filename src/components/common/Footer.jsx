@@ -2,10 +2,9 @@ import React from "react";
 import "./Footer.css";
 import { NavLink, useLocation } from "react-router-dom";
 
-function Footer() {
+function Footer({ isLive }) {
   const { pathname } = useLocation();
 
-  // DM 채팅방일 때만 푸터 숨김
   const isChatRoom =
     pathname.startsWith("/home/dm/") && pathname !== "/home/dm";
 
@@ -14,7 +13,7 @@ function Footer() {
   }
 
   return (
-    <footer className="footer">
+    <footer className={`footer ${isLive ? "is-live" : ""}`}>
       <NavLink to="/home" end className="footer-item">
         {({ isActive }) => (
           <>

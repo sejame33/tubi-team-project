@@ -1,3 +1,31 @@
+/* My.css 에 추가 */
+
+/* 시트 내부의 모든 요소에 대해 드래그 및 선택 방지 */
+.sheetBody {
+  -webkit-user-select: none; /* iOS Safari */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none; /* 기본 */
+  -webkit-touch-callout: none; /* iOS 길게 누르기 메뉴 방지 */
+}
+
+/* 이미지가 드래그되어 고스트 이미지가 생기는 현상 방지 */
+.sheetBody img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: none; /* 아이콘 클릭이 필요 없다면 추가, 필요하면 제외 */
+}
+
+/* 버튼이나 클릭이 필요한 요소는 다시 허용 */
+.sheetBody button,
+.sheetBody a,
+.sheetBody .swiper-container {
+  user-select: auto;
+  -webkit-user-drag: auto;
+}
+
 .myTubi {
   min-height: 100vh;
   position: relative;
@@ -6,14 +34,14 @@
   background: linear-gradient(180deg, #82c3f8, #9b7cfe 100%);
 }
 
-.myTubi .header {
+.myTubi {
   border: none;
   padding-top: 80px;
   text-align: center;
   display: block;
 }
 
-.myTubi .header .titleRow {
+.myTubi .titleRow {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -21,11 +49,11 @@
   justify-content: center;
 }
 
-.myTubi .header .titleRow .name {
+.myTubi .titleRow .name {
   font-size: 36px;
 }
 
-.myTubi .header .email {
+.myTubi .email {
   display: block;
   width: 100%;
   color: #f0f0f0;

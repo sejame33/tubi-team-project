@@ -1,29 +1,31 @@
 import { useNavigate } from "react-router-dom";
-import MySticker from './MySticker'
+import MySticker from "./MySticker";
 
-import "../My.css"
+import "../My.css";
 
 const MyPage = () => {
   const navigate = useNavigate();
 
   return (
     <div className="myTubi">
-      <div className="header">
-        <div className="titleRow">
-          <h1 className="name">상부3조</h1>
-          <a className="editBtn" href="#edit" aria-label="edit">
-            <img src="/img/my-edit.svg" alt="" />
-          </a>
-        </div>
-        <p className="email">j.youngsopretty@gmail.com</p>
+      <div className="titleRow">
+        <h1 className="name">상부3조</h1>
+        <a className="editBtn" href="#edit" aria-label="edit">
+          <img src="/img/my-edit.svg" alt="" />
+        </a>
       </div>
+      <p className="email">j.youngsopretty@gmail.com</p>
 
       <section className="characterArea">
         <div className="glow">
           <img src="/img/my-blur.png" alt="" />
         </div>
         <div className="characterCard">
-          <img src="/img/my-nova.svg" alt="tubi character" className="characterImg" />
+          <img
+            src="/img/my-nova.svg"
+            alt="tubi character"
+            className="characterImg"
+          />
         </div>
       </section>
 
@@ -44,7 +46,11 @@ const MyPage = () => {
       </section>
 
       <section className="actionButtons sheetSection">
-        <button className="actionBtn" type="button" onClick={() => navigate("/home/my/tubi")}>
+        <button
+          className="actionBtn"
+          type="button"
+          onClick={() => navigate("/home/my/tubi")}
+        >
           <img src="/img/my-tubi.svg" alt="" />
           <span>My TUBI</span>
         </button>
@@ -54,9 +60,8 @@ const MyPage = () => {
           <span>스티커 가챠실</span>
         </button>
       </section>
-      <MySticker />
     </div>
-  )
-}
+  );
+};
 
-export default MyPage
+export default MyPage;
