@@ -6,6 +6,8 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/scrollbar";
 
+import StickerCard from "./StickerCard";
+
 export default function StickerSwiper({
   items = [],
   onItemClick,
@@ -29,30 +31,10 @@ export default function StickerSwiper({
       >
         {items.map((it) => (
           <SwiperSlide key={it.id} className="stickerSwiper-slide">
-            <button
-              type="button"
-              className="stickerSwiper-card"
-              onClick={() => onItemClick?.(it)}
-            >
-              <div className="stickerSwiper-thumb">
-                <img src={it.imageUrl} alt={it.name || ""} />
-              </div>
-
-              <div className="stickerSwiper-text">
-                <div className="stickerSwiper-brand">
-                  <span>{it.brand}</span>
-                  {it.brandIcon && (
-                    <img
-                      src={it.brandIcon}
-                      alt=""
-                      className="stickerSwiper-brandIcon"
-                    />
-                  )}
-                </div>
-
-                <div className="stickerSwiper-name">{it.name}</div>
-              </div>
-            </button>
+            <StickerCard
+              item={it}
+              onItemClick={(selectedItem) => console.log(selectedItem)}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

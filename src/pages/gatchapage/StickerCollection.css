@@ -1,0 +1,84 @@
+.sticker-collection-container {
+  margin-top: 40px;
+  padding-bottom: 30px;
+}
+
+.sticker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 12px;
+  padding: 20px 16px;
+  background-color: #fff;
+}
+
+.badge-new {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff5e5e;
+  color: white;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 10px;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.stickerSwiper-thumb {
+  position: relative;
+  aspect-ratio: 1/1;
+  background: #f9f9f9;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.stickerSwiper-thumb img {
+  width: 80%;
+  height: auto;
+}
+
+.stickerSwiper-name {
+  font-size: 13px;
+  color: #333;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.stickerBox .productCategory-chip.is-active {
+  background: linear-gradient(#884dff 0%, #44b1f7 100%);
+  border: none;
+}
+
+.stickerBox {
+  margin: 24px 16px;
+  border-radius: 20px;
+  box-shadow: 0 0px 40px rgba(0, 0, 0, 0.12);
+  padding-bottom: 30px;
+}
+
+.artist-group-section {
+  margin-bottom: 30px;
+}
+.artist-group-header {
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+.artist-sticker-row {
+  gap: 15px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.artist-group-header .artist-group-count {
+  color: #646464;
+  font-size: 12px;
+  font-weight: normal;
+}

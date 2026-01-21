@@ -16,6 +16,7 @@ import ShopBrand2 from "../../components/shopcomp/ShopBrand2";
 import ShopSlideBanner from "../../components/shopcomp/ShopSlideBanner";
 import ShopTodayOffer from "../../components/shopcomp/ShopTodayOffer";
 import SlideLargeBanner from "../../components/shopcomp/SlideLargeBanner";
+import ShopEventMoreBtn from "../../components/shopcomp/ShopEventMoreBtn";
 
 export default function Shop() {
   /* =========================
@@ -106,6 +107,22 @@ export default function Shop() {
 
       <ShopSectionTitle title="아티스트" showMore />
       <MyArtist />
+      <div className="eventmore">
+        <ShopEventMoreBtn
+          bgColor="#FDE1F1"
+          highlightContent={
+            <>
+              <span style={{ color: "#880076" }}>신규가입 </span>
+              <span style={{ color: "#9E58FF", fontWeight: "bold" }}>
+                3 · 5 · 7
+              </span>
+            </>
+          }
+          text=" 만원 결제시 추가 적립 혜택"
+          extra="More"
+          onClick={() => console.log("혜택 상세 보기 클릭")}
+        />
+      </div>
 
       <ShopBrand />
       <ShopBrand2 />

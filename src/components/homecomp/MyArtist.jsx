@@ -6,6 +6,8 @@ import "swiper/css";
 import "./MyArtist.css";
 import { useFollowArtist } from "../../context/FollowArtistContext";
 
+import { artistData } from "../../pages/artistpage/sections/ArtistData";
+
 const MyArtist = () => {
   const navigate = useNavigate();
   const { artistList, followedArtists } = useFollowArtist();
@@ -17,18 +19,28 @@ const MyArtist = () => {
     ...(moreItem ? [moreItem] : []),
     ...(followedArtists || []),
   ];
+
+  const findArtistKeyByName = (name) => {
+    return Object.keys(artistData).find((key) => artistData[key].name === name);
+  };
+
   const handleArtistClick = (item) => {
     if (item.type === "more") {
       navigate("/follow-artist", { state: { from: "myartist" } });
       return;
     }
 
-    // 기존 로직 유지 (예: StelLive(8) 누르면 artist 페이지)
-    if (String(item.id) === "8") {
-      navigate("/home/artist");
-    } else {
-      console.log(`${item.name} 클릭됨`);
+    // 이제 위에서 선언되었으므로 정상 작동합니다.
+    const artistKey = findArtistKeyByName(item.name);
+
+    if (!artistKey) {
+      console.warn("아티스트 데이터 없음:", item.name);
+      return;
     }
+
+    navigate(`/home/artist/${artistKey}`, {
+      state: { artist: artistData[artistKey] },
+    });
   };
 
   return (

@@ -19,3 +19,22 @@
 .event-banner-text .highlight {
   color: #7294fc;
 }
+
+.eventmore .event-banner {
+  border-radius: 0px;
+  padding-left: 22px;
+}
+
+.eventmore .event-banner-text {
+  color: #880076;
+}
+
+.event-banner-extra {
+  background-color: #fff;
+  color: #606060;
+  padding: 10px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 8px;
+  font-weight: 500;
+}

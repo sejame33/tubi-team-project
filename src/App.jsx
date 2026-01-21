@@ -45,6 +45,7 @@ import Gatcha from "./pages/gatchapage/Gatcha";
 // live
 import LivePage from "./pages/livepage/LivePage";
 import Artist from "./pages/artistpage/Artist";
+import StickerCollection from "./pages/gatchapage/StickerCollection";
 
 function App() {
   return (
@@ -71,9 +72,13 @@ function App() {
           {/* ✅ 메인 앱 영역 */}
           <Route path="/home" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/home/artist" element={<Artist />} />
+            <Route path="artist/:artistId" element={<Artist />} />
             <Route path="/home/live" element={<LivePage />} />
             <Route path="gatcha" element={<Gatcha />} />
+            <Route
+              path="/home/gatcha/stickercollection"
+              element={<StickerCollection />}
+            />
 
             <Route path="shop" element={<Shop />} />
             <Route path="shop/brand" element={<ShopBrandPage />} />

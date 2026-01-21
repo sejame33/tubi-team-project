@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../components/gatchacomp/Gatcha.css";
 import GatchaVisual from "../../components/gatchacomp/GatchaVisual.jsx";
 import GatchaExtraList from "../../components/gatchacomp/GatchaExtraList.jsx";
@@ -6,6 +7,7 @@ import GachaResultModal from "../../components/gatchacomp/GachaResultModal.jsx";
 
 const Gatcha = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate(); // 2. 네비게이트 함수 선언
 
   /** ✅ 모달 열릴 때 뒤 스크롤 차단 */
   useEffect(() => {
@@ -21,7 +23,11 @@ const Gatcha = () => {
       <div className={`gatcha-page-blur ${open ? "is-blurred" : ""}`}>
         <div className="gatcha-header">
           <h1 className="gatcha-header-title">스티커 가챠실</h1>
-          <p className="gatcha-more">
+          <p
+            className="gatcha-more"
+            onClick={() => navigate("/home/gatcha/stickercollection")}
+            style={{ cursor: "pointer" }}
+          >
             목록보기 <img src="/img/gatcha-right-arrow.svg" alt="" />
           </p>
         </div>
