@@ -12,6 +12,8 @@ const Layout = () => {
   const isMyHome = location.pathname === "/home/my";
   const isTubiPage = location.pathname === "/home/my/tubi";
 
+  const isArtistPage = location.pathname.startsWith("/home/artist");
+
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
@@ -32,12 +34,10 @@ const Layout = () => {
     <div className="app-wrapper">
       <div className="app">
         {/* Header */}
-        {!isMyHome && !isTubiPage && <Header />}
+        {!isMyHome && !isTubiPage && !isArtistPage && <Header />}
 
         <main
-          className={`main ${
-            isMyHome || isTubiPage ? "main--nochrome" : ""
-          }`}
+          className={`main ${isMyHome || isTubiPage || isArtistPage ? "main--nochrome" : ""}`}
           ref={mainRef}
         >
           <Outlet />

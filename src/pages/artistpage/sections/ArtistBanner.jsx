@@ -1,15 +1,30 @@
-import React from "react";
+import { useParams, useLocation } from "react-router-dom";
+import { artistData } from "./ArtistData";
 
 const ArtistBanner = () => {
+  const { artistId } = useParams();
+  const artist = artistData[artistId];
+
+  if (!artist) {
+    console.error("해당 아티스트 데이터를 찾을 수 없습니다:", artistId);
+    return (
+      <div style={{ height: "300px", background: "#eee" }}>
+        데이터를 불러올 수 없습니다.
+      </div>
+    );
+  }
   return (
     <div className="artist-page">
       <section className="artist-visual">
         <div className="visual-bg">
-          <img src="/img/artist-banner.png" alt="StelLive" />
+          <img src={artist.bannerImg} alt={artist.name} />
         </div>
+
         <div className="visual-info">
-          <span className="members-count">2.2만 Members • ✓ 가입 완료</span>
-          <h1 className="artist-name">STELLIVE</h1>
+          <span className="members-count">
+            2.2만 Members{artist.members} • ✓ 가입 완료
+          </span>
+          <h1 className="artist-name">{artist.name}</h1>
         </div>
         <ul className="social-links">
           <li className="icon-instagram">

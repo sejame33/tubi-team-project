@@ -1,4 +1,3 @@
-import React, { useMemo } from "react";
 import "./Artist.css";
 import ArtistBanner from "./sections/ArtistBanner";
 import ShopImportant from "../../components/shopcomp/ShopImportant";

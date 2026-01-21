@@ -5,8 +5,7 @@ import SettingsList from "../../../components/mycomp/SettingsList";
 import StickerSwiper from "../../../components/mycomp/StickerSwiper";
 import ShopProductBannerSwiper from "../../../components/shopcomp/ShopProductBannerSwiper";
 
-import "../My.css"
-
+import "../My.css";
 
 function clamp(n, min, max) {
   return Math.max(min, Math.min(max, n));
@@ -39,38 +38,100 @@ const MySticker = () => {
       { value: "IRISE", label: "IRISE" },
       { value: "StelLive", label: "StelLive" },
     ],
-    []
+    [],
   );
 
   const [active, setActive] = useState("PLAVE");
 
   const stickers = useMemo(
     () => [
-      { id: 1, brand: "PLAVE", name: "ASTERUM", imageUrl: "/img/sticker1.svg", category: "PLAVE" },
-      { id: 2, brand: "PLAVE", name: "솜바꼭질", imageUrl: "/img/sticker2.svg", category: "PLAVE" },
-      { id: 3, brand: "PLAVE", name: "인형 예준", imageUrl: "/img/sticker3.svg", category: "PLAVE" },
-      { id: 4, brand: "PLAVE", name: "인형 노아", imageUrl: "/img/sticker4.svg", category: "PLAVE" },
-      { id: 5, brand: "PLAVE", name: "인형 밤비", imageUrl: "/img/sticker5.svg", category: "PLAVE" },
-      { id: 6, brand: "PLAVE", name: "인형 은호", imageUrl: "/img/sticker6.svg", category: "PLAVE" },
-      { id: 7, brand: "PLAVE", name: "인형 하민", imageUrl: "/img/sticker7.svg", category: "PLAVE" },
+      {
+        id: 1,
+        brand: "PLAVE",
+        name: "ASTERUM",
+        imageUrl: "/img/sticker1.svg",
+        category: "PLAVE",
+      },
+      {
+        id: 2,
+        brand: "PLAVE",
+        name: "솜바꼭질",
+        imageUrl: "/img/sticker2.svg",
+        category: "PLAVE",
+      },
+      {
+        id: 3,
+        brand: "PLAVE",
+        name: "인형 예준",
+        imageUrl: "/img/sticker3.svg",
+        category: "PLAVE",
+      },
+      {
+        id: 4,
+        brand: "PLAVE",
+        name: "인형 노아",
+        imageUrl: "/img/sticker4.svg",
+        category: "PLAVE",
+      },
+      {
+        id: 5,
+        brand: "PLAVE",
+        name: "인형 밤비",
+        imageUrl: "/img/sticker5.svg",
+        category: "PLAVE",
+      },
+      {
+        id: 6,
+        brand: "PLAVE",
+        name: "인형 은호",
+        imageUrl: "/img/sticker6.svg",
+        category: "PLAVE",
+      },
+      {
+        id: 7,
+        brand: "PLAVE",
+        name: "인형 하민",
+        imageUrl: "/img/sticker7.svg",
+        category: "PLAVE",
+      },
     ],
-    []
+    [],
   );
 
   const filtered = useMemo(
     () => stickers.filter((s) => (active ? s.category === active : true)),
-    [stickers, active]
+    [stickers, active],
   );
 
   const settings = useMemo(
     () => [
-      { key: "profile", label: "내 정보", icon: "/img/setting1.svg", to: "/my/profile" },
-      { key: "wish", label: "내 관심상품", icon: "/img/setting2.svg", to: "/my/wish" },
-      { key: "setting", label: "환경설정", icon: "/img/setting3.svg", to: "/my/setting" },
-      { key: "notice", label: "공지사항", icon: "/img/setting4.svg", to: "/my/notice" },
+      {
+        key: "profile",
+        label: "내 정보",
+        icon: "/img/setting1.svg",
+        to: "/my/profile",
+      },
+      {
+        key: "wish",
+        label: "내 관심상품",
+        icon: "/img/setting2.svg",
+        to: "/my/wish",
+      },
+      {
+        key: "setting",
+        label: "환경설정",
+        icon: "/img/setting3.svg",
+        to: "/my/setting",
+      },
+      {
+        key: "notice",
+        label: "공지사항",
+        icon: "/img/setting4.svg",
+        to: "/my/notice",
+      },
       { key: "cs", label: "고객센터", icon: "/img/setting5.svg", to: "/my/cs" },
     ],
-    []
+    [],
   );
 
   const banners = [
@@ -177,8 +238,16 @@ const MySticker = () => {
     <section className="bottomSheet" ref={sheetRef}>
       <div className="sheetHandle" ref={handleRef} />
       <div className="sheetBody">
-        <div style={{ padding: "35px 16px 0", display: "flex", justifyContent: "space-between" }}>
-          <h2 style={{ margin: 0, fontSize: 28, fontWeight: 700 }}>나의 스티커</h2>
+        <div
+          style={{
+            padding: "35px 16px 0",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <h2 style={{ margin: 0, fontSize: 28, fontWeight: 700 }}>
+            나의 스티커
+          </h2>
           <button
             type="button"
             onClick={() => navigate("/my/stickers")}
@@ -194,15 +263,22 @@ const MySticker = () => {
           </button>
         </div>
 
-        <ProductCategory categories={categories} active={active} onChange={setActive} />
-        <StickerSwiper items={filtered} onItemClick={(it) => console.log("sticker", it.id)} />
+        <ProductCategory
+          categories={categories}
+          active={active}
+          onChange={setActive}
+        />
+        <StickerSwiper
+          items={filtered}
+          onItemClick={(it) => console.log("sticker", it.id)}
+        />
         <ShopProductBannerSwiper banners={banners} />
         <SettingsList items={settings} />
 
         <div className="sheetSpacer" />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default MySticker
+export default MySticker;
