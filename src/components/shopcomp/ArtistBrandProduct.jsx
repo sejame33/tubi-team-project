@@ -91,7 +91,15 @@ export default function ArtistBrandProduct() {
           const wished = isWished(p.id);
 
           return (
-            <article key={p.id} className="artistbrandproduct-card">
+            <article
+              key={p.id}
+              className="artistbrandproduct-card impl-anchor"
+              data-impl
+              style={{
+                "--impl-right": "12px",
+                "--impl-top": "146px",
+              }}
+            >
               <div className="artistbrandproduct-thumb">
                 {/* ✅ 이미지 위 뱃지 (HOT/NEW) */}
                 {p.topBadge && (

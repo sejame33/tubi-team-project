@@ -11,7 +11,14 @@ import ArtistFrom from "../../../components/artistcomp/ArtistFrom";
 const From = () => {
   return (
     <>
-      <div className="artistswiper">
+      <div
+        className="artistswiper impl-anchor"
+        data-impl
+        style={{
+          "--impl-right": "140px",
+          "--impl-top": "210px",
+        }}
+      >
         <Swiper
           modules={[FreeMode, Scrollbar]}
           // 3. scrollbar 설정을 활성화합니다.

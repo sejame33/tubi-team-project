@@ -156,8 +156,13 @@ useEffect(() => {
                               <button
                                 type="button"
                                 className="followartist-chip-remove"
+                                data-impl
                                 onClick={() => handleRemove(a)}
                                 aria-label={`${a.name} 제거`}
+                                style={{
+                                  "--impl-right": "-6px",
+                                  "--impl-top": "0px",
+                                }}
                               >
                                 −
                               </button>

@@ -6,7 +6,12 @@ const AnnouncementListItem = ({ id, icon, title, desc, time }) => {
 
   return (
     <div
-      className="announcement-item"
+      className="announcement-item impl-anchor"
+      data-impl
+      style={{
+        "--impl-right": "384px",
+        "--impl-top": "24px",
+      }}
       onClick={() => navigate(`/home/shop/announcement/${id}`)}
     >
       <div className="item-left">

@@ -1,5 +1,5 @@
-import React from 'react'
-import './MvCard.css';
+import React from "react";
+import "./MvCard.css";
 
 function MvCard({
   mainTitle,
@@ -9,23 +9,23 @@ function MvCard({
   image,
   cover,
   coverType = "default",
-  desc
+  desc,
 }) {
   return (
-    <div className="mv-card">
-
+    <div
+      className="mv-card impl-anchor"
+      data-impl
+      style={{
+        "--impl-right": "12px",
+        "--impl-top": "12px",
+      }}
+    >
       {/* 카드 상단 메인 타이틀 */}
-      {mainTitle && (
-        <h2 className="mv-card-main-title">{mainTitle}</h2>
-      )}
+      {mainTitle && <h2 className="mv-card-main-title">{mainTitle}</h2>}
 
       {/* 이미지 영역 */}
       <div className="mv-card-img">
-        {badge && (
-          <span className={`badge badge-${badgeType}`}>
-            {badge}
-          </span>
-        )}
+        {badge && <span className={`badge badge-${badgeType}`}>{badge}</span>}
         <img src={image} alt={title} />
       </div>
 
@@ -36,7 +36,6 @@ function MvCard({
       </div>
 
       <p className="desc">{desc}</p>
-
     </div>
   );
 }

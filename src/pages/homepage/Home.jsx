@@ -20,6 +20,7 @@ function Home() {
   const navigate = useNavigate();
   const { nickname } = useNickname();
   const fractionRefs = useRef([]); // ✅ 슬라이드별 fraction 자리 저장
+  const navigate = useNavigate();
 
   const swiperBanners = [
     {
@@ -135,8 +136,13 @@ function Home() {
               {/* ✅ fraction div를 "카드 내부"에 넣기 */}
               <SmallBanner {...banner}>
                 <div
-                  className="small-banner-fraction swiper-pagination-fraction"
+                  className="small-banner-fraction swiper-pagination-fraction impl-anchor"
+                  data-impl
                   ref={(el) => (fractionRefs.current[index] = el)}
+                  style={{
+                    "--impl-right": "-12px",
+                    "--impl-top": "20px",
+                  }}
                 />
               </SmallBanner>
             </SwiperSlide>
@@ -163,7 +169,7 @@ function Home() {
         title="브랜드관"
         showMore={true}
         useNicknameTitle={false}
-        onMoreClick={() => console.log("/album")}
+        onMoreClick={() => navigate("/home/shop/brand")}
       />
       <BrandShop />
     </div>

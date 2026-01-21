@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useNickname } from "../../../context/NicknameContext";
+import MySticker from "./MySticker";
 
 import "../My.css";
 

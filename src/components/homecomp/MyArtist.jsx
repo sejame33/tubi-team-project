@@ -51,9 +51,11 @@ const MyArtist = () => {
             {item.type === "more" ? (
               <button
                 type="button"
-                className="artist-more"
+                className="artist-more impl-anchor"
                 aria-label="More Artists"
+                data-impl
                 onClick={() => handleArtistClick(item)}
+                style={{ "--impl-right": "-8px", "--impl-top": "0px" }}
               >
                 <img src={item.img} alt="" aria-hidden="true" />
                 <span className="my-artist-name">{item.name}</span>
@@ -61,9 +63,14 @@ const MyArtist = () => {
             ) : (
               <button
                 type="button"
-                className="artist-card"
+                className="artist-card impl-anchor"
                 aria-label={item.name}
+                data-impl
                 onClick={() => handleArtistClick(item)}
+                style={{
+                  "--impl-right": "-8px",
+                  "--impl-top": "0px",
+                }}
               >
                 <div className="artist-img">
                   <img src={item.img} alt={item.name} />

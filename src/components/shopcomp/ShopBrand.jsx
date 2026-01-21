@@ -127,7 +127,12 @@ export default function ShopBrand() {
                           type="button"
                           className={`shopbrand-wish ${
                             wished ? "is-active" : ""
-                          }`}
+                          } impl-anchor`}
+                          data-impl-alt
+                          style={{
+                            "--impl-alt-top": "2px",
+                            "--impl-alt-right": "-1px",
+                          }}
                           aria-pressed={wished}
                           aria-label={
                             wished ? "관심상품 해제" : "관심상품 추가"
@@ -170,7 +175,14 @@ export default function ShopBrand() {
                 );
               })}
             </Swiper>
-            <div className="shopbrand-products-controls">
+            <div
+              className="shopbrand-products-controls impl-anchor"
+              data-impl
+              style={{
+                "--impl-right": "-50px",
+                "--impl-top": "-3px",
+              }}
+            >
               <div className="shopbrand-products-row">
                 <div className="shopbrand-products-scrollbar swiper-scrollbar" />
                 <div className="shopbrand-products-pagination swiper-pagination" />
@@ -183,7 +195,14 @@ export default function ShopBrand() {
           className="brand-direct-btn"
           onClick={() => navigate("/home/shop/brand")}
         >
-          <div className="direct-box">
+          <div
+            className="direct-box impl-anchor"
+            data-impl
+            style={{
+              "--impl-right": "12px",
+              "--impl-top": "16px",
+            }}
+          >
             <h2 className="direct-left">PLAVE 브랜드관 입점</h2>
             <span className="direct-right">
               바로가기 <img src="/img/more-arrow-white-5x10.svg" alt="" />

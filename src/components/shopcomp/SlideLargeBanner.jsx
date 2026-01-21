@@ -20,17 +20,22 @@ export default function SlideLargeBanner() {
     { id: 3, img: "/img/slide-large-banner-3.png" },
   ];
 
-  // ✅ ShopSlideBanner랑 동일한 fraction 바인딩
+  // ✅ pagination(fraction)에 impl 표시 주입
   const bindFractionEl = (swiper) => {
-    const activeSlide = swiper.slides[swiper.activeIndex];
-    const el = activeSlide?.querySelector(".large-banner-fraction");
+    const paginationEl = swiper.pagination?.el;
+    if (!paginationEl) return;
 
-    if (el && swiper.pagination) {
-      swiper.pagination.el = el;
-      swiper.pagination.init();
-      swiper.pagination.render();
-      swiper.pagination.update();
-    }
+    // 🔴 impl 시스템 연결
+    paginationEl.classList.add("impl-anchor");
+    paginationEl.setAttribute("data-impl", "true");
+
+    // 위치 미세 조정 (필요 없으면 지워도 됨)
+    paginationEl.style.setProperty("--impl-top", "-6px");
+    paginationEl.style.setProperty("--impl-right", "-8px");
+
+    swiper.pagination.init();
+    swiper.pagination.render();
+    swiper.pagination.update();
   };
 
   return (
@@ -44,7 +49,7 @@ export default function SlideLargeBanner() {
         loop
         autoplay={{
           delay: 3000,
-          disableOnInteraction: false, // 터치 후에도 계속 autoplay
+          disableOnInteraction: false,
         }}
         pagination={{
           type: "fraction",
@@ -63,7 +68,6 @@ export default function SlideLargeBanner() {
                 alt={`banner-${s.id}`}
               />
 
-              {/* ✅ 첫 번째 슬라이드만 버튼 */}
               {idx === 0 && (
                 <button
                   type="button"
@@ -74,8 +78,6 @@ export default function SlideLargeBanner() {
                   <img src="/img/more-arrow-white-5x10.svg" alt="" />
                 </button>
               )}
-
-              {/* 🔹 fraction div (이미 CSS/구조 있다면 유지) */}
             </div>
           </SwiperSlide>
         ))}

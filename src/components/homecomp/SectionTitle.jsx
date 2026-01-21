@@ -16,7 +16,14 @@ function SectionTitle({
   const { nickname } = useNickname();
 
   return (
-    <div className="section-title-wrap">
+    <div
+      className="section-title-wrap impl-anchor"
+      data-impl
+      style={{
+        "--impl-right": "8px",
+        "--impl-top": "4px",
+      }}
+    >
       <h2 className="section-title">
         {useNicknameTitle && nickname ? (
           <>

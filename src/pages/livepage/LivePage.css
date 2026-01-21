@@ -33,3 +33,24 @@
   gap: 24px;
   padding-bottom: 20px;
 }
+
+/* Artist Live 페이지의 SectionTitle 점 비활성화 */
+.artistlive .section-title-wrap[data-impl]::after {
+  display: none;
+}
+
+/* Artist Live 페이지의 SectionTitle 점 비활성화 */
+.mv .section-title-wrap[data-impl]::after {
+  display: none;
+}
+/* Artist Live 페이지의 SectionTitle 점 비활성화 */
+.commentpage .section-title-wrap[data-impl]::after {
+  display: none;
+}
+/* Artist Live 페이지의 SectionTitle 점 비활성화 */
+.goods .section-title-wrap[data-impl]::after {
+  display: none;
+}
+.section-title-wrap[data-impl]::after {
+  display: none;
+}

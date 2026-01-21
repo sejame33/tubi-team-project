@@ -77,7 +77,12 @@ export default function ArtistBrandNotice({
       {/* ✅ 정상 동작 */}
       <button
         type="button"
-        className="ab-notice-more"
+        className="ab-notice-more impl-anchor"
+        data-impl
+        style={{
+          "--impl-right": "-8px",
+          "--impl-top": "-4px",
+        }}
         onClick={() => navigate("/home/shop/announcement")}
       >
         더보기

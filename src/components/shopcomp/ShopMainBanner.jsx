@@ -75,7 +75,14 @@ export default function ShopMainBanner() {
         ))}
 
         {/* ✅ Swiper 밖이 아니라 Swiper 안에 두되, el로 연결 */}
-        <div className="shop-banner-controls">
+        <div
+          className="shop-banner-controls impl-anchor"
+          data-impl
+          style={{
+            "--impl-right": "-54px",
+            "--impl-top": "-3px",
+          }}
+        >
           <div className="shop-banner-row">
             <div className="shop-banner-scrollbar swiper-scrollbar" />
             <div className="shop-banner-pagination swiper-pagination" />
