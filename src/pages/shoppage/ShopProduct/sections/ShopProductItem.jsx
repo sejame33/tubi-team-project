@@ -34,7 +34,7 @@ const ShopProductItem = () => {
         img: "/img/shopproduct-item3.svg",
       },
     ],
-    []
+    [],
   );
 
   return (

@@ -101,9 +101,16 @@ export default function AlbumSlide() {
         </Swiper>
 
         {/* ✅ 여기! 둘을 감싸는 컨트롤 박스 */}
-        <div className="album-swiper-controls">
+        <div
+          className="album-swiper-controls impl-anchor"
+          data-impl
+          style={{
+            "--impl-right": "-50px",
+            "--impl-top": "-3px",
+          }}
+        >
           <div className="album-swiper-row">
-            <div className="album-swiper-scrollbar swiper-scrollbar" />
+            <div className="album-swiper-scrollbar swiper-scrollbar impl-anchor" />
             <div className="album-swiper-pagination swiper-pagination" />
           </div>
         </div>

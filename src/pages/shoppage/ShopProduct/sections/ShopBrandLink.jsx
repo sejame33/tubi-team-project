@@ -1,6 +1,6 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import ShopTagList from "../../../../components/shopcomp/ShopTagList"; // 작성하신 파일 임포트
-import "./ShopBrandLink.css"
+import "./ShopBrandLink.css";
 
 const ShopBrand = () => {
   const tags = [
@@ -12,10 +12,10 @@ const ShopBrand = () => {
   ];
 
   const [isStar, setStar] = useState(false);
-  
+
   const toggleStar = () => {
     setStar(!isStar);
-  }
+  };
 
   return (
     <div className="profile-container">
@@ -32,9 +32,24 @@ const ShopBrand = () => {
           </div>
         </div>
 
-        <div className="follower-count" onClick={toggleStar}
-            style={{ cursor: "pointer", userSelect: "none" }}>
-          <img src={!isStar ? "/img/shopbrand-star.svg" :"/img/shopbrand-fillstar.svg" } />
+        <div
+          className="follower-count impl-anchor"
+          data-impl
+          onClick={toggleStar}
+          style={{
+            "--impl-right": "4px",
+            "--impl-top": "-2px",
+            cursor: "pointer",
+            userSelect: "none",
+          }}
+        >
+          <img
+            src={
+              !isStar
+                ? "/img/shopbrand-star.svg"
+                : "/img/shopbrand-fillstar.svg"
+            }
+          />
           <p>13.2만</p>
         </div>
       </div>

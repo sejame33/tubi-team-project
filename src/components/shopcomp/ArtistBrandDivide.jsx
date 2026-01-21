@@ -249,9 +249,14 @@ export default function ArtistBrandDivide() {
               type="button"
               role="tab"
               aria-selected={mainTab === t}
-              className={`artistbranddivide-tab ${
+              className={`artistbranddivide-tab impl-anchor ${
                 mainTab === t ? "is-active" : ""
               }`}
+              data-impl-alt
+              style={{
+                "--impl-alt-top": "7px",
+                "--impl-alt-right": "-8px",
+              }}
               onClick={() => setMainTab(t)}
             >
               {t}
@@ -267,10 +272,15 @@ export default function ArtistBrandDivide() {
               <button
                 key={t}
                 type="button"
-                className={`artistbranddivide-chip ${
+                className={`artistbranddivide-chip impl-anchor ${
                   isNova ? "is-nova" : ""
                 } ${subTab === t ? "is-active" : ""}`}
                 onClick={() => setSubTab(t)}
+                data-impl-alt
+                style={{
+                  "--impl-alt-top": "0px",
+                  "--impl-alt-right": "-6px",
+                }}
               >
                 <span className="artistbranddivide-chip-text">{t}</span>
               </button>
@@ -284,7 +294,14 @@ export default function ArtistBrandDivide() {
         <div className="artistbranddivide-sectionhead">
           <h3 className="artistbranddivide-sectiontitle">{mainTab}</h3>
 
-          <label className="artistbranddivide-soldout">
+          <label
+            className="artistbranddivide-soldout impl-anchor"
+            data-impl
+            style={{
+              "--impl-right": "-8px",
+              "--impl-top": "-2px",
+            }}
+          >
             <input
               type="checkbox"
               checked={excludeSoldOut}
@@ -360,7 +377,12 @@ export default function ArtistBrandDivide() {
                           type="button"
                           className={`artistbranddivide-wish ${
                             wished ? "is-active" : ""
-                          }`}
+                          } impl-anchor`}
+                          data-impl-alt
+                          style={{
+                            "--impl-alt-top": "4px",
+                            "--impl-alt-right": "-2px",
+                          }}
                           aria-pressed={wished}
                           aria-label={
                             wished ? "관심상품 해제" : "관심상품 추가"
@@ -404,7 +426,14 @@ export default function ArtistBrandDivide() {
               })}
             </Swiper>
 
-            <div className="artistbranddivide-products-controls">
+            <div
+              className="artistbranddivide-products-controls impl-anchor"
+              data-impl
+              style={{
+                "--impl-right": "-50px",
+                "--impl-top": "-3px",
+              }}
+            >
               <div className="artistbranddivide-products-row">
                 <div className="artistbranddivide-products-scrollbar swiper-scrollbar" />
                 <div className="artistbranddivide-products-pagination swiper-pagination" />

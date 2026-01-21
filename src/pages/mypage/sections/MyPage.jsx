@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import MySticker from './MySticker'
+import MySticker from "./MySticker";
 
-import "../My.css"
+import "../My.css";
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -23,7 +23,11 @@ const MyPage = () => {
           <img src="/img/my-blur.png" alt="" />
         </div>
         <div className="characterCard">
-          <img src="/img/my-nova.svg" alt="tubi character" className="characterImg" />
+          <img
+            src="/img/my-nova.svg"
+            alt="tubi character"
+            className="characterImg"
+          />
         </div>
       </section>
 
@@ -44,7 +48,11 @@ const MyPage = () => {
       </section>
 
       <section className="actionButtons sheetSection">
-        <button className="actionBtn" type="button" onClick={() => navigate("/home/my/tubi")}>
+        <button
+          className="actionBtn"
+          type="button"
+          onClick={() => navigate("/home/my/tubi")}
+        >
           <img src="/img/my-tubi.svg" alt="" />
           <span>My TUBI</span>
         </button>
@@ -56,7 +64,7 @@ const MyPage = () => {
       </section>
       <MySticker />
     </div>
-  )
-}
+  );
+};
 
-export default MyPage
+export default MyPage;

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -75,7 +75,6 @@ export default function Shop() {
   /* =========================
      ✅ 2. fraction ref & binder
      ========================= */
-
   const bindFractionEl = (swiper) => {
     const activeSlide = swiper.slides[swiper.activeIndex];
     const el = activeSlide?.querySelector(".shop-slide-banner-fraction");
@@ -83,7 +82,13 @@ export default function Shop() {
     if (el && swiper.pagination) {
       swiper.pagination.el = el;
 
-      // ✅ loop에서 가끔 init이 필요함
+      /* 🔴 여기부터 추가 */
+      el.classList.add("impl-anchor");
+      el.setAttribute("data-impl", "true");
+      el.style.setProperty("--impl-top", "18px");
+      el.style.setProperty("--impl-right", "-12px");
+      /* 🔴 여기까지 */
+
       swiper.pagination.init();
       swiper.pagination.render();
       swiper.pagination.update();
@@ -107,6 +112,7 @@ export default function Shop() {
 
       <ShopSectionTitle title="아티스트" showMore />
       <MyArtist />
+
       <div className="eventmore">
         <ShopEventMoreBtn
           bgColor="#FDE1F1"
@@ -155,18 +161,18 @@ export default function Shop() {
           ))}
         </Swiper>
       </div>
+
       <ShopSectionTitle
         title="오늘 단 하루만"
         showMore={false}
         useNicknameTitle={false}
-        onMoreClick={() => console.log("/album")}
       />
       <ShopTodayOffer />
+
       <ShopSectionTitle
         title="Coming Soon"
         showMore={false}
         useNicknameTitle={false}
-        onMoreClick={() => console.log("/album")}
       />
       <SlideLargeBanner />
     </div>

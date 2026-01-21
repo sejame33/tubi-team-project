@@ -4,8 +4,13 @@ export default function FilterChips({ chips, active, onChange }) {
       {chips.map((c) => (
         <button
           key={c}
-          className={`chip ${active === c ? "is-active" : ""}`}
+          className={`chip impl-anchor ${active === c ? "is-active" : ""}`}
           onClick={() => onChange(c)}
+          data-impl-alt
+          style={{
+            "--impl-alt-top": "-2px",
+            "--impl-alt-right": "-6px",
+          }}
         >
           {c}
         </button>

@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Scrollbar, Pagination } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -224,7 +225,7 @@ export default function BrandShop() {
 
   // ✅ 상품 swiper 인스턴스 ref (탭 바뀔 때 리셋용)
   const productsSwiperRef = useRef(null);
-
+  const navigate = useNavigate();
   const filteredProducts = useMemo(
     () => products.filter((p) => p.brand === activeBrand),
     [activeBrand],
@@ -274,8 +275,13 @@ export default function BrandShop() {
                 <SwiperSlide key={a.id} className="brandshop-tab-slide">
                   <button
                     type="button"
-                    className={`brandshop-tab ${isActive ? "is-active" : ""}`}
+                    className={`brandshop-tab impl-anchor ${isActive ? "is-active" : ""}`}
+                    data-impl
                     onClick={() => setActiveBrand(a.id)}
+                    style={{
+                      "--impl-right": "-4px",
+                      "--impl-top": "0px",
+                    }}
                   >
                     <span className="brandshop-tab-text">{a.name}</span>
                     {a.dot && <span className="brandshop-tab-dot" />}
@@ -360,7 +366,14 @@ export default function BrandShop() {
           </Swiper>
 
           {/* 컨트롤 */}
-          <div className="brandshop-products-controls">
+          <div
+            className="brandshop-products-controls impl-anchor"
+            data-impl
+            style={{
+              "--impl-right": "-50px",
+              "--impl-top": "-3px",
+            }}
+          >
             <div className="brandshop-products-row">
               <div className="brandshop-products-scrollbar swiper-scrollbar" />
               <div className="brandshop-products-pagination swiper-pagination" />
@@ -369,7 +382,16 @@ export default function BrandShop() {
         </div>
       </div>
 
-      <button className="brandshop-more" type="button">
+      <button
+        className="brandshop-more impl-anchor"
+        type="button"
+        onClick={() => navigate("/home/shop")}
+        data-impl
+        style={{
+          "--impl-right": "164px",
+          "--impl-top": "16px",
+        }}
+      >
         더보기
       </button>
     </section>

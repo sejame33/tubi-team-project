@@ -6,12 +6,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import AnnouncementList from "../../components/shopcomp/AnnouncementList";
-import ShopSmallBanner from "../../components/shopcomp/ShopSmallBanner"; // ✅ Home에서 쓰던 배너 컴포넌트로 통일
+import ShopSmallBanner from "../../components/shopcomp/ShopSmallBanner";
 
 const ShopAnnounce = () => {
-  const fractionRefs = useRef([]); // ✅ 슬라이드별 fraction 자리 저장
+  const fractionRefs = useRef([]); // 슬라이드별 fraction 자리 저장
 
-  // ✅ 공지 페이지에서 쓸 배너들 (Home이랑 동일하게)
   const swiperBanners = [
     {
       variant: "logo",
@@ -40,19 +39,30 @@ const ShopAnnounce = () => {
     {
       variant: "text",
       background: "/img/small-banner-bg-4.svg",
-      title: { top: "IRISÉ 첫 1:1 팬사인회", bottom: "지금 바로 참여하세요" },
+      title: {
+        top: "IRISÉ 첫 1:1 팬사인회",
+        bottom: "지금 바로 참여하세요",
+      },
       image: "/img/small-banner-char-4.png",
       imageStyle: { height: 135, right: "0%", bottom: "0%" },
     },
   ];
 
-  // ✅ 현재 슬라이드의 fraction el로 pagination을 연결
+  // ✅ fraction el + impl 표시 주입
   const bindFractionEl = (swiper) => {
-    const active = swiper.realIndex; // loop일 때 realIndex가 안전
+    const active = swiper.realIndex; // loop 대응
     const el = fractionRefs.current[active];
     if (!el) return;
 
     swiper.pagination.el = el;
+
+    /* 🔴 impl 점 추가 */
+    el.classList.add("impl-anchor");
+    el.setAttribute("data-impl", "true");
+    el.style.setProperty("--impl-top", "18px");
+    el.style.setProperty("--impl-right", "-12px");
+    /* 🔴 여기까지 */
+
     swiper.pagination.init();
     swiper.pagination.render();
     swiper.pagination.update();

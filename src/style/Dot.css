@@ -16,6 +16,20 @@
   top: var(--impl-top, 6px);
   right: var(--impl-right, 6px);
 }
+/* 특수 구현 표시 (예외용) */
+.impl-anchor[data-impl-alt]::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 101;
+
+  top: var(--impl-alt-top, 6px);
+  right: var(--impl-alt-right, 6px);
+}
 
 .gacha-modal .impl-anchor[data-impl]::after {
   display: block;

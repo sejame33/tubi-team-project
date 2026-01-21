@@ -68,7 +68,15 @@ export default function ShopImportant({ onScheduleClick }) {
             {notices.map((n) => {
               const b = badgeTypes[n.badge];
               return (
-                <SwiperSlide key={n.id} className="shop-important-slide">
+                <SwiperSlide
+                  key={n.id}
+                  className="shop-important-slide impl-anchor"
+                  data-impl
+                  style={{
+                    "--impl-right": "8px",
+                    "--impl-top": "8px",
+                  }}
+                >
                   <article
                     className={`notice-card is-${n.bgType}`}
                     role="button"

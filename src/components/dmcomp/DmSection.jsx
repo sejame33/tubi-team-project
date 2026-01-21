@@ -7,7 +7,6 @@ import DmHeader from "./DmHeader";
 import DmItem from "./DmItem";
 import "./Dm.css";
 import MyArtist from "../../components/homecomp/MyArtist";
-import SmallBanner from "../../components/homecomp/SmallBanner";
 import DmSlideBanner from "./DmSlideBanner";
 
 function DmSection({ items, onClickItem }) {
@@ -40,13 +39,21 @@ function DmSection({ items, onClickItem }) {
 
   const fractionRefs = useRef([]);
 
-  // ✅ 현재 슬라이드의 fraction el로 pagination을 연결하는 함수
+  // ✅ pagination + impl 점 주입
   const bindFractionEl = (swiper) => {
-    const active = swiper.realIndex; // loop일 때 realIndex가 안전
+    const active = swiper.realIndex; // loop 대응
     const el = fractionRefs.current[active];
     if (!el) return;
 
     swiper.pagination.el = el;
+
+    /* 🔴 여기서 점 추가 */
+    el.classList.add("impl-anchor");
+    el.setAttribute("data-impl", "true");
+    el.style.setProperty("--impl-top", "18px");
+    el.style.setProperty("--impl-right", "-12px");
+    /* 🔴 여기까지 */
+
     swiper.pagination.init();
     swiper.pagination.render();
     swiper.pagination.update();
@@ -55,6 +62,7 @@ function DmSection({ items, onClickItem }) {
   return (
     <section className="dm-section">
       <MyArtist />
+
       <div className="dm-slide-banner-wrap">
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -74,12 +82,16 @@ function DmSection({ items, onClickItem }) {
           {swiperBanners.map((banner, index) => (
             <SwiperSlide key={index} className="shop-slide-banner-slide">
               <DmSlideBanner {...banner}>
-                <div className="shop-slide-banner-fraction swiper-pagination-fraction" />
+                <div
+                  className="shop-slide-banner-fraction swiper-pagination-fraction"
+                  ref={(el) => (fractionRefs.current[index] = el)}
+                />
               </DmSlideBanner>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
+
       <div className="DmListBox">
         <DmHeader />
         <ul className="dm-list">

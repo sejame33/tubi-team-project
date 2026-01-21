@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import "./ShopProductBanner.css";
 import ShopMoreBtn from "../../../../components/shopcomp/ShopMoreBtn";
 import ShopEventMoreBtn from "../../../../components/shopcomp/ShopEventMoreBtn";
@@ -38,13 +38,23 @@ const ShopProductBanner = () => {
             하츠네 미쿠 <img src="/img/shopproduct-brand-arrow.svg" alt="" />
           </div>
 
-          <div 
-            className="shopproduct-heart" 
+          <div
+            className="shopproduct-heart impl-anchor"
+            data-impl
             onClick={toggleLike}
-            style={{ cursor: "pointer", userSelect: "none" }}
+            style={{
+              "--impl-right": "-8px",
+              "--impl-top": "-2px",
+              cursor: "pointer",
+              userSelect: "none",
+            }}
           >
-            <img 
-              src={!isLiked ? "/img/shopproduct-heart.svg" : "/img/shopproduct-fillheart.svg"} 
+            <img
+              src={
+                !isLiked
+                  ? "/img/shopproduct-heart.svg"
+                  : "/img/shopproduct-fillheart.svg"
+              }
             />
             {!isLiked ? "11,062" : "11,063"}
           </div>

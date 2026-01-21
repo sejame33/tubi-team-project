@@ -28,6 +28,7 @@ const products = [
     price: "₩23,000원",
     img: "/img/shop-new-product-stand-1.svg",
     badge3: "정규앨범",
+    impl: true,
   },
   {
     id: 203,
@@ -167,8 +168,13 @@ export default function ShopNewItem() {
                 <SwiperSlide key={a.id} className="shop-new-tab-slide">
                   <button
                     type="button"
-                    className={`shop-new-tab ${isActive ? "is-active" : ""}`}
+                    className={`shop-new-tab ${isActive ? "is-active" : ""} impl-anchor`}
+                    data-impl
                     onClick={() => setActiveBrand(a.id)}
+                    style={{
+                      "--impl-right": "-4px",
+                      "--impl-top": "0px",
+                    }}
                   >
                     <span className="shop-new-tab-text">{a.name}</span>
                   </button>
@@ -211,21 +217,35 @@ export default function ShopNewItem() {
                     className="shop-new-card"
                     onClick={() => handleProductClick(p.id)}
                   >
-                    <div className="shop-new-thumb">
+                    <div
+                      className={`shop-new-thumb ${p.impl ? "impl-anchor" : ""}`}
+                      {...(p.impl ? { "data-impl": true } : {})}
+                      style={
+                        p.impl
+                          ? {
+                              "--impl-right": "8px",
+                              "--impl-top": "8px",
+                            }
+                          : undefined
+                      }
+                    >
                       <img
                         src={p.img}
-                        alt={p.titleTop || p.title}
+                        alt={p.title}
                         loading="lazy"
                         decoding="async"
                         onLoad={() => productsSwiperRef.current?.update()}
                       />
 
-                      {/* ✅ 하트 */}
+                      {/* 하트는 그대로 */}
                       <button
                         type="button"
                         className={`shop-new-wish ${wished ? "is-active" : ""}`}
-                        aria-pressed={wished}
-                        aria-label={wished ? "관심상품 해제" : "관심상품 추가"}
+                        data-impl
+                        style={{
+                          "--impl-right": "-4px",
+                          "--impl-top": "4px",
+                        }}
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
@@ -265,7 +285,14 @@ export default function ShopNewItem() {
             })}
           </Swiper>
 
-          <div className="shop-new-products-controls">
+          <div
+            className="shop-new-products-controls impl-anchor"
+            data-impl
+            style={{
+              "--impl-right": "-50px",
+              "--impl-top": "-3px",
+            }}
+          >
             <div className="shop-new-products-row">
               <div className="shop-new-products-scrollbar swiper-scrollbar" />
               <div className="shop-new-products-pagination swiper-pagination" />

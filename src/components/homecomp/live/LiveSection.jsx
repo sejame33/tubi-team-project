@@ -332,16 +332,26 @@ export default function LiveSection() {
           <div className="live-panel-tabs">
             <button
               type="button"
-              className={`mini-tab ${panelTab === "라이브" ? "is-active" : ""}`}
+              className={`mini-tab impl-anchor ${panelTab === "라이브" ? "is-active" : ""}`}
               onClick={() => setPanelTab("라이브")}
+              data-impl-alt
+              style={{
+                "--impl-alt-top": "4px",
+                "--impl-alt-right": "54px",
+              }}
             >
               라이브
             </button>
 
             <button
               type="button"
-              className={`mini-tab ${panelTab === "전체" ? "is-active" : ""}`}
+              className={`mini-tab impl-anchor ${panelTab === "전체" ? "is-active" : ""}`}
               onClick={() => setPanelTab("전체")}
+              data-impl-alt
+              style={{
+                "--impl-alt-top": "4px",
+                "--impl-alt-right": "60px",
+              }}
             >
               전체
             </button>

@@ -49,7 +49,14 @@ function MainBanner() {
       </Swiper>
 
       {/* ⭐ 기준을 통일하기 위한 wrapper */}
-      <div className="banner-controls">
+      <div
+        className="banner-controls impl-anchor"
+        data-impl
+        style={{
+          "--impl-right": "-54px",
+          "--impl-top": "0px",
+        }}
+      >
         <div className="banner-row">
           <div className="swiper-scrollbar banner-scrollbar"></div>
           <div className="banner-fraction"></div>

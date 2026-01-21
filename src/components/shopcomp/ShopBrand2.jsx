@@ -113,7 +113,12 @@ export default function ShopBrand2() {
                           type="button"
                           className={`shopbrand2-wish ${
                             wished ? "is-active" : ""
-                          }`}
+                          } impl-anchor`}
+                          data-impl-alt
+                          style={{
+                            "--impl-alt-top": "2px",
+                            "--impl-alt-right": "-1px",
+                          }}
                           aria-pressed={wished}
                           aria-label={
                             wished ? "관심상품 해제" : "관심상품 추가"
@@ -158,7 +163,14 @@ export default function ShopBrand2() {
             </Swiper>
 
             {/* ✅ shopbrand2 컨트롤 DOM 추가 */}
-            <div className="shopbrand2-products-controls">
+            <div
+              className="shopbrand2-products-controls impl-anchor"
+              data-impl
+              style={{
+                "--impl-right": "-50px",
+                "--impl-top": "-3px",
+              }}
+            >
               <div className="shopbrand2-products-row">
                 <div className="shopbrand2-products-scrollbar swiper-scrollbar" />
                 <div className="shopbrand2-products-pagination swiper-pagination" />
@@ -169,8 +181,13 @@ export default function ShopBrand2() {
 
         <button
           type="button"
-          className="brand-direct-btn"
+          className="brand-direct-btn impl-anchor"
           onClick={() => navigate("/home/shop/brand")}
+          data-impl
+          style={{
+            "--impl-right": "12px",
+            "--impl-top": "16px",
+          }}
         >
           <div className="direct-box">
             <h2 className="direct-left">HEVI 브랜드관 입점</h2>
