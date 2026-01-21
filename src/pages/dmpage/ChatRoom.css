@@ -1,3 +1,43 @@
+.chat-error-message {
+  margin: 0 auto;
+  width: 60%;
+  padding: 155px 0;
+  text-align: center;
+}
+
+.chat-error-message img {
+  width: 100%;
+}
+
+.chat-error-message .chat-error-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.chat-error-message .chat-error-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #808080;
+}
+
+.chat-error-btn-wrap {
+  margin: 0 16px;
+}
+.chat-error-btn-wrap .chat-error-btn {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 18px 0;
+
+  background: #884dff; /* 필요하면 그라데이션도 가능 */
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
 .chat-room {
   display: flex;
   flex-direction: column;
@@ -53,6 +93,7 @@
   height: 100%;
   object-fit: cover; /* 🔑 이게 핵심 */
   display: block;
+  border-radius: 10px;
 }
 
 /* 메시지 컬럼 */

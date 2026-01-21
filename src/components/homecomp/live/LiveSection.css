@@ -259,6 +259,7 @@
   padding: 26px 24px;
   border-radius: 10px;
   margin-bottom: 30px;
+  height: 260px;
 }
 .replay-main-title {
   font-size: 22px;
@@ -269,21 +270,54 @@
 }
 .replay-thumb {
   position: relative;
+  height: 160px;
 }
 .replay-thumb img {
   width: 100%;
   border-radius: 12px;
   display: block;
 }
+.replay-empty {
+  font-size: 13px;
+  color: #8b8b8b;
+  margin-top: 10px;
+}
 .replay-badge {
   position: absolute;
   top: 17px;
   left: 17px;
-  background: #ff5555;
   padding: 6px;
   border-radius: 5px;
   font-size: 12px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
 }
+
+/* HOT */
+.replay-badge.is-hot {
+  background: #ff5555;
+  color: #fff;
+}
+
+/* NEW */
+.replay-badge.is-new {
+  background: rgba(0, 122, 255, 1);
+  color: #fff;
+}
+
+/* FOR YOU */
+.replay-badge.is-foryou {
+  background: #a172ff;
+  color: #fff;
+}
+
+/* TREND */
+.replay-badge.is-trend {
+  background: #53c536;
+  color: #fff;
+}
+
 .replay-meta {
   position: absolute;
   left: 17px;

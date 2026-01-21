@@ -125,7 +125,7 @@
   text-align: right;
   z-index: 20;
   pointer-events: none;
-  color: #dadada;
+  color: #fff;
   font-size: 12px;
   font-weight: 300;
   background: rgba(16, 15, 15, 0.38);
@@ -145,4 +145,8 @@
 .small-banner-wrap .swiper-horizontal > .swiper-pagination-bullets,
 .small-banner-wrap .swiper-pagination-bullets.swiper-pagination-horizontal {
   width: 0%;
+}
+
+.swiper-pagination-total {
+  color: #fff;
 }

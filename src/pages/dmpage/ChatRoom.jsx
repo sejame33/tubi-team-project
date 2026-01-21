@@ -1,14 +1,34 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { chatData } from "../../components/dmcomp/ChatData.jsx";
 import "./ChatRoom.css";
 
 function ChatRoom() {
+  const navigate = useNavigate();
   const { artistId } = useParams();
   const artistInfo = chatData[artistId];
 
   if (!artistInfo) {
-    return <div>존재하지 않는 채팅방입니다.</div>;
+    return (
+      <>
+        <div className="chat-error-message">
+          <img src="/img/chat-error-tubi.svg" alt="" />
+          <p className="chat-error-title">
+            현재 해당 페이지를
+            <br />
+            찾을 수 없어요
+          </p>
+          <p className="chat-error-text">나중에 다시 시도해주세요</p>
+        </div>
+
+        <div className="chat-error-btn-wrap">
+          <button className="chat-error-btn" onClick={() => navigate(-1)}>
+            다시 돌아가기
+          </button>
+        </div>
+      </>
+    );
   }
 
   const [messages, setMessages] = useState(artistInfo.initialMessages);

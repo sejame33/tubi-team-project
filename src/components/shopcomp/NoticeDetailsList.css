@@ -1,3 +1,43 @@
+.notice-error-message {
+  margin: 0 auto;
+  width: 60%;
+  padding: 155px 0;
+  text-align: center;
+}
+
+.notice-error-message img {
+  width: 100%;
+}
+
+.notice-error-message .notice-error-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.notice-error-message .notice-error-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #808080;
+}
+
+.notice-error-btn-wrap {
+  margin: 0 16px;
+}
+.notice-error-btn-wrap .notice-error-btn {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 18px 0;
+
+  background: #884dff; /* 필요하면 그라데이션도 가능 */
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
 .notice-detail {
   padding: 16px;
   background: #fff;

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, Pagination } from "swiper/modules";
@@ -10,42 +10,20 @@ import "swiper/css/pagination";
 
 import "./ArtistBrandDivide.css";
 
-const MAIN_TABS = ["ALBUM", "TICKET", "KIT", "DIGITAL"];
+const MAIN_TABS = ["ALBUM", "TICKET", "KIT", "FASHION"];
 const SUB_TABS = ["NOVA Only", "All", "New", "Best", "Limited"];
 
 const products = [
+  // ===== ALBUM =====
   {
     id: 601,
     title: "플레이브 홈 스위트 홈 시즌 그리팅 2025",
     price: "₩41,000원",
     img: "/img/shop-brand-plave-1.svg",
     badge2: "특전제공",
-    // category: "ALBUM",
-  },
-  {
-    id: 602,
-    title: "플레이브 공식 응원봉 백 블랙",
-    price: "₩36,000원",
-    img: "/img/shop-brand-plave-2.svg",
-    badge4: "콜라보",
-    badge3: "멤버쉽",
-    // category: "TICKET",
-  },
-  {
-    id: 603,
-    title: "플레이브 시즌 그리팅 2026",
-    price: "₩58,000원",
-    img: "/img/shop-brand-plave-3.svg",
-    badge1: "콜라보",
-    badge2: "특전제공",
-    // category: "KIT",
-  },
-  {
-    id: 604,
-    title: "2026 TOUR ENCORE PHOTOCARD PACK_DASH",
-    price: "₩26,000원",
-    img: "/img/shop-brand-plave-4.svg",
-    // category: "DIGITAL",
+    category: "ALBUM",
+    novaOnly: true,
+    tag: "New",
   },
   {
     id: 605,
@@ -53,7 +31,155 @@ const products = [
     price: "₩18,000원",
     img: "/img/shop-brand-plave-5.svg",
     badge4: "콜라보",
-    // category: "ALBUM",
+    category: "ALBUM",
+    novaOnly: false,
+    tag: "Best",
+  },
+  {
+    id: 606,
+    title: "PLAVE 2nd Mini Album (Limited)",
+    price: "₩29,000원",
+    img: "/img/shop-brand-plave-6.svg",
+    badge1: "한정",
+    category: "ALBUM",
+    novaOnly: false,
+    tag: "Limited",
+  },
+  {
+    id: 607,
+    title: "PLAVE 포토북 세트(NOVA only)",
+    price: "₩35,000원",
+    img: "/img/shop-brand-plave-7.svg",
+    badge2: "특전제공",
+    category: "ALBUM",
+    novaOnly: true,
+    tag: "Best",
+  },
+
+  // ===== TICKET =====
+  {
+    id: 602,
+    title: "플레이브 1st CONCERT 스탠딩 티켓",
+    price: "₩86,000원",
+    img: "/img/shop-brand-plave-2.svg",
+    badge4: "콜라보",
+    badge3: "멤버쉽",
+    category: "TICKET",
+    novaOnly: false,
+    tag: "Best",
+  },
+  {
+    id: 608,
+    title: "팬미팅 선예매 티켓(NOVA Only)",
+    price: "₩99,000원",
+    img: "/img/shop-brand-plave-8.svg",
+    badge3: "멤버쉽",
+    category: "TICKET",
+    novaOnly: true,
+    tag: "New",
+  },
+  {
+    id: 609,
+    title: "콘서트 VIP 패키지 (Limited)",
+    price: "₩189,000원",
+    img: "/img/shop-brand-plave-9.svg",
+    badge1: "한정",
+    category: "TICKET",
+    novaOnly: false,
+    tag: "Limited",
+  },
+  {
+    id: 610,
+    title: "투어 스탠딩 티켓",
+    price: "₩129,000원",
+    img: "/img/shop-brand-plave-10.svg",
+    category: "TICKET",
+    novaOnly: false,
+    tag: "Best",
+  },
+
+  // ===== KIT =====
+  {
+    id: 603,
+    title: "플레이브 시즌 그리팅 2026",
+    price: "₩58,000원",
+    img: "/img/shop-brand-plave-3.svg",
+    badge1: "콜라보",
+    badge2: "특전제공",
+    category: "KIT",
+    novaOnly: false,
+    tag: "New",
+  },
+  {
+    id: 611,
+    title: "팬키트 (NOVA Only)",
+    price: "₩49,000원",
+    img: "/img/shop-brand-plave-11.svg",
+    badge3: "멤버쉽",
+    category: "KIT",
+    novaOnly: true,
+    tag: "Best",
+  },
+  {
+    id: 612,
+    title: "한정 팬키트 (Limited)",
+    price: "₩79,000원",
+    img: "/img/shop-brand-plave-12.svg",
+    badge1: "한정",
+    category: "KIT",
+    novaOnly: false,
+    tag: "Limited",
+  },
+  {
+    id: 613,
+    title: "응원봉 커스텀 키트",
+    price: "₩22,000원",
+    img: "/img/shop-brand-plave-4.svg",
+    category: "KIT",
+    novaOnly: false,
+    tag: "Best",
+  },
+
+  // ===== FASHION =====
+  {
+    id: 604,
+    title: "플레이브 공식 응원봉 백 블랙",
+    price: "₩26,000원",
+    img: "/img/shop-brand-plave-13.svg",
+    badge1: "한정",
+    category: "FASHION",
+    novaOnly: false,
+    tag: "New",
+  },
+  {
+    id: 614,
+    title: "플레이브 공식 후드 그레이(NOVA Only)",
+    price: "₩39,900원",
+    img: "/img/shop-brand-plave-14.svg",
+    category: "FASHION",
+    badge3: "멤버쉽",
+    badge2: "특전제공",
+    novaOnly: true,
+    tag: "Best",
+  },
+  {
+    id: 615,
+    title: "플레이브 공식 후드 블랙 (Limited)",
+    price: "₩39,900원",
+    img: "/img/shop-brand-plave-15.svg",
+    category: "FASHION",
+    badge4: "콜라보",
+    novaOnly: true,
+    tag: "Limited",
+  },
+  {
+    id: 616,
+    title: "플레이브 공식 캡 모자",
+    price: "₩25,000원",
+    img: "/img/shop-brand-plave-16.svg",
+    category: "FASHION",
+    novaOnly: false,
+    tag: "Best",
   },
 ];
 
@@ -65,18 +191,47 @@ export default function ArtistBrandDivide() {
   const [subTab, setSubTab] = useState("All");
   const [excludeSoldOut, setExcludeSoldOut] = useState(false);
 
-  // ✅ (선택) 탭별 상품 필터링을 나중에 쓰고 싶으면 category 추가 후 아래 주석 해제
+  // ✅ Swiper 인스턴스 저장
+  const swiperRef = useRef(null);
+
+  // ✅ 탭(main/sub) 바뀔 때마다 스와이퍼 위치 리셋
+  useEffect(() => {
+    const swiper = swiperRef.current;
+    if (!swiper) return;
+
+    // 맨 앞으로
+    swiper.slideTo(0, 0);
+
+    // 드래그 스크롤바 위치도 초기화(옵션)
+    if (swiper.scrollbar && swiper.scrollbar.el) {
+      swiper.scrollbar.el.scrollLeft = 0;
+    }
+  }, [mainTab, subTab]);
+
+  const applySubTabFilter = (list) => {
+    if (subTab === "All") return list;
+
+    if (subTab === "NOVA Only") {
+      return list.filter((p) => p.novaOnly);
+    }
+
+    return list.filter((p) => p.tag === subTab);
+  };
+
   const filteredProducts = useMemo(() => {
     let list = products;
 
-    // 예: category가 붙었을 때만 적용
-    // list = list.filter((p) => p.category === mainTab);
+    // 1) 메인 탭 필터
+    list = list.filter((p) => p.category === mainTab);
 
-    // 품절 제외 로직은 실제 품절 데이터가 있어야 적용 가능
-    // if (excludeSoldOut) list = list.filter((p) => !p.soldOut);
+    // 2) 품절 제외
+    if (excludeSoldOut) list = list.filter((p) => !p.soldOut);
 
-    // subTab도 실제 데이터/정렬 규칙에 맞춰 적용
-    return list;
+    // 3) 서브 탭 필터
+    list = applySubTabFilter(list);
+
+    // 4) 각 탭에서 4개만
+    return list.slice(0, 4);
   }, [mainTab, subTab, excludeSoldOut]);
 
   return (
@@ -94,7 +249,9 @@ export default function ArtistBrandDivide() {
               type="button"
               role="tab"
               aria-selected={mainTab === t}
-              className={`artistbranddivide-tab ${mainTab === t ? "is-active" : ""}`}
+              className={`artistbranddivide-tab ${
+                mainTab === t ? "is-active" : ""
+              }`}
               onClick={() => setMainTab(t)}
             >
               {t}
@@ -110,9 +267,9 @@ export default function ArtistBrandDivide() {
               <button
                 key={t}
                 type="button"
-                className={`artistbranddivide-chip ${isNova ? "is-nova" : ""} ${
-                  subTab === t ? "is-active" : ""
-                }`}
+                className={`artistbranddivide-chip ${
+                  isNova ? "is-nova" : ""
+                } ${subTab === t ? "is-active" : ""}`}
                 onClick={() => setSubTab(t)}
               >
                 <span className="artistbranddivide-chip-text">{t}</span>
@@ -136,9 +293,8 @@ export default function ArtistBrandDivide() {
             <span>품절제외</span>
           </label>
         </div>
-        <div className="artistbranddivide-box">
-          {/* ✅ ALBUM 타이틀 + 품절제외 */}
 
+        <div className="artistbranddivide-box">
           <div className="artistbranddivide-toprow">
             <button className="artistbranddivide-link" type="button">
               <span className="artistbranddivide-gray">상품</span> {"235"}개
@@ -157,6 +313,9 @@ export default function ArtistBrandDivide() {
 
           <div className="artistbranddivide-products">
             <Swiper
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
               className="artistbranddivide-products-swiper"
               modules={[Scrollbar, Pagination]}
               slidesPerView="auto"
@@ -185,13 +344,23 @@ export default function ArtistBrandDivide() {
                     key={p.id}
                     className="artistbranddivide-product-slide"
                   >
-                    <article className="artistbranddivide-card">
+                    <article
+                      className="artistbranddivide-card"
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter")
+                          navigate(`/home/shop/product/${p.id}`);
+                      }}
+                    >
                       <div className="artistbranddivide-thumb">
                         <img src={p.img} alt={p.title} />
 
                         <button
                           type="button"
-                          className={`artistbranddivide-wish ${wished ? "is-active" : ""}`}
+                          className={`artistbranddivide-wish ${
+                            wished ? "is-active" : ""
+                          }`}
                           aria-pressed={wished}
                           aria-label={
                             wished ? "관심상품 해제" : "관심상품 추가"
