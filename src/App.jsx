@@ -47,6 +47,13 @@ import LivePage from "./pages/livepage/LivePage";
 import Artist from "./pages/artistpage/Artist";
 import StickerCollection from "./pages/gatchapage/StickerCollection";
 
+// album
+import AlbumPage from "./pages/albumpage/AlbumPage"
+
+// mv
+import MvPage from "./pages/mvpage/MvPage";
+
+
 import "./style/Dot.css";
 
 function App() {
@@ -76,6 +83,8 @@ function App() {
             <Route index element={<Home />} />
             <Route path="artist/:artistId" element={<Artist />} />
             <Route path="/home/live" element={<LivePage />} />
+            <Route path="/home/album" element={<AlbumPage />} />
+            <Route path="/home/mv" element={<MvPage />} />
             <Route path="gatcha" element={<Gatcha />} />
             <Route
               path="/home/gatcha/stickercollection"

@@ -1,6 +1,7 @@
 <svg width="248" height="268" viewBox="0 0 248 268" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M0 0H242V268H0V0Z" fill="url(#pattern0_3497_3832)"/>
-<path d="M161.918 105.091C161.538 102.881 162.465 99.6244 162.759 97.8798C162.759 97.8798 167.01 101.938 167.614 103.419C168.217 104.9 168.343 107.184 165.965 107.882C162.993 108.754 162.133 106.341 161.918 105.091Z" fill="#5B81FF" stroke="#5B81FF" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M13.8633 15.353H228.136V252.647H13.8633V15.353Z" fill="url(#pattern0_3497_3832)"/>
+<path d="M154.7 111.156C154.191 107.018 156.202 101.051 156.905 97.8367C156.905 97.8367 164.44 105.752 165.429 108.556C166.417 111.361 166.448 115.615 161.97 116.7C156.372 118.057 154.988 113.497 154.7 111.156Z" fill="#5B81FF" stroke="#5B81FF" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M164.164 95.2162C163.496 92.6276 164.279 88.6671 164.458 86.5651C164.458 86.5651 169.907 90.9709 170.768 92.6717C171.63 94.3725 172.003 97.0746 169.246 98.1367C165.8 99.4643 164.541 96.6806 164.164 95.2162Z" fill="#5B81FF" stroke="#5B81FF" stroke-width="1.5" stroke-linecap="round"/>
 <defs>
 <pattern id="pattern0_3497_3832" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_3497_3832" transform="matrix(0.00168919 0 0 0.00152531 0 -0.000302541)"/>

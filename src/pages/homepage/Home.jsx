@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -16,6 +17,7 @@ import AlbumSlide from "../../components/homecomp/AlbumSlide";
 import BrandShop from "../../components/homecomp/BrandShop";
 
 function Home() {
+  const navigate = useNavigate();
   const { nickname } = useNickname();
   const fractionRefs = useRef([]); // ✅ 슬라이드별 fraction 자리 저장
 
@@ -146,14 +148,14 @@ function Home() {
         title="이달의 ALBUM"
         showMore={true}
         useNicknameTitle={false}
-        onMoreClick={() => console.log("/album")}
+        onMoreClick={() => navigate("/home/album")}
       />
       <AlbumSlide />
 
       <SectionTitle
         title="추천 MV"
         showMore={true}
-        onMoreClick={() => console.log("/recommend")}
+        onMoreClick={() => navigate("/home/mv")}
       />
       <MvSection />
 
