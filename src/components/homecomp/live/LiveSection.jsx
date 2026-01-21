@@ -11,11 +11,14 @@ import { useFollowArtist } from "../../../context/FollowArtistContext";
 
 const TABS = ["라이브", "콘텐츠", "무대"];
 const CHIPS = ["HOT", "NEW", "FOR YOU", "TREND"];
-
-// ✅ 라이브 탭에서 "항상 보여줄" 고정 3명 (ARTIST_LIST의 id로 맞춰줘!)
 const FIXED_LIVE_IDS = ["7", "5", "1"]; // IRISE(7), HONEYZ(5), Plave(1)
 
-const mockReplays = [
+/* =========================
+   ✅ mock: badge 4종(HOT/NEW/FOR YOU/TREND) 구성
+   ========================= */
+
+// 라이브 탭 (패널 1개)
+const mockLiveReplays = [
   {
     id: 1,
     title: "산중 호걸이라는 테리님의 생일날...",
@@ -23,20 +26,181 @@ const mockReplays = [
     thumb: "/img/live-replay-bg.svg",
     badge: "HOT",
   },
+  {
+    id: 2,
+    title: "오늘의 라이브 요약",
+    subtitle: "HONEYZ · 제이",
+    thumb: "/img/live-replay-bg-2.svg",
+    badge: "NEW",
+  },
+  {
+    id: 3,
+    title: "당신을 위한 추천 라이브",
+    subtitle: "IRISE · 이이네",
+    thumb: "/img/live-replay-bg-3.svg",
+    badge: "FOR YOU",
+  },
+  {
+    id: 4,
+    title: "지금 가장 트렌디한 순간",
+    subtitle: "PLAVE · 밤비",
+    thumb: "/img/live-replay-bg-4.svg",
+    badge: "TREND",
+  },
+];
+
+// 콘텐츠 탭 (패널 2개)
+const mockContentReplays = [
+  {
+    id: 11,
+    title: "비하인드 콘텐츠 모음.zip",
+    subtitle: "LUVDIA · 이이네",
+    thumb: "/img/content-clip-bg.svg",
+    badge: "HOT",
+  },
+  {
+    id: 2,
+    title: "오늘의 라이브 요약",
+    subtitle: "HONEYZ · 제이",
+    thumb: "/img/live-replay-bg-2.svg",
+    badge: "NEW",
+  },
+  {
+    id: 3,
+    title: "당신을 위한 추천 라이브",
+    subtitle: "IRISE · 이이네",
+    thumb: "/img/live-replay-bg-3.svg",
+    badge: "FOR YOU",
+  },
+  {
+    id: 4,
+    title: "지금 가장 트렌디한 순간",
+    subtitle: "PLAVE · 밤비",
+    thumb: "/img/live-replay-bg-4.svg",
+    badge: "TREND",
+  },
+];
+
+const mockContentClips = [
+  {
+    id: 21,
+    title: "10초 하이라이트 클립",
+    subtitle: "HONEYZ · 제이",
+    thumb: "/img/content-replay-bg.svg",
+    badge: "HOT",
+  },
+  {
+    id: 22,
+    title: "리액션 모음 클립",
+    subtitle: "LUVDIA · 아이비",
+    thumb: "/img/content-clip-bg-2.svg",
+    badge: "NEW",
+  },
+  {
+    id: 23,
+    title: "FOR YOU 추천 클립",
+    subtitle: "IRISE · 이이네",
+    thumb: "/img/content-clip-bg-3.svg",
+    badge: "FOR YOU",
+  },
+  {
+    id: 24,
+    title: "TREND 밈 클립",
+    subtitle: "PLAVE · 밤비",
+    thumb: "/img/content-clip-bg-4.svg",
+    badge: "TREND",
+  },
+];
+
+// 무대 탭 (패널 2개)
+const mockStageReplays = [
+  {
+    id: 31,
+    title: "무대 풀캠 리플레이",
+    subtitle: "PLAVE · 밤비",
+    thumb: "/img/stage-replay-bg.svg",
+    badge: "HOT",
+  },
+  {
+    id: 2,
+    title: "오늘의 라이브 요약",
+    subtitle: "HONEYZ · 제이",
+    thumb: "/img/live-replay-bg-2.svg",
+    badge: "NEW",
+  },
+  {
+    id: 3,
+    title: "당신을 위한 추천 라이브",
+    subtitle: "IRISE · 이이네",
+    thumb: "/img/live-replay-bg-3.svg",
+    badge: "FOR YOU",
+  },
+  {
+    id: 4,
+    title: "지금 가장 트렌디한 순간",
+    subtitle: "PLAVE · 밤비",
+    thumb: "/img/live-replay-bg-4.svg",
+    badge: "TREND",
+  },
+];
+
+const mockStageClips = [
+  {
+    id: 41,
+    title: "킬링파트 모음",
+    subtitle: "PLAVE · 하민",
+    thumb: "/img/stage-clip-bg.svg",
+    badge: "HOT",
+  },
+  {
+    id: 42,
+    title: "NEW 5초 킬포",
+    subtitle: "IRISE · 이이네",
+    thumb: "/img/stage-clip-bg-2.svg",
+    badge: "NEW",
+  },
+  {
+    id: 43,
+    title: "FOR YOU 퍼포먼스",
+    subtitle: "HONEYZ · 제이",
+    thumb: "/img/stage-clip-bg-3.svg",
+    badge: "FOR YOU",
+  },
+  {
+    id: 44,
+    title: "TREND 안무 모음",
+    subtitle: "LUVDIA · 아이비",
+    thumb: "/img/stage-clip-bg-4.svg",
+    badge: "TREND",
+  },
 ];
 
 export default function LiveSection() {
   const navigate = useNavigate();
   const { nickname } = useNickname();
-
-  // ✅ 전체 탭은 팔로우 전체
   const { followedArtists, artistsOnly } = useFollowArtist();
 
   const [tab, setTab] = useState("라이브");
   const [chip, setChip] = useState("HOT");
   const [panelTab, setPanelTab] = useState("라이브"); // "라이브" | "전체"
 
-  // ✅ ARTIST_LIST(artistsOnly)에서 id로 찾아서 "라이브 고정 3명" 구성
+  const isLiveTab = tab === "라이브";
+  const isContentTab = tab === "콘텐츠";
+  const isStageTab = tab === "무대";
+
+  const goToLivePage = () => navigate("/home/live");
+
+  /* =========================
+     ✅ chip -> badge 필터링 함수
+     ========================= */
+  const filterByChip = (arr) => {
+    if (!chip) return arr;
+    return (arr || []).filter((item) => item.badge === chip);
+  };
+
+  /* =========================
+     ✅ 팔로우 패널(라이브 탭 고정)
+     ========================= */
   const fixedLiveArtists = useMemo(() => {
     const byId = new Map(artistsOnly.map((a) => [String(a.id), a]));
 
@@ -47,7 +211,7 @@ export default function LiveSection() {
       return {
         id: a.id,
         name: a.name,
-        label: a.label ?? "", // ✅ ARTIST_LIST에서 가져옴
+        label: a.label ?? "",
         avatar: a.img,
         live: true,
         verified: true,
@@ -55,24 +219,88 @@ export default function LiveSection() {
     }).filter(Boolean);
   }, [artistsOnly]);
 
-  // ✅ 전체 탭: 팔로우 전체를 LiveArtistRow 포맷으로 매핑
   const followingArtists = useMemo(() => {
     return (followedArtists || []).map((a) => ({
       id: a.id,
       name: a.name,
-      label: false, // ✅ ARTIST_LIST 기반 label
+      label: false,
       avatar: a.img,
       live: false,
       verified: false,
     }));
   }, [followedArtists]);
 
-  // ✅ mini-tab에 따라 items 결정
   const artists = panelTab === "라이브" ? fixedLiveArtists : followingArtists;
 
-  const replays = useMemo(() => mockReplays, [chip]);
+  /* =========================
+     ✅ chip 눌렀을 때 실제 렌더링될 리스트(필터 적용)
+     ========================= */
+  const liveReplays = useMemo(() => filterByChip(mockLiveReplays), [chip]);
+  const contentReplays = useMemo(
+    () => filterByChip(mockContentReplays),
+    [chip],
+  );
+  const contentClips = useMemo(() => filterByChip(mockContentClips), [chip]);
+  const stageReplays = useMemo(() => filterByChip(mockStageReplays), [chip]);
+  const stageClips = useMemo(() => filterByChip(mockStageClips), [chip]);
 
-  const goToLivePage = () => navigate("/home/live");
+  /* =========================
+     ✅ 패널 정의(탭별로 1개/2개)
+     ========================= */
+  const replayPanels = useMemo(() => {
+    if (isLiveTab) {
+      return [
+        {
+          key: "live-replay",
+          title: "Now Live!",
+          variant: "live",
+          items: liveReplays,
+        },
+      ];
+    }
+
+    if (isContentTab) {
+      return [
+        {
+          key: "content-replay",
+          title: "Live Replay",
+          variant: "content",
+          items: contentReplays,
+        },
+        {
+          key: "content-clip",
+          title: "Hot Clip",
+          variant: "content2",
+          items: contentClips,
+        },
+      ];
+    }
+
+    // isStageTab
+    return [
+      {
+        key: "stage-replay",
+        title: "Stage Replay",
+        variant: "stage",
+        items: stageReplays,
+      },
+      {
+        key: "stage-clip",
+        title: "Performance Clip",
+        variant: "stage2",
+        items: stageClips,
+      },
+    ];
+  }, [
+    isLiveTab,
+    isContentTab,
+    isStageTab,
+    liveReplays,
+    contentReplays,
+    contentClips,
+    stageReplays,
+    stageClips,
+  ]);
 
   return (
     <section className="live-section">
@@ -82,46 +310,72 @@ export default function LiveSection() {
         onMoreClick={goToLivePage}
       />
 
-      <LiveTabs tabs={TABS} active={tab} onChange={setTab} />
+      <LiveTabs
+        tabs={TABS}
+        active={tab}
+        onChange={(next) => {
+          setTab(next);
+          if (next === "라이브") setPanelTab("라이브");
+        }}
+      />
+
+      {/* ✅ chip 클릭 -> setChip -> 필터링 반영 */}
       <FilterChips chips={CHIPS} active={chip} onChange={setChip} />
 
-      <div className="live-panel">
-        <h3 className="live-panel-title">
-          <span>{nickname || "닉네임"}</span>님의 팔로우 리스트
-        </h3>
+      {/* ✅ 라이브 탭일 때만 팔로우 패널 */}
+      {isLiveTab && (
+        <div className="live-panel">
+          <h3 className="live-panel-title">
+            <span>{nickname || "닉네임"}</span>님의 팔로우 리스트
+          </h3>
 
-        <div className="live-panel-tabs">
-          <button
-            type="button"
-            className={`mini-tab ${panelTab === "라이브" ? "is-active" : ""}`}
-            onClick={() => setPanelTab("라이브")}
-          >
-            라이브
-          </button>
+          <div className="live-panel-tabs">
+            <button
+              type="button"
+              className={`mini-tab ${panelTab === "라이브" ? "is-active" : ""}`}
+              onClick={() => setPanelTab("라이브")}
+            >
+              라이브
+            </button>
 
-          <button
-            type="button"
-            className={`mini-tab ${panelTab === "전체" ? "is-active" : ""}`}
-            onClick={() => setPanelTab("전체")}
-          >
-            전체
-          </button>
+            <button
+              type="button"
+              className={`mini-tab ${panelTab === "전체" ? "is-active" : ""}`}
+              onClick={() => setPanelTab("전체")}
+            >
+              전체
+            </button>
+          </div>
+
+          <LiveArtistRow items={artists} />
         </div>
+      )}
 
-        <LiveArtistRow items={artists} />
-      </div>
+      {/* ✅ 탭에 따라 패널 1개/2개, chip에 따라 리스트가 필터링됨 */}
+      {replayPanels.map((panel) => (
+        <div className="replay-panel" key={panel.key}>
+          <h3 className="replay-main-title">{panel.title}</h3>
 
-      <div className="replay-panel">
-        <h3 className="replay-main-title">Live Replay</h3>
-        {replays.map((r) => (
-          <LiveReplayCard key={r.id} item={r} />
-        ))}
-      </div>
+          {/* ✅ chip 필터 결과가 없을 때 */}
+          {panel.items.length === 0 ? (
+            <p className="replay-empty">해당 카테고리의 영상이 아직 없어요.</p>
+          ) : (
+            panel.items.map((r) => (
+              <LiveReplayCard
+                key={`${panel.key}-${r.id}`}
+                item={r}
+                variant={panel.variant}
+              />
+            ))
+          )}
+        </div>
+      ))}
 
       <button className="section-more" onClick={() => console.log("더보기")}>
         더보기
         <img src="/img/live-down-arrow.svg" alt="" />
       </button>
+
       <img
         src="/img/live-speech-bubble.png"
         alt=""

@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./NoticeDetailsList.css";
 
 const noticeData = {
@@ -31,11 +32,30 @@ const noticeData = {
 };
 
 const NoticeDetailsList = () => {
+  const navigate = useNavigate();
   const { noticeId } = useParams();
   const data = noticeData[noticeId];
 
   if (!data) {
-    return <div className="notice-detail">존재하지 않는 공지입니다.</div>;
+    return (
+      <>
+        <div className="notice-error-message">
+          <img src="/img/chat-error-tubi.svg" alt="" />
+          <p className="notice-error-title">
+            현재 해당 페이지를
+            <br />
+            찾을 수 없어요
+          </p>
+          <p className="notice-error-text">나중에 다시 시도해주세요</p>
+        </div>
+
+        <div className="notice-error-btn-wrap">
+          <button className="notice-error-btn" onClick={() => navigate(-1)}>
+            다시 돌아가기
+          </button>
+        </div>
+      </>
+    );
   }
 
   return (

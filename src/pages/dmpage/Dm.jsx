@@ -8,7 +8,7 @@ const dmListData = [
     check: "/img/dm-purple-check.svg",
     time: "12분 전",
     group: "IRISE",
-    image: "/img/dm-irise.svg",
+    image: "/img/dm-irise.png",
     verified: true,
   },
   {
@@ -17,7 +17,7 @@ const dmListData = [
     check: "/img/dm-purple-check.svg",
     time: "45분 전",
     group: "Stellive",
-    image: "/img/dm-stellive.svg",
+    image: "/img/dm-stellive.png",
     verified: true,
   },
   {
@@ -44,7 +44,7 @@ const dmListData = [
     check: "/img/dm-purple-check.svg",
     time: "4일 전",
     group: "Hebi",
-    image: "/img/dm-hebi.svg",
+    image: "/img/dm-hebi.png",
     verified: true,
   },
   {
