@@ -6,6 +6,7 @@ import { chatData } from "../../components/dmcomp/ChatData.jsx";
 import "./ChatRoom.css";
 
 function ChatRoom() {
+  
   const navigate = useNavigate();
   const { artistId } = useParams();
   const artistInfo = chatData[artistId];

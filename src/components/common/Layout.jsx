@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useEffect, useRef } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, matchPath } from "react-router-dom";
 import "./Layout.css";
 import ChatbotContainer from "../homecomp/chatbot/ChatbotContainer.jsx";
 
@@ -11,8 +11,9 @@ const Layout = () => {
 
   const isMyHome = location.pathname === "/home/my";
   const isTubiPage = location.pathname === "/home/my/tubi";
-
   const isArtistPage = location.pathname.startsWith("/home/artist");
+
+  const isChatRoom = !!matchPath("/home/dm/:artistId", location.pathname);
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
@@ -173,9 +174,13 @@ const Layout = () => {
       <div className="app">
         {headerProps && <Header {...headerProps} />}
         <main
-          className={`main ${isMyHome || isTubiPage || isArtistPage ? "main--nochrome" : ""}`}
-          ref={mainRef}
-        >
+  ref={mainRef}
+  className={[
+    "main",
+    (isMyHome || isTubiPage || isArtistPage) ? "main--nochrome" : "",
+    isChatRoom ? "main--noBottom main--chat" : "",
+  ].filter(Boolean).join(" ")}
+>
           <Outlet />
         </main>
         {!isTubiPage && <Footer isLive={isLiveMode} />}

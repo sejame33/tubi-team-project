@@ -39,20 +39,17 @@ function DmSection({ items, onClickItem }) {
 
   const fractionRefs = useRef([]);
 
-  // ✅ pagination + impl 점 주입
   const bindFractionEl = (swiper) => {
-    const active = swiper.realIndex; // loop 대응
+    const active = swiper.realIndex; 
     const el = fractionRefs.current[active];
     if (!el) return;
 
     swiper.pagination.el = el;
 
-    /* 🔴 여기서 점 추가 */
     el.classList.add("impl-anchor");
     el.setAttribute("data-impl", "true");
     el.style.setProperty("--impl-top", "18px");
     el.style.setProperty("--impl-right", "-12px");
-    /* 🔴 여기까지 */
 
     swiper.pagination.init();
     swiper.pagination.render();

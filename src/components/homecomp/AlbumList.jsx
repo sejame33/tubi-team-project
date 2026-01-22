@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import heartLine from "/img/heart-line.svg";
 import heartFill from "/img/heart-fill.svg";
 
 import "./AlbumList.css";
 
 const AlbumList = ({
+  id, // ⭐️ 고유 id 꼭 필요
   image,
   title,
   subtitle,
   defaultLiked = false,
   onLikeChange,
 }) => {
-  const [liked, setLiked] = useState(defaultLiked);
+  const storageKey = `album-like-${id}`;
+
+  const [liked, setLiked] = useState(() => {
+    const saved = localStorage.getItem(storageKey);
+    return saved !== null ? JSON.parse(saved) : defaultLiked;
+  });
 
   const handleLike = () => {
     const next = !liked;
     setLiked(next);
+    localStorage.setItem(storageKey, JSON.stringify(next));
     onLikeChange?.(next);
   };
 
@@ -29,10 +36,7 @@ const AlbumList = ({
       </div>
 
       <button className="album-list__heart" onClick={handleLike}>
-        <img
-          src={liked ? heartFill : heartLine}
-          alt="like"
-        />
+        <img src={liked ? heartFill : heartLine} alt="like" />
       </button>
     </div>
   );
