@@ -12,6 +12,10 @@ const Layout = () => {
   const isMyHome = location.pathname === "/home/my";
   const isTubiPage = location.pathname === "/home/my/tubi";
   const isArtistPage = location.pathname.startsWith("/home/artist");
+  const isAnnouncement6 = location.pathname.startsWith("/home/shop/announcement/");
+  const isDmPage1 = location.pathname === "/home/dm/isegye";
+  const isDmPage2 = location.pathname === "/home/dm/hebi";
+  const isDmPage3 = location.pathname === "/home/dm/meechu";
 
   const isChatRoom = !!matchPath("/home/dm/:artistId", location.pathname);
 
@@ -75,7 +79,7 @@ const Layout = () => {
         showMenu: true,
       };
     }
-    if (path === "/home/shop/announcement") {
+    if (path.startsWith("/home/shop/announcement")) {
       return {
         showBack: true,
         showLogo: false,
@@ -172,18 +176,19 @@ const Layout = () => {
   return (
     <div className="app-wrapper">
       <div className="app">
-        {headerProps && <Header {...headerProps} />}
+        {headerProps && !isAnnouncement6 && !isDmPage1 && !isDmPage2 && !isDmPage3 && <Header {...headerProps} />}
         <main
-  ref={mainRef}
-  className={[
-    "main",
-    (isMyHome || isTubiPage || isArtistPage) ? "main--nochrome" : "",
-    isChatRoom ? "main--noBottom main--chat" : "",
-  ].filter(Boolean).join(" ")}
->
+          ref={mainRef}
+          className={[
+            "main",
+            isArtistPage ? "main--artist" : "",
+            (isMyHome || isTubiPage) ? "main--nochrome" : "",
+            isChatRoom ? "main--noBottom main--chat" : "",
+          ].filter(Boolean).join(" ")}
+        >
           <Outlet />
         </main>
-        {!isTubiPage && <Footer isLive={isLiveMode} />}
+        {!isTubiPage && !isAnnouncement6 && <Footer isLive={isLiveMode} />}
         {isHome && <ChatbotContainer />}
       </div>
     </div>

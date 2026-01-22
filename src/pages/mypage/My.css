@@ -53,7 +53,6 @@
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  padding-bottom: 200px;
 }
 
 .myTubi img {
@@ -195,7 +194,8 @@
   margin: auto;
   z-index: 2;
 
-  width: 430px;
+  width: 100%;
+  max-width: 430px;
   height: 80vh;
   background: #fff;
 

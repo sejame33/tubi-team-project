@@ -84,3 +84,8 @@ body {
   /* 기존 main이 flex/height 구조면 여기로 맞춰짐 */
   overflow: auto;
 }
+
+
+.main--artist {
+  padding: 0 0 90px;
+}

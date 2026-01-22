@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Confetti from "react-confetti";
 import { boom } from "./boom";
 
 import "./GachaResultModal.css";
 import { gachaItems } from "../data/gachaData.jsx";
-import { useNavigate } from "react-router-dom";
 import "../../style/Dot.css";
 
 const GachaResultModal = ({ onClose }) => {
@@ -59,17 +57,6 @@ const GachaResultModal = ({ onClose }) => {
             />
           </div>
 
-        <button
-          className="sticker-list-btn impl-anchor"
-          data-impl
-          style={{
-            "--impl-right": "38px",
-            "--impl-top": "12px",
-          }}
-          onClick={() => navigate("/home/gatcha/stickercollection")}
-        >
-          스티커 목록 보기
-        </button>
           <div className="sticker-gatcha-box">
             <div className="sticker-badge">{item.no}</div>
             <p className="sticker-desc">
