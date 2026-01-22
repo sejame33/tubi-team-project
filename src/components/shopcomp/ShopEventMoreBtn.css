@@ -38,3 +38,10 @@
   margin-right: 8px;
   font-weight: 500;
 }
+
+@media screen and (max-width: 390px) {
+  .eventmore .event-banner {
+    font-size: 14px;
+    gap: 10px;
+  }
+}

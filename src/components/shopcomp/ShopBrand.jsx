@@ -114,12 +114,15 @@ export default function ShopBrand() {
                 1024: { spaceBetween: 18 },
               }}
             >
-              {products.map((p) => {
+              {products.map((p, index) => {
                 const wished = isWished(p.id);
 
                 return (
                   <SwiperSlide key={p.id} className="shopbrand-product-slide">
-                    <article className="shopbrand-card">
+                    <article
+                      className="shopbrand-card impl-anchor"
+                      data-impl={index === 0 ? true : undefined}
+                    >
                       <div className="shopbrand-thumb">
                         <img src={p.img} alt={p.title} />
 

@@ -8,10 +8,6 @@ const AnnouncementListItem = ({ id, icon, title, desc, time }) => {
     <div
       className="announcement-item impl-anchor"
       data-impl
-      style={{
-        "--impl-right": "384px",
-        "--impl-top": "24px",
-      }}
       onClick={() => navigate(`/home/shop/announcement/${id}`)}
     >
       <div className="item-left">

@@ -191,3 +191,50 @@
   font-size: 12px;
   color: #fff;
 }
+
+@media screen and (max-width: 390px) {
+  .gatcha-visual {
+    width: 100%;
+    max-width: 360px;
+    margin: 24px auto 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 620px;
+  }
+
+  .gatcha-visual .gatcha-main-button {
+    width: 167px;
+    height: 54px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .gatcha-title-text {
+    font-size: 32px;
+    margin-bottom: 272px;
+  }
+
+  .gatcha-sub-text {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+
+  .gatcha-visual .gatcha-caption-text {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+
+  .gatcha-visual .gatcha-count-btn {
+    width: 140px;
+    height: 48px;
+    font-size: 14px;
+  }
+  .gatcha-visual .gatcha-count-buttons {
+    margin-bottom: 7px;
+  }
+  .gatcha-visual .gatcha-count-btn span {
+    font-size: 28px;
+  }
+}

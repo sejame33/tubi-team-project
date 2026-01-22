@@ -50,7 +50,7 @@ export default function ShopBrand2() {
       <div className="shopbrand2-header">
         <div className="shopbrand2-header-left">
           <p className="shopbrand2-header-sub">3Y CORPORATION</p>
-          <h2 className="shopbrand2-header-title">HEVI</h2>
+          <h2 className="shopbrand2-header-title">HEBI</h2>
         </div>
 
         <img
@@ -100,12 +100,15 @@ export default function ShopBrand2() {
                 1024: { spaceBetween: 18 },
               }}
             >
-              {products.map((p) => {
+              {products.map((p, index) => {
                 const wished = isWished(p.id);
 
                 return (
                   <SwiperSlide key={p.id} className="shopbrand2-product-slide">
-                    <article className="shopbrand2-card">
+                    <article
+                      className="shopbrand2-card impl-anchor"
+                      data-impl={index === 0 ? true : undefined}
+                    >
                       <div className="shopbrand2-thumb">
                         <img src={p.img} alt={p.title} />
 
@@ -190,7 +193,7 @@ export default function ShopBrand2() {
           }}
         >
           <div className="direct-box">
-            <h2 className="direct-left">HEVI 브랜드관 입점</h2>
+            <h2 className="direct-left">HEBI 브랜드관 입점</h2>
             <span className="direct-right">
               바로가기 <img src="/img/more-arrow-white-5x10.svg" alt="" />
             </span>

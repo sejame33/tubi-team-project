@@ -7,18 +7,12 @@ import "swiper/css/free-mode";
 
 import ShopProductSmallBanner from "../../../components/shopcomp/ShopProductSmallBanner";
 import ArtistFrom from "../../../components/artistcomp/ArtistFrom";
+import "./From.css";
 
 const From = () => {
   return (
     <>
-      <div
-        className="artistswiper impl-anchor"
-        data-impl
-        style={{
-          "--impl-right": "140px",
-          "--impl-top": "210px",
-        }}
-      >
+      <div className="artistswiper impl-anchor" data-impl>
         <Swiper
           modules={[FreeMode, Scrollbar]}
           // 3. scrollbar 설정을 활성화합니다.

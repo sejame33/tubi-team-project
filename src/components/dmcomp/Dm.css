@@ -126,3 +126,15 @@
   font-weight: 700;
   margin-bottom: 16px;
 }
+
+.dm-item.impl-anchor {
+  --impl-right: 384px;
+  --impl-top: 0px;
+}
+
+@media screen and (max-width: 390px) {
+  .dm-item.impl-anchor {
+    --impl-right: 335px;
+    --impl-top: 0px;
+  }
+}

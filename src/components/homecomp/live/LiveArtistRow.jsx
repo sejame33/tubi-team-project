@@ -64,9 +64,17 @@ export default function LiveArtistRow({ items = [] }) {
   }, []);
 
   return (
-    <div className="artist-row" ref={rowRef}>
+    <div className="artist-row " ref={rowRef}>
       {items.map((a) => (
-        <div key={a.id} className="artist-item">
+        <div
+          key={a.id}
+          className="artist-item impl-anchor"
+          data-impl
+          style={{
+            "--impl-right": "-8px",
+            "--impl-top": "0px",
+          }}
+        >
           <div className={`avatar ${a.live ? "is-live" : ""}`}>
             <img src={a.avatar} alt={a.name} />
           </div>

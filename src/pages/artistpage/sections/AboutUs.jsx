@@ -77,7 +77,14 @@ const AboutUs = () => {
   }));
 
   return (
-    <section className="about-us">
+    <section
+      className="about-us impl-anchor"
+      data-impl
+      style={{
+        "--impl-right": "12px",
+        "--impl-top": "12px",
+      }}
+    >
       <StickerSwiper
         items={swiperItems}
         onItemClick={(item) => console.log("멤버 클릭:", item)}

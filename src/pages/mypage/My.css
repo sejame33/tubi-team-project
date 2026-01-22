@@ -50,15 +50,16 @@
   padding-top: 60px;
   text-align: center;
   display: block;
-   user-select: none;
-  -webkit-user-select: none;  
+  user-select: none;
+  -webkit-user-select: none;
   -ms-user-select: none;
+  padding-bottom: 200px;
 }
 
 .myTubi img {
-  -webkit-user-drag: none;   
+  -webkit-user-drag: none;
   user-drag: none;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .myTubi .titleRow {
@@ -82,7 +83,7 @@
 
 .myTubi .editBtn {
   border: none;
-  background: transparent;;
+  background: transparent;
 }
 
 .glow {
@@ -206,7 +207,7 @@
 
   overflow: hidden;
   will-change: transform;
-  box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.12);  
+  box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .sheetHandle {
@@ -227,8 +228,8 @@
   overscroll-behavior: contain;
   -ms-overflow-style: none;
   scrollbar-width: none;
-    user-select: none;
-  -webkit-user-select: none; 
+  user-select: none;
+  -webkit-user-select: none;
   -ms-user-select: none;
 }
 
@@ -324,4 +325,24 @@
 
 .sheetHandle {
   touch-action: none;
+}
+.bottomSheet {
+  z-index: 101;
+}
+
+@media screen and (max-width: 390px) {
+  /* 캐릭터 위치 보정 */
+  .characterImg {
+    left: 22px;
+  }
+
+  /* bottomSheet 전체 폭 */
+  .bottomSheet {
+    width: 100%;
+  }
+
+  /* ✅ bottomSheet에 가려지지 않도록 여유 공간 확보 */
+  /* .myTubi {
+    padding-bottom: 140px;
+  } */
 }

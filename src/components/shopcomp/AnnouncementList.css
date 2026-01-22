@@ -16,6 +16,7 @@
   border-radius: 10px;
   padding: 25px 20px;
   cursor: pointer;
+  "--impl-right":"384px","--impl-top": "24px";
 }
 
 .item-left img {
@@ -45,4 +46,25 @@
   font-size: 12px;
   color: #aaa;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 390px) {
+  .item-title {
+    font-size: 16px;
+  }
+  .item-right {
+    margin-top: 3px;
+  }
+  .item-desc {
+    font-size: 13px;
+  }
+
+  .notice-goods tr td,
+  .notice-goods th {
+    padding-left: 20px;
+  }
+
+   .announcement-item {
+    --impl-right: 340px; /* 원하는 값 */
+    --impl-top: 20px;
 }

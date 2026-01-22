@@ -118,3 +118,18 @@
   display: inline-flex;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 390px) {
+  .dm-slide-banner-text-box {
+    width: 70%;
+    margin-left: 110px;
+  }
+
+  .dm-slide-banner-title-top {
+    font-size: 18px;
+  }
+
+  .dm-slide-banner-title-bottom {
+    font-size: 10px;
+  }
+}

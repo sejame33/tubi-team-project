@@ -19,7 +19,7 @@
   height: 90px;
   background: #fff;
   border-top: 1px solid #eee;
-  z-index: 100;
+  z-index: 150;
 }
 .footer.is-live {
   background-color: #000000;

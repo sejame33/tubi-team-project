@@ -174,6 +174,8 @@ const StickerCollection = () => {
 
       <div className="stickerBox">
         <ProductCategory
+          className="impl-anchor"
+          data-impl
           categories={categories}
           active={active}
           onChange={setActive}

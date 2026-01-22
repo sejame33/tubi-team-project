@@ -222,13 +222,18 @@ const products = [
 
 export default function BrandShop() {
   const [activeBrand, setActiveBrand] = useState("apoki");
-
-  // ✅ 상품 swiper 인스턴스 ref (탭 바뀔 때 리셋용)
   const productsSwiperRef = useRef(null);
   const navigate = useNavigate();
+
   const filteredProducts = useMemo(
     () => products.filter((p) => p.brand === activeBrand),
     [activeBrand],
+  );
+
+  // ✅ "진짜 상품(type !== 'brand')" 중 첫 번째 인덱스
+  const firstRealProductIndex = useMemo(
+    () => filteredProducts.findIndex((p) => p.type !== "brand"),
+    [filteredProducts],
   );
 
   // ✅ 탭 변경 시 상품 스크롤(슬라이드 위치) 리셋
@@ -275,7 +280,9 @@ export default function BrandShop() {
                 <SwiperSlide key={a.id} className="brandshop-tab-slide">
                   <button
                     type="button"
-                    className={`brandshop-tab impl-anchor ${isActive ? "is-active" : ""}`}
+                    className={`brandshop-tab impl-anchor ${
+                      isActive ? "is-active" : ""
+                    }`}
                     data-impl
                     onClick={() => setActiveBrand(a.id)}
                     style={{
@@ -300,7 +307,7 @@ export default function BrandShop() {
             slidesPerView="auto"
             spaceBetween={18}
             grabCursor
-            onSwiper={(swiper) => (productsSwiperRef.current = swiper)} // ✅ 저장
+            onSwiper={(swiper) => (productsSwiperRef.current = swiper)}
             scrollbar={{
               draggable: true,
               el: ".brandshop-products-scrollbar",
@@ -316,7 +323,9 @@ export default function BrandShop() {
               1024: { spaceBetween: 18 },
             }}
           >
-            {filteredProducts.map((p) => {
+            {filteredProducts.map((p, index) => {
+              const isFirstReal = index === firstRealProductIndex;
+
               if (p.type === "brand") {
                 return (
                   <SwiperSlide key={p.id} className="brandshop-product-slide">
@@ -340,7 +349,14 @@ export default function BrandShop() {
               return (
                 <SwiperSlide key={p.id} className="brandshop-product-slide">
                   <article className="brandshop-card">
-                    <div className="brandshop-thumb">
+                    <div
+                      className="brandshop-thumb impl-anchor"
+                      data-impl={isFirstReal ? true : undefined}
+                      style={{
+                        "--impl-top": "6px",
+                        "--impl-right": "6px",
+                      }}
+                    >
                       <img src={p.img} alt={p.title} />
                     </div>
 
@@ -387,10 +403,6 @@ export default function BrandShop() {
         type="button"
         onClick={() => navigate("/home/shop")}
         data-impl
-        style={{
-          "--impl-right": "164px",
-          "--impl-top": "16px",
-        }}
       >
         더보기
       </button>

@@ -41,12 +41,16 @@ const MyPage = () => {
               }
             }}
           />
-
         ) : (
           <>
             <h1 className="name">{nickname || "닉네임"}</h1>
             <button
-              className="editBtn"
+              className="editBtn impl-anchor"
+              data-impl
+              style={{
+                "--impl-right": "-8px",
+                "--impl-top": "-4px",
+              }}
               type="button"
               onClick={() => {
                 console.log("edit click");
@@ -92,7 +96,8 @@ const MyPage = () => {
 
       <section className="actionButtons sheetSection">
         <button
-          className="actionBtn"
+          className="actionBtn impl-anchor"
+          data-impl
           type="button"
           onClick={() => navigate("/home/my/tubi")}
         >
@@ -100,8 +105,12 @@ const MyPage = () => {
           <span>My TUBI</span>
         </button>
 
-        <button className="actionBtn" type="button"
-          onClick={() => navigate("/home/gatcha/stickercollection")}>
+        <button
+          className="actionBtn impl-anchor"
+          data-impl
+          type="button"
+          onClick={() => navigate("/home/gatcha/stickercollection")}
+        >
           <img src="/img/my-gacha.svg" alt="" />
           <span>스티커 가챠실</span>
         </button>

@@ -26,7 +26,12 @@ export default function ProductCategory({
         {categories.map((c) => {
           const isActive = c.value === active;
           return (
-            <SwiperSlide key={c.value} className="productCategory-slide">
+            <SwiperSlide
+              key={c.value}
+              className="productCategory-slide impl-anchor"
+              data-impl
+              style={{ "--impl-right": "-4px", "--impl-top": "0px" }}
+            >
               <button
                 type="button"
                 className={`productCategory-chip ${isActive ? "is-active" : ""}`}
