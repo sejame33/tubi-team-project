@@ -107,6 +107,7 @@
     background 0.25s ease,
     color 0.2s ease,
     transform 0.15s ease;
+  white-space: nowrap;
 }
 .chip.is-active {
   background: linear-gradient(90deg, #44b1f7 0%, #884dff 100%);
@@ -223,7 +224,7 @@
   z-index: 0;
   left: 50%;
   top: 50%;
-  transform: translate(-52.5%, -51.5%);
+  transform: translate(-51.5%, -51.5%);
 }
 
 .avatar img {
@@ -387,7 +388,7 @@
   }
 
   .replay-meta {
-    bottom: 27px;
+    bottom: 20px;
   }
 
   /* speech bubble */
@@ -412,5 +413,18 @@
 
   .replay-sub {
     font-size: 12px;
+  }
+
+  .chip {
+    font-size: 14px;
+  }
+
+  .replay-panel {
+    padding: 24px 20px;
+    height: 240px;
+  }
+
+  .replay-thumb {
+    height: auto;
   }
 }

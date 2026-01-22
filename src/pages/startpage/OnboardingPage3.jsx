@@ -11,7 +11,7 @@ function OnboardingPage3() {
     if (!main) return;
 
     // 원하는 값으로 덮기
-    main.style.padding = "80px 0 0";
+    main.style.padding = "0";
 
     // 페이지 벗어나면 원복
     return () => {
@@ -64,62 +64,61 @@ function OnboardingPage3() {
           alt=""
           className="center-bg-img"
         />
+        {/* 상품 리스트 */}
+        <ul className="product-area">
+          <li className="product-card">
+            <div className="img-box">
+              <img
+                src="/img/onboarding-3-album-1.svg"
+                alt="album"
+                className="product-img"
+              />
+              <img
+                src="/img/onboarding-3-heart.svg"
+                alt=""
+                className="product-heart"
+              />
+            </div>
+            <p className="product-name">PLAVE JP 1ST SINGLE...</p>
+            <p className="price">₩21,400원</p>
+          </li>
+
+          <li className="product-card">
+            <div className="img-box">
+              <img
+                src="/img/onboarding-3-album-2.svg"
+                alt="album"
+                className="product-img"
+              />
+              <img
+                src="/img/onboarding-3-heart.svg"
+                alt=""
+                className="product-heart"
+              />
+            </div>
+            <p className="product-name">PLAVE JP 1ST SINGLE...</p>
+            <p className="price">₩17,000원</p>
+          </li>
+
+          <li className="product-card">
+            <div className="img-box">
+              <img
+                src="/img/onboarding-3-album-3.svg"
+                alt="album"
+                className="product-img a"
+              />
+            </div>
+            <p className="product-name">PLAVE 3rd Mini...</p>
+            <p className="price">₩13,400원</p>
+          </li>
+        </ul>
+
+        <img
+          src="/img/onboarding-3-tubi.svg"
+          alt="character"
+          className="tubi-img"
+        />
       </div>
-
-      {/* 상품 리스트 */}
-      <ul className="product-area">
-        <li className="product-card">
-          <div className="img-box">
-            <img
-              src="/img/onboarding-3-album-1.svg"
-              alt="album"
-              className="product-img"
-            />
-            <img
-              src="/img/onboarding-3-heart.svg"
-              alt=""
-              className="product-heart"
-            />
-          </div>
-          <p className="product-name">PLAVE JP 1ST SINGLE...</p>
-          <p className="price">₩21,400원</p>
-        </li>
-
-        <li className="product-card">
-          <div className="img-box">
-            <img
-              src="/img/onboarding-3-album-2.svg"
-              alt="album"
-              className="product-img"
-            />
-            <img
-              src="/img/onboarding-3-heart.svg"
-              alt=""
-              className="product-heart"
-            />
-          </div>
-          <p className="product-name">PLAVE JP 1ST SINGLE...</p>
-          <p className="price">₩17,000원</p>
-        </li>
-
-        <li className="product-card">
-          <div className="img-box">
-            <img
-              src="/img/onboarding-3-album-3.svg"
-              alt="album"
-              className="product-img a"
-            />
-          </div>
-          <p className="product-name">PLAVE 3rd Mini...</p>
-          <p className="price">₩13,400원</p>
-        </li>
-      </ul>
-
-      <img
-        src="/img/onboarding-3-tubi.svg"
-        alt="character"
-        className="tubi-img"
-      />
     </div>
   );
 }
