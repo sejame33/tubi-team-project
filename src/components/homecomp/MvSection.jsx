@@ -28,58 +28,58 @@ function MvSection() {
 
         <SwiperSlide style={{ width: "376px" }}>
           <MvCard
-            mainTitle="'STARGAZERS' Official MV"
-            badge="NEW"
-            badgeType="yellow"
+            mainTitle="플레이브 미니 앨범 'ASTERUM'"
             image="/img/mv2.svg"
             cover="MV"
             coverType="yellow"
-            title="이세계아이돌 (ISEGYE IDOL)"
-            desc="이세계아이돌 'STARGAZERS' Official MV 최초공개!"
+            title="PLAVE"
+            desc="팬들의 성원에 힘입어 선보인 앨범 로그 스페셜 무대 영상"
           />
         </SwiperSlide>
 
         <SwiperSlide style={{ width: "376px" }}>
           <MvCard
-            mainTitle="IRISÉ (아이리제) 'LOVEGAME' M/V"
+            mainTitle="'Nameless' 공식 뮤직비디오 영상"
             image="/img/mv3.svg"
             cover="MV"
             coverType="yellow"
-            title="IRISÉ (아이리제)"
-            desc="이세계아이돌 'STARGAZERS' Official MV 최초공개!"
+            title="이세계아이돌 (ISEGYE IDOL)"
+            desc="현장감 넘치는 라이브로 진행된 스페셜 무대 영상"
           />
         </SwiperSlide>
 
         <SwiperSlide style={{ width: "376px" }}>
           <MvCard
-            mainTitle="PLAVE 'BBUU!' M/V"
+            mainTitle="'STARGAZERS' 이벤트 무대"
+            badge="BEST"
+            badgeType="yellow"
             image="/img/mv4.svg"
             cover="MV"
             coverType="yellow"
-            title="PLAVE"
-            desc="이세계아이돌 'STARGAZERS' Official MV 최초공개!"
+            title="스텔라이브 (STELLIVE)"
+            desc="이벤트 한정으로 공개된 스페셜 퍼포먼스 무대 영상"
           />
         </SwiperSlide>
 
         <SwiperSlide style={{ width: "376px" }}>
           <MvCard
-            mainTitle="Snow Halation"
+            mainTitle="'BBUU!' M/V 선공개"
             image="/img/mv5.svg"
-            cover="Special"
-            coverType="green"
-            title="이오몽 X 미녕이 X 부쿠키 X 희지"
-            desc="이세계아이돌 'STARGAZERS' Official MV 최초공개!"
-          />
-        </SwiperSlide>
-
-        <SwiperSlide style={{ width: "376px" }}>
-          <MvCard
-            mainTitle="IRISÉ (아이리제) 'LOVEGAME' M/V"
-            image="/img/mv6.svg"
             cover="MV"
             coverType="yellow"
+            title="PLAVE"
+            desc="멤버들이 함께 선보인 특별한 공연 무대 영상"
+          />
+        </SwiperSlide>
+
+        <SwiperSlide style={{ width: "376px" }}>
+          <MvCard
+            mainTitle="아이리제 'LOVEGAME' 곡 컴백"
+            image="/img/mv6.svg"
+            cover="SPECIAL"
+            coverType="green"
             title="IRISÉ (아이리제)"
-            desc="이세계아이돌 'STARGAZERS' Official MV 최초공개!"
+            desc="컴백을 기념한 콘셉트와 무대가 돋보이는 공연 영상"
           />
         </SwiperSlide>
       </Swiper>

@@ -1,5 +1,7 @@
 .login-page {
   text-align: center;
+  height: 100%;
+  align-content: center;
 }
 
 .login-page .desc {

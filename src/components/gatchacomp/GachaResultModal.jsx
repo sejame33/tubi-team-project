@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import "./GachaResultModal.css";
 import { gachaItems } from "../data/gachaData.jsx";
+import { useNavigate } from "react-router-dom";
 import "../../style/Dot.css";
 
 const GachaResultModal = ({ onClose }) => {
   const [item, setItem] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const random = gachaItems[Math.floor(Math.random() * gachaItems.length)];
@@ -46,6 +48,7 @@ const GachaResultModal = ({ onClose }) => {
             "--impl-right": "38px",
             "--impl-top": "12px",
           }}
+          onClick={() => navigate("/home/gatcha/stickercollection")}
         >
           스티커 목록 보기
         </button>

@@ -41,7 +41,6 @@ const MyPage = () => {
               }
             }}
           />
-
         ) : (
           <>
             <h1 className="name">{nickname || "닉네임"}</h1>
@@ -100,8 +99,11 @@ const MyPage = () => {
           <span>My TUBI</span>
         </button>
 
-        <button className="actionBtn" type="button"
-          onClick={() => navigate("/home/gatcha/stickercollection")}>
+        <button
+          className="actionBtn"
+          type="button"
+          onClick={() => navigate("/home/gatcha")}
+        >
           <img src="/img/my-gacha.svg" alt="" />
           <span>스티커 가챠실</span>
         </button>
