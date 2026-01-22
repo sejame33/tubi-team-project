@@ -127,12 +127,6 @@ export default function ShopNewItem() {
     swiper.update();
   }, [activeBrand]);
 
-  const handleProductClick = (id) => {
-    if (id === 202) {
-      navigate("/home/shop/ShopProduct");
-    }
-  };
-
   return (
     <section className="shop-new">
       <div className="shop-new-box">
@@ -215,7 +209,13 @@ export default function ShopNewItem() {
                 <SwiperSlide key={p.id} className="shop-new-product-slide">
                   <article
                     className="shop-new-card"
-                    onClick={() => handleProductClick(p.id)}
+                    onClick={() => navigate("/home/shop/ShopProduct")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        navigate("/home/shop/ShopProduct");
+                      }
+                    }}
+                    style={{ cursor: "pointer" }}
                   >
                     <div
                       className={`shop-new-thumb ${p.impl ? "impl-anchor" : ""}`}

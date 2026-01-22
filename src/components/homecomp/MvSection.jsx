@@ -23,6 +23,7 @@ function MvSection() {
             coverType="default"
             title="미녕이 X 희지"
             desc="AGF 행사에서 진행했던 포지티브 댄스 타임 커버 무대"
+            url="https://www.youtube.com/watch?v=LHTijE7Wuic&list=RDLHTijE7Wuic&start_radio=1"
           />
         </SwiperSlide>
 
@@ -34,6 +35,7 @@ function MvSection() {
             coverType="yellow"
             title="PLAVE"
             desc="팬들의 성원에 힘입어 선보인 앨범 로그 스페셜 무대 영상"
+            url="https://www.youtube.com/watch?v=8L001YT4k6k&list=RD8L001YT4k6k&start_radio=1"
           />
         </SwiperSlide>
 
@@ -45,6 +47,7 @@ function MvSection() {
             coverType="yellow"
             title="이세계아이돌 (ISEGYE IDOL)"
             desc="현장감 넘치는 라이브로 진행된 스페셜 무대 영상"
+            url="https://www.youtube.com/watch?v=nz2_gNQDiVM&list=RDnz2_gNQDiVM&start_radio=1"
           />
         </SwiperSlide>
 
@@ -58,6 +61,7 @@ function MvSection() {
             coverType="yellow"
             title="스텔라이브 (STELLIVE)"
             desc="이벤트 한정으로 공개된 스페셜 퍼포먼스 무대 영상"
+            url="https://www.youtube.com/watch?v=gUoj_Orj7LQ&list=RDgUoj_Orj7LQ&start_radio=1"
           />
         </SwiperSlide>
 
@@ -69,6 +73,7 @@ function MvSection() {
             coverType="yellow"
             title="PLAVE"
             desc="멤버들이 함께 선보인 특별한 공연 무대 영상"
+            url="https://www.youtube.com/watch?v=8L001YT4k6k&list=RD8L001YT4k6k&start_radio=1"
           />
         </SwiperSlide>
 
@@ -80,6 +85,7 @@ function MvSection() {
             coverType="green"
             title="IRISÉ (아이리제)"
             desc="컴백을 기념한 콘셉트와 무대가 돋보이는 공연 영상"
+            url="https://www.youtube.com/watch?v=gUoj_Orj7LQ&list=RDgUoj_Orj7LQ&start_radio=1"
           />
         </SwiperSlide>
       </Swiper>
