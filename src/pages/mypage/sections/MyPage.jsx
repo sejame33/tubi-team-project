@@ -58,7 +58,7 @@ const MyPage = () => {
         )}
       </div>
 
-      <p className="email">j.youngsopretty@gmail.com</p>
+      <p className="email">tubi_cute@gmail.com</p>
 
       <section className="characterArea">
         <div className="glow">

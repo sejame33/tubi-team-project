@@ -9,22 +9,35 @@ import LiveReplayCard from "./LiveReplayCard";
 import { useNickname } from "../../../context/NicknameContext";
 import { useFollowArtist } from "../../../context/FollowArtistContext";
 
+
 const TABS = ["라이브", "콘텐츠", "무대"];
 const CHIPS = ["HOT", "NEW", "FOR YOU", "TREND"];
 const FIXED_LIVE_IDS = ["7", "5", "1"]; // IRISE(7), HONEYZ(5), Plave(1)
 
 /* =========================
-   ✅ mock: badge 4종(HOT/NEW/FOR YOU/TREND) 구성
+   ✅ mock: badge 4종(HOT/NEW/FOR YOU/TREND) 구성 + url 추가
    ========================= */
+
+const ARTIST_URL_MAP = {
+  "1": "https://weverse.io/plave/live?hl=ko",
+  "2": "https://www.sooplive.co.kr/station/meechu",
+  "3": "https://www.youtube.com/@apoki_vv",
+  "4": "https://weverse.io/hebi/artistpedia",
+  "5": "https://www.twitch.tv/team/projecti",
+  "6": "https://www.sooplive.co.kr/station/cotton1217/vod",
+  "7": "https://weverse.io/irise/live",
+  "8": "https://stellive.me/",
+};
 
 // 라이브 탭 (패널 1개)
 const mockLiveReplays = [
   {
     id: 1,
     title: "산중 호걸이라는 테리님의 생일날...",
-    subtitle: "LUVDIA · 아이비",
+    subtitle: "LUVITA · 아이비",
     thumb: "/img/live-replay-bg.svg",
     badge: "HOT",
+    url: "https://www.sooplive.co.kr/station/luvita",
   },
   {
     id: 2,
@@ -32,6 +45,7 @@ const mockLiveReplays = [
     subtitle: "HONEYZ · 제이",
     thumb: "/img/live-replay-bg-2.svg",
     badge: "NEW",
+    url: "https://www.twitch.tv/team/projecti",
   },
   {
     id: 3,
@@ -39,6 +53,7 @@ const mockLiveReplays = [
     subtitle: "IRISE · 이이네",
     thumb: "/img/live-replay-bg-3.svg",
     badge: "FOR YOU",
+    url: "https://weverse.io/irise/live",
   },
   {
     id: 4,
@@ -46,6 +61,7 @@ const mockLiveReplays = [
     subtitle: "PLAVE · 밤비",
     thumb: "/img/live-replay-bg-4.svg",
     badge: "TREND",
+    url: "https://weverse.io/plave/live?hl=ko",
   },
 ];
 
@@ -54,30 +70,34 @@ const mockContentReplays = [
   {
     id: 11,
     title: "비하인드 콘텐츠 모음.zip",
-    subtitle: "LUVDIA · 이이네",
+    subtitle: "LUVITA · 이이네",
     thumb: "/img/content-clip-bg.svg",
     badge: "HOT",
+    url: "https://www.sooplive.co.kr/station/luvita",
   },
   {
-    id: 2,
+    id: 12,
     title: "오늘의 라이브 요약",
     subtitle: "HONEYZ · 제이",
     thumb: "/img/live-replay-bg-2.svg",
     badge: "NEW",
+    url: "https://www.twitch.tv/team/projecti",
   },
   {
-    id: 3,
+    id: 13,
     title: "당신을 위한 추천 라이브",
     subtitle: "IRISE · 이이네",
     thumb: "/img/live-replay-bg-3.svg",
     badge: "FOR YOU",
+    url: "https://weverse.io/irise/live",
   },
   {
-    id: 4,
+    id: 14,
     title: "지금 가장 트렌디한 순간",
     subtitle: "PLAVE · 밤비",
     thumb: "/img/live-replay-bg-4.svg",
     badge: "TREND",
+    url: "https://weverse.io/plave/live?hl=ko",
   },
 ];
 
@@ -88,13 +108,15 @@ const mockContentClips = [
     subtitle: "HONEYZ · 제이",
     thumb: "/img/content-replay-bg.svg",
     badge: "HOT",
+    url: "https://www.twitch.tv/team/projecti",
   },
   {
     id: 22,
     title: "리액션 모음 클립",
-    subtitle: "LUVDIA · 아이비",
+    subtitle: "LUVITA · 아이비",
     thumb: "/img/content-clip-bg-2.svg",
     badge: "NEW",
+    url: "https://www.sooplive.co.kr/station/luvita",
   },
   {
     id: 23,
@@ -102,6 +124,7 @@ const mockContentClips = [
     subtitle: "IRISE · 이이네",
     thumb: "/img/content-clip-bg-3.svg",
     badge: "FOR YOU",
+    url: "https://weverse.io/irise/live",
   },
   {
     id: 24,
@@ -109,6 +132,7 @@ const mockContentClips = [
     subtitle: "PLAVE · 밤비",
     thumb: "/img/content-clip-bg-4.svg",
     badge: "TREND",
+    url: "https://weverse.io/plave/live?hl=ko",
   },
 ];
 
@@ -120,27 +144,31 @@ const mockStageReplays = [
     subtitle: "PLAVE · 밤비",
     thumb: "/img/stage-replay-bg.svg",
     badge: "HOT",
+    url: "https://weverse.io/plave/live?hl=ko",
   },
   {
-    id: 2,
+    id: 32,
     title: "오늘의 라이브 요약",
     subtitle: "HONEYZ · 제이",
     thumb: "/img/live-replay-bg-2.svg",
     badge: "NEW",
+    url: "https://www.twitch.tv/team/projecti",
   },
   {
-    id: 3,
+    id: 33,
     title: "당신을 위한 추천 라이브",
     subtitle: "IRISE · 이이네",
     thumb: "/img/live-replay-bg-3.svg",
     badge: "FOR YOU",
+    url: "https://weverse.io/irise/live",
   },
   {
-    id: 4,
+    id: 34,
     title: "지금 가장 트렌디한 순간",
     subtitle: "PLAVE · 밤비",
     thumb: "/img/live-replay-bg-4.svg",
     badge: "TREND",
+    url: "https://weverse.io/plave/live?hl=ko",
   },
 ];
 
@@ -151,6 +179,7 @@ const mockStageClips = [
     subtitle: "PLAVE · 하민",
     thumb: "/img/stage-clip-bg.svg",
     badge: "HOT",
+    url: "https://weverse.io/plave/live?hl=ko",
   },
   {
     id: 42,
@@ -158,6 +187,7 @@ const mockStageClips = [
     subtitle: "IRISE · 이이네",
     thumb: "/img/stage-clip-bg-2.svg",
     badge: "NEW",
+    url: "https://weverse.io/irise/live",
   },
   {
     id: 43,
@@ -165,13 +195,15 @@ const mockStageClips = [
     subtitle: "HONEYZ · 제이",
     thumb: "/img/stage-clip-bg-3.svg",
     badge: "FOR YOU",
+    url: "https://www.twitch.tv/team/projecti",
   },
   {
     id: 44,
     title: "TREND 안무 모음",
-    subtitle: "LUVDIA · 아이비",
+    subtitle: "LUVITA · 아이비",
     thumb: "/img/stage-clip-bg-4.svg",
     badge: "TREND",
+    url: "https://www.sooplive.co.kr/station/luvita",
   },
 ];
 
@@ -188,7 +220,28 @@ export default function LiveSection() {
   const isContentTab = tab === "콘텐츠";
   const isStageTab = tab === "무대";
 
-  const goToLivePage = () => navigate("/home/live");
+  const goToUrl = (url) => {
+  if (!url) return;
+
+  const isExternal = /^https?:\/\//i.test(url);
+
+  if (isExternal) {
+    // ✅ 팝업 차단 회피용: a 태그를 만들어 클릭
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    return;
+  }
+
+  // 내부 링크
+  navigate(url);
+};
+
+  const goToLivePage = () => goToUrl("/home/live");
 
   /* =========================
      ✅ chip -> badge 필터링 함수
@@ -199,7 +252,7 @@ export default function LiveSection() {
   };
 
   /* =========================
-     ✅ 팔로우 패널(라이브 탭 고정)
+     ✅ 팔로우 패널(라이브 탭 고정) + url 추가
      ========================= */
   const fixedLiveArtists = useMemo(() => {
     const byId = new Map(artistsOnly.map((a) => [String(a.id), a]));
@@ -215,6 +268,7 @@ export default function LiveSection() {
         avatar: a.img,
         live: true,
         verified: true,
+        url: ARTIST_URL_MAP[String(a.id)] ?? `/home/artist/${a.id}`,
       };
     }).filter(Boolean);
   }, [artistsOnly]);
@@ -227,6 +281,7 @@ export default function LiveSection() {
       avatar: a.img,
       live: false,
       verified: false,
+      url: ARTIST_URL_MAP[String(a.id)] ?? `/home/artist/${a.id}`,
     }));
   }, [followedArtists]);
 
@@ -319,7 +374,6 @@ export default function LiveSection() {
         }}
       />
 
-      {/* ✅ chip 클릭 -> setChip -> 필터링 반영 */}
       <FilterChips chips={CHIPS} active={chip} onChange={setChip} />
 
       {/* ✅ 라이브 탭일 때만 팔로우 패널 */}
@@ -332,7 +386,9 @@ export default function LiveSection() {
           <div className="live-panel-tabs">
             <button
               type="button"
-              className={`mini-tab impl-anchor ${panelTab === "라이브" ? "is-active" : ""}`}
+              className={`mini-tab impl-anchor ${
+                panelTab === "라이브" ? "is-active" : ""
+              }`}
               onClick={() => setPanelTab("라이브")}
               data-impl-alt
               style={{
@@ -345,7 +401,9 @@ export default function LiveSection() {
 
             <button
               type="button"
-              className={`mini-tab impl-anchor ${panelTab === "전체" ? "is-active" : ""}`}
+              className={`mini-tab impl-anchor ${
+                panelTab === "전체" ? "is-active" : ""
+              }`}
               onClick={() => setPanelTab("전체")}
               data-impl-alt
               style={{
@@ -357,7 +415,8 @@ export default function LiveSection() {
             </button>
           </div>
 
-          <LiveArtistRow items={artists} />
+          {/* ✅ 아티스트 클릭 시 url 이동 */}
+          <LiveArtistRow items={artists} onItemClick={(a) => goToUrl(a.url)} />
         </div>
       )}
 
@@ -366,7 +425,6 @@ export default function LiveSection() {
         <div className="replay-panel" key={panel.key}>
           <h3 className="replay-main-title">{panel.title}</h3>
 
-          {/* ✅ chip 필터 결과가 없을 때 */}
           {panel.items.length === 0 ? (
             <p className="replay-empty">해당 카테고리의 영상이 아직 없어요.</p>
           ) : (
@@ -375,13 +433,15 @@ export default function LiveSection() {
                 key={`${panel.key}-${r.id}`}
                 item={r}
                 variant={panel.variant}
+                onClick={() => goToUrl(r.url)} // ✅ 카드 클릭 시 url 이동
               />
             ))
           )}
         </div>
       ))}
 
-      <button className="section-more" onClick={() => console.log("더보기")}>
+      {/* ✅ 더보기도 url 이동 */}
+      <button className="section-more" onClick={() => goToUrl("/home/live")}>
         더보기
         <img src="/img/live-down-arrow.svg" alt="" />
       </button>

@@ -33,7 +33,7 @@ function Home() {
       },
       image: "/img/small-banner-char-2.png",
       imageStyle: {
-        height: 100,
+        height: "clamp(80px, 22vw, 100px)",
         right: "0%",
         bottom: "0%",
       },
@@ -50,7 +50,7 @@ function Home() {
       },
       image: "/img/small-banner-char-3.png",
       imageStyle: {
-        height: 120,
+        height: "clamp(100px, 22vw, 120px)",
         right: "0%",
         bottom: "0%",
       },
@@ -64,10 +64,11 @@ function Home() {
       },
       image: "/img/small-banner-char-4.png",
       imageStyle: {
-        height: 135,
+        height: "clamp(120px, 22vw, 135px)",
         right: "0%",
         bottom: "0%",
       },
+      onMore: () => navigate("/home/shop"),
     },
   ];
 
@@ -103,7 +104,7 @@ function Home() {
             right: "0%",
             bottom: "0%",
           }}
-          onMore={() => console.log("single banner")}
+          onMore={() => navigate("/home/shop")}
         />
       </div>
 

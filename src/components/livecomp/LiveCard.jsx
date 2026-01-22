@@ -12,9 +12,20 @@ const LiveCard = ({
   subTitle,
   group,
   member,
+  onClick, // ✅ 추가
 }) => {
   return (
-    <div className="hot-issue-container">
+    <div
+      className="hot-issue-container"
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (!onClick) return;
+        if (e.key === "Enter" || e.key === " ") onClick();
+      }}
+      style={{ cursor: onClick ? "pointer" : "default" }}
+    >
       <h2 className="top-text" style={{ color: topTextColor }}>
         {topText}
       </h2>
@@ -24,10 +35,7 @@ const LiveCard = ({
 
         <div className="card-top-info">
           {label && (
-            <span
-              className="card-label"
-              style={{ backgroundColor: labelColor }}
-            >
+            <span className="card-label" style={{ backgroundColor: labelColor }}>
               {label}
             </span>
           )}
@@ -37,8 +45,10 @@ const LiveCard = ({
         <div className="card-overlay">
           <div className="info-wrap">
             <img src={smallImage} alt="profile" className="small-image" />
+
             <div className="text-group">
               <h3 className="sub-title">{subTitle}</h3>
+
               <p className="artist-info">
                 <span className="group-name">{group}</span>
                 <span className="check-icon">
@@ -56,3 +66,4 @@ const LiveCard = ({
 };
 
 export default LiveCard;
+

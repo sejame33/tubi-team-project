@@ -188,12 +188,10 @@
   display: none; /* Chrome/Safari */
 }
 
-.artist-row.is-dragging {
-  cursor: grabbing;
-}
 
-.artist-row.is-dragging * {
-  pointer-events: none; /* 드래그 중 클릭 방지(원치 않으면 빼도 됨) */
+.live-artist-item {
+  background: none;
+  border: none;
 }
 
 .artist-item {
@@ -267,6 +265,7 @@
 }
 .replay-card {
   margin-top: 14px;
+  cursor: pointer;
 }
 .replay-thumb {
   position: relative;
@@ -359,3 +358,6 @@
   margin: 0 auto;
   display: block;
 }
+
+.replay-thumb * { pointer-events: none; }
+.artist-item * { pointer-events: none; }
