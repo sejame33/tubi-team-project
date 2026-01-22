@@ -12,7 +12,6 @@ export default function FollowArtistPage() {
 
   const [q, setQ] = useState("");
 
-  // ✅ viewport 폭 + content(칩 전체 길이) 측정용 ref 2개
   const viewportRef = useRef(null);
   const measureRef = useRef(null);
   const [useSwiper, setUseSwiper] = useState(false);
@@ -56,7 +55,6 @@ export default function FollowArtistPage() {
 
   const handleDone = () => {
     if (from === "myartist") {
-      // 히스토리가 없을 수도 있으니 안전장치
       if (window.history.length > 1) navigate(-1);
       else navigate("/home");
     } else {
@@ -72,12 +70,11 @@ export default function FollowArtistPage() {
     };
   }, []);
 
-  const DEFAULT_ONBOARDING_IDS = ["1", "2", "3"]; // 원하는 3개
+  const DEFAULT_ONBOARDING_IDS = ["8", "2", "3"];
 
 useEffect(() => {
   if (from !== "onboarding") return;
 
-  // 이미 팔로우가 있으면 덮어쓰지 않음
   if (followedArtists.length > 0) return;
 
   DEFAULT_ONBOARDING_IDS.forEach((id) => {
@@ -90,7 +87,6 @@ useEffect(() => {
       <div className="app">
         <main className="main followartist-main">
           <section className="followartist-page">
-            {/* ✅ sticky 영역(타이틀+검색+선택 row) */}
             <div className="followartist-sticky">
               <h2 className="followartist-title">
                 소식을 받아볼
@@ -98,7 +94,6 @@ useEffect(() => {
                 버추얼 그룹을 선택해요
               </h2>
 
-              {/* 검색 */}
               <div
                 className="followartist-search impl-anchor"
                 data-impl
@@ -118,14 +113,12 @@ useEffect(() => {
                 />
               </div>
 
-              {/* ✅ 선택된 아티스트 (넘치면 Swiper, 안 넘치면 flex) */}
               {followedArtists.length > 0 && (
                 <div
                   className="followartist-selected-viewport"
                   ref={viewportRef}
                   aria-label="selected artists"
                 >
-                  {/* 측정 전용 */}
                   <div
                     ref={measureRef}
                     className="followartist-selected-measure"
@@ -137,7 +130,6 @@ useEffect(() => {
                     ))}
                   </div>
 
-                  {/* 실제 표시 */}
                   {useSwiper ? (
                     <Swiper
                       slidesPerView="auto"
@@ -194,7 +186,6 @@ useEffect(() => {
               )}
             </div>
 
-            {/* ✅ 리스트만 스크롤되는 영역 */}
             <div className="followartist-list-scroll">
               <div className="followartist-list" role="list">
                 {filtered.map((a) => {

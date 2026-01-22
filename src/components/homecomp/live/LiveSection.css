@@ -171,7 +171,7 @@
 .artist-row {
   padding: 10px;
   display: flex;
-  gap: 30px;
+  gap: 16px;
   margin-top: 20px;
   overflow-x: auto;
   overflow-y: hidden;
@@ -218,20 +218,20 @@
   position: absolute;
 
   border-radius: 25px;
-  height: 74px;
-  width: 74px;
+  height: 71px;
+  width: 71px;
 
   background: linear-gradient(90deg, #47b2ff 0%, #6918f6 100%);
 
   z-index: 0;
   left: 50%;
   top: 50%;
-  transform: translate(-49.5%, -49%);
+  transform: translate(-52.5%, -51.5%);
 }
 
 .avatar img {
-  width: 100%;
-  height: 100%;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   display: block;
   position: relative;
@@ -239,7 +239,7 @@
 }
 .artist-name {
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   white-space: nowrap;
   margin-bottom: px;
 }

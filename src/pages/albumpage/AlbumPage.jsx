@@ -24,49 +24,34 @@ const AlbumPage = () => {
       />
       <div className="album-list-wrap">
         <AlbumList
+        id="feverse-cho"
         image="/img/album-list-1.svg"
         title="Feverse"
         subtitle="1st Debut Album 《CHO》"
-        defaultLiked={false}
-        onLikeChange={(liked) =>
-          console.log("앨범 좋아요 상태:", liked)
-        }
       />
       <AlbumList
+        id="hades-planet-b"
         image="/img/album-list-2.svg"
         title="HADES"
         subtitle="Digital Single 두번째 지구 《Planet B》"
-        defaultLiked={false}
-        onLikeChange={(liked) =>
-          console.log("앨범 좋아요 상태:", liked)
-        }
       />
       <AlbumList
+        id="plave-asterum"
         image="/img/album-list-3.svg"
         title="PLAVE"
         subtitle="1st Single Album 《ASTERUM》"
-        defaultLiked={false}
-        onLikeChange={(liked) =>
-          console.log("앨범 좋아요 상태:", liked)
-        }
       />
       <AlbumList
+        id="hebi-chroma"
         image="/img/album-list-4.svg"
         title="HEBI"
         subtitle="1st Mini Album 《Chroma》"
-        defaultLiked={false}
-        onLikeChange={(liked) =>
-          console.log("앨범 좋아요 상태:", liked)
-        }
       />
       <AlbumList
+        id="mir-yong"
         image="/img/album-list-5.svg"
         title="MIR"
         subtitle="The 1st Digital Single 《龍 : 미르》"
-        defaultLiked={false}
-        onLikeChange={(liked) =>
-          console.log("앨범 좋아요 상태:", liked)
-        }
       />
       </div>
     </div>
