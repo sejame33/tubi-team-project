@@ -44,4 +44,7 @@
     font-size: 14px;
     gap: 10px;
   }
+  .eventmore .event-banner-text {
+    font-size: 13px;
+  }
 }

@@ -8,7 +8,7 @@ function StartPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/onboarding/1");
-    }, 1800); // ✅ 1.8초 (원하면 1200~2500 정도로 바꾸면 자연스러움)
+    }, 1800);
 
     return () => clearTimeout(timer);
   }, [navigate]);

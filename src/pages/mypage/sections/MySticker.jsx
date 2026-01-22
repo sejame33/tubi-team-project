@@ -254,7 +254,7 @@ const MySticker = () => {
       <div className="sheetBody" style={{ touchAction: "pan-y" }}>
         <div
           style={{
-            padding: "35px 16px 0",
+            padding: "45px 16px 0",
             display: "flex",
             justifyContent: "space-between",
           }}

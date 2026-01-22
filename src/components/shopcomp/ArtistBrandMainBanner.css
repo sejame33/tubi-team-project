@@ -138,3 +138,17 @@
 .ab-mainbanner .ab-mainbanner-pagination .swiper-pagination-total {
   color: #666;
 }
+
+@media screen and (max-width: 390px) {
+  .ab-mainbanner-title {
+    font-size: 24px;
+  }
+  .ab-mainbanner-subtitle {
+    font-size: 12px;
+  }
+  .ab-mainbanner-product {
+    width: 150px;
+    right: 10px;
+    bottom: 50px;
+  }
+}

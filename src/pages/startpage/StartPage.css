@@ -1,18 +1,19 @@
-.main:has(.start-page) {
-  padding: 0 !important;
-}
-
 .start-page {
   position: relative;
-  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 가운데 정렬 */
+  align-items: center;
 }
 
 .start-page .start-text-group {
-  margin-top: 200px;
-  text-align: center;
-  justify-content: center;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .start-page .start-logo {
@@ -31,4 +32,8 @@
 .start-page img {
   display: flex;
   margin: auto;
+}
+
+.start-main {
+  min-height: 100vh; /* 또는 100dvh */
 }

@@ -119,3 +119,9 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+@media screen and (max-width: 410px) {
+  .today-offer-info .product-title {
+    font-size: 14px;
+  }
+}

@@ -119,6 +119,14 @@
   white-space: nowrap;
 }
 
+@media (max-width: 430px) {
+  .dm-slide-banner {
+    background-size: contain; /* ✅ 전체 다 보이기 */
+    background-position: center;
+    background-color: #fff;
+  }
+}
+
 @media screen and (max-width: 390px) {
   .dm-slide-banner-text-box {
     width: 70%;
@@ -126,10 +134,10 @@
   }
 
   .dm-slide-banner-title-top {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .dm-slide-banner-title-bottom {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
