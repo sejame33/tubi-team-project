@@ -1,7 +1,9 @@
 import React from "react";
 import SectionTitle from "../../../components/homecomp/SectionTitle";
+import { useNavigate } from "react-router-dom";
 
 const ArtistLive = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="artistpage">
@@ -10,6 +12,7 @@ const ArtistLive = () => {
             title="실시간 라이브!"
             showMore={true}
             useNicknameTitle={false}
+            onMoreClick={() => navigate("/home/live")}
           />
 
           <div className="live-content-box">
@@ -46,6 +49,7 @@ const ArtistLive = () => {
             title="인기 MV"
             showMore={true}
             useNicknameTitle={false}
+            onMoreClick={() => navigate("/home/mv")}
           />
           <div className="live-content-box">
             <h3 className="category-label">Live Replay</h3>

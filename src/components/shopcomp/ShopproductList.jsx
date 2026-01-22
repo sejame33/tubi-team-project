@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Scrollbar, Pagination } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -38,6 +39,7 @@ export default function ShopproductList({
     onProductClick?.(id, product);
   };
 
+  const navigate = useNavigate();
   return (
     <section className="shopproduct">
       <div className="shopproduct-products">
@@ -61,7 +63,12 @@ export default function ShopproductList({
             <SwiperSlide key={p.id} className="shopproduct-product-slide">
               <article
                 className="shopproduct-card"
-                onClick={() => handleProductClick(p.id, p)}
+                onClick={() => navigate("/home/shop/ShopProduct")}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    navigate("/home/shop/ShopProduct");
+                  }
+                }}
                 style={{ cursor: "pointer" }}
               >
                 <div className="shopproduct-thumb">

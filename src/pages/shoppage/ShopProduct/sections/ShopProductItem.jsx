@@ -43,9 +43,13 @@ const ShopProductItem = () => {
 
       <ShopProductList
         items={items}
-        onProductClick={(id) => {
-          navigate(`/home/shop/ShopProduct/${id}`);
+        onClick={() => navigate("/home/shop/ShopProduct")}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            navigate("/home/shop/ShopProduct");
+          }
         }}
+        style={{ cursor: "pointer" }}
         enableBrandFilter={false}
       />
     </section>

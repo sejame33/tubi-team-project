@@ -21,7 +21,7 @@ const ShopAnnounce = () => {
         bottom: "플레이브 한정 콜라보 굿즈",
       },
       image: "/img/small-banner-char-2.png",
-      imageStyle: { height: 100, right: "0%", bottom: "0%" },
+      imageStyle: { height: "clamp(80px, 22vw, 100px)", right: "0%", bottom: "0%" },
     },
     {
       variant: "logo",
@@ -34,7 +34,7 @@ const ShopAnnounce = () => {
         bottom: "IRISÉ의 헤드셋을 만나보세요!",
       },
       image: "/img/small-banner-char-3.png",
-      imageStyle: { height: 120, right: "0%", bottom: "0%" },
+      imageStyle: { height: "clamp(100px, 22vw, 120px)", right: "0%", bottom: "0%" },
     },
     {
       variant: "text",
@@ -44,7 +44,7 @@ const ShopAnnounce = () => {
         bottom: "지금 바로 참여하세요",
       },
       image: "/img/small-banner-char-4.png",
-      imageStyle: { height: 135, right: "0%", bottom: "0%" },
+      imageStyle: { height: "clamp(120px, 22vw, 135px)", right: "0%", bottom: "0%" },
     },
   ];
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function LiveReplayCard({ item, variant = "live" }) {
+export default function LiveReplayCard({ item, variant = "live", onClick }) {
   const [artist, guest] = (item.subtitle || "").split(" · ");
 
   const META_ICON_MAP = {
@@ -16,7 +16,17 @@ export default function LiveReplayCard({ item, variant = "live" }) {
     : "";
 
   return (
-    <div className="replay-card">
+    <div
+      className="replay-card"
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (!onClick) return;
+        if (e.key === "Enter" || e.key === " ") onClick();
+      }}
+      style={{ cursor: onClick ? "pointer" : "default" }}
+    >
       <div className="replay-thumb">
         <img src={item.thumb} alt={item.title} />
 

@@ -75,7 +75,7 @@ const ARTIST_LIST = [
 const FollowArtistContext = createContext(null);
 
 export function FollowArtistProvider({ children }) {
-  const DEFAULT_FOLLOWED_IDS = ["1", "2", "3"];
+  const DEFAULT_FOLLOWED_IDS = ["8", "2", "3"];
 
 const [followedIds, setFollowedIds] = useState(() => {
   try {

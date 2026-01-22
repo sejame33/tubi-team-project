@@ -9,6 +9,8 @@
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   z-index: 999;
+  max-width: 430px;
+  margin: 0 auto;
 }
 
 /* 플로팅 버튼 */

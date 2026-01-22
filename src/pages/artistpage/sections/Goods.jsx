@@ -1,8 +1,10 @@
 import React, { useMemo } from "react";
 import SectionTitle from "../../../components/homecomp/SectionTitle";
 import ShopproductList from "../../../components/shopcomp/ShopProductList";
+import { useNavigate } from "react-router-dom";
 
 const Goods = () => {
+  const navigate = useNavigate();
   const items = useMemo(
     () => [
       {
@@ -47,7 +49,7 @@ const Goods = () => {
         <SectionTitle
           title="굿즈샵"
           useNicknameTitle={false}
-          onMoreClick={() => console.log("새로고침 클릭!")}
+          onMoreClick={() => navigate("/home/shop")}
         />
         <div className="goodsshop">
           <ShopproductList items={items} enableBrandFilter={false} />

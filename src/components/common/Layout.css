@@ -11,7 +11,7 @@
 .app {
   width: 100%;
   max-width: 430px;
-  min-height: 100vh;
+  height: 100vh;
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -24,9 +24,33 @@
   min-width: 0;
   flex: 1;
   padding: 90px 0 90px;
-  /* header / footer 고려 */
   overflow-y: auto;
   box-sizing: border-box;
+  min-height: 0;
+}
+
+.main::-webkit-scrollbar,
+.chat-body::-webkit-scrollbar {
+  display: none;            /* Chrome/Safari */
+}
+
+.main,
+.chat-body {
+  -ms-overflow-style: none; /* IE/Edge 구버전 */
+  scrollbar-width: none;    /* Firefox */
+}
+
+.main--noBottom {
+  padding: 90px 0 0;
+}
+
+.main--chat {
+  overflow-y: hidden !important;  /* ✅ 이게 핵심 */
+  overflow-x: hidden !important;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 0;       /* ✅ flex 스크롤 안정화 */
 }
 
 .app,

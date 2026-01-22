@@ -146,6 +146,7 @@ const MySticker = () => {
       subtitle: { type: "text", value: "튜비 스티커 가챠" },
       title: "나만의 튜비를\n만들어 봐요!",
       productImage: "/img/my-banner2.svg",
+      url: "/home/gatcha",
     },
   ];
   const setT = (px, animate) => {

@@ -63,7 +63,7 @@ const MyPage = () => {
         )}
       </div>
 
-      <p className="email">j.youngsopretty@gmail.com</p>
+      <p className="email">tubi_cute@gmail.com</p>
 
       <section className="characterArea">
         <div className="glow">
@@ -106,10 +106,9 @@ const MyPage = () => {
         </button>
 
         <button
-          className="actionBtn impl-anchor"
-          data-impl
+          className="actionBtn"
           type="button"
-          onClick={() => navigate("/home/gatcha/stickercollection")}
+          onClick={() => navigate("/home/gatcha")}
         >
           <img src="/img/my-gacha.svg" alt="" />
           <span>스티커 가챠실</span>

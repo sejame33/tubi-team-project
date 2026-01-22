@@ -26,13 +26,13 @@ function StartPage() {
                 src="/img/start-page-logo.svg"
                 alt="NOVA Start logo"
               />
-            </div>
 
-            <img
-              className="startpage-image"
-              src="/img/start-page1.png"
-              alt="NOVA Start Background"
-            />
+              <img
+                className="startpage-image"
+                src="/img/tubicommon.png"
+                alt="NOVA Start Background"
+              />
+            </div>
           </div>
         </main>
       </div>

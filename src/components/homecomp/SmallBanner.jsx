@@ -13,6 +13,11 @@ function SmallBanner({
   // 위치 관련만 div로, 크기는 img로 분리하는 게 깔끔
   const { height, width, transform, ...posStyle } = imageStyle;
 
+  const toCssSize = (v) => {
+  if (v == null) return undefined;
+  return typeof v === "number" ? `${v}px` : v; // ✅ 문자열이면 그대로(clamp 등)
+  };
+
   return (
     <div
       className={`small-banner small-banner--${variant}`}
@@ -56,8 +61,8 @@ function SmallBanner({
           src={image}
           alt=""
           style={{
-            height: height ? `${height}px` : undefined,
-            width: width ? `${width}px` : undefined,
+            height: toCssSize(height),
+            width: toCssSize(width),
             transform: transform ?? undefined,
           }}
         />

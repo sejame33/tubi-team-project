@@ -106,8 +106,14 @@ export default function ShopBrand2() {
                 return (
                   <SwiperSlide key={p.id} className="shopbrand2-product-slide">
                     <article
-                      className="shopbrand2-card impl-anchor"
-                      data-impl={index === 0 ? true : undefined}
+                      className="shopbrand2-card"
+                      onClick={() => navigate("/home/shop/ShopProduct")}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          navigate("/home/shop/ShopProduct");
+                        }
+                      }}
+                      style={{ cursor: "pointer" }}
                     >
                       <div className="shopbrand2-thumb">
                         <img src={p.img} alt={p.title} />
