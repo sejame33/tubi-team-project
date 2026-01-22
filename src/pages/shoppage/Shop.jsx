@@ -78,21 +78,6 @@ export default function Shop() {
   const bindFractionEl = (swiper) => {
     const activeSlide = swiper.slides[swiper.activeIndex];
     const el = activeSlide?.querySelector(".shop-slide-banner-fraction");
-
-    if (el && swiper.pagination) {
-      swiper.pagination.el = el;
-
-      /* 🔴 여기부터 추가 */
-      el.classList.add("impl-anchor");
-      el.setAttribute("data-impl", "true");
-      el.style.setProperty("--impl-top", "18px");
-      el.style.setProperty("--impl-right", "-12px");
-      /* 🔴 여기까지 */
-
-      swiper.pagination.init();
-      swiper.pagination.render();
-      swiper.pagination.update();
-    }
   };
 
   return (

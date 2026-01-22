@@ -35,7 +35,15 @@ const AlbumList = ({
         <p className="album-list__subtitle">{subtitle}</p>
       </div>
 
-      <button className="album-list__heart" onClick={handleLike}>
+      <button
+        className="album-list__heart impl-anchor"
+        onClick={handleLike}
+        data-impl
+        style={{
+          "--impl-right": "-4px",
+          "--impl-top": "2px",
+        }}
+      >
         <img src={liked ? heartFill : heartLine} alt="like" />
       </button>
     </div>

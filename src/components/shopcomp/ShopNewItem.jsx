@@ -206,38 +206,19 @@ export default function ShopNewItem() {
               const wished = isWished(p.id);
 
               return (
-                <SwiperSlide key={p.id} className="shop-new-product-slide">
+                <SwiperSlide
+                  key={p.id}
+                  className="shop-new-product-slide impl-anchor"
+                  data-impl
+                >
                   <article
                     className="shop-new-card"
                     onClick={() => navigate("/home/shop/ShopProduct")}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter") {
-                        navigate("/home/shop/ShopProduct");
-                      }
-                    }}
                     style={{ cursor: "pointer" }}
                   >
-                    <div
-                      className={`shop-new-thumb ${p.impl ? "impl-anchor" : ""}`}
-                      {...(p.impl ? { "data-impl": true } : {})}
-                      style={
-                        p.impl
-                          ? {
-                              "--impl-right": "8px",
-                              "--impl-top": "8px",
-                            }
-                          : undefined
-                      }
-                    >
-                      <img
-                        src={p.img}
-                        alt={p.title}
-                        loading="lazy"
-                        decoding="async"
-                        onLoad={() => productsSwiperRef.current?.update()}
-                      />
+                    <div className="shop-new-thumb impl-anchor" data-impl>
+                      <img src={p.img} alt={p.title} loading="lazy" />
 
-                      {/* 하트는 그대로 */}
                       <button
                         type="button"
                         className={`shop-new-wish ${wished ? "is-active" : ""}`}
@@ -285,14 +266,7 @@ export default function ShopNewItem() {
             })}
           </Swiper>
 
-          <div
-            className="shop-new-products-controls impl-anchor"
-            data-impl
-            style={{
-              "--impl-right": "-50px",
-              "--impl-top": "-3px",
-            }}
-          >
+          <div className="shop-new-products-controls">
             <div className="shop-new-products-row">
               <div className="shop-new-products-scrollbar swiper-scrollbar" />
               <div className="shop-new-products-pagination swiper-pagination" />

@@ -16,7 +16,8 @@ const LiveCard = ({
 }) => {
   return (
     <div
-      className="hot-issue-container"
+      className="hot-issue-container impl-anchor"
+      data-impl
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
       onClick={onClick}
@@ -24,7 +25,11 @@ const LiveCard = ({
         if (!onClick) return;
         if (e.key === "Enter" || e.key === " ") onClick();
       }}
-      style={{ cursor: onClick ? "pointer" : "default" }}
+      style={{
+        cursor: onClick ? "pointer" : "default",
+        "--impl-right": "12px",
+        "--impl-top": "12px",
+      }}
     >
       <h2 className="top-text" style={{ color: topTextColor }}>
         {topText}
@@ -35,7 +40,10 @@ const LiveCard = ({
 
         <div className="card-top-info">
           {label && (
-            <span className="card-label" style={{ backgroundColor: labelColor }}>
+            <span
+              className="card-label"
+              style={{ backgroundColor: labelColor }}
+            >
               {label}
             </span>
           )}
@@ -66,4 +74,3 @@ const LiveCard = ({
 };
 
 export default LiveCard;
-

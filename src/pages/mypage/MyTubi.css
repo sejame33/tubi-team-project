@@ -4,7 +4,7 @@
 }
 
 .mytubipg {
-  background: linear-gradient(24deg, #4F4F4F 0%, #615664 100%);
+  background: linear-gradient(24deg, #4f4f4f 0%, #615664 100%);
   position: relative;
 }
 
@@ -39,9 +39,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(620deg,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0.1) 100%);
+  background: linear-gradient(
+    620deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
 }
 
 .mytubipg img.tubi {
@@ -54,9 +56,11 @@
 .mytubipg .circle {
   width: 295px;
   height: 295px;
-  background: linear-gradient(620deg,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0.1) 100%);
+  background: linear-gradient(
+    620deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
   position: absolute;
   top: 154px;
   left: 50%;
@@ -154,10 +158,24 @@
 
 .picslect .right .txt {
   font-size: 16px;
-  color: #BABABA
+  color: #bababa;
 }
 
 .history .swiper-wrapper {
   padding: 0 16px;
   margin-top: 24px;
+}
+
+.stickerSec .productCategory-slide[data-impl]::after {
+  display: none;
+}
+
+.mytubipg .top.impl-anchor {
+  --impl-right: 385px;
+  --impl-top: 70px;
+}
+@media screen and (max-width: 390px) {
+  .mytubipg .top.impl-anchor {
+    --impl-right: 345px;
+  }
 }

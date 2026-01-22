@@ -426,14 +426,7 @@ export default function ArtistBrandDivide() {
               })}
             </Swiper>
 
-            <div
-              className="artistbranddivide-products-controls impl-anchor"
-              data-impl
-              style={{
-                "--impl-right": "-50px",
-                "--impl-top": "-3px",
-              }}
-            >
+            <div className="artistbranddivide-products-controls">
               <div className="artistbranddivide-products-row">
                 <div className="artistbranddivide-products-scrollbar swiper-scrollbar" />
                 <div className="artistbranddivide-products-pagination swiper-pagination" />

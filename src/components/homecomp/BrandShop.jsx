@@ -359,6 +359,7 @@ export default function BrandShop() {
                 <SwiperSlide key={p.id} className="brandshop-product-slide">
                   <article
                     className="brandshop-card"
+                    data-impl
                     role="button"
                     tabIndex={0}
                     onClick={() => navigate("/home/shop/ShopProduct")}
@@ -395,14 +396,7 @@ export default function BrandShop() {
           </Swiper>
 
           {/* 컨트롤 */}
-          <div
-            className="brandshop-products-controls impl-anchor"
-            data-impl
-            style={{
-              "--impl-right": "-50px",
-              "--impl-top": "-3px",
-            }}
-          >
+          <div className="brandshop-products-controls">
             <div className="brandshop-products-row">
               <div className="brandshop-products-scrollbar swiper-scrollbar" />
               <div className="brandshop-products-pagination swiper-pagination" />

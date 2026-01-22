@@ -66,10 +66,6 @@ function NicknamePage() {
               className="start-btn impl-anchor"
               onClick={handleSubmit}
               data-impl
-              style={{
-                "--impl-right": "170px",
-                "--impl-top": "23px",
-              }}
             >
               다음
             </button>

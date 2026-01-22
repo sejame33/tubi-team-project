@@ -9,7 +9,6 @@ import LiveReplayCard from "./LiveReplayCard";
 import { useNickname } from "../../../context/NicknameContext";
 import { useFollowArtist } from "../../../context/FollowArtistContext";
 
-
 const TABS = ["라이브", "콘텐츠", "무대"];
 const CHIPS = ["HOT", "NEW", "FOR YOU", "TREND"];
 const FIXED_LIVE_IDS = ["7", "5", "1"]; // IRISE(7), HONEYZ(5), Plave(1)
@@ -19,14 +18,14 @@ const FIXED_LIVE_IDS = ["7", "5", "1"]; // IRISE(7), HONEYZ(5), Plave(1)
    ========================= */
 
 const ARTIST_URL_MAP = {
-  "1": "https://weverse.io/plave/live?hl=ko",
-  "2": "https://www.sooplive.co.kr/station/meechu",
-  "3": "https://www.youtube.com/@apoki_vv",
-  "4": "https://weverse.io/hebi/artistpedia",
-  "5": "https://www.twitch.tv/team/projecti",
-  "6": "https://www.sooplive.co.kr/station/cotton1217/vod",
-  "7": "https://weverse.io/irise/live",
-  "8": "https://stellive.me/",
+  1: "https://weverse.io/plave/live?hl=ko",
+  2: "https://www.sooplive.co.kr/station/meechu",
+  3: "https://www.youtube.com/@apoki_vv",
+  4: "https://weverse.io/hebi/artistpedia",
+  5: "https://www.twitch.tv/team/projecti",
+  6: "https://www.sooplive.co.kr/station/cotton1217/vod",
+  7: "https://weverse.io/irise/live",
+  8: "https://stellive.me/",
 };
 
 // 라이브 탭 (패널 1개)
@@ -221,25 +220,25 @@ export default function LiveSection() {
   const isStageTab = tab === "무대";
 
   const goToUrl = (url) => {
-  if (!url) return;
+    if (!url) return;
 
-  const isExternal = /^https?:\/\//i.test(url);
+    const isExternal = /^https?:\/\//i.test(url);
 
-  if (isExternal) {
-    // ✅ 팝업 차단 회피용: a 태그를 만들어 클릭
-    const a = document.createElement("a");
-    a.href = url;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    return;
-  }
+    if (isExternal) {
+      // ✅ 팝업 차단 회피용: a 태그를 만들어 클릭
+      const a = document.createElement("a");
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      return;
+    }
 
-  // 내부 링크
-  navigate(url);
-};
+    // 내부 링크
+    navigate(url);
+  };
 
   const goToLivePage = () => goToUrl("/home/live");
 
@@ -433,7 +432,11 @@ export default function LiveSection() {
       ))}
 
       {/* ✅ 더보기도 url 이동 */}
-      <button className="section-more" onClick={() => goToUrl("/home/live")}>
+      <button
+        className="section-more impl-anchor"
+        onClick={() => goToUrl("/home/live")}
+        data-impl
+      >
         더보기
         <img src="/img/live-down-arrow.svg" alt="" />
       </button>

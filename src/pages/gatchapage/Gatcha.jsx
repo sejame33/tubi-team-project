@@ -26,7 +26,7 @@ const Gatcha = () => {
           data-impl
           style={{
             "--impl-right": "10px",
-            "--impl-top": "26px",
+            "--impl-top": "42px",
           }}
         >
           <h1 className="gatcha-header-title">오늘의 스티커는?</h1>

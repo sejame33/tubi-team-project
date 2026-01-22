@@ -188,7 +188,6 @@
   display: none; /* Chrome/Safari */
 }
 
-
 .live-artist-item {
   background: none;
   border: none;
@@ -359,6 +358,11 @@
   display: block;
 }
 
+.live-section .section-more[data-impl] {
+  --impl-right: 150px;
+  --impl-top: 2px;
+}
+
 @media screen and (max-width: 390px) {
   /* =========================
      LiveSection impl 조정
@@ -378,8 +382,8 @@
 
   /* replay-panel 더보기 버튼 */
   .live-section .section-more[data-impl] {
-    --impl-right: 90px;
-    --impl-top: 12px;
+    --impl-right: 130px;
+    --impl-top: 2px;
   }
 
   .replay-meta {

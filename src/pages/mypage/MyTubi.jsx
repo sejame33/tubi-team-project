@@ -20,21 +20,21 @@ const MyTubi = () => {
   const history = [
     {
       id: 1,
-      imgSrc: "/img/history1.svg"
+      imgSrc: "/img/history1.svg",
     },
     {
       id: 2,
-      imgSrc: "/img/history2.svg"
+      imgSrc: "/img/history2.svg",
     },
     {
       id: 3,
-      imgSrc: "/img/history3.svg"
+      imgSrc: "/img/history3.svg",
     },
-  ]
+  ];
 
   return (
     <div className="mytubipg">
-      <div className="top">
+      <div className="top impl-anchor" data-impl>
         <img
           src="/img/cancel.svg"
           alt="back"
@@ -54,7 +54,7 @@ const MyTubi = () => {
         <MyOptionSwiper
           options={COLOR_OPTIONS}
           selectedId={COLOR_OPTIONS[0]?.id}
-          onSelect={() => { }}
+          onSelect={() => {}}
         />
       </section>
 
@@ -62,30 +62,27 @@ const MyTubi = () => {
         <div className="stickerHead">
           <div>
             <p className="stickerTitle">스티커</p>
-            <p className="stickerDesc">
-              스티커는 최대 5개까지 선택 가능해요.
-            </p>
+            <p className="stickerDesc">스티커는 최대 5개까지 선택 가능해요.</p>
           </div>
 
           <button type="button" className="stickerListBtn">
             목록 <span aria-hidden="true">›</span>
           </button>
         </div>
-
-        <ProductCategory
-          categories={STICKER_CATEGORIES}
-          active="ALL"
-          onChange={() => { }}
-          className="stickerCategory"
-        />
+        <div className="my-dot-erase">
+          <ProductCategory
+            categories={STICKER_CATEGORIES}
+            active="ALL"
+            onChange={() => {}}
+            className="stickerCategory"
+          />
+        </div>
 
         <MyOptionSwiper
           options={stickerOptions}
           selectedId={STICKERS[0]?.id}
-          onSelect={() => { }}
+          onSelect={() => {}}
         />
-
-
       </section>
 
       <section className="picture">
@@ -96,7 +93,10 @@ const MyTubi = () => {
           <img src="/img/my-picture.svg" alt="" />
           <div className="right">
             <p>사진 선택</p>
-            <p className="txt">갤러리에서 사용자의 사진을 가져와 프로필 사진으로 변경 할 수 있습니다.</p>
+            <p className="txt">
+              갤러리에서 사용자의 사진을 가져와 프로필 사진으로 변경 할 수
+              있습니다.
+            </p>
           </div>
         </div>
       </section>
@@ -105,9 +105,7 @@ const MyTubi = () => {
         <div className="stickerHead">
           <p className="stickerTitle">History</p>
         </div>
-        <MyOptionSwiper
-          options={history}
-        />
+        <MyOptionSwiper options={history} />
       </section>
     </div>
   );

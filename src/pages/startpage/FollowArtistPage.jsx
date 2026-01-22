@@ -72,15 +72,15 @@ export default function FollowArtistPage() {
 
   const DEFAULT_ONBOARDING_IDS = ["8", "2", "3"];
 
-useEffect(() => {
-  if (from !== "onboarding") return;
+  useEffect(() => {
+    if (from !== "onboarding") return;
 
-  if (followedArtists.length > 0) return;
+    if (followedArtists.length > 0) return;
 
-  DEFAULT_ONBOARDING_IDS.forEach((id) => {
-    addFollow(id);
-  });
-}, [from, followedArtists.length, addFollow]);
+    DEFAULT_ONBOARDING_IDS.forEach((id) => {
+      addFollow(id);
+    });
+  }, [from, followedArtists.length, addFollow]);
 
   return (
     <div className="app-wrapper">
@@ -124,8 +124,11 @@ useEffect(() => {
                     className="followartist-selected-measure"
                   >
                     {followedArtists.map((a) => (
-                      <div key={a.id} className="followartist-chip">
-                        <div className="followartist-chip-img" />
+                      <div key={a.id} className="followartist-chip ">
+                        <div
+                          className="followartist-chip-img impl-anchor"
+                          data-impl
+                        />
                       </div>
                     ))}
                   </div>
@@ -143,18 +146,16 @@ useEffect(() => {
                           className="followartist-chip-slide"
                         >
                           <div className="followartist-chip">
-                            <div className="followartist-chip-img">
+                            <div
+                              className="followartist-chip-img impl-anchor"
+                              data-impl
+                            >
                               <img src={a.img} alt={a.name} />
                               <button
                                 type="button"
                                 className="followartist-chip-remove"
-                                data-impl
                                 onClick={() => handleRemove(a)}
                                 aria-label={`${a.name} 제거`}
-                                style={{
-                                  "--impl-right": "-6px",
-                                  "--impl-top": "0px",
-                                }}
                               >
                                 −
                               </button>
@@ -167,7 +168,10 @@ useEffect(() => {
                     <div className="followartist-selected-row">
                       {followedArtists.map((a) => (
                         <div key={a.id} className="followartist-chip">
-                          <div className="followartist-chip-img">
+                          <div
+                            className="followartist-chip-img impl-anchor"
+                            data-impl
+                          >
                             <img src={a.img} alt={a.name} />
                             <button
                               type="button"
@@ -228,14 +232,7 @@ useEffect(() => {
               </div>
             </div>
 
-            <div
-              className="follow-artist-btn-wrap impl-anchor"
-              data-impl
-              style={{
-                "--impl-right": "154px",
-                "--impl-top": "26px",
-              }}
-            >
+            <div className="follow-artist-btn-wrap impl-anchor" data-impl>
               <button
                 className="followartist-done"
                 type="button"

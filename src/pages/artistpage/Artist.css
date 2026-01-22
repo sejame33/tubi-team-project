@@ -272,3 +272,10 @@
 .mv .section-more img {
   filter: brightness(0) invert(1);
 }
+
+/* Artist Live 페이지의 SectionTitle 점 비활성화 */
+.Ustit .section-title-wrap .section-more[data-impl]::after,
+.artistswiper .section-title-wrap .section-more[data-impl]::after,
+.commentpage .section-title-wrap .section-more[data-impl]::after {
+  display: none;
+}

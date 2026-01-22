@@ -106,7 +106,8 @@ const MyPage = () => {
         </button>
 
         <button
-          className="actionBtn"
+          className="actionBtn impl-anchor"
+          data-impl
           type="button"
           onClick={() => navigate("/home/gatcha")}
         >
