@@ -34,3 +34,12 @@
   opacity: 0.6;
 }
 
+@media screen and (max-width: 390px) {
+  .section-title-wrap .section-title {
+    font-size: 24px;
+  }
+
+  .section-title-wrap .section-right-area .section-more {
+    font-size: 16px;
+  }
+}

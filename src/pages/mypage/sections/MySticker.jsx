@@ -263,6 +263,8 @@ const MySticker = () => {
             나의 스티커
           </h2>
           <button
+            className="impl-anchor"
+            data-impl
             type="button"
             onClick={() => navigate("/home/gatcha/stickercollection")}
             style={{
@@ -271,6 +273,8 @@ const MySticker = () => {
               fontSize: 18,
               fontWeight: 500,
               color: "#656565",
+              "--impl-right": "-8px",
+              "--impl-top": "4px",
             }}
           >
             더보기 ›

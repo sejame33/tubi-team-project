@@ -19,8 +19,7 @@ import BrandShop from "../../components/homecomp/BrandShop";
 function Home() {
   const navigate = useNavigate();
   const { nickname } = useNickname();
-  const fractionRefs = useRef([]); // ✅ 슬라이드별 fraction 자리 저장
-
+  const fractionRefs = useRef([]);
 
   const swiperBanners = [
     {
@@ -44,7 +43,7 @@ function Home() {
       logo: "/img/small-banner-logo-3.svg",
       title: {
         topPrefix: "2/22일 오늘은",
-        topIcon: "/img/small-banner-text-img-3.svg", // ✅ 여기!
+        topIcon: "/img/small-banner-text-img-3.svg",
         topSuffix: "의 날!",
         bottom: "IRISÉ의 헤드셋을 만나보세요!",
       },
@@ -123,9 +122,6 @@ function Home() {
           }}
           pagination={{
             type: "fraction",
-            // 01 / 03 같이 0 붙이고 싶으면 아래 두 줄 추가 가능
-            // formatFractionCurrent: (n) => String(n).padStart(2, "0"),
-            // formatFractionTotal: (n) => String(n).padStart(2, "0"),
             renderFraction: (currentClass, totalClass) =>
               `<span class="${currentClass}"></span> / <span class="${totalClass}"></span>`,
           }}
@@ -134,7 +130,6 @@ function Home() {
         >
           {swiperBanners.map((banner, index) => (
             <SwiperSlide key={index} className="small-banner-slide">
-              {/* ✅ fraction div를 "카드 내부"에 넣기 */}
               <SmallBanner {...banner}>
                 <div
                   className="small-banner-fraction swiper-pagination-fraction impl-anchor"
@@ -156,6 +151,11 @@ function Home() {
         showMore={true}
         useNicknameTitle={false}
         onMoreClick={() => navigate("/home/album")}
+        data-impl
+        style={{
+          "--impl-right": "12px",
+          "--impl-top": "12px",
+        }}
       />
       <AlbumSlide />
 

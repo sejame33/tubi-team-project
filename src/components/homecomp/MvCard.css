@@ -87,3 +87,10 @@
   color: #7d7d7d;
   line-height: 1;
 }
+
+@media screen and (max-width: 390px) {
+  .mv-card {
+    min-width: 300px;
+    padding: 24px 20px;
+  }
+}

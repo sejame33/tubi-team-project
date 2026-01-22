@@ -359,5 +359,54 @@
   display: block;
 }
 
-.replay-thumb * { pointer-events: none; }
-.artist-item * { pointer-events: none; }
+@media screen and (max-width: 390px) {
+  /* =========================
+     LiveSection impl 조정
+  ========================= */
+
+  /* 팔로우 아티스트 스와이퍼 */
+  .artistswiper {
+    --impl-right: 100px;
+    --impl-top: 160px;
+  }
+
+  /* 미니 탭 (라이브 / 전체) */
+  .live-panel-tabs .mini-tab[data-impl-alt] {
+    --impl-alt-top: 4px;
+    --impl-alt-right: 40px;
+  }
+
+  /* replay-panel 더보기 버튼 */
+  .live-section .section-more[data-impl] {
+    --impl-right: 90px;
+    --impl-top: 12px;
+  }
+
+  .replay-meta {
+    bottom: 27px;
+  }
+
+  /* speech bubble */
+  .replay-speech-bubble {
+    transform: scale(0.9);
+  }
+
+  .replay-meta img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .replay-sub img {
+    width: 10px;
+    height: 17px;
+    margin-left: 3px;
+  }
+
+  .replay-title {
+    font-size: 14px;
+  }
+
+  .replay-sub {
+    font-size: 12px;
+  }
+}

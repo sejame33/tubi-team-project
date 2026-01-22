@@ -114,7 +114,7 @@ export default function ShopBrand() {
                 1024: { spaceBetween: 18 },
               }}
             >
-              {products.map((p) => {
+              {products.map((p, index) => {
                 const wished = isWished(p.id);
 
                 return (

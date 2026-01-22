@@ -24,23 +24,26 @@
 .notice-error-btn-wrap {
   margin: 0 16px;
 }
+
 .notice-error-btn-wrap .notice-error-btn {
   width: 100%;
   border: none;
   border-radius: 6px;
   padding: 18px 0;
-
-  background: #884dff; /* 필요하면 그라데이션도 가능 */
+  background: #884dff;
   color: #fff;
   font-size: 20px;
   font-weight: 400;
-
   cursor: pointer;
 }
 
+/* =========================
+   Notice Detail
+========================= */
 .notice-detail {
   padding: 16px;
   background: #fff;
+  box-sizing: border-box;
 }
 
 /* 제목 */
@@ -69,6 +72,7 @@
   align-items: center;
   gap: 16px;
 }
+
 .notice-section h3 span {
   font-size: 22px;
   font-weight: 700;
@@ -100,9 +104,9 @@
   font-weight: 400;
 }
 
-/* ===========================
+/* =========================
    당첨자 테이블
-=========================== */
+========================= */
 .notice-table-wrap {
   border-radius: 12px;
   overflow: hidden;
@@ -114,6 +118,7 @@
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+  box-sizing: border-box;
 }
 
 .notice-table th,
@@ -122,6 +127,7 @@
   font-size: 14px;
   border-bottom: 1px solid #eee;
   text-align: left;
+  vertical-align: middle;
 }
 
 .notice-table th {
@@ -133,14 +139,16 @@
   border-bottom: none;
 }
 
+/* 기본 패딩 (390 이상) */
 .notice-table th:first-child,
-.notice-table tr td:first-child {
+.notice-table td:first-child {
   padding-left: 30px;
+  white-space: nowrap;
 }
 
-/* ===========================
+/* =========================
    경품 테이블
-=========================== */
+========================= */
 .notice-goods-wrap {
   border-radius: 12px;
   overflow: hidden;
@@ -151,6 +159,7 @@
 .notice-goods {
   width: 100%;
   border-collapse: collapse;
+  box-sizing: border-box;
 }
 
 .notice-goods th,
@@ -159,6 +168,7 @@
   font-size: 14px;
   border-bottom: 1px solid #eee;
   text-align: left;
+  vertical-align: middle;
 }
 
 .notice-goods th {
@@ -170,11 +180,16 @@
   border-bottom: none;
 }
 
-.notice-goods tr td,
-.notice-goods th {
+/* 기본 패딩 (390 이상) */
+.notice-goods th:first-child,
+.notice-goods td:first-child {
   padding-left: 30px;
+  white-space: nowrap;
 }
 
+/* =========================
+   기타 텍스트
+========================= */
 .notice-section .notice-congraution {
   margin-top: 24px;
   margin-bottom: 80px;
@@ -200,4 +215,13 @@
 
 .notice-section .ma-b-30 {
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 390px) {
+  .notice-table th:first-child,
+  .notice-table td:first-child,
+  .notice-goods th:first-child,
+  .notice-goods td:first-child {
+    padding-left: 4vw;
+  }
 }

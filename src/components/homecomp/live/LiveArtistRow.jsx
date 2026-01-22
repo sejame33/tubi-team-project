@@ -60,7 +60,7 @@ export default function LiveArtistRow({ items = [], onItemClick }) {
   }, []);
 
   return (
-    <div className="artist-row" ref={rowRef}>
+    <div className="artist-row " ref={rowRef}>
       {items.map((a) => (
         <button
           key={a.id}

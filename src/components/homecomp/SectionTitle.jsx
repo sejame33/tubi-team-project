@@ -59,16 +59,28 @@ function SectionTitle({
               color: "#333",
               display: "flex",
               alignItems: "center",
-              
             }}
           >
             인기순
-            <img src="/img/brand-popular-arrow.svg" alt="" className="sort-icon" style={{marginLeft: "4px"}}/>
+            <img
+              src="/img/brand-popular-arrow.svg"
+              alt=""
+              className="sort-icon"
+              style={{ marginLeft: "4px" }}
+            />
           </button>
         )}
 
         {showMore && (
-          <button className="section-more" onClick={onMoreClick}>
+          <button
+            className="section-more impl-anchor"
+            onClick={onMoreClick}
+            data-impl
+            style={{
+              "--impl-right": "-8px",
+              "--impl-top": "0px",
+            }}
+          >
             {moreElement ? (
               moreElement
             ) : (

@@ -1,0 +1,13 @@
+/* 기본 */
+.artistswiper.impl-anchor {
+  --impl-right: 140px;
+  --impl-top: 210px;
+}
+
+/* 390 이하 */
+@media screen and (max-width: 390px) {
+  .artistswiper.impl-anchor {
+    --impl-right: 120px; /* 원하는 값 */
+    --impl-top: 235px;
+  }
+}

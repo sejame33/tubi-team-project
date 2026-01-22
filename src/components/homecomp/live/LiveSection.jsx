@@ -391,10 +391,6 @@ export default function LiveSection() {
               }`}
               onClick={() => setPanelTab("라이브")}
               data-impl-alt
-              style={{
-                "--impl-alt-top": "4px",
-                "--impl-alt-right": "54px",
-              }}
             >
               라이브
             </button>
@@ -406,10 +402,6 @@ export default function LiveSection() {
               }`}
               onClick={() => setPanelTab("전체")}
               data-impl-alt
-              style={{
-                "--impl-alt-top": "4px",
-                "--impl-alt-right": "60px",
-              }}
             >
               전체
             </button>
