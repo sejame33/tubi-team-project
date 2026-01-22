@@ -60,7 +60,11 @@ export default function ShopproductList({
           freeMode
         >
           {filteredProducts.map((p) => (
-            <SwiperSlide key={p.id} className="shopproduct-product-slide">
+            <SwiperSlide
+              key={p.id}
+              className="shopproduct-product-slide"
+              data-impl
+            >
               <article
                 className="shopproduct-card"
                 onClick={() => navigate("/home/shop/ShopProduct")}

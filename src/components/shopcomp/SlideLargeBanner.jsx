@@ -23,19 +23,6 @@ export default function SlideLargeBanner() {
   // ✅ pagination(fraction)에 impl 표시 주입
   const bindFractionEl = (swiper) => {
     const paginationEl = swiper.pagination?.el;
-    if (!paginationEl) return;
-
-    // 🔴 impl 시스템 연결
-    paginationEl.classList.add("impl-anchor");
-    paginationEl.setAttribute("data-impl", "true");
-
-    // 위치 미세 조정 (필요 없으면 지워도 됨)
-    paginationEl.style.setProperty("--impl-top", "-6px");
-    paginationEl.style.setProperty("--impl-right", "-8px");
-
-    swiper.pagination.init();
-    swiper.pagination.render();
-    swiper.pagination.update();
   };
 
   return (

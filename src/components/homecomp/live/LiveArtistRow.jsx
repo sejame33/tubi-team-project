@@ -65,7 +65,12 @@ export default function LiveArtistRow({ items = [], onItemClick }) {
         <button
           key={a.id}
           type="button"
-          className="live-artist-item"
+          className="live-artist-item impl-anchor"
+          data-impl
+          style={{
+            "--impl-right": "-8px",
+            "--impl-top": "0px",
+          }}
           onClick={() => {
             const movedNow = rowRef.current?.dataset?.moved === "1";
             if (movedNow) return; // ✅ 드래그였다면 이동 금지

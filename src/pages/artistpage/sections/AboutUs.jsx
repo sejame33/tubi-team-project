@@ -2,6 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Btn from "../../../components/common/Btn";
 import StickerSwiper from "../../../components/mycomp/StickerSwiper";
+import SectionTitle from "../../../components/homecomp/SectionTitle";
 import "swiper/css";
 
 const memberList = [
@@ -77,34 +78,46 @@ const AboutUs = () => {
   }));
 
   return (
-    <section
-      className="about-us impl-anchor"
-      data-impl
-      style={{
-        "--impl-right": "12px",
-        "--impl-top": "12px",
-      }}
-    >
-      <StickerSwiper
-        items={swiperItems}
-        onItemClick={(item) => console.log("멤버 클릭:", item)}
-      />
+    <>
+      <div className="Us">
+        <div className="Ustit">
+          <SectionTitle
+            title="About US"
+            showMore={true}
+            useNicknameTitle={false}
+          />
+        </div>
 
-      <div className="about-footer">
-        <p className="about-description">
-          안녕하세요 스텔라이브입니다!
-          <br />
-          각자의 개성을 가진 멤버들이 모여 라이브와 다양한 콘텐츠로 여러분을
-          만나고 있어요.
-        </p>
+        <section
+          className="about-us impl-anchor"
+          data-impl
+          style={{
+            "--impl-right": "12px",
+            "--impl-top": "12px",
+          }}
+        >
+          <StickerSwiper
+            items={swiperItems}
+            onItemClick={(item) => console.log("멤버 클릭:", item)}
+          />
 
-        <Btn
-          text="더보기"
-          bgColor="linear-gradient(90deg, #A97EFF 0%, #11A4FF 100%)"
-          onClick={() => console.log("더보기 클릭")}
-        />
+          <div className="about-footer">
+            <p className="about-description">
+              안녕하세요 스텔라이브입니다!
+              <br />
+              각자의 개성을 가진 멤버들이 모여 라이브와 다양한 콘텐츠로 여러분을
+              만나고 있어요.
+            </p>
+
+            <Btn
+              text="더보기"
+              bgColor="linear-gradient(90deg, #A97EFF 0%, #11A4FF 100%)"
+              onClick={() => console.log("더보기 클릭")}
+            />
+          </div>
+        </section>
       </div>
-    </section>
+    </>
   );
 };
 

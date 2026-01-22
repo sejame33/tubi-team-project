@@ -252,3 +252,20 @@
   bottom: 40px;
   left: auto;
 }
+
+.followartist-chip-img[data-impl]::after {
+  top: 0px;
+  right: -5px;
+}
+
+.follow-artist-btn-wrap.impl-anchor {
+  --impl-right: 154px;
+  --impl-top: 26px;
+}
+
+@media screen and (max-width: 390px) {
+  .follow-artist-btn-wrap.impl-anchor {
+    --impl-right: 135px;
+    --impl-top: 28px;
+  }
+}

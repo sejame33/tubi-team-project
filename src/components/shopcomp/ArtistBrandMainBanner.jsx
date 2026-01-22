@@ -90,14 +90,7 @@ export default function ArtistBrandMainBanner({
         ))}
 
         {/* ✅ ShopMainBanner와 동일한 컨트롤 */}
-        <div
-          className="ab-mainbanner-controls impl-anchor"
-          data-impl
-          style={{
-            "--impl-right": "-36px",
-            "--impl-top": "-3px",
-          }}
-        >
+        <div className="ab-mainbanner-controls">
           <div className="ab-mainbanner-row">
             <div className="ab-mainbanner-scrollbar swiper-scrollbar" />
             <div className="ab-mainbanner-pagination swiper-pagination" />

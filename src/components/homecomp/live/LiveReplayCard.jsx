@@ -17,7 +17,8 @@ export default function LiveReplayCard({ item, variant = "live", onClick }) {
 
   return (
     <div
-      className="replay-card"
+      className="replay-card impl-anchor"
+      data-impl
       role="button"
       tabIndex={0}
       onClick={onClick}

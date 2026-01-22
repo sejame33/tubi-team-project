@@ -40,20 +40,11 @@ function DmSection({ items, onClickItem }) {
   const fractionRefs = useRef([]);
 
   const bindFractionEl = (swiper) => {
-    const active = swiper.realIndex; 
+    const active = swiper.realIndex;
     const el = fractionRefs.current[active];
     if (!el) return;
 
     swiper.pagination.el = el;
-
-    el.classList.add("impl-anchor");
-    el.setAttribute("data-impl", "true");
-    el.style.setProperty("--impl-top", "18px");
-    el.style.setProperty("--impl-right", "-12px");
-
-    swiper.pagination.init();
-    swiper.pagination.render();
-    swiper.pagination.update();
   };
 
   return (

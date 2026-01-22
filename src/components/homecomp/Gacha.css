@@ -19,7 +19,8 @@
   right: 8%;
   bottom: 50%;
   transform: translateY(50%);
-  width: 160px;
+  width: clamp(130px, 18vw, 160px);
+
   z-index: 1;
 }
 
@@ -73,3 +74,8 @@
   font-weight: 500;
 }
 
+/* @media screen and (max-width: 390px) {
+  .gacha-banner .gacha-content .char {
+    width: 120px;
+  }
+} */

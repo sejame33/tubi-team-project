@@ -132,13 +132,8 @@ function Home() {
             <SwiperSlide key={index} className="small-banner-slide">
               <SmallBanner {...banner}>
                 <div
-                  className="small-banner-fraction swiper-pagination-fraction impl-anchor"
-                  data-impl
+                  className="small-banner-fraction swiper-pagination-fraction"
                   ref={(el) => (fractionRefs.current[index] = el)}
-                  style={{
-                    "--impl-right": "-12px",
-                    "--impl-top": "20px",
-                  }}
                 />
               </SmallBanner>
             </SwiperSlide>

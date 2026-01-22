@@ -104,7 +104,11 @@ export default function ShopBrand2() {
                 const wished = isWished(p.id);
 
                 return (
-                  <SwiperSlide key={p.id} className="shopbrand2-product-slide">
+                  <SwiperSlide
+                    key={p.id}
+                    className="shopbrand2-product-slide impl-anchor"
+                    data-impl
+                  >
                     <article
                       className="shopbrand2-card"
                       onClick={() => navigate("/home/shop/ShopProduct")}
@@ -172,14 +176,7 @@ export default function ShopBrand2() {
             </Swiper>
 
             {/* ✅ shopbrand2 컨트롤 DOM 추가 */}
-            <div
-              className="shopbrand2-products-controls impl-anchor"
-              data-impl
-              style={{
-                "--impl-right": "-50px",
-                "--impl-top": "-3px",
-              }}
-            >
+            <div className="shopbrand2-products-controls">
               <div className="shopbrand2-products-row">
                 <div className="shopbrand2-products-scrollbar swiper-scrollbar" />
                 <div className="shopbrand2-products-pagination swiper-pagination" />

@@ -7,12 +7,25 @@ import "swiper/css/free-mode";
 
 import ShopProductSmallBanner from "../../../components/shopcomp/ShopProductSmallBanner";
 import ArtistFrom from "../../../components/artistcomp/ArtistFrom";
+import SectionTitle from "../../../components/homecomp/SectionTitle";
 import "./From.css";
 
 const From = () => {
   return (
     <>
-      <div className="artistswiper impl-anchor" data-impl>
+      <div className="artistswiper">
+        <SectionTitle
+          title="From StelLive"
+          useNicknameTitle={false}
+          moreElement={
+            <img
+              src="/img/reset.svg"
+              alt="refresh"
+              style={{ width: "24px", height: "24px" }}
+            />
+          }
+          onMoreClick={() => console.log("새로고침 클릭!")}
+        />
         <Swiper
           modules={[FreeMode, Scrollbar]}
           // 3. scrollbar 설정을 활성화합니다.

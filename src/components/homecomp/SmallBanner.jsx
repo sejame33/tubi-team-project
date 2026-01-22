@@ -14,8 +14,8 @@ function SmallBanner({
   const { height, width, transform, ...posStyle } = imageStyle;
 
   const toCssSize = (v) => {
-  if (v == null) return undefined;
-  return typeof v === "number" ? `${v}px` : v; // ✅ 문자열이면 그대로(clamp 등)
+    if (v == null) return undefined;
+    return typeof v === "number" ? `${v}px` : v; // ✅ 문자열이면 그대로(clamp 등)
   };
 
   return (
@@ -50,7 +50,11 @@ function SmallBanner({
         <p className="small-banner-title-bottom">{title.bottom}</p>
 
         {variant === "text" && (
-          <button className="small-banner-more" onClick={onMore}>
+          <button
+            className="small-banner-more impl-anchor"
+            onClick={onMore}
+            data-impl
+          >
             지금 예매하기
           </button>
         )}

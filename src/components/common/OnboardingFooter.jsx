@@ -57,10 +57,6 @@ const OnboardingFooter = ({
           onClick={handleNext}
           type="button"
           data-impl
-          style={{
-            "--impl-right": "108px",
-            "--impl-top": "18px",
-          }}
         >
           {lastCtaText}
         </button>

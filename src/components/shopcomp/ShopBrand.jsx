@@ -118,7 +118,11 @@ export default function ShopBrand() {
                 const wished = isWished(p.id);
 
                 return (
-                  <SwiperSlide key={p.id} className="shopbrand-product-slide">
+                  <SwiperSlide
+                    key={p.id}
+                    className="shopbrand-product-slide impl-anchor"
+                    data-impl
+                  >
                     <article
                       className="shopbrand-card"
                       onClick={() => navigate("/home/shop/ShopProduct")}
@@ -184,14 +188,7 @@ export default function ShopBrand() {
                 );
               })}
             </Swiper>
-            <div
-              className="shopbrand-products-controls impl-anchor"
-              data-impl
-              style={{
-                "--impl-right": "-50px",
-                "--impl-top": "-3px",
-              }}
-            >
+            <div className="shopbrand-products-controls">
               <div className="shopbrand-products-row">
                 <div className="shopbrand-products-scrollbar swiper-scrollbar" />
                 <div className="shopbrand-products-pagination swiper-pagination" />

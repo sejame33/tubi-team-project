@@ -50,3 +50,15 @@
 
   cursor: pointer;
 }
+
+.ob-cta.impl-anchor {
+  --impl-right: 108px;
+  --impl-top: 18px;
+}
+
+@media screen and (max-width: 390px) {
+  .ob-cta.impl-anchor {
+    --impl-right: 85px;
+    --impl-top: 16px;
+  }
+}
