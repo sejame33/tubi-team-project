@@ -10,7 +10,14 @@ function MvCard({
   cover,
   coverType = "default",
   desc,
+  url,
 }) {
+  const handleClick = () => {
+    if (!url) return;
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div
       className="mv-card impl-anchor"
@@ -19,6 +26,7 @@ function MvCard({
         "--impl-right": "12px",
         "--impl-top": "12px",
       }}
+      onClick={handleClick}
     >
       {/* 카드 상단 메인 타이틀 */}
       {mainTitle && <h2 className="mv-card-main-title">{mainTitle}</h2>}

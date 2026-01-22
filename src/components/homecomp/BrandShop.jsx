@@ -320,7 +320,16 @@ export default function BrandShop() {
               if (p.type === "brand") {
                 return (
                   <SwiperSlide key={p.id} className="brandshop-product-slide">
-                    <article className="brandshop-card brand-card">
+                    <article
+                      className="brandshop-card brand-card"
+                      onClick={() => navigate("/home/shop/brand")}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          navigate("/home/shop/brand");
+                        }
+                      }}
+                      style={{ cursor: "pointer" }}
+                    >
                       <div className="brandshop-thumb">
                         <img src={p.img} alt={p.titleTop} />
                       </div>
@@ -339,7 +348,18 @@ export default function BrandShop() {
 
               return (
                 <SwiperSlide key={p.id} className="brandshop-product-slide">
-                  <article className="brandshop-card">
+                  <article
+                    className="brandshop-card"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => navigate("/home/shop/ShopProduct")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        navigate("/home/shop/ShopProduct");
+                      }
+                    }}
+                    style={{ cursor: "pointer" }}
+                  >
                     <div className="brandshop-thumb">
                       <img src={p.img} alt={p.title} />
                     </div>
