@@ -11,7 +11,7 @@
 .app {
   width: 100%;
   max-width: 430px;
-  min-height: 100vh;
+  height: 100vh;
   background: #ffffff;
   display: flex;
   flex-direction: column;

@@ -8,18 +8,27 @@
 }
 
 .start-page .start-text-group {
-  position: absolute;
-  top: 173px; /* 이미지에 맞춰 높이 조절 */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+  margin-top: 200px;
   text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.start-page .start-logo {
+  width: 50%;
+  margin-bottom: 130px;
 }
 
 .start-page .start-text-group .start-subtitle {
-  margin-bottom: 9px;
+  margin-bottom: 20px;
   color: #767676;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.5px;
+}
+
+.start-page img {
+  display: flex;
+  margin: auto;
 }
