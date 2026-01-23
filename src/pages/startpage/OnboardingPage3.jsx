@@ -1,124 +1,161 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./OnboardingPage3.css";
 
 function OnboardingPage3() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
-  // ✅ 이 페이지에서만 main padding 제어
+  // ✅ 이 페이지에서만 main padding 제어 (네 방식 유지)
   useEffect(() => {
     const main = document.querySelector(".main");
     if (!main) return;
 
-    // 원하는 값으로 덮기
     main.style.padding = "0";
-
-    // 페이지 벗어나면 원복
     return () => {
       main.style.padding = "";
     };
   }, []);
 
+  // ✅ step 계산 (/onboarding/1~4)
+  const match = pathname.match(/^\/onboarding\/([1-4])\/?$/);
+  const step = match ? Number(match[1]) : 3;
+
   return (
-    <div className="onboarding-3">
-      <div className="text-area">
-        <h1 className="title">
-          카테고리에 따라
-          <br />
-          다양한 상품을 볼 수 있어요
-        </h1>
-        <p className="sub-title">버츄얼 아이돌을 선택하고 함께 소통해요!</p>
-      </div>
+    <div className="obh-wrap">
+      {/* ✅ Header: progress + skip */}
+      <header className="obhs-header">
+        <div className="obhs-progress" aria-label="onboarding progress">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <span
+              key={i}
+              className={`obhs-seg ${i < Math.max(0, step - 1) ? "is-filled" : ""}`}
+            />
+          ))}
+        </div>
 
-      {/* 필터 버튼 */}
-      <ul className="filter-area">
-        <li>
-          <button className="filter-btn outline">
-            <span className="filter-btn-chip-text">NOVA Only</span>
-          </button>
-        </li>
-        <li>
-          <button className="filter-btn active">All</button>
-        </li>
-        <li>
-          <button className="filter-btn">
-            New
-            <span className="dot" />
-          </button>
-        </li>
-        <li>
-          <button className="filter-btn">Best</button>
-        </li>
-        <li>
-          <button className="filter-btn">
-            Limited
-            <span className="dot" />
-          </button>
-        </li>
-      </ul>
+        <button
+          type="button"
+          className="obhs-skip"
+          onClick={() => navigate("/login")}
+        >
+          Skip
+        </button>
+      </header>
 
-      {/* 중앙 배경 */}
-      <div className="center-bg-layer">
-        <img
-          src="/img/onboarding-3-background2.svg"
-          alt=""
-          className="center-bg-img"
-        />
-        {/* 상품 리스트 */}
-        <ul className="product-area">
-          <li className="product-card">
-            <div className="img-box">
-              <img
-                src="/img/onboarding-3-album-1.svg"
-                alt="album"
-                className="product-img"
-              />
-              <img
-                src="/img/onboarding-3-heart.svg"
-                alt=""
-                className="product-heart"
-              />
-            </div>
-            <p className="product-name">PLAVE JP 1ST SINGLE...</p>
-            <p className="price">₩21,400원</p>
+      {/* ✅ Page Body */}
+      <div className="onboarding-3">
+        <div className="text-area">
+          <h1 className="title">
+            카테고리에 따라
+            <br />
+            다양한 상품을 볼 수 있어요
+          </h1>
+          <p className="sub-title">버츄얼 아이돌을 선택하고 함께 소통해요!</p>
+        </div>
+
+        {/* 필터 버튼 */}
+        <ul className="filter-area">
+          <li>
+            <button className="filter-btn outline" type="button">
+              <span className="filter-btn-chip-text">NOVA Only</span>
+            </button>
           </li>
-
-          <li className="product-card">
-            <div className="img-box">
-              <img
-                src="/img/onboarding-3-album-2.svg"
-                alt="album"
-                className="product-img"
-              />
-              <img
-                src="/img/onboarding-3-heart.svg"
-                alt=""
-                className="product-heart"
-              />
-            </div>
-            <p className="product-name">PLAVE JP 1ST SINGLE...</p>
-            <p className="price">₩17,000원</p>
+          <li>
+            <button className="filter-btn active" type="button">
+              All
+            </button>
           </li>
-
-          <li className="product-card">
-            <div className="img-box">
-              <img
-                src="/img/onboarding-3-album-3.svg"
-                alt="album"
-                className="product-img a"
-              />
-            </div>
-            <p className="product-name">PLAVE 3rd Mini...</p>
-            <p className="price">₩13,400원</p>
+          <li>
+            <button className="filter-btn" type="button">
+              New <span className="dot" />
+            </button>
+          </li>
+          <li>
+            <button className="filter-btn" type="button">
+              Best
+            </button>
+          </li>
+          <li>
+            <button className="filter-btn" type="button">
+              Limited <span className="dot" />
+            </button>
           </li>
         </ul>
 
-        <img
-          src="/img/onboarding-3-tubi.svg"
-          alt="character"
-          className="tubi-img"
-        />
+        {/* 중앙 배경 */}
+        <div className="center-bg-layer">
+          <img
+            src="/img/onboarding-3-background2.svg"
+            alt=""
+            className="center-bg-img"
+          />
+
+          {/* 상품 리스트 */}
+          <ul className="product-area">
+            <li className="product-card">
+              <div className="img-box">
+                <img
+                  src="/img/onboarding-3-album-1.svg"
+                  alt="album"
+                  className="product-img"
+                />
+                <img
+                  src="/img/onboarding-3-heart.svg"
+                  alt=""
+                  className="product-heart"
+                />
+              </div>
+              <p className="product-name">PLAVE JP 1ST SINGLE...</p>
+              <p className="price">₩21,400원</p>
+            </li>
+
+            <li className="product-card">
+              <div className="img-box">
+                <img
+                  src="/img/onboarding-3-album-2.svg"
+                  alt="album"
+                  className="product-img"
+                />
+                <img
+                  src="/img/onboarding-3-heart.svg"
+                  alt=""
+                  className="product-heart"
+                />
+              </div>
+              <p className="product-name">PLAVE JP 1ST SINGLE...</p>
+              <p className="price">₩17,000원</p>
+            </li>
+
+            <li className="product-card">
+              <div className="img-box">
+                <img
+                  src="/img/onboarding-3-album-3.svg"
+                  alt="album"
+                  className="product-img a"
+                />
+              </div>
+              <p className="product-name">PLAVE 3rd Mini...</p>
+              <p className="price">₩13,400원</p>
+            </li>
+          </ul>
+
+          <img
+            src="/img/onboarding-3-tubi.svg"
+            alt="character"
+            className="tubi-img"
+          />
+        </div>
       </div>
+       <footer className="obfb">
+        <button
+          type="button"
+          className="obfb-btn"
+          onClick={() => navigate("/onboarding/4")}
+        >
+          다음
+        </button>
+      </footer>
     </div>
   );
 }

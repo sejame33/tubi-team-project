@@ -1,57 +1,119 @@
-.main:has(.onboarding-1) {
-  padding: 0;
+/* 전체 화면 */
+.ob1 {
+  height: 100vh;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-.onboarding-1 {
+/* ===== Header ===== */
+.ob1-header {
+  height: 56px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ob1-skip {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #9aa0a6;
+  cursor: pointer;
+  padding: 6px 6px;
+}
+
+/* ===== Main ===== */
+.ob1-main {
+  height: calc(100vh - 56px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  background-color: #ffffff;
   text-align: center;
-  box-sizing: border-box;
-  padding: none;
-  height: 100%;
+  padding: 36px 20px 0;
 }
 
-.onboarding-1 .onboarding-text {
-  margin-top: 30px;
+/* 상단 작은 문구(파란색) */
+.ob1-eyebrow {
+  margin: 8px 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3b5bff;
 }
 
-.onboarding-1 .title {
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 14px;
-  letter-spacing: -0.3px;
-  background: linear-gradient(
-    to right,
-    rgb(17, 164, 255) 25%,
-    rgb(136, 77, 255) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* 큰 타이틀 */
+.ob1-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #222;
+  letter-spacing: -0.2px;
 }
 
-.onboarding-1 .desc {
-  font-size: 28px;
-  font-weight: 600;
-  color: #333333;
-  line-height: 1.2;
+.ob1-point {
+  color: #3b5bff;
 }
 
-.onboarding-1 .desc .point-color {
-  background: linear-gradient(
-    120deg,
-    rgb(17, 164, 255) 10%,
-    rgb(83, 116, 255) 30%,
-    rgb(136, 77, 255) 63%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* 이미지 영역 */
+.ob1-hero {
+  margin-top: 42px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.onboarding-1 .onboarding-image {
-  margin-left: 15px;
-  width: 83%;
+.ob1-hero-img {
+  width: 292px; /* 스샷 느낌 */
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.12));
+}
+
+/* ===== Footer (우하단 NEXT) ===== */
+.ob1-footer {
+  position: absolute;
+  right: 18px;
+  bottom: 24px;
+  pointer-events: none; /* 버튼만 클릭 */
+}
+
+.ob1-next {
+  pointer-events: auto;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 6px;
+}
+
+.ob1-next-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: #5b3dff;
+  letter-spacing: 0.3px;
+}
+
+.ob1-next-arrow {
+  width: 36px; /* 네 화살표 svg 크기에 맞춰 조절 */
+  height: auto;
+  display: block;
+}
+
+/* 작은 화면 보정 */
+@media (max-width: 390px) {
+  .ob1-title {
+    font-size: 24px;
+  }
+  .ob1-hero-img {
+    width: 270px;
+  }
+  .ob1-footer {
+    right: 16px;
+    bottom: 20px;
+  }
 }

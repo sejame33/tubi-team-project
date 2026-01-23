@@ -1,40 +1,212 @@
-.onboarding-2 {position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; } 
+/* =========================
+   전체 프레임 (헤더/푸터 포함)
+   ========================= */
+.ob1 {
+  height: 100dvh;              /* ✅ 모바일 주소창 변화에도 안정 */
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+  overflow: hidden;            /* ✅ 스크롤바 방지 */
+  display: flex;
+  flex-direction: column;
+}
 
-.onboarding-2 .text-box { width: 100%; margin: 0 auto; text-align: center; height: 600px; } 
+/* 헤더 */
+.ob1-header {
+  height: 56px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+}
 
-.onboarding-2 .text-box h1 { font-size: 28px; font-weight: 600; line-height: 1.2; color: #333333; } 
+.ob1-skip {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #9aa0a6;
+  cursor: pointer;
+  padding: 6px 6px;
+}
 
-.onboarding-2 .text-box p { font-size: 16px; color: #808080; font-weight: normal; margin-top: 12px; } 
+/* 푸터 (우하단 NEXT) */
+.ob1-footer {
+  position: absolute;
+  right: 18px;
+  bottom: 24px;
+  pointer-events: none;
+  z-index: 10;
+}
 
-/* ---------- MARQUEE ---------- */
-.onboarding-2 .marquee-wrapper { position: absolute; top: 42%; left: 0; width: 100%; z-index: 1; } 
+.ob1-next {
+  pointer-events: auto;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 6px;
+}
 
-.onboarding-2 .marquee-track { display: flex; width: max-content; animation: marquee 50s linear infinite; will-change: transform; } 
+.ob1-next-text {
+  font-size: 16px;
+  font-weight: 800;
+  color: #5b3dff;
+  letter-spacing: 0.3px;
+}
 
-/* 카드 프레임 */
-.onboarding-2 .marquee-item { width: 160px; height: 220px; margin-right: 14px; display: flex; align-items: center; justify-content: center; position: relative; flex-shrink: 0; /* ✅ 중요 */}
+.ob1-next-arrow {
+  width: 36px;
+  height: auto;
+  display: block;
+}
 
-/* 카드만 지그재그 */
-.onboarding-2 .marquee-item img { width: 100%; display: block; animation: zigzag 5s ease-in-out infinite; will-change: transform; } 
+/* =========================
+   온보딩 2 본문
+   ========================= */
+.onboarding-2 {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 텍스트 박스: 고정 높이 X, 위쪽에만 자리 */
+.onboarding-2 .text-box {
+  width: 100%;
+  text-align: center;
+  padding-top: clamp(36px, 6vh, 64px);
+  padding-inline: 20px;
+}
+
+.onboarding-2 .text-box h1 {
+  margin: 0;
+  font-size: clamp(20px, 2.6vh, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #333;
+  letter-spacing: -0.2px;
+}
+
+.onboarding-2 .text-box p {
+  margin-top: 12px;
+  font-size: clamp(12px, 1.7vh, 16px);
+  color: #808080;
+  font-weight: 400;
+}
+
+/* =========================
+   MARQUEE (가운데 띠)
+   - top% 대신 "calc(텍스트 영역 + 여백)"로 안정 배치
+   ========================= */
+.onboarding-2 .marquee-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  /* ✅ 텍스트 아래, 화면 크기 따라 자동 */
+  top: clamp(190px, 36vh, 320px);
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.onboarding-2 .marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 14px;
+  animation: marquee 50s linear infinite;
+  will-change: transform;
+  padding: 0 10px;
+}
+
+/* 카드 프레임 (반응형) */
+.onboarding-2 .marquee-item {
+  width: clamp(132px, 18vw, 160px);
+  height: clamp(182px, 25vw, 220px);
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.onboarding-2 .marquee-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+  animation: zigzag 5s ease-in-out infinite;
+  will-change: transform;
+}
 
 /* 지그재그 타이밍 분산 */
-.onboarding-2 .wave-0 img { animation-delay: -2.4s; } 
-.onboarding-2 .wave-1 img { animation-delay: -0.6s; } 
-.onboarding-2 .wave-2 img { animation-delay: -2.4s; } 
-.onboarding-2 .wave-3 img { animation-delay: -0.6s; } 
+.onboarding-2 .wave-0 img { animation-delay: -2.4s; }
+.onboarding-2 .wave-1 img { animation-delay: -0.6s; }
+.onboarding-2 .wave-2 img { animation-delay: -2.4s; }
+.onboarding-2 .wave-3 img { animation-delay: -0.6s; }
 
-.onboarding-2 .tubi-img { position: absolute; left: 50%; top: 55%; transform: translateX(-50%); width: 260px; z-index: 2; } 
+/* =========================
+   튜비 이미지
+   - top% 대신 bottom 기준으로 고정 (NEXT랑 안 겹치게)
+   ========================= */
+.onboarding-2 .tubi-img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 
-/* ---------- Animations ---------- */
-@keyframes marquee { 
- from { transform: translateX(0); } 
- to { transform: translateX(-50%); } 
- }
+  /* ✅ 하단 기준으로 올려서 어떤 화면에서도 안정 */
+  bottom: clamp(70px, 10vh, 120px);
 
-@keyframes zigzag { 
- 0% { transform: translateY(-50px); } 
+  width: clamp(200px, 42vw, 260px);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.14));
+}
 
- 50% { transform: translateY(0px); } 
+/* =========================
+   애니메이션
+   ========================= */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
- 100% { transform: translateY(-50px); } 
- }
+@keyframes zigzag {
+  0%   { transform: translateY(-40px); }
+  50%  { transform: translateY(0px); }
+  100% { transform: translateY(-40px); }
+}
+
+/* =========================
+   작은 화면(폰) 추가 보정
+   ========================= */
+@media (max-width: 390px) {
+  .ob1-footer {
+    right: 16px;
+    bottom: 20px;
+  }
+
+  .onboarding-2 .marquee-wrapper {
+    top: clamp(175px, 34vh, 290px);
+  }
+
+  @keyframes zigzag {
+    0%   { transform: translateY(-34px); }
+    50%  { transform: translateY(0px); }
+    100% { transform: translateY(-34px); }
+  }
+}
+
+/* =========================
+   큰 화면(모니터)에서 카드가 너무 커지지 않게
+   ========================= */
+@media (min-width: 1200px) {
+  .onboarding-2 .marquee-wrapper {
+    top: 320px;
+  }
+}

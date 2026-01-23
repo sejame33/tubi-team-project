@@ -1,0 +1,234 @@
+/* =========================
+   전체 래퍼(헤더 포함)
+   ========================= */
+.ob4-wrap {
+  height: 100dvh;
+  min-height: 100vh;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   Header: progress + skip (3페이지랑 동일)
+   ========================= */
+.obhs-header {
+  height: 56px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+}
+
+.obhs-progress {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.obhs-seg {
+  flex: 1;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #11a4ff 0%, #884dff 100%);
+}
+
+.obhs-skip {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #9aa0a6;
+  cursor: pointer;
+  padding: 6px 6px;
+  flex: 0 0 auto;
+  margin-left: 12px;
+}
+
+/* =========================
+   Body
+   ========================= */
+.ob4 {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* ✅ 하단(버블+소셜) 공간 확보 */
+  padding: clamp(18px, 2.4vh, 28px) 20px calc(34px + env(safe-area-inset-bottom));
+}
+
+/* 상단 한줄 */
+.ob4-topline {
+  margin: clamp(10px, 1.8vh, 18px) 0 0;
+  font-size: clamp(14px, 2vh, 16px);
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.2px;
+}
+
+.ob4-point {
+  color: #6b4dff;
+  position: relative;
+}
+
+/* 점(·) */
+.ob4-point::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6b4dff;
+}
+
+/* 가운데 튜비 영역 */
+.ob4-hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(22px, 7vh, 54px);
+  margin-bottom: clamp(18px, 6vh, 44px);
+}
+
+.ob4-tubi {
+  width: clamp(220px, 46vw, 320px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.14));
+}
+
+/* 하단 텍스트 */
+.ob4-text {
+  margin-top: auto; /* ✅ 큰 화면에서도 아래쪽으로 자연스럽게 */
+  padding-top: clamp(10px, 2vh, 16px);
+}
+
+.ob4-title {
+  margin: 0;
+  font-size: clamp(22px, 3vh, 30px);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #222;
+  letter-spacing: -0.3px;
+}
+
+.ob4-desc {
+  margin: 10px 0 0;
+  font-size: clamp(12px, 1.8vh, 16px);
+  color: #b0b0b0;
+  font-weight: 500;
+}
+
+/* =========================
+   말풍선 CTA
+   ========================= */
+.ob4-bubble {
+  margin-top: clamp(18px, 3vh, 26px);
+  border: none;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 22px;
+  border-radius: 999px;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #11a4ff 0%, #884dff 100%);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+
+  position: relative;
+}
+
+.ob4-bubble-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* 말풍선 꼬리 */
+.ob4-bubble-tail {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid #6b60ff;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.1));
+}
+
+/* =========================
+   소셜 버튼 4개
+   ========================= */
+.ob4-social {
+  margin-top: clamp(18px, 3vh, 28px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 26px);
+}
+
+.ob4-social-btn {
+  width: clamp(64px, 18vw, 86px);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
+}
+
+.ob4-social-text {
+  font-size: clamp(16px, 4vw, 22px);
+  letter-spacing: -0.2px;
+}
+
+/* 색 */
+.ob4-social-btn.kakao {
+  background: #ffe600;
+  color: #111;
+}
+
+.ob4-social-btn.naver {
+  background: #00c300;
+  color: #fff;
+}
+
+.ob4-social-btn.google {
+  background: #ffffff;
+  border: 2px solid #ececec;
+  color: #111;
+}
+
+.ob4-social-btn.apple {
+  background: #2f2f2f;
+  color: #fff;
+}
+
+/* 작은 폰 보정 */
+@media (max-width: 360px) {
+  .ob4-bubble {
+    font-size: 15px;
+    padding: 13px 18px;
+  }
+}

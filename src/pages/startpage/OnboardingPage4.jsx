@@ -1,66 +1,88 @@
 import React, { useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 import "./OnboardingPage4.css";
 
-function OnboardingPage4() {
+export default function OnboardingPage4() {
+  const navigate = useNavigate();
+
+  // ✅ 이 페이지에서만 main padding 제어
   useEffect(() => {
     const main = document.querySelector(".main");
     if (!main) return;
 
-    // 원하는 값으로 덮기
     main.style.padding = "0";
-
-    // 페이지 벗어나면 원복
     return () => {
       main.style.padding = "";
     };
   }, []);
 
-  
   return (
-    <div className="onboarding-4" role="button" tabIndex={0}>
-      {/* ✅ TOP */}
-      <div className="ob4-top">
-        <div className="onboarding-text">
-          <h2 className="title">
-            스티커와 튜비를
-            <br />한 눈에 확인할 수 있어요
-          </h2>
-          <p className="desc">나만의 튜비를 만들어 가요!</p>
-        </div>
-      </div>
-
-      {/* ✅ CENTER (기준) */}
-      <div className="bg-wrap" aria-hidden="true">
-        <img
-          className="onboarding-4-frame"
-          src="/img/onboarding-4-Frame2.svg"
-          alt=""
-          draggable="false"
-        />
-
-        <div className="inner-wrap">
-          <img
-            className="onboarding-4-myitem"
-            src="/img/onboarding-4-myitem.svg"
-            alt=""
-            draggable="false"
-          />
+    <div className="ob4-wrap">
+      {/* ✅ Header: progress + skip */}
+      <header className="obhs-header">
+        <div className="obhs-progress" aria-label="onboarding progress">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <span key={i} className={`obhs-seg is-filled`} />
+          ))}
         </div>
 
-        <img
-          className="onboarding-4-tubi"
-          src="/img/onboarding-4-tubi.svg"
-          alt=""
-          draggable="false"
-        />
-      </div>
+        <button
+          type="button"
+          className="obhs-skip"
+          onClick={() => navigate("/login")}
+        >
+          Skip
+        </button>
+      </header>
 
-      {/* ✅ BOTTOM: (필요하면 다음 버튼 같은거 넣을 자리)
-          지금은 비워둬도 grid가 꽉 채워줌 */}
-      <div className="ob4-bottom" />
+      {/* ✅ Body */}
+      <main className="ob4">
+        {/* 상단 한 줄 */}
+        <p className="ob4-topline">
+          노바랑 같이 <span className="ob4-point">점을</span> 따라가봐요
+        </p>
+
+        {/* 가운데 튜비 */}
+        <div className="ob4-hero">
+          <img src="/img/tubicommon.png" alt="tubi" className="ob4-tubi" />
+        </div>
+
+        {/* 하단 문구 */}
+        <div className="ob4-text">
+          <h1 className="ob4-title">
+            지금 로그인하고
+            <br />
+            다양한 콘텐츠를 만나보세요!
+          </h1>
+          <p className="ob4-desc">팬덤 일정부터 굿즈까지 한번에</p>
+        </div>
+
+        {/* 말풍선 CTA */}
+        <button type="button" className="ob4-bubble" onClick={() => navigate("/login")}>
+          <span className="ob4-bubble-icon" aria-hidden="true">⚡</span>
+          3초만에 빠른 가입하기
+          <span className="ob4-bubble-tail" aria-hidden="true" />
+        </button>
+
+        {/* 소셜 버튼 */}
+        <div className="ob4-social">
+          <button type="button" className="ob4-social-btn kakao" aria-label="Kakao">
+            <span className="ob4-social-text">TALK</span>
+          </button>
+
+          <button type="button" className="ob4-social-btn naver" aria-label="Naver">
+            <span className="ob4-social-text">N</span>
+          </button>
+
+          <button type="button" className="ob4-social-btn google" aria-label="Google">
+            <span className="ob4-social-text">G</span>
+          </button>
+
+          <button type="button" className="ob4-social-btn apple" aria-label="Apple">
+            <span className="ob4-social-text"></span>
+          </button>
+        </div>
+      </main>
     </div>
   );
 }
-
-export default OnboardingPage4;

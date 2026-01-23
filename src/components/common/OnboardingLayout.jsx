@@ -44,11 +44,7 @@ const OnboardingLayout = () => {
       </div>
       <div className="app-wrapper">
         <div className="app">
-          <OnboardingHeader />
-          <main className="main main--onboarding" ref={mainRef}>
-            <Outlet />
-          </main>
-          <OnboardingFooter />
+          <Outlet />
         </div>
       </div>
     </>
