@@ -14,7 +14,16 @@ function Footer({ isLive }) {
 
   return (
     <footer className={`footer ${isLive ? "is-live" : ""}`}>
-      <NavLink to="/home" end className="footer-item">
+      <NavLink
+        to="/home"
+        end
+        className="footer-item impl-anchor"
+        data-impl
+        style={{
+          "--impl-right": "8px",
+          "--impl-top": "0px",
+        }}
+      >
         {({ isActive }) => (
           <>
             <img
@@ -30,7 +39,15 @@ function Footer({ isLive }) {
         )}
       </NavLink>
 
-      <NavLink to="/home/shop" className="footer-item">
+      <NavLink
+        to="/home/shop"
+        className="footer-item impl-anchor"
+        data-impl
+        style={{
+          "--impl-right": "8px",
+          "--impl-top": "0px",
+        }}
+      >
         {({ isActive }) => (
           <>
             <img
@@ -46,7 +63,15 @@ function Footer({ isLive }) {
         )}
       </NavLink>
 
-      <NavLink to="/home/dm" className="footer-item">
+      <NavLink
+        to="/home/dm"
+        className="footer-item impl-anchor"
+        data-impl
+        style={{
+          "--impl-right": "8px",
+          "--impl-top": "0px",
+        }}
+      >
         {({ isActive }) => (
           <>
             <img
@@ -60,7 +85,15 @@ function Footer({ isLive }) {
         )}
       </NavLink>
 
-      <NavLink to="/home/my" className="footer-item">
+      <NavLink
+        to="/home/my"
+        className="footer-item impl-anchor"
+        data-impl
+        style={{
+          "--impl-right": "8px",
+          "--impl-top": "0px",
+        }}
+      >
         {({ isActive }) => (
           <>
             <img
