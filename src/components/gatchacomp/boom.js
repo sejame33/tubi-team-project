@@ -8,7 +8,7 @@ export function boom() {
     gravity: 0.9,
     zIndex: 10000,
     ticks: 100,
-    origin: { x: 0.5, y: 0.75 },
+    origin: { x: 0.72, y: 0.75 },
     colors: ["#44B1F7", "#884DFF", "#6FD6FF", "#B28CFF", "#FFFFFF"],
   });
 }

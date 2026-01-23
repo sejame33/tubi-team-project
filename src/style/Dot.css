@@ -3,6 +3,17 @@
   position: relative;
 }
 
+[data-impl]::after,
+.impl-anchor[data-impl-alt]::before {
+  display: block;
+}
+
+/* impl-off가 있으면 전부 끔 */
+.impl-off [data-impl]::after,
+.impl-off .impl-anchor[data-impl-alt]::before {
+  display: none !important;
+}
+
 [data-impl]::after {
   content: "";
   position: absolute;

@@ -34,7 +34,7 @@
 }
 
 .onboarding-1 .desc {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
   color: #333333;
   line-height: 1.2;
@@ -53,5 +53,5 @@
 
 .onboarding-1 .onboarding-image {
   margin-left: 15px;
-  width: 100%;
+  width: 83%;
 }

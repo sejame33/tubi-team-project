@@ -1,9 +1,11 @@
 .artist-comment {
+  border-bottom: 1px solid #dfdfdf;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding-bottom: 50px;
+  padding-bottom: 38px;
   font-family: "Pretendard", sans-serif;
+  padding-top: 24px;
 }
 
 /* ---------- 프로필 ---------- */

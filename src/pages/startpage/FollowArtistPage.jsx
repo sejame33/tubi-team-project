@@ -16,6 +16,14 @@ export default function FollowArtistPage() {
   const measureRef = useRef(null);
   const [useSwiper, setUseSwiper] = useState(false);
 
+  const disableImplDot = () => {
+    document.body.classList.add("impl-off");
+  };
+
+  const enableImplDot = () => {
+    document.body.classList.remove("impl-off");
+  };
+
   useEffect(() => {
     const viewportEl = viewportRef.current;
     const measureEl = measureRef.current;
@@ -83,69 +91,102 @@ export default function FollowArtistPage() {
   }, [from, followedArtists.length, addFollow]);
 
   return (
-    <div className="app-wrapper">
-      <div className="app">
-        <main className="main followartist-main">
-          <section className="followartist-page">
-            <div className="followartist-sticky">
-              <h2 className="followartist-title">
-                소식을 받아볼
-                <br />
-                버추얼 그룹을 선택해요
-              </h2>
+    <div className="all">
+      <div className="apptit">
+        <img src="/img/background-light.png" alt="" className="light" />
+        <p className="appTit">라이브부터 소통까지,</p>
+        <p className="appSubTit">당신과 아이돌을 이어주는</p>
+        <img src="/img/background-logo.png" alt="" className="logo" />
+        <div className="btn">
+          <button onClick={enableImplDot}>가이드 ON</button>
+          <button onClick={disableImplDot}>가이드 OFF</button>
+        </div>
+      </div>
+      <div className="app-wrapper">
+        <div className="app">
+          <main className="main followartist-main">
+            <section className="followartist-page">
+              <div className="followartist-sticky">
+                <h2 className="followartist-title">
+                  소식을 받아볼
+                  <br />
+                  버추얼 그룹을 선택해요
+                </h2>
 
-              <div
-                className="followartist-search impl-anchor"
-                data-impl
-                style={{
-                  "--impl-right": "8px",
-                  "--impl-top": "8px",
-                }}
-              >
-                <span className="followartist-search-icon" aria-hidden="true">
-                  <img src="/img/follow-artist-search-icon.svg" alt="" />
-                </span>
-                <input
-                  className="followartist-search-input"
-                  value={q}
-                  onChange={(e) => setQ(e.target.value)}
-                  placeholder="아티스트의 이름을 입력하세요"
-                />
-              </div>
-
-              {followedArtists.length > 0 && (
                 <div
-                  className="followartist-selected-viewport"
-                  ref={viewportRef}
-                  aria-label="selected artists"
+                  className="followartist-search impl-anchor"
+                  data-impl
+                  style={{
+                    "--impl-right": "8px",
+                    "--impl-top": "8px",
+                  }}
                 >
-                  <div
-                    ref={measureRef}
-                    className="followartist-selected-measure"
-                  >
-                    {followedArtists.map((a) => (
-                      <div key={a.id} className="followartist-chip ">
-                        <div
-                          className="followartist-chip-img impl-anchor"
-                          data-impl
-                        />
-                      </div>
-                    ))}
-                  </div>
+                  <span className="followartist-search-icon" aria-hidden="true">
+                    <img src="/img/follow-artist-search-icon.svg" alt="" />
+                  </span>
+                  <input
+                    className="followartist-search-input"
+                    value={q}
+                    onChange={(e) => setQ(e.target.value)}
+                    placeholder="아티스트의 이름을 입력하세요"
+                  />
+                </div>
 
-                  {useSwiper ? (
-                    <Swiper
-                      slidesPerView="auto"
-                      spaceBetween={16}
-                      slidesOffsetAfter={16}
-                      className="followartist-selected-swiper"
+                {followedArtists.length > 0 && (
+                  <div
+                    className="followartist-selected-viewport"
+                    ref={viewportRef}
+                    aria-label="selected artists"
+                  >
+                    <div
+                      ref={measureRef}
+                      className="followartist-selected-measure"
                     >
                       {followedArtists.map((a) => (
-                        <SwiperSlide
-                          key={a.id}
-                          className="followartist-chip-slide"
-                        >
-                          <div className="followartist-chip">
+                        <div key={a.id} className="followartist-chip ">
+                          <div
+                            className="followartist-chip-img impl-anchor"
+                            data-impl
+                          />
+                        </div>
+                      ))}
+                    </div>
+
+                    {useSwiper ? (
+                      <Swiper
+                        slidesPerView="auto"
+                        spaceBetween={16}
+                        slidesOffsetAfter={16}
+                        className="followartist-selected-swiper"
+                      >
+                        {followedArtists.map((a) => (
+                          <SwiperSlide
+                            key={a.id}
+                            className="followartist-chip-slide"
+                          >
+                            <div className="followartist-chip">
+                              <div
+                                className="followartist-chip-img impl-anchor"
+                                data-impl
+                              >
+                                <img src={a.img} alt={a.name} />
+                                <button
+                                  type="button"
+                                  className="followartist-chip-remove"
+                                  onClick={() => handleRemove(a)}
+                                  aria-label={`${a.name} 제거`}
+                                >
+                                  −
+                                </button>
+                              </div>
+                            </div>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    ) : (
+                      <div className="followartist-selected-row">
+                        {followedArtists.map((a) => (
+                          <div key={a.id} className="followartist-chip">
                             <div
                               className="followartist-chip-img impl-anchor"
                               data-impl
@@ -161,88 +202,67 @@ export default function FollowArtistPage() {
                               </button>
                             </div>
                           </div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                  ) : (
-                    <div className="followartist-selected-row">
-                      {followedArtists.map((a) => (
-                        <div key={a.id} className="followartist-chip">
-                          <div
-                            className="followartist-chip-img impl-anchor"
-                            data-impl
-                          >
-                            <img src={a.img} alt={a.name} />
-                            <button
-                              type="button"
-                              className="followartist-chip-remove"
-                              onClick={() => handleRemove(a)}
-                              aria-label={`${a.name} 제거`}
-                            >
-                              −
-                            </button>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-
-            <div className="followartist-list-scroll">
-              <div className="followartist-list" role="list">
-                {filtered.map((a) => {
-                  const active = isFollowed(a.id);
-
-                  return (
-                    <button
-                      key={a.id}
-                      type="button"
-                      className={`followartist-item ${active ? "is-selected" : ""}`}
-                      role="listitem"
-                      onClick={() =>
-                        active ? removeFollow(a.id) : handleSelect(a)
-                      }
-                    >
-                      <div
-                        className="followartist-item-left impl-anchor"
-                        data-impl
-                        style={{
-                          "--impl-right": "140px",
-                          "--impl-top": "0px",
-                        }}
-                      >
-                        <div className="followartist-item-avatar">
-                          <img src={a.img} alt={a.name} />
-                        </div>
-
-                        <div className="followartist-item-text">
-                          <div className="followartist-item-name ">
-                            {a.name}
-                          </div>
-                          <div className="followartist-item-sub">
-                            그룹 · 라이브 · 업데이트
-                          </div>
-                        </div>
+                        ))}
                       </div>
-                    </button>
-                  );
-                })}
+                    )}
+                  </div>
+                )}
               </div>
-            </div>
 
-            <div className="follow-artist-btn-wrap impl-anchor" data-impl>
-              <button
-                className="followartist-done"
-                type="button"
-                onClick={handleDone}
-              >
-                선택완료
-              </button>
-            </div>
-          </section>
-        </main>
+              <div className="followartist-list-scroll">
+                <div className="followartist-list" role="list">
+                  {filtered.map((a) => {
+                    const active = isFollowed(a.id);
+
+                    return (
+                      <button
+                        key={a.id}
+                        type="button"
+                        className={`followartist-item ${active ? "is-selected" : ""}`}
+                        role="listitem"
+                        onClick={() =>
+                          active ? removeFollow(a.id) : handleSelect(a)
+                        }
+                      >
+                        <div
+                          className="followartist-item-left impl-anchor"
+                          data-impl
+                          style={{
+                            "--impl-right": "140px",
+                            "--impl-top": "0px",
+                          }}
+                        >
+                          <div className="followartist-item-avatar">
+                            <img src={a.img} alt={a.name} />
+                          </div>
+
+                          <div className="followartist-item-text">
+                            <div className="followartist-item-name ">
+                              {a.name}
+                            </div>
+                            <div className="followartist-item-sub">
+                              그룹 · 라이브 · 업데이트
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="follow-artist-btn-wrap impl-anchor" data-impl>
+                <button
+                  className="followartist-done"
+                  type="button"
+                  onClick={handleDone}
+                >
+                  선택완료
+                </button>
+              </div>
+            </section>
+          </main>
+        </div>
       </div>
     </div>
   );

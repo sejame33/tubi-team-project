@@ -7,14 +7,16 @@ function OnboardingPage4() {
     const main = document.querySelector(".main");
     if (!main) return;
 
-    const prevPadding = main.style.padding;
+    // 원하는 값으로 덮기
     main.style.padding = "0";
 
+    // 페이지 벗어나면 원복
     return () => {
-      main.style.padding = prevPadding;
+      main.style.padding = "";
     };
   }, []);
 
+  
   return (
     <div className="onboarding-4" role="button" tabIndex={0}>
       {/* ✅ TOP */}
