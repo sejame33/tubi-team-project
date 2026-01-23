@@ -1,281 +1,105 @@
-.artist-page {
-  background-color: #f8f9fa;
-}
+.artist-page { background-color: #f8f9fa; } 
 
-.artist-visual {
-  position: relative;
-  color: #fff;
-  text-align: center;
-}
+.artist-visual { position: relative; color: #fff; text-align: center; } 
 
-.visual-bg img {
-  width: 100%;
-  object-fit: cover;
-}
+.visual-bg img { width: 100%; object-fit: cover; } 
 
-.visual-info {
-  position: absolute;
-  bottom: 20%;
-  width: 100%;
-  font-size: 12px;
-}
+.visual-info { position: absolute; bottom: 20%; width: 100%; font-size: 12px; } 
 
-.visual-info .artist-name {
-  font-size: 50px;
-  font-weight: bold;
-}
+.visual-info .artist-name { font-size: 50px; font-weight: bold; } 
 
-.social-links {
-  position: absolute;
-  bottom: 4px;
-  padding: 22px 40px;
-  width: 100%;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  background-image: url("/img/snsbg.png");
-}
+.social-links { position: absolute; bottom: 4px; padding: 22px 40px; width: 100%; list-style: none; display: flex; justify-content: space-between; background-image: url("/img/snsbg.png"); } 
 
-.about-us {
-  padding: 24px 16px;
-  background-color: #fff;
-  border-radius: 16px;
-  margin: 24px 16px 100px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
+.about-us { padding: 24px 16px; background-color: #fff; border-radius: 16px; margin: 24px 16px 80px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); } 
 
-.about-us .stickerSwiper-swiper {
-  padding-left: 0;
-}
+.about-us .stickerSwiper-swiper { padding-left: 0; } 
 
-.about-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
+.about-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; } 
 
-.about-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #111;
-}
+.about-title { font-size: 20px; font-weight: 700; color: #111; } 
 
-.view-all-btn {
-  font-size: 13px;
-  color: #888;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+.view-all-btn { font-size: 13px; color: #888; background: none; border: none; cursor: pointer; } 
 
-.about-description {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 30px;
-}
+.about-description { font-size: 14px; line-height: 1.6; color: #555; margin-bottom: 30px; } 
 
-.artistpage {
-  width: 100%;
-  padding: 24px 16px;
-  background-image: url("/img/artist-live-bg.png");
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
-  padding-bottom: 80px;
-  margin-top: 30px;
-  position: relative;
-}
+.artistpage { width: 100%; padding: 24px 16px; background-image: url("/img/artist-live-bg.png"); background-size: cover; color: #ffffff; padding-bottom: 270px; margin-top: 30px; position: relative; } 
 
-.about-us .stickerSwiper-card {
-  margin-right: 10px;
-}
+.about-us .stickerSwiper-card { margin-right: 10px; } 
 
 .artistlive .section-title,
-.mv .section-title {
-  color: white;
-}
+.mv .section-title { color: white; } 
 
 .artistlive .section-title-wrap .section-more,
-.mv .section-title-wrap .section-more {
-  color: white;
-}
+.mv .section-title-wrap .section-more { color: white; } 
 
-.artistlive .section-title-wrap {
-  margin-top: 45px;
-  margin-bottom: 24px;
-}
+.artistlive .section-title-wrap { margin-top: 45px; margin-bottom: 24px; padding: 0;} 
 
-.mv .section-title-wrap {
-  margin-top: 30px;
-  margin-bottom: 24px;
-}
+.mv .section-title-wrap { margin-top: 30px; margin-bottom: 24px; padding: 0;} 
 
-.artistlive .category-label {
-  font-size: 22px;
-}
+.artistlive .category-label { font-size: 22px; } 
 
-.live-content-box {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.live-content-box .cover-yellow {
+  color: black;
 }
+.live-content-box .hot-issue-container, .live-content-box .mv-card { background: linear-gradient(
+ 60deg,
+ rgba(76, 175, 254, 0.1) 0%, 
+ rgba(130, 94, 254, 0.1) 100% 
+); backdrop-filter: blur(15px); border-radius: 20px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.1); color: white; } 
+.live-content-box .mv-card .desc { color: white; } 
 
-.category-label {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
+.live-content-box .mv-card .mv-card-main-title { color: white; } 
 
-.thumbnail-wrap {
-  position: relative;
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-}
+.category-label { font-size: 18px; font-weight: 700; margin-bottom: 16px; } 
 
-.thumb-img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-}
+.thumbnail-wrap { position: relative; width: 100%; border-radius: 12px; overflow: hidden; } 
 
-.hot-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background-color: #ff4d4d;
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: bold;
-}
+.thumb-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; } 
 
-.card-footer {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 16px;
-}
+.hot-badge { position: absolute; top: 12px; left: 12px; background-color: #ff4d4d; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; } 
 
-.profile-circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
+.card-footer { display: flex; align-items: center; gap: 12px; margin-top: 16px; } 
 
-.profile-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.profile-circle { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.3); } 
 
-.text-info .stitle {
-  font-size: 15px;
-  font-weight: 500;
-  margin-bottom: 4px;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+.profile-circle img { width: 100%; height: 100%; object-fit: cover; } 
 
-.text-info .sartist {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
-}
+.text-info .stitle { font-size: 15px; font-weight: 500; margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; } 
 
-.check-v {
-  font-size: 10px;
-}
+.text-info .sartist { font-size: 13px; color: rgba(255, 255, 255, 0.7); } 
 
-.about-us .stickerSwiper-brand {
-  font-size: 14px;
-  color: #333333;
-}
+.commentpage {margin-top: -30px;}
+.check-v { font-size: 10px; } 
 
-.about-us .stickerSwiper-name {
-  font-size: 16px;
-  color: #6e6e6e;
-  font-weight: 500;
-}
+.about-us .stickerSwiper-brand { font-size: 14px; color: #333333; } 
 
-.crown-banner .shop-promo-subtitle-img {
-  height: auto;
-  width: 70%;
-}
+.about-us .stickerSwiper-name { font-size: 16px; color: #6e6e6e; font-weight: 500; } 
 
-.crown-banner .shop-promo-title {
-  font-size: 16px;
-}
+.crown-banner .shop-promo-subtitle-img { height: auto; width: 70%; } 
 
-.dm-banner {
-  width: 100%;
-}
+.crown-banner .shop-promo-title { font-size: 16px; } 
 
-.dm-banner .shop-promo-subtitle-text {
-  background: linear-gradient(90deg, #92b5f9 0%, #ffffff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  font-size: 28px;
-  font-weight: 600;
-}
+.dm-banner { width: 100%; position: absolute; left: 0; bottom: 10%; } 
 
-.dm-banner .shop-promo-title {
-  font-size: 14px;
-}
+.dm-banner .shop-promo-subtitle-text { background: linear-gradient(90deg, #92b5f9 0%, #ffffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; font-size: 28px; font-weight: 600; } 
 
-.goods {
-  margin-top: 100px;
-}
+.dm-banner .shop-promo-title { font-size: 14px; } 
 
-.goodsshop {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin: 30px 16px 60px;
-  padding: 40px 16px;
-  padding-right: 0;
-}
+.goods { margin-top: 80px; } 
 
-.artist-from-swiper {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  margin: 16px;
-  padding: 37px 24px;
-}
+.goodsshop { background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); margin: 24px 16px 60px; padding: 40px 16px; padding-right: 0; } 
 
-.commentpage {
-  margin-top: 180px;
-}
+.artist-from-swiper { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); border-radius: 8px; margin: 24px 16px; padding: 37px 24px; } 
 
-.comment {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  margin: 24px 16px;
-  padding: 45px 24px;
-}
+.comment { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); border-radius: 8px; margin: 24px 16px; padding: 21px 24px 34px; } 
 
-.artistlive .section-more img {
-  filter: brightness(0) invert(1);
-}
+.artistlive .section-more img { filter: brightness(0) invert(1); } 
 
-.mv .section-more img {
-  filter: brightness(0) invert(1);
-}
+.mv .section-more img { filter: brightness(0) invert(1); } 
 
 /* Artist Live 페이지의 SectionTitle 점 비활성화 */
 .Ustit .section-title-wrap .section-more[data-impl]::after,
 .artistswiper .section-title-wrap .section-more[data-impl]::after,
-.commentpage .section-title-wrap .section-more[data-impl]::after {
-  display: none;
-}
+.commentpage .section-title-wrap .section-more[data-impl]::after { display: none; } 
+
+.artistImportant .shop-important { margin: 24px 0 80px; } 

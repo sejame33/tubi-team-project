@@ -1,109 +1,40 @@
-.onboarding-2 {
-  top: 420px;
-  width: 100%;
-  height: auto;
-}
+.onboarding-2 {position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; } 
 
-.onboarding-2 .text-box {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
+.onboarding-2 .text-box { width: 100%; margin: 0 auto; text-align: center; height: 600px; } 
 
-.onboarding-2 .text-box h1 {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #333333;
-}
+.onboarding-2 .text-box h1 { font-size: 28px; font-weight: 600; line-height: 1.2; color: #333333; } 
 
-.onboarding-2 .text-box p {
-  font-size: 16px;
-  color: #808080;
-  font-weight: normal;
-  margin-top: 12px;
-}
+.onboarding-2 .text-box p { font-size: 16px; color: #808080; font-weight: normal; margin-top: 12px; } 
 
 /* ---------- MARQUEE ---------- */
-.onboarding-2 .marquee-wrapper {
-  position: absolute;
-  top: 42%;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-}
+.onboarding-2 .marquee-wrapper { position: absolute; top: 42%; left: 0; width: 100%; z-index: 1; } 
 
-.onboarding-2 .marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 50s linear infinite;
-  will-change: transform;
-}
+.onboarding-2 .marquee-track { display: flex; width: max-content; animation: marquee 50s linear infinite; will-change: transform; } 
 
 /* 카드 프레임 */
-.onboarding-2 .marquee-item {
-  width: 160px;
-  height: 220px;
-  margin-right: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-shrink: 0; /* ✅ 중요 */
-}
+.onboarding-2 .marquee-item { width: 160px; height: 220px; margin-right: 14px; display: flex; align-items: center; justify-content: center; position: relative; flex-shrink: 0; /* ✅ 중요 */}
 
 /* 카드만 지그재그 */
-.onboarding-2 .marquee-item img {
-  width: 100%;
-  display: block;
-  animation: zigzag 5s ease-in-out infinite;
-  will-change: transform;
-}
+.onboarding-2 .marquee-item img { width: 100%; display: block; animation: zigzag 5s ease-in-out infinite; will-change: transform; } 
 
 /* 지그재그 타이밍 분산 */
-.onboarding-2 .wave-0 img {
-  animation-delay: -2.4s;
-}
-.onboarding-2 .wave-1 img {
-  animation-delay: -0.6s;
-}
-.onboarding-2 .wave-2 img {
-  animation-delay: -2.4s;
-}
-.onboarding-2 .wave-3 img {
-  animation-delay: -0.6s;
-}
+.onboarding-2 .wave-0 img { animation-delay: -2.4s; } 
+.onboarding-2 .wave-1 img { animation-delay: -0.6s; } 
+.onboarding-2 .wave-2 img { animation-delay: -2.4s; } 
+.onboarding-2 .wave-3 img { animation-delay: -0.6s; } 
 
-/* ---------- 문어 ---------- */
-.onboarding-2 .tubi-img {
-  position: fixed;
-  left: 50%;
-  top: 52%;
-  transform: translateX(-50%);
-  width: 300px;
-  z-index: 2;
-}
+.onboarding-2 .tubi-img { position: absolute; left: 50%; top: 55%; transform: translateX(-50%); width: 260px; z-index: 2; } 
 
 /* ---------- Animations ---------- */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
+@keyframes marquee { 
+ from { transform: translateX(0); } 
+ to { transform: translateX(-50%); } 
+ }
 
-@keyframes zigzag {
-  0% {
-    transform: translateY(-50px);
-  }
+@keyframes zigzag { 
+ 0% { transform: translateY(-50px); } 
 
-  50% {
-    transform: translateY(0px);
-  }
+ 50% { transform: translateY(0px); } 
 
-  100% {
-    transform: translateY(-50px);
-  }
-}
+ 100% { transform: translateY(-50px); } 
+ }

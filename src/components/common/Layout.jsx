@@ -12,7 +12,9 @@ const Layout = () => {
   const isMyHome = location.pathname === "/home/my";
   const isTubiPage = location.pathname === "/home/my/tubi";
   const isArtistPage = location.pathname.startsWith("/home/artist");
-  const isAnnouncement6 = location.pathname.startsWith("/home/shop/announcement/");
+  const isAnnouncement6 = location.pathname === "/home/shop/announcement/6";
+  const isAnnouncement7 = location.pathname === "/home/shop/announcement/7";
+  const isAnnouncement5 = location.pathname === "/home/shop/announcement/5";
   const isDmPage1 = location.pathname === "/home/dm/isegye";
   const isDmPage2 = location.pathname === "/home/dm/hebi";
   const isDmPage3 = location.pathname === "/home/dm/meechu";
@@ -65,8 +67,7 @@ const Layout = () => {
 
     if (
       path === "/home/my" ||
-      path === "/home/my/tubi" ||
-      path.startsWith("/home/artist")
+      path === "/home/my/tubi"
     ) {
       return null;
     }
@@ -86,6 +87,11 @@ const Layout = () => {
         centerTitle: "공지사항",
         showAnShare: true,
         showMenu: false,
+      };
+    }
+    if (path.startsWith("/home/artist/")) {
+      return {
+        showBack: true,
       };
     }
     if (path === "/home/gatcha/stickercollection") {
@@ -173,25 +179,46 @@ const Layout = () => {
   const headerProps = getHeaderProps();
   const isLiveMode = headerProps?.isLive || false;
 
+  const disableImplDot = () => {
+    document.body.classList.add("impl-off");
+  };
+
+  const enableImplDot = () => {
+    document.body.classList.remove("impl-off");
+  };
+
   return (
-    <div className="app-wrapper">
-      <div className="app">
-        {headerProps && !isAnnouncement6 && !isDmPage1 && !isDmPage2 && !isDmPage3 && <Header {...headerProps} />}
-        <main
-          ref={mainRef}
-          className={[
-            "main",
-            isArtistPage ? "main--artist" : "",
-            (isMyHome || isTubiPage) ? "main--nochrome" : "",
-            isChatRoom ? "main--noBottom main--chat" : "",
-          ].filter(Boolean).join(" ")}
-        >
-          <Outlet />
-        </main>
-        {!isTubiPage && !isAnnouncement6 && <Footer isLive={isLiveMode} />}
-        {isHome && <ChatbotContainer />}
+    <>
+      <div className="all">
+        <div className="apptit">
+          <img src="/img/background-light.png" alt="" className="light" />
+          <p className="appTit">라이브부터 소통까지,</p>
+          <p className="appSubTit">당신과 아이돌을 이어주는</p>
+          <img src="/img/background-logo.png" alt="" className="logo" />
+          <div className="btn">
+            <button onClick={enableImplDot}>가이드 ON</button>
+            <button onClick={disableImplDot}>가이드 OFF</button>
+          </div>
+        </div>
+        <div className="app-wrapper">
+          <div className="app">
+            {headerProps && !isAnnouncement6 && !isAnnouncement7 && !isAnnouncement5 && !isDmPage1 && !isDmPage2 && !isDmPage3 && <Header {...headerProps} />}
+            <main
+              ref={mainRef}
+              className={[
+                "main",
+                (isMyHome || isTubiPage) ? "main--nochrome" : "",
+                isChatRoom ? "main--noBottom main--chat" : "",
+              ].filter(Boolean).join(" ")}
+            >
+              <Outlet />
+            </main>
+            {!isTubiPage && !isAnnouncement5 && !isAnnouncement6 && !isAnnouncement7 && <Footer isLive={isLiveMode} />}
+            {isHome && <ChatbotContainer />}
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -8,6 +8,14 @@ const OnboardingLayout = () => {
   const location = useLocation();
   const mainRef = useRef(null);
 
+  const disableImplDot = () => {
+    document.body.classList.add("impl-off");
+  };
+
+  const enableImplDot = () => {
+    document.body.classList.remove("impl-off");
+  };
+
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
@@ -21,15 +29,29 @@ const OnboardingLayout = () => {
   }, [location.key]);
 
   return (
-    <div className="app-wrapper">
-      <div className="app">
-        <OnboardingHeader />
-        <main className="main main--onboarding" ref={mainRef}>
-          <Outlet />
-        </main>
-        <OnboardingFooter />
+    <>
+      <div className="all">
+        <div className="apptit">
+          <img src="/img/background-light.png" alt="" className="light" />
+          <p className="appTit">라이브부터 소통까지,</p>
+          <p className="appSubTit">당신과 아이돌을 이어주는</p>
+          <img src="/img/background-logo.png" alt="" className="logo" />
+          <div className="btn">
+            <button onClick={enableImplDot}>가이드 ON</button>
+            <button onClick={disableImplDot}>가이드 OFF</button>
+          </div>
+        </div>
       </div>
-    </div>
+      <div className="app-wrapper">
+        <div className="app">
+          <OnboardingHeader />
+          <main className="main main--onboarding" ref={mainRef}>
+            <Outlet />
+          </main>
+          <OnboardingFooter />
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@
 ================================================== */
 /* 배경 블러 + 딤 */
 .chatbot-backdrop {
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(6px);
@@ -17,7 +17,7 @@
 .chatbot-fab {
   position: fixed;
   bottom: calc(90px + 35px);
-  right: 48.3%;
+  right: 26.5%;
   transform: translateX(calc(187.5px - 16px));
   width: 60px;
   height: 60px;
@@ -30,7 +30,7 @@
 
 /* 챗봇 전체 래퍼 */
 .chatbot-wrapper {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

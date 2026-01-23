@@ -11,7 +11,7 @@
   bottom: 0;
 
   /* ✅ 핵심: 화면 가운데에 430px로 고정 */
-  left: 50%;
+  left: 72%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 430px;
