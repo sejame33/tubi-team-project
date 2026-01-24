@@ -58,6 +58,7 @@ import "./style/Dot.css";
 
 function App() {
   return (
+    // Vercel deployment verification
     <NicknameProvider>
       <FollowArtistProvider>
         <ScrollToTop />
