@@ -16,7 +16,8 @@
   border-radius: 10px;
   padding: 25px 20px;
   cursor: pointer;
-  "--impl-right":"384px","--impl-top": "24px";
+  --impl-right: 384px;
+  --impl-top: 24px;
 }
 
 .item-left img {
@@ -64,7 +65,8 @@
     padding-left: 20px;
   }
 
-   .announcement-item {
+  .announcement-item {
     --impl-right: 340px; /* 원하는 값 */
     --impl-top: 20px;
+  }
 }

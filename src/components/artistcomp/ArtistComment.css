@@ -69,11 +69,6 @@
   opacity: 0.9;
 }
 
-/* 댓글 아이콘 */
-.artist-comment .icon.comment {
-  background-image: url("/img/icon-comment.svg");
-}
-
 .imgBox {
   display: flex;
   gap: 5px;
