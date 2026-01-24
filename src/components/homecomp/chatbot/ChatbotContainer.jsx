@@ -4,7 +4,7 @@ import ChatbotBody from "./ChatbotBody.jsx";
 import ChatbotIntro from "./ChatbotIntro.jsx";
 import ChatbotInput from "./ChatbotInput.jsx";
 import { CHATBOT_RULES } from "../../data/chatbotRules";
-import "./Chatbot.css";
+import "./ChatBot.css";
 
 const ChatbotContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
