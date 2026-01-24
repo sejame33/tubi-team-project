@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./liveSection.css";
+import "./LiveSection.css";
 import SectionHeader from "./SectionHeader";
 import LiveTabs from "./LiveTabs";
 import FilterChips from "./FilterChips";
