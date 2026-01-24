@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ShopProductItem.css";
 
-import ShopProductList from "../../../../components/shopcomp/ShopProductList";
+import ShopproductList from "../../../../components/shopcomp/ShopproductList";
 
 const ShopProductItem = () => {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ const ShopProductItem = () => {
     <section className="shop-item-section">
       <div className="sectionTit">하츠네 미쿠 추천 아이템</div>
 
-      <ShopProductList
+      <ShopproductList
         items={items}
         onClick={() => navigate("/home/shop/ShopProduct")}
         onKeyDown={(e) => {
