@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import SectionTitle from "../../../components/homecomp/SectionTitle";
-import ShopproductList from "../../../components/shopcomp/ShopProductList";
+import ShopproductList from "../../../components/shopcomp/ShopproductList";
 import { useNavigate } from "react-router-dom";
 
 const Goods = () => {
