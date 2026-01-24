@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { NicknameProvider } from "./context/NicknameContext";
@@ -57,6 +57,11 @@ import MvPage from "./pages/mvpage/MvPage";
 import "./style/Dot.css";
 
 function App() {
+  useEffect(() => {
+    // 앱 시작 시 가이드(빨간 점)가 꺼져있다면 켭니다. (모바일에서 버튼이 안 보이는 문제 방지)
+    document.body.classList.remove("impl-off");
+  }, []);
+
   return (
     // Vercel deployment verification
     <NicknameProvider>
