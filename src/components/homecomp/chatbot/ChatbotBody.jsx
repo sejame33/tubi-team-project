@@ -3,7 +3,7 @@ import ChatbotMessage from "./ChatbotMessage";
 import ChatbotOptions from "./ChatbotOptions";
 import { TOPIC_OPTIONS, TOPIC_ACTIONS } from "../../data/chatbotData.jsx";
 import { CHATBOT_RULES } from "../../data/chatbotRules";
-import "./Chatbot.css";
+import "./ChatBot.css";
 
 const ChatbotBody = ({ topic, messages: externalMessages = [] }) => {
   const [messages, setMessages] = useState([]);

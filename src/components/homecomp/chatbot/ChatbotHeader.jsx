@@ -1,4 +1,4 @@
-import "./Chatbot.css";
+import "./ChatBot.css";
 
 const ChatbotHeader = ({ onClose, onReset }) => {
   const now = new Date();

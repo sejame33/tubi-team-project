@@ -1,4 +1,4 @@
-import "./Chatbot.css";
+import "./ChatBot.css";
 import ChatbotChip from "./ChatbotChip";
 import { useNickname } from "../../../context/NicknameContext";
 
